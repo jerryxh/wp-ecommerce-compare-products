@@ -47,7 +47,7 @@ For even more features, have a look at the [WPEC Compare Product Pro Version](ht
 * When adding or editing a product all you have to do is just fill in the Compare Features Fields that auto show on the Products editing screen.
 * Publish or update a product and the Products Comparable Features auto show when the Compare button is clicked.
 
-= Pro Version Features =
+=Pro Version Features=
 * Check out the [WPEC Compare Product Pro Version](http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/) for even more great features like these.
 * Create unlimited number of Compare Feature Products Sets to match different products categories and types you sell on your site.
 * Allows users to Campare different Products features on the same screen.
@@ -104,6 +104,16 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
 When can I use this plugin? =
 
 You can use this plugin when you have installed wp-e-commerce plugin
+
+= 
+How can I show Compare button on product page and detail product page? =
+
+You can go to Products -> Comparable Settings, checked on Auto Add Compare button, it will automatically add Compare button on your theme. If you want to show Compare button anywhere you want, you unchecked Auto Add Compare button, then copy this code <? if(function_exists('wpec_add_compare_button')) echo wpec_add_compare_button(); ?> and past into the theme code where you want to show Compare button.
+
+= 
+How can I sho Compare Featured fields on detail product page? =
+
+You can copy this code <? if(function_exists('wpec_show_compare_fields')) echo wpec_show_compare_fields(); ?> and past into the theme code where you want to show Compare Featured fields on detail product page.
 
 == Support ==
 
