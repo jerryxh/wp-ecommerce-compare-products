@@ -295,14 +295,14 @@ class WPEC_Compare_Class{
                             <div style="width:200px; float:left"><label for="compare_container_height"><?php _e('Compare Container Height','wpec_cp'); ?></label></div> <input type="text" name="compare_container_height" id="compare_container_height" value="<?php echo $comparable_settings['compare_container_height'] ?>" style="width:100px" />px
                             <div style="clear:both; height:20px;"></div>
                         	<div style="width:200px; float:left"><label for="auto_add"><?php _e('Auto Add Compare button','wpec_cp'); ?></label></div> <input type="checkbox" name="auto_add" id="auto_add" value="yes" <?php if($comparable_settings['auto_add'] == 'yes'){ echo 'checked="checked"';} ?> /> Yes <br />
-                            <div style="margin-left:200px;"><i><?php _e('Checked to auto add Compare button into each product.', 'wpec_cp'); ?> Or you can use this function <code>&lt;?php echo wpec_add_compare_button(); ?&gt;</code> to put into your theme code where you want to show Compare button</i></div>
+                            <div style="margin-left:200px;"><i><?php _e('Checked to auto add Compare button into each product.', 'wpec_cp'); ?> Or you can use this function <code>&lt;?php if(function_exists('wpec_add_compare_button')) echo wpec_add_compare_button(); ?&gt;</code> to put into your theme code where you want to show Compare button</i></div>
                             <div style="clear:both; height:20px;"></div>
                             <div style="width:200px; float:left"><label for="button_text"><?php _e('Button Text','wpec_cp'); ?></label></div> <input type="text" name="button_text" id="button_text" value="<?php echo $comparable_settings['button_text']; ?>" />
                             <div style="clear:both; height:20px;"></div>
                             <div style="width:200px; float:left"><label for="button_type"><?php _e('Compare Style','wpec_cp'); ?></label></div> <input type="radio" name="button_type" value="button" <?php if($comparable_settings['button_type'] == 'button'){ echo 'checked="checked"';} ?> /> Button &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="button_type" value="link" <?php if($comparable_settings['button_type'] == 'link'){ echo 'checked="checked"';} ?> /> Link 
                             <div style="clear:both; height:20px;"></div>
                             <div style="width:200px; float:left"><label for=""><?php _e('Show Compare Featured fields','wpec_cp'); ?></label></div>
-                            <div style="margin-left:200px;"><i>You can use this function <code>&lt;?php echo wpec_show_compare_fields(); ?&gt;</code> to put into your theme code where you want to show Compare Featured fields</i></div>
+                            <div style="margin-left:200px;"><i>You can use this function <code>&lt;?php if(function_exists('wpec_show_compare_fields')) echo wpec_show_compare_fields(); ?&gt;</code> to put into your theme code where you want to show Compare Featured fields</i></div>
                             <div style="clear:both; height:20px;"></div>
                     	</td>
                     </tr>
