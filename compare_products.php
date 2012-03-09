@@ -3,7 +3,7 @@
 Plugin Name: WPEC Compare Products
 Plugin URI: http://www.a3rev.com/
 Description: WPEC Compare Products plugin.
-Version: The Plugin's Version 1.0.1
+Version: 1.0.1
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -57,7 +57,6 @@ if(!defined("ECCP_MANAGER_URL"))
     define("ECCP_MANAGER_URL", "http://a3dev.net/api/plugins");
 
 update_option('a3rev_wpeccp_version', '1.0.1');
-
 include('compare_class.php');
 include('compare_filter.php');
 include('compare_data.php');
