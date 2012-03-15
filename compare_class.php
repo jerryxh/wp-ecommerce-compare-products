@@ -120,7 +120,7 @@ class WPEC_Compare_Class{
 		?>
         <div class="wrap">
         <h2></h2>
-        <div class="updated" style="padding:10px">You are using WPEC Compare Product free verison. Please upgrade the <a href="http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/" target="_blank">WPEC Compare Products Pro version</a> to can use full features.</div>
+        <div class="updated" style="padding:10px"><?php _e('You are using WPEC Compare Product FREE VERSION. Upgrade to the','wpec_cp'); ?> <a href="http://a3rev.com/products-page/wp-e-commerce/wpec-compare-products/" target="_blank">PRO VERSION</a> <?php _e('to create unlimited Compare Feature Category Sets.','wpec_cp'); ?></div>
         <script type="text/javascript">
 			(function($){
 				$(function(){
