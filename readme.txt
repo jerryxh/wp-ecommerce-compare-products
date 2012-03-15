@@ -47,7 +47,7 @@ For even more features, have a look at the [WPEC Compare Product Pro Version](ht
 * When adding or editing a product all you have to do is just fill in the Compare Features Fields that auto show on the Products editing screen.
 * Publish or update a product and the Products Comparable Features auto show when the Compare button is clicked.
 
-=Pro Version Features=
+= Pro Version Features =
 * Check out the [WPEC Compare Product Pro Version](http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/) for even more great features like these.
 * Create unlimited number of Compare Feature Products Sets to match different products categories and types you sell on your site.
 * Allows users to Campare different Products features on the same screen.
