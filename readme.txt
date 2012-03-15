@@ -80,7 +80,7 @@ For even more features, have a look at the [WPEC Compare Product Pro Version](ht
 = Localization =
 Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
 
- == Installation ==
+== Installation ==
 
 
 1. Upload the folder wpec-compare-products to the /wp-content/plugins/ directory
