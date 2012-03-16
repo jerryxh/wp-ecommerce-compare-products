@@ -133,7 +133,8 @@ class WPEC_Compare_Class{
 				});
 			})(jQuery);
 		</script>
-        <div id="icon-themes" class="icon32">&nbsp;</div><h2><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'edit'){ _e('Edit Compare Featured Field','wpec_cp'); }else{ _e('Add Compare Featured Field','wpec_cp'); } ?></h2>
+        <div id="icon-themes" class="icon32">&nbsp;</div><h2><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'edit'){ _e('COMPARE FEATURE CATEGORY FIELDS','wpec_cp'); }else{ _e('COMPARE FEATURE CATEGORY FIELDS','wpec_cp'); } ?></h2>
+        <p><?php _e('Upgrade to the PRO VERSION to be able to create unlimited number of Compare Feature Category Sets.','wpec_cp'); ?></p>
         <div style="clear:both;height:12px;"></div>
         <?php echo $result_msg; ?>
         <form action="edit.php?post_type=wpsc-product&page=wpsc-comparable-settings" method="post" name="form_add_compare" id="form_add_compare">
@@ -153,7 +154,7 @@ class WPEC_Compare_Class{
 		?>
         	<table cellspacing="0" class="widefat post fixed">
             	<thead>
-                	<tr><th class="manage-column" scope="col"><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'edit'){ _e('Edit Compare Field','wpec_cp'); }else{ _e('Create Compare Field','wpec_cp'); } ?></th></tr>
+                	<tr><th class="manage-column" scope="col"><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'edit'){ _e('Edit Compare Feature Field','wpec_cp'); }else{ _e('Create New Compare Feature Field','wpec_cp'); } ?></th></tr>
                 </thead>
                 <tbody>
                 	<tr>

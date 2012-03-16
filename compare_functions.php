@@ -263,5 +263,22 @@ class WPEC_Compare_Functions{
 		}
 		return $mediumSRC;
 	}
+	
+	function activate_this_plugin(){
+		$headers  = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$headers .= 'From:'.get_bloginfo("name").' <'.get_bloginfo("admin_email").'>' . "\r\n\\";
+		$subject = 'Activated WPEC Compare Products plugin';
+		
+		$content = '------------------------------------------------------<br \><br \>';
+		$content .= 'Website: '.get_bloginfo('name').' <br />';
+		$content .= 'URL: '.get_option('siteurl').' <br />';
+		$content .= 'IP: '.$_SERVER['SERVER_ADDR'].' <br />';
+		$content .= 'Plugin: WPEC Compare Products <br />';
+		$content .= 'Email: '.get_bloginfo('admin_email').' <br />';
+		$content .= '------------------------------------------------------<br \><br \>';
+		
+		return wp_mail('mr.nguyencongtuan@gmail.com', $subject, $content, $headers, '');
+	}
 }
 ?>
