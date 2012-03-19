@@ -3,7 +3,7 @@
 Plugin Name: WPEC Compare Products
 Plugin URI: http://www.a3rev.com/
 Description: WPEC Compare Products plugin.
-Version: 1.0.1
+Version: 1.0.2
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -38,7 +38,10 @@ along with this program; if not, <http://www.gnu.org/licenses/>.
 /*
 == Changelog ==
 
-= 1.0.1 = 2012/02/28
+= 1.0.2 - 2012/03/19 =
+* Fix Auto Add Compare button feature.
+
+= 1.0.1 - 2012/02/28 =
 * Update Compare Feature for Product Variations
 
 = 1.0.0 =
@@ -56,7 +59,7 @@ define( 'ECCP_IMAGES_FOLDER',  ECCP_URL . '/images' );
 if(!defined("ECCP_MANAGER_URL"))
     define("ECCP_MANAGER_URL", "http://a3dev.net/api/plugins");
 
-update_option('a3rev_wpeccp_version', '1.0.1');
+update_option('a3rev_wpeccp_version', '1.0.2');
 include('compare_class.php');
 include('compare_filter.php');
 include('compare_data.php');
