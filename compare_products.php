@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WPEC Compare Products
+Plugin Name: WP e-Commerce Compare Products
 Plugin URI: http://www.a3rev.com/
 Description: WP e-Commerce Compare Products plugin.
 Version: 1.0.3
