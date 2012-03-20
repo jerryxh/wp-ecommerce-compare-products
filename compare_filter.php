@@ -15,12 +15,12 @@ class WPEC_Compare_Hook_Filter{
 						if($("#bt_compare_this_'.$product_id.'").length <= 0){
 							if($("input#product_'.$product_id.'_submit_button").length > 0){
 								add_cart_class = $("#product_'.$product_id.'_submit_button").attr("class");
-								$("input#product_'.$product_id.'_submit_button").before("<div class=\"compare_button_container\"><input type=\"button\" value=\"'.$button_text.'\" class=\"bt_compare_this "+ add_cart_class +" \" id=\"bt_compare_this_'.$product_id.'\" /><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
+								$("input#product_'.$product_id.'_submit_button").after("<div class=\"compare_button_container\" style=\"margin-top:10px\"><input type=\"button\" value=\"'.$button_text.'\" class=\"bt_compare_this "+ add_cart_class +" \" id=\"bt_compare_this_'.$product_id.'\" /><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
 							}else if($(".product_view_'.$product_id.'").length > 0){
-								$(".product_view_'.$product_id.'").find(".more_details").before("<div class=\"compare_button_container\"><input type=\"button\" value=\"'.$button_text.'\" class=\"bt_compare_this \" id=\"bt_compare_this_'.$product_id.'\" /><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
+								$(".product_view_'.$product_id.'").find(".more_details").after("<div class=\"compare_button_container\" style=\"margin-top:10px\"><input type=\"button\" value=\"'.$button_text.'\" class=\"bt_compare_this \" id=\"bt_compare_this_'.$product_id.'\" /><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
 							}else{
 								add_cart_class = $("input.wpsc_buy_button").attr("class");
-								$("input.wpsc_buy_button").before("<div class=\"compare_button_container\"><input type=\"button\" value=\"'.$button_text.'\" class=\"bt_compare_this "+ add_cart_class +" \" id=\"bt_compare_this_'.$product_id.'\" /><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
+								$("input.wpsc_buy_button").after("<div class=\"compare_button_container\" style=\"margin-top:10px\"><input type=\"button\" value=\"'.$button_text.'\" class=\"bt_compare_this "+ add_cart_class +" \" id=\"bt_compare_this_'.$product_id.'\" /><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
 							}
 						}
 					});		  
@@ -34,11 +34,11 @@ class WPEC_Compare_Hook_Filter{
 					$(function(){
 						if($("#bt_compare_this_'.$product_id.'").length <= 0){
 							if($("input#product_'.$product_id.'_submit_button").length > 0){
-								$("input#product_'.$product_id.'_submit_button").before("<div class=\"compare_button_container\"><a class=\"bt_compare_this\" id=\"bt_compare_this_'.$product_id.'\" style=\"cursor:pointer\">'.$button_text.'</a><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
+								$("input#product_'.$product_id.'_submit_button").after("<div class=\"compare_button_container\" style=\"margin-top:10px\"><a class=\"bt_compare_this\" id=\"bt_compare_this_'.$product_id.'\" style=\"cursor:pointer\">'.$button_text.'</a><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
 							}else if($(".product_view_'.$product_id.'").length > 0){
-								$(".product_view_'.$product_id.'").find(".more_details").before("<div class=\"compare_button_container\"><a class=\"bt_compare_this\" id=\"bt_compare_this_'.$product_id.'\" style=\"cursor:pointer\">'.$button_text.'</a><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
+								$(".product_view_'.$product_id.'").find(".more_details").after("<div class=\"compare_button_container\" style=\"margin-top:10px\"><a class=\"bt_compare_this\" id=\"bt_compare_this_'.$product_id.'\" style=\"cursor:pointer\">'.$button_text.'</a><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" /></div>");
 							}else{
-								$("input.wpsc_buy_button").before("<div class=\"compare_button_container\"><a class=\"bt_compare_this\" id=\"bt_compare_this_'.$product_id.'\" style=\"cursor:pointer\">'.$button_text.'</a><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" />");
+								$("input.wpsc_buy_button").after("<div class=\"compare_button_container\" style=\"margin-top:10px\"><a class=\"bt_compare_this\" id=\"bt_compare_this_'.$product_id.'\" style=\"cursor:pointer\">'.$button_text.'</a><input type=\"hidden\" id=\"input_bt_compare_this_'.$product_id.'\" name=\"product_compare_'.$product_id.'\" value=\"'.$product_id.'\" />");
 							}
 						}
 					});		  
