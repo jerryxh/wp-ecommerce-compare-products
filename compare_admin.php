@@ -18,7 +18,15 @@ update_option('a3rev_wpeccp_plugin', 'wpec_compare');
 	
 	add_action('get_footer', array('WPEC_Compare_Hook_Filter', 'wpec_compare_footer_script'));
 	//add_action('the_post', array('WPEC_Compare_Hook_Filter', 'wpec_ajax_add_compare_button'));
-	add_action('wpsc_start_product', array('WPEC_Compare_Hook_Filter', 'wpec_ajax_add_compare_button'));
+	//add_action('wpsc_start_product', array('WPEC_Compare_Hook_Filter', 'wpec_ajax_add_compare_button'));
+
+	require_once(ABSPATH.'wp-admin/includes/plugin.php');
+	$wpec_version = get_plugin_data(WP_PLUGIN_DIR.'/wp-e-commerce/wp-shopping-cart.php');
+	if(version_compare($wpec_version['Version'], '3.8.7', '<')){ 
+		add_action('the_post', array('WPEC_Compare_Hook_Filter', 'wpec_ajax_add_compare_button'));
+	}else{
+		add_action('wpsc_product_form_fields_begin', array('WPEC_Compare_Hook_Filter', 'wpec_ajax_add_compare_button'));
+	}
 	
 	// Add compare feature fields box into Edit product page
 	add_action( 'admin_menu', array('WPEC_Compare_MetaBox', 'compare_meta_boxes'), 1 );

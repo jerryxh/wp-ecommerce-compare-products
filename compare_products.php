@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: WPEC Compare Products
+Plugin Name: WP e-Commerce Compare Products
 Plugin URI: http://www.a3rev.com/
-Description: WPEC Compare Products plugin.
-Version: 1.0.2
+Description: WP e-Commerce Compare Products plugin.
+Version: 1.0.3
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -25,7 +25,7 @@ along with this program; if not, <http://www.gnu.org/licenses/>.
 */
 
 /*
-	WPEC Compare Products. Plugin for the WP e-Commerce shopping Cart.
+	WP e-Commerce Compare Products. Plugin for the WP e-Commerce shopping Cart.
 	Copyright © 2011 A3 Revolution Software Development team
 	
 	A3 Revolution Software Development team
@@ -37,6 +37,9 @@ along with this program; if not, <http://www.gnu.org/licenses/>.
 
 /*
 == Changelog ==
+
+= 1.0.3 - 2012/03/20 =
+* Fix show Compare button for older and latest versions of WP e-commerce
 
 = 1.0.2 - 2012/03/19 =
 * Fix Auto Add Compare button feature.
@@ -59,7 +62,7 @@ define( 'ECCP_IMAGES_FOLDER',  ECCP_URL . '/images' );
 if(!defined("ECCP_MANAGER_URL"))
     define("ECCP_MANAGER_URL", "http://a3dev.net/api/plugins");
 
-update_option('a3rev_wpeccp_version', '1.0.2');
+update_option('a3rev_wpeccp_version', '1.0.3');
 include('compare_class.php');
 include('compare_filter.php');
 include('compare_data.php');
