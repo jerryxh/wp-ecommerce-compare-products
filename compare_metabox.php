@@ -22,7 +22,7 @@ class WPEC_Compare_MetaBox{
 			foreach($compare_fields as $field_data){
 		?>
                 <tr class="form-field">
-                    <th valign="top" scope="row"><label for="<?php echo $field_data->field_key; ?>"><strong><?php echo $field_data->field_name; ?> : </strong> <?php if(trim($field_data->field_unit) != ''){ ?>(<?php echo $field_data->field_unit; ?>)<?php } ?></label><br /><i><?php echo $field_data->field_description; ?></i></th>
+                    <th valign="top" scope="row"><label for="<?php echo $field_data->field_key; ?>"><strong><?php echo $field_data->field_name; ?> : </strong> <?php if(trim($field_data->field_unit) != ''){ ?>(<?php echo $field_data->field_unit; ?>)<?php } ?></label><br /><?php echo $field_data->field_description; ?></th>
                     <td>
                	<?php
 					$field_value = get_post_meta( $post->ID, '_wpsc_compare_'.$field_data->field_key, true );

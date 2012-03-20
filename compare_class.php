@@ -42,6 +42,7 @@ class WPEC_Compare_Class{
 		
 		if(isset($_REQUEST['bt_save_settings'])){
 			$comparable_settings = get_option('comparable_settings');
+			if(!isset($_REQUEST['auto_add'])) $comparable_settings['auto_add'] = 'no';
 			$comparable_settings = array_merge((array)$comparable_settings, $_REQUEST);
 			update_option('comparable_settings', $comparable_settings);
 			$comparable_setting_msg = '<div class="updated" id="comparable_settings_msg"><p>'.__('Save Comparable Settings successfully','wpec_cp').'.</p></div>
@@ -161,7 +162,7 @@ class WPEC_Compare_Class{
                     	<td>
                         	<div style="width:200px; float:left"><label for="field_name"><?php _e('Field Name','wpec_cp'); ?></label></div> <input type="text" name="field_name" id="field_name" value="<?php echo stripslashes($field->field_name); ?>" style="width:400px" />
                             <div style="clear:both"></div>
-                            <div style="width:200px; float:left"><label for="field_key"><?php _e('Field Key','wpec_cp'); ?></label></div> <input type="text" name="field_key" id="field_key" value="<?php echo stripslashes($field->field_key); ?>" style="width:400px" /> <i><?php _e('Please do not enter space character.','wpec_cp'); ?></i>
+                            <div style="width:200px; float:left"><label for="field_key"><?php _e('Field Key','wpec_cp'); ?></label></div> <input type="text" name="field_key" id="field_key" value="<?php echo stripslashes($field->field_key); ?>" style="width:400px" /> <?php _e('Please do not enter space character.','wpec_cp'); ?>
                             <div style="clear:both"></div>
                             <div style="width:200px; float:left"><label for="field_type"><?php _e('Field Type','wpec_cp'); ?></label></div> 
                             <select style="width:400px;" name="field_type" id="field_type">
@@ -295,15 +296,18 @@ class WPEC_Compare_Class{
                             <div style="clear:both; height:20px;"></div>
                             <div style="width:200px; float:left"><label for="compare_container_height"><?php _e('Compare Container Height','wpec_cp'); ?></label></div> <input type="text" name="compare_container_height" id="compare_container_height" value="<?php echo $comparable_settings['compare_container_height'] ?>" style="width:100px" />px
                             <div style="clear:both; height:20px;"></div>
-                        	<div style="width:200px; float:left"><label for="auto_add"><?php _e('Auto Add Compare button','wpec_cp'); ?></label></div> <input type="checkbox" name="auto_add" id="auto_add" value="yes" <?php if($comparable_settings['auto_add'] == 'yes'){ echo 'checked="checked"';} ?> /> Yes <br />
-                            <div style="margin-left:200px;"><i><?php _e('Checked to auto add Compare button into each product.', 'wpec_cp'); ?> Or you can use this function <code>&lt;?php if(function_exists('wpec_add_compare_button')) echo wpec_add_compare_button(); ?&gt;</code> to put into your theme code where you want to show Compare button</i></div>
+                        	<div style="width:200px; float:left"><label for="auto_add1"><?php _e('Auto Add Compare button','wpec_cp'); ?></label></div> <input type="radio" name="auto_add" id="auto_add1" value="yes" <?php if($comparable_settings['auto_add'] == 'yes'){ echo 'checked="checked"';} ?> /> <?php _e('Yes','wpec_cp'); ?> <br />
+                            <div style="margin-left:200px;"><?php _e("This feature must be set at YES in the FREE version for Compare Products to work. You can manually deactivate the Compare Button and features from any individual products page edit screen. If you'd prefer to be just able to just activate the Plugin and then add the Compare Products Button and Features to individual Products rather than ALL Products (and then have to deactivate on individual product pages) you can do that by upgrading to the PRO version. IMORTANT! If your theme does not auto show the Campare button on each product page you will need to activate the next option and take the necessary steps.", 'wpec_cp'); ?></div>
+                            <div style="clear:both; height:20px;"></div>
+                        	<div style="width:200px; float:left"><label for="auto_add2"><?php _e('Manually set Show Compare button and/or Button Position','wpec_cp'); ?></label></div> <input type="radio" name="auto_add" id="auto_add2" value="no" <?php if($comparable_settings['auto_add'] == 'no'){ echo 'checked="checked"';} ?> /> <?php _e('Yes','wpec_cp'); ?> <br />
+                            <div style="margin-left:200px;"><?php _e('If your theme does not support not auto show the compare button on product pages - or if you want to change the default position of the Button on the product page - Set this option to YES. Then use this function','wpec_cp'); ?> <code>&lt;?php if(function_exists('wpec_add_compare_button')) echo wpec_add_compare_button(); ?&gt;</code> <?php _e('to put into your theme code to allow your theme to show the button. Set it in your theme where you want the Compare button to show on the product pages.','wpec_cp'); ?></div>
                             <div style="clear:both; height:20px;"></div>
                             <div style="width:200px; float:left"><label for="button_text"><?php _e('Button Text','wpec_cp'); ?></label></div> <input type="text" name="button_text" id="button_text" value="<?php echo $comparable_settings['button_text']; ?>" />
                             <div style="clear:both; height:20px;"></div>
                             <div style="width:200px; float:left"><label for="button_type"><?php _e('Compare Style','wpec_cp'); ?></label></div> <input type="radio" name="button_type" value="button" <?php if($comparable_settings['button_type'] == 'button'){ echo 'checked="checked"';} ?> /> Button &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="button_type" value="link" <?php if($comparable_settings['button_type'] == 'link'){ echo 'checked="checked"';} ?> /> Link 
                             <div style="clear:both; height:20px;"></div>
                             <div style="width:200px; float:left"><label for=""><?php _e('Show Compare Featured fields','wpec_cp'); ?></label></div>
-                            <div style="margin-left:200px;"><i>You can use this function <code>&lt;?php if(function_exists('wpec_show_compare_fields')) echo wpec_show_compare_fields(); ?&gt;</code> to put into your theme code where you want to show Compare Featured fields</i></div>
+                            <div style="margin-left:200px;"><?php _e('You can use this function', 'wpec_cp'); ?> <code>&lt;?php if(function_exists('wpec_show_compare_fields')) echo wpec_show_compare_fields(); ?&gt;</code> <?php _e('to put into your theme code where you want to show Compare Featured fields', 'wpec_cp'); ?></div>
                             <div style="clear:both; height:20px;"></div>
                     	</td>
                     </tr>

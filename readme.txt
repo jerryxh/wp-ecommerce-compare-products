@@ -8,7 +8,7 @@ Tags: e-commerce, shop, cart, ecommerce, compare product, wpec compare product, 
 
 Requires at least: 2.92
 Tested up to: 3.3.1
-Stable tag: 1.3 
+Stable tag: 1.0.2 
 
 Add fully featured Compare Products Feature to your WP e-Commerce site with the Free WP e-Commerce Comapre Products plugin.
 
@@ -80,7 +80,7 @@ For even more features, have a look at the [WPEC Compare Product Pro Version](ht
 = Localization =
 Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
 
-== Installation ==
+ == Installation ==
 
 
 1. Upload the folder wpec-compare-products to the /wp-content/plugins/ directory
@@ -126,20 +126,24 @@ http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/#comments
 
 == Changelog ==
 
-= 
-1.0.1 = 2012/02/28
+= 1.0.2 - 2012/03/19 =
+* Fix Auto Add Compare button feature.
+
+= 1.0.1 - 2012/02/28 =
 * Update Compare Feature for Product Variations
 
-
-= 1.0 = 2012
+= 1.0.0 =
 * First working release of the modification
 
 
 
 == Upgrade Notice ==
 
+= 1.0.2 - 2012/03/19 =
+* Upgrade to can checked and unchecked Auto Add Compare button feature on Comparable Settings.
+
 = 
-1.0.1 =
+1.0.1 - 2012/02/28 =
 Upgrade to can use Deactivate Compare Feature option for Product Variations.
 
 
