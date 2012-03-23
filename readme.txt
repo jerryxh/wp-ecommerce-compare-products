@@ -108,12 +108,12 @@ You can use this plugin when you have installed wp-e-commerce plugin
 = 
 How can I show the Compare button on product page and detail product page? =
 
-You can go to Products -> Comparable Settings, checked on Auto Add Compare button, it will automatically add the Compare button on your theme. If you want to show the Compare button anywhere you want, you unchecked Auto Add Compare button, then copy this code <? if(function_exists('wpec_add_compare_button')) echo wpec_add_compare_button(); ?> and past into the theme code where you want to show Compare button.
+You can go to Products -> Comparable Settings, checked on Auto Add Compare button, it will automatically add the Compare button on your theme. If you want to show the Compare button anywhere you want, you unchecked Auto Add Compare button, then copy this code &lt;? if(function_exists('wpec_add_compare_button')) echo wpec_add_compare_button(); ?&gt; and past into the theme code where you want to show Compare button.
 
 = 
 How can I show the Compare Featured fields on detail product page? =
 
-You can copy this code <? if(function_exists('wpec_show_compare_fields')) echo wpec_show_compare_fields(); ?> and past into the theme code where you want to show the Compare Featured fields on detail product page.
+You can copy this code &lt;? if(function_exists('wpec_show_compare_fields')) echo wpec_show_compare_fields(); ?&gt; and past into the theme code where you want to show the Compare Featured fields on detail product page.
 
 == Support ==
 
