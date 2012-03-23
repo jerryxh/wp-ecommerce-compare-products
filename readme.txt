@@ -118,9 +118,7 @@ You can copy this code &lt;? if(function_exists('wpec_show_compare_fields')) ech
 == Support ==
 
 
-If you have any problems, questions or suggestions please post your request to the [HELP tab] (
-
-http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/#comments) on the Pro Versions Home page.
+If you have any problems, questions or suggestions please post your request to the [HELP tab] (http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/#comments) on the Pro Versions Home page.
 
 
 
