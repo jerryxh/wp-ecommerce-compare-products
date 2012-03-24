@@ -10,7 +10,7 @@ Requires at least: 2.92
 Tested up to: 3.3.1
 Stable tag: 1.0.3
 
-The Only Compare Products Plugin for WP e-Commerce. FULLY FEATURED, Enterprise Class Compare Products – Plug and play - FREE FOREVER
+The Only Compare Products Plugin for WP e-Commerce. FULLY FEATURED, Enterprise Class Compare Products – Plug and play - FREE FOREVER.
 
 == Description ==
 
