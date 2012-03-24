@@ -10,23 +10,23 @@ Requires at least: 2.92
 Tested up to: 3.3.1
 Stable tag: 1.0.3
 
-The One and Only Compare Products Plugin for WP e-Commerce. Fully featured, Enterprise Class Compare Products Feature - No set up & FREE FOREVER
+The Only Compare Products Plugin for WP e-Commerce. FULLY FEATURED, Enterprise Class Compare Products – Plug and play - FREE FOREVER
 
 == Description ==
 
-Ever seen or used one of those excellent Compare Products features on another ecommerce platform? You'll agree they are a brilliant feature. WPEC Compare Products has very every feature of the best of those and it is plug-and-play and FREE FOREVER. 
+Ever seen or used one of those excellent Compare Products features on another ecommerce platform? You will agree they are a brilliant feature. WPEC Compare Products has very every feature of the best of those and it is plug-and-play and FREE FOREVER. 
 
 WPEC Compare Products has been released in 2 versions - FREE and PRO because we want every WP e-Commerce site owner to be able to have this incredibly powerful feature on their sites.
 
-= FREE Version - FREE Forver =
+= Fully Featured FREE Version - FREE Forever =
 
 WPEC Compare Products has been released in a fully featured FREE version because we want every WPEC site owner to be able to use this mighty plugin on their sites to generate more sales - completely obligation and risk free. In fact if you have a smaller site or only sell one type of product on your site, that is all products have the same comparable features then the FREE Version is all you will ever need.
 
-= PRO VERSION =
+= PRO VERSION Upgrade =
 
 You can upgrade to the PRO version at any time - or never, its up to you. When you do upgrade all of your Compare Features automatically transfer to the PRO version - nothing is lost.
 
-If  you have a larger site or a varied product mix you'll want the PRO version for ease of management and the enhanced features it offers site owners and users. Whilst the FREE version is fully featured the advantages of the PRO version are:
+If  you have a larger site or a varied product mix you will want the PRO version for ease of management and the enhanced features it offers site owners and users. Whilst the FREE version is fully featured the advantages of the PRO version are:
 
 * PRO users have an advanced dashboard features which allows them to Set up and easily manage an unlimited number Product Compare Categories. 
 
@@ -36,7 +36,7 @@ If  you have a larger site or a varied product mix you'll want the PRO version f
 
 * When you have a varied product mix PRO makes the Product Comparison of those products a breeze for your customers. 
 
-We are are so confident that once you've intsalled the FREE version you'll want all the goodies PRO brings a professional online seller. If we are wrong then fully featured FREE version is yours for life for FREE FOREVER including lifetime upgrades and the same support as our PRO users.
+We are are so confident that once you've installed the FREE version you'll want all the goodies PRO brings a professional online seller. If we are wrong then fully featured FREE version is yours for life for FREE FOREVER including lifetime upgrades and the same support as our PRO users.
 
 Here is the link to check out the [WPEC Compare Product Pro Version](http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/) when you are ready. 
 
