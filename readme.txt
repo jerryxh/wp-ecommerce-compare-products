@@ -8,7 +8,7 @@ Tags: e-commerce, shop, cart, ecommerce, compare product, wpec compare product, 
 
 Requires at least: 2.92
 Tested up to: 3.3.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 The Only Compare Products Plugin for WP e-Commerce. FULLY FEATURED, and Plug and play - FREE FOREVER
 

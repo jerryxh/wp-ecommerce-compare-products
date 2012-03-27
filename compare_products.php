@@ -3,7 +3,7 @@
 Plugin Name: WP e-Commerce Compare Products
 Plugin URI: http://www.a3rev.com/
 Description: WP e-Commerce Compare Products plugin.
-Version: 1.0.3
+Version: 1.0.4
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
