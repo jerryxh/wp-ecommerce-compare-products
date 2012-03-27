@@ -6,7 +6,6 @@ function wpec_compare_set_settings(){
 
 function wpec_compare_install(){
 	WPEC_Compare_Data::install_database();
-	WPEC_Compare_Functions::activate_this_plugin();
 }
 update_option('a3rev_wpeccp_plugin', 'wpec_compare');
 	
