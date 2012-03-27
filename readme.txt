@@ -22,6 +22,8 @@ WPEC Compare Products has been released in 2 versions - FREE and PRO because we 
 
 WPEC Compare Products has been released in a fully featured FREE version because we want every WPEC site owner to be able to use this mighty plugin on their sites to generate more sales - completely obligation and risk free. In fact if you have a smaller site or only sell one type of product on your site, that is all products have the same comparable features then the FREE Version is all you will ever need.
 
+[youtube http://www.youtube.com/watch?v=yMqG70r6D28]
+
 = PRO VERSION Upgrade =
 
 You can upgrade to the PRO version at any time - or never, its up to you. When you do upgrade all of your Compare Features automatically transfer to the PRO version - nothing is lost.
@@ -96,12 +98,12 @@ You can use this plugin when you have installed wp-e-commerce plugin
 = 
 How can I show the Compare button on product page and detail product page? =
 
-You can go to Products -> Comparable Settings, checked on Auto Add Compare button, it will automatically add the Compare button on your theme. If you want to show the Compare button anywhere you want, you unchecked Auto Add Compare button, then copy this code &lt;? if(function_exists('wpec_add_compare_button')) echo wpec_add_compare_button(); ?&gt; and past into the theme code where you want to show Compare button.
+You can go to Products -> Comparable Settings, checked on Auto Add Compare button, it will automatically add the Compare button on your theme. If you want to show the Compare button anywhere you want, you unchecked Auto Add Compare button, then copy this code `<? if(function_exists('wpec_add_compare_button')) echo wpec_add_compare_button(); ?>` and past into the theme code where you want to show Compare button.
 
 = 
 How can I show the Compare Featured fields on detail product page? =
 
-You can copy this code &lt;? if(function_exists('wpec_show_compare_fields')) echo wpec_show_compare_fields(); ?&gt; and past into the theme code where you want to show the Compare Featured fields on detail product page.
+You can copy this code `<? if(function_exists('wpec_show_compare_fields')) echo wpec_show_compare_fields(); ?>` and past into the theme code where you want to show the Compare Featured fields on detail product page.
 
 == Support ==
 
