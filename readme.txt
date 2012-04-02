@@ -3,7 +3,7 @@
 
 Contributors: A3 Revolution Software Development team
 
-Tags: e-commerce, shop, cart, ecommerce, compare product, wpec compare product, compare products, wp e-commerce, wp ecommerce compare products
+Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compare products, wp ecommerce compare products, e-commerce, ecommerce
 
 
 Requires at least: 2.92
