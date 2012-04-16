@@ -143,8 +143,7 @@ If you have any problems, questions or suggestions please post your request to t
 
 == Changelog ==
 
-= 1.0.5 - 2012/04/16
-
+= 1.0.5 - 2012/04/16 =
 * Feature: Combined 2 admin pages into one with SETTINGS  |  FEATURES tabs
 * Feature: Added comprehensive admin page setup instructions via Tool Tips and text instructions.
 * Greatly improved Admin pages layout for enhanced user experience.
