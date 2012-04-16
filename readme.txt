@@ -22,7 +22,7 @@ WP e-Commerce Compare Products has been released in 2 versions - FREE and PRO be
 
 WP e-Commerce Compare Products has been released in a fully featured FREE version because we want every WP e-Commerce site owner to be able to use this mighty plugin on their sites to generate more sales - completely obligation and risk free. In fact if you have a smaller site or only sell one type of product on your site, that is all products have the same comparable features then the WP e-Commerce Compare Products FREE Version is all you will ever need.
 
-[http://www.youtube.com/watch?v=v7MQi2B_qeo]
+[youtube http://www.youtube.com/watch?v=v7MQi2B_qeo]
 
 = PRO VERSION Upgrade =
 
