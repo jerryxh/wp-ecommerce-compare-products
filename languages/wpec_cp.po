@@ -1,0 +1,533 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPEC Compare Products Pro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-04 13:43+0700\n"
+"PO-Revision-Date: 2012-07-04 13:45+0700\n"
+"Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
+"Language-Team: a3rev\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products\n"
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:167
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:357
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_filter.php:377
+msgid "Compare Products"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:282
+msgid "Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:283
+msgid "Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:284
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:287
+msgid "Products"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:365
+msgid "No find the encryp.inc file. Please copy encryp.inc file to folder"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:370
+msgid "encryp.inc was modified. Please keep it by default"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:374
+msgid "Enter Your Plugin Authorization Key"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:379
+msgid "Authorization Key"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/compare_init.php:382
+msgid "Validate"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:24
+msgid "Compare Category Successfully edited"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:26
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:38
+msgid "That Compare category name already exists or empty. Please try again."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:33
+msgid "Compare Category Successfully created"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:35
+msgid "Compare Category Error created"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:47
+msgid "Compare Category deleted"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:54
+msgid "Edit Compare Product Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:54
+msgid "Add Compare Product Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:55
+msgid "Create Categories based on groups of products that share the same compare feature list."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:69
+msgid "Edit Category Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:69
+msgid "Category Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:75
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:169
+msgid "Save"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:75
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:169
+msgid "Create"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:75
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:169
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:210
+msgid "Cancel"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_categories.php:91
+msgid "You just save the order for compare categories."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:44
+msgid "Compare Feature Successfully edited"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:46
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:64
+msgid "That Compare Feature Name already exists. Please try again"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:59
+msgid "Compare Feature Successfully created"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:61
+msgid "Compare Feature Error created"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:74
+msgid "Compare Feature Successfully deleted"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:76
+msgid "Please select Feature(s) to delete"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:84
+msgid "Compare Feature successfully removed"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:88
+msgid "Compare Feature successfully deleted"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:100
+msgid "Edit Compare Product Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:100
+msgid "Add Compare Product Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:116
+msgid "Edit Compare Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:116
+msgid "Create New Compare Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:121
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:286
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:375
+msgid "Feature Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:121
+msgid "This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:123
+msgid "Feature Unit of Measurement"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:123
+msgid "e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:125
+msgid "Feature Input Type"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:139
+msgid "Users don't see this. Use to set the data input field type that you will use on to enter the Products data for this feature."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:142
+msgid "Enter Input Type options"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:142
+msgid "You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:146
+msgid "Assign Feature to Categories"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:161
+msgid "Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:180
+msgid "Manage Compare Categories and Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:181
+msgid "Use drag and drop to change Category order and Feature order within Categories."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:194
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:208
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:301
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:387
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:82
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:112
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:279
+msgid "Edit"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:194
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:301
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:306
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:387
+msgid "Delete"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:194
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:301
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:387
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:208
+msgid "Are you sure you want to remove"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:208
+msgid "from"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:208
+msgid "Remove"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:213
+msgid "You have not assigned any Features to this category yet. No Hurry!"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:279
+msgid "Un-Assigned Features (Assign to a Category to activate)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:285
+msgid "No"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:287
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:376
+msgid "Type"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:306
+msgid "Are you sure about deleting this?"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:323
+msgid "You just save the order for Compare Features."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:330
+msgid "Categories & Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:330
+msgid "Add New"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:344
+msgid "Search Features"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:368
+msgid "Found"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:368
+msgid "feature(s)"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:395
+msgid "Show"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:406
+msgid "Go"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:407
+msgid "Displaying"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_fields.php:407
+msgid "of"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:71
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:101
+msgid "Activated"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:72
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:102
+msgid "Deactivated"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:187
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_metabox.php:56
+msgid "Activate Compare Feature for this Product"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:188
+msgid "Select a  Compare Category for this Product"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:190
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_metabox.php:59
+msgid "Select..."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:209
+msgid "Update"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:253
+msgid "Compare Product Feature Fields updated successfully"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:257
+msgid "WPEC Compare Products Manager"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:274
+msgid "No."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:275
+msgid "Product Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:276
+msgid "Product Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:277
+msgid "Compare Category"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:278
+msgid "Activated / Deactivated"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:288
+msgid "Find Product Name"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_products.php:311
+msgid "Product Compare Feature Fields"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:52
+msgid "Compare Settings Successfully saved"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:55
+msgid "Compare Settings Successfully reseted"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:60
+msgid "Compare Pop-Up Window Setup"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:65
+msgid "Pop-Up Window Header Image"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:68
+msgid "To add a header image to your Compare Pop-Up Window put the full URL of the image you want to use. Use file formats .jpg .png. jpeg Your image can be any size. If it is not as wide as the Pop-Up Container that you set below it will sit in the centre at the top. If it is wider the bottom scroll bar will come into play."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:72
+msgid "Compare Pop-Up Width"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:77
+msgid "Compare Pop-Up Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:82
+msgid "Pop-Up Container Height"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:85
+msgid "Set at slightly less than the Pop-Up height to ensure that your Header Image and the Print button are always visible as users scroll down the products list of features."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:90
+msgid "Product Page Compare Buttons"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:94
+msgid "Auto Add Compare button"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:95
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:100
+msgid "Yes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:99
+msgid "Manually set Show Compare button and/or Button Position"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:102
+msgid "IMPORTANT! Select YES only it if you want to manually set / change the default position of the Compare Button / Link on your theme product pages. Use this function"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:102
+msgid "to do that."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:106
+msgid "Button or Text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:107
+msgid "Button"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:107
+msgid "Link"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:107
+msgid "Show Compare feature on products as a Button or Hyperlink Text."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:109
+msgid "If you select LINK - the hyperlinked text auto shows in your themes font and colour. It is not possible to auto know the Style and Colour of your themes BUTTONS as many themes have many different buttons. To set the style and Colour of the Compare button to the same as you theme use Class name 'bt_compare_this' for product pages and class name 'compare_button_go' for the sidebar widget."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:113
+msgid "BUTTON or LINK text"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:114
+msgid "Add the text you want to show on your Compare Button / Link on the Products pages"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:118
+msgid "Show Compare Featured fields"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:119
+msgid "To auto show and position the Product title and a list of the Compare features in your Themes product pages use this function"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:125
+msgid "Save changes"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/admin/classes/class-compare_settings.php:126
+msgid "Reset Settings"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_filter.php:30
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_filter.php:78
+msgid "Compare this"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_filter.php:377
+msgid "Print This Page"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_filter.php:377
+msgid "Narrow your selection to 3 products and print!"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_metabox.php:17
+msgid "Compare Feature Fields"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_metabox.php:57
+msgid "Select Compare Category for this Product"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_metabox.php:136
+msgid "Select value"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_metabox.php:178
+msgid "Do not have any field on this category, please add fields for it at"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_metabox.php:178
+msgid "this page"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_upgrade.php:35
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_upgrade.php:59
+msgid "There is a new version of WPEC Compare Products available."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/classes/class-compare_upgrade.php:145
+msgid "Oops!! Something went wrong.<br/>Please try again or <a href='http://www.a3rev.com'>contact us</a>."
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/includes/class-compare_functions.php:226
+msgid "Avg. Customer Rating"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/includes/class-compare_functions.php:237
+msgid "Add To Cart"
+msgstr ""
+
+#: /Applications/XAMPP/xamppfiles/htdocs/ecommerce/wp-content/plugins/wpec-compare-products/includes/class-compare_functions.php:241
+msgid "This product has sold out."
+msgstr ""
+
