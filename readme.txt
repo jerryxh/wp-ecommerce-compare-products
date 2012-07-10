@@ -7,41 +7,35 @@ Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compar
 
 
 Requires at least: 2.92
-Tested up to: 3.3.1
-Stable tag: 1.0.5
+Tested up to: 3.4.1
+Stable tag: 2.0
 
-The Only Compare Products Plugin for WP e-Commerce. FULLY FEATURED, and Plug and play - FREE FOREVER
+The Only Compare Products Plugin for WP e-Commerce. Add the compare products feature to your WP e-Commerce store toady with WP e-Commerce Compare Products. 
 
 == Description ==
 
-Ever seen or used one of those excellent Compare Products features on another e-commerce platform? You will agree they are a brilliant feature. WP e-Commerce Compare Products has very every feature of the best of those and it is plug-and-play and FREE FOREVER. 
-
-WP e-Commerce Compare Products has been released in 2 versions - FREE and PRO because we want every WP e-Commerce site owner to be able to have this incredibly powerful feature on their sites.
-
-= Fully Featured FREE Version - FREE Forever =
-
-WP e-Commerce Compare Products has been released in a fully featured FREE version because we want every WP e-Commerce site owner to be able to use this mighty plugin on their sites to generate more sales - completely obligation and risk free. In fact if you have a smaller site or only sell one type of product on your site, that is all products have the same comparable features then the WP e-Commerce Compare Products FREE Version is all you will ever need.
-
-[youtube http://www.youtube.com/watch?v=v7MQi2B_qeo]
-
-= PRO VERSION Upgrade =
-
-You can upgrade to the WP e-Commerce Compare Products PRO version at any time - or never, its up to you. When you do upgrade all of your Compare Features automatically transfer to the PRO version - nothing is lost.
-
-If  you have a larger site or a varied product mix you will want the WP e-Commerce Compare Products PRO version for ease of management and the enhanced features it offers site owners and users. Whilst the FREE version is fully featured the advantages of the PRO version are:
-
-* Bulk-update all your Products Compare Features from a single admin page.
-* The plugin when activated auto adds a Compare Settings and Compare Products links to your WP e-Commerce Products Menu.
-* Compare Settings has 3 tabs SETTINGS | CATEGORIES  |  FEATURES - each page has extensive help notes via Tool Tips and text.  
-* Compare Feature only shows on a product once it has been assigned to a Compare Category. Allows you to do an orderly roll-out of the feature across your site.
-* COMPARE PRODUCTS - Manage Compare features on every product on your site from the one page. See at a glance which products and variations have the feature activated. Add or edit Compare features on any products on your site.
-* Edit the Compare Products feature on any products edit page.
+WP e-Commerce Compare products instantly adds the <strong>cutting edge Compare products feature</strong> to you store in just minutes. 
  
-We are are so confident that once you've installed the FREE version you'll want all the goodies PRO brings a professional online seller. If we are wrong then fully featured FREE version is yours for life for FREE FOREVER including lifetime upgrades and the same support as our PRO users.
+= Key Features =
 
-Grab [WP e-Commerce Compare Product Pro Version](http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/) when you are ready. 
+* Professional front end compare products presentation, buttons, links, sidebar widget and compare pop-up
+* Works with any Theme that has WP e-Commerce installed.
+* Takes just minutes to set up on your site.
+* Product variants auto created as Compare feature - add unlimited custom features to compare.
 
-= TRY WP e-Commerce Compare Products FREE version = Install and try the FREE version before you spend your cash - we know you'll love it.
+Research has proven <strong>Online shoppers love the compare products feature</strong> and giving customers more of what they love leads to <strong>more sales.</strong>. Boost your sales today by installing WP e-Commerce Compare Products on your WP e-Commerce store.
+
+= Premium Upgrade =
+
+When you install WP e-Commerce Compare Products you will see all the added functionality that the Premium Version offers. The plugin is designed so that the upgrade is completely seamless. Nothing changes except all the features of Compare Products are activated. This means you can activate, set up and use the free version completely risk free.  
+
+PRO Version upgrade features:
+
+* Compare Categories - is activated - Categories are important to delivering you customers easy to read compare features in the pop-up window.
+* Create unlimited number of custom Compare Categories. 
+* Compare Express Products Manager  - is activate - makes setting up and managing the Compare feature across you entire catalogue at least 50 times faster. 
+ 
+TRY WP e-Commerce Compare Products FREE version today. <strong>Your customers will love you for it.</strong>
 
 = Localization =
 * English (default) - always include.
@@ -64,17 +58,7 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
 
 3. screenshot-3.jpg
 
-4. screenshot-4.jpg
-
-5. screenshot-5.jpg
-
-6. screenshot-6.jpg
-
-
-
-= Localization =
-Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a translation or an update.
-
+ 
  == Installation ==
 
 
@@ -87,11 +71,11 @@ Please [Contact us](http://www.a3rev.com/contact/) if you'd like to provide a tr
 == Usage ==
 
 
-1. Open Products > Compare Settings
+1. Open Products > Compare Products
 
 2. Settings Tab - follow the extensive onscreen help notes to style your Compare feature.
 
-3. Features Tab - add your products Compare Features - extensive onscreen help notes to guide you. 
+3. Features Tab - add your products Compare Features. 
 
 4. Go to any products edit screen and add data to your Compare Feature Fields.
 
@@ -142,6 +126,51 @@ If you have any problems, questions or suggestions please post your request to t
 
 
 == Changelog ==
+
+= 2.0 - 2012/07/09 =
+
+MAJOR UPGRADE
+
+* Feature - All Product Categories auto created as Compare Categories when plugin is activated. Feature is activated on upgrade. 
+
+* Feature - All Product Variations auto added to Master Category as Compare Features when the plugin is first activated.
+
+* Feature – When Product Categories or Sub categories are created they are auto created as Compare categories. The plugin only listens to Create new so edits to Product categories are ignored. 
+
+* Feature: When parent product variations are created they are auto created as Compare Features. Child product variations and edits are ignored. 
+
+* Feature - Complete rework of admin user interface - Combined Features and Categories tabs into a single tab - Added Products Tab. Greatly enhanced user experience and ease of use.
+
+* Feature - Moved Create New Categories and Features to a single on page assessable from an 'add new' button on Features tab.
+
+* Feature - Added Features search facility for ease of finding and editing Compare Features.
+
+* Feature - Added support for use of special characters in Feature Fields.
+
+* Feature - Added support for use of Cyrillic Symbols in Feature Fields.
+
+* Feature - Added support for use of sup tags in Feature Fields.
+
+* Feature – Language file added to support localization – looking for people to do translations.
+
+* Fixed - WP e-Commerce version updates editing Product Page Compare meta field values which caused Compare feature when activated from product page not updating Compare category name and show as activated on the Compare Products Admin Page.
+
+* Fixed - Can't create Compare Feature if user does not have a default value set in SQL. Changed INSERT INTO SQL command output to cater for this relatively rare occurrence.
+
+* Tweak - Replaced all Category Edit | Delete icons with WordPress link text. Replace edit icon on Product Update table with text link.
+
+* Tweak - Edited Product update table to fit 100% wide on page so that the horizontal scroll bar does not auto show.
+
+* Tweak - Removed verbose text explanations and superfluous tool tips.
+
+* Tweak - Edited the way that Add Compare Features shows on product edit page - now same width as the page content.
+
+* Tweak - Show Compare Featured fields on products page - added table css styling.
+
+* Tweak - Adding padding between Product name and the Clear All - Compare button in sidebar widget.
+
+* Other - Create script to facilitate seamless upgrade from Version 1.04 to Major upgrade Version 2.0  
+
 
 = 1.0.5 - 2012/04/16 =
 * Feature: Combined 2 admin pages into one with SETTINGS  |  FEATURES tabs
