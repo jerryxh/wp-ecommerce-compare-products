@@ -7,6 +7,7 @@
  *
  * upgrade_version_1_0_1()
  * upgrade_version_2_0()
+ * upgrade_version_2_0_1()
  */					
 class WPEC_Compare_Upgrade{
 	function upgrade_version_1_0_1(){
@@ -29,6 +30,12 @@ class WPEC_Compare_Upgrade{
 		
 		WPEC_Compare_Categories_Data::auto_add_master_category();
 		WPEC_Compare_Data::add_features_to_master_category();
+	}
+	
+	function upgrade_version_2_0_1() {
+		global $wpdb;
+		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_categories CHANGE `category_name` `category_name` blob NOT NULL";
+		$wpdb->query($sql);
 	}
 }
 ?>

@@ -25,7 +25,7 @@ class WPEC_Compare_Categories_Data{
 		if($wpdb->get_var("SHOW TABLES LIKE '$table_compare_categories'") != $table_compare_categories){
 			$sql = "CREATE TABLE IF NOT EXISTS `{$table_compare_categories}` (
 				  `id` int(11) NOT NULL auto_increment,
-				  `category_name` varchar(250) NOT NULL,
+				  `category_name` blob NOT NULL,
 				  `category_order` int(11) NOT NULL,
 				  PRIMARY KEY  (`id`)
 				) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";

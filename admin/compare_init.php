@@ -5,7 +5,7 @@
  * Call this function when plugin is activated
  */
 function wpec_compare_set_settings(){
-	update_option('a3rev_wpeccp_free_version', '2.0');
+	update_option('a3rev_wpeccp_free_version', '2.0.1');
 	WPEC_Compare_Settings::wpeccp_set_setting_default();	
 	wpec_compare_install();
 }
@@ -131,7 +131,11 @@ add_action('init', 'wpeccp_init');
 		WPEC_Compare_Upgrade::upgrade_version_2_0();
 		update_option('a3rev_wpeccp_free_version', '2.0');
 	}
-	update_option('a3rev_wpeccp_free_version', '2.0');
+	if(version_compare(get_option('a3rev_wpeccp_free_version'), '2.0.1') === -1){
+		WPEC_Compare_Upgrade::upgrade_version_2_0_1();
+		update_option('a3rev_wpeccp_free_version', '2.0.1');
+	}
+	update_option('a3rev_wpeccp_free_version', '2.0.1');
 
 // Add Menu Comparable Settings in E Commerce Plugins
 function wpeccp_add_menu_item_e_commerce() {
