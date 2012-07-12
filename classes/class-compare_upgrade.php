@@ -20,11 +20,9 @@ class WPEC_Compare_Upgrade{
 		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_fields CHANGE `field_name` `field_name` blob NOT NULL";
 		$wpdb->query($sql);
 		
-		global $wpdb;
 		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_fields CHANGE `field_unit` `field_unit` blob NOT NULL";
 		$wpdb->query($sql);
 		
-		global $wpdb;
 		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_fields CHANGE `field_description` `field_description` blob NOT NULL";
 		$wpdb->query($sql);
 		
@@ -35,6 +33,9 @@ class WPEC_Compare_Upgrade{
 	function upgrade_version_2_0_1() {
 		global $wpdb;
 		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_categories CHANGE `category_name` `category_name` blob NOT NULL";
+		$wpdb->query($sql);
+		
+		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_fields CHANGE `default_value` `default_value` blob NOT NULL";
 		$wpdb->query($sql);
 	}
 }

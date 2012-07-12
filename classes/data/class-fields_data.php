@@ -31,7 +31,7 @@ class WPEC_Compare_Data{
 				  `field_name` blob NOT NULL,
 				  `field_key` varchar(250) NOT NULL,
 				  `field_type` varchar(250) NOT NULL,
-				  `default_value` text NOT NULL,
+				  `default_value` blob NOT NULL,
 				  `field_unit` blob NOT NULL,
 				  `field_description` blob NOT NULL,
 				  `field_order` int(11) NOT NULL,
