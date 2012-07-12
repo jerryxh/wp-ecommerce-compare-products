@@ -33,7 +33,7 @@ class WPEC_Compare_Hook_Filter{
 		if($button_text == '') $button_text = __('Compare this', 'wpec_cp');
 		if($post->post_type == 'wpsc-product' && WPEC_Compare_Functions::check_product_activate_compare($product_id) && WPEC_Compare_Functions::check_product_have_cat($product_id) && $comparable_settings['auto_add'] == 'yes'){
 			if($comparable_settings['button_type'] == 'button'){
-				$script_add = '<style>input.bt_compare_this{display:block !important;}</style><script type="text/javascript">
+				$script_add = '<style>input.bt_compare_this{display:inline-block !important;}</style><script type="text/javascript">
 				(function($){		
 					$(function(){
 						if($("#bt_compare_this_'.$product_id.'").length <= 0){
@@ -53,7 +53,7 @@ class WPEC_Compare_Hook_Filter{
 				
 				echo $script_add;
 			}else{
-				$script_add = '<style>input.bt_compare_this{display:block !important;}</style><script type="text/javascript">
+				$script_add = '<style>input.bt_compare_this{display:inline-block !important;}</style><script type="text/javascript">
 				(function($){		
 					$(function(){
 						if($("#bt_compare_this_'.$product_id.'").length <= 0){
