@@ -134,8 +134,8 @@ class WPEC_Compare_Hook_Filter{
 						$field_value = get_post_meta( $variation_id, '_wpsc_compare_'.$field_data->field_key, true );
 						if(is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
 						if(is_array($field_value) && count($field_value) > 0) $field_value = implode(', ', $field_value);
-						elseif(is_array($field_value) && count($field_value) < 0) $field_value = 'N/A';
-						if(trim($field_value) == '') $field_value = 'N/A';
+						elseif(is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'wpec_cp');
+						if(trim($field_value) == '') $field_value = __('N/A', 'wpec_cp');
 						if (trim($field_data->field_unit) != '') $field_unit = ' <span class="compare_featured_unit">('.trim($field_data->field_unit).')</span>';
 						if ($use_table_style) 
 							$html .= '<tr><th><span class="compare_featured_name">'.stripslashes($field_data->field_name).'</span>'.$field_unit.'</th><td '.$fixed_width.'><span class="compare_featured_value">'.$field_value.'</span></td></tr>';
@@ -162,8 +162,8 @@ class WPEC_Compare_Hook_Filter{
 					$field_value = get_post_meta( $product_id, '_wpsc_compare_'.$field_data->field_key, true );
 					if(is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
 					if(is_array($field_value) && count($field_value) > 0) $field_value = implode(', ', $field_value);
-					elseif(is_array($field_value) && count($field_value) < 0) $field_value = 'N/A';
-					if(trim($field_value) == '') $field_value = 'N/A';
+					elseif(is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'wpec_cp');
+					if(trim($field_value) == '') $field_value = __('N/A', 'wpec_cp');
 					if (trim($field_data->field_unit) != '') $field_unit = ' <span class="compare_featured_unit">('.trim($field_data->field_unit).')</span>';
 					if ($use_table_style) 
 						$html .= '<tr><th><span class="compare_featured_name">'.stripslashes($field_data->field_name).'</span>'.$field_unit.'</th><td '.$fixed_width.'><span class="compare_featured_value">'.$field_value.'</span></td></tr>';

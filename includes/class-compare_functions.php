@@ -212,7 +212,7 @@ class WPEC_Compare_Functions{
 					$html .= '<td class="column_'.$i.'">';
 						$html .= '<div class="compare_image_container">'.$image_src.'</div>';
 						$html .= '<div class="compare_product_name">'.$product_name.'</div>';
-						$html .= '<div class="compare_avg_rating">'.__( 'Avg. Customer Rating', 'wpsc' ).':<br />'.wpsc_product_existing_rating( $product_id ).'</div>';
+						$html .= '<div class="compare_avg_rating">'.__( 'Avg. Customer Rating', 'wpec_cp' ).':<br />'.wpsc_product_existing_rating( $product_id ).'</div>';
 						$html .= '<div class="compare_price">'.WPEC_Compare_Functions::wpeccp_the_product_price($product_id).'</div>';
 					if((get_option('hide_addtocart_button') == 0) &&  (get_option('addtocart_or_buynow') !='1')){
 						$html .= '<div class="compare_add_cart">';
@@ -223,11 +223,11 @@ class WPEC_Compare_Functions{
 								if(wpsc_product_has_stock($product_id)){
 									$html .= '<div class="wpsc_buy_button_container">';
 									if(wpsc_product_external_link($product_id) == ''){
-										$html .= '<input type="submit" value="'.__('Add To Cart', 'wpsc').'" name="Buy" class="wpsc_buy_button" id="product_'.$product_id.'_submit_button" />';
+										$html .= '<input type="submit" value="'.__('Add To Cart', 'wpec_cp').'" name="Buy" class="wpsc_buy_button" id="product_'.$product_id.'_submit_button" />';
 									}
 									$html .= '</div>';
 								}else{
-									$html .= '<p class="soldout">'.__('This product has sold out.', 'wpsc').'</p>';
+									$html .= '<p class="soldout">'.__('This product has sold out.', 'wpec_cp').'</p>';
 								}
 						$html .= '</form>';
 						$html .= '</div>';
@@ -253,8 +253,8 @@ class WPEC_Compare_Functions{
 						$field_value = get_post_meta( $product_id, '_wpsc_compare_'.$field_data->field_key, true );
 						if(is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
 						if(is_array($field_value) && count($field_value) > 0) $field_value = implode(', ', $field_value);
-						elseif(is_array($field_value) && count($field_value) < 0) $field_value = 'N/A';
-						if(trim($field_value) == '') $field_value = 'N/A';
+						elseif(is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'wpec_cp');
+						if(trim($field_value) == '') $field_value = __('N/A', 'wpec_cp');
 					}else{
 						$field_value = '';
 					}
