@@ -21,13 +21,18 @@
 class WPEC_Compare_Categories_Fields_Data{
 	function install_database(){
 		global $wpdb;
+		$collate = '';
+		if ( $wpdb->supports_collation() ) {
+			if( ! empty($wpdb->charset ) ) $collate .= "DEFAULT CHARACTER SET $wpdb->charset";
+			if( ! empty($wpdb->collate ) ) $collate .= " COLLATE $wpdb->collate";
+		}
 		$table_compare_categories_fields = $wpdb->prefix. "wpec_compare_cat_fields";
 		if($wpdb->get_var("SHOW TABLES LIKE '$table_compare_categories_fields'") != $table_compare_categories_fields){
 			$sql = "CREATE TABLE IF NOT EXISTS `{$table_compare_categories_fields}` (
 				  `cat_id` int(11) NOT NULL,
 				  `field_id` int(11) NOT NULL,
 				  `field_order` int(11) NOT NULL
-				) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+				) $collate;";
 			require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 			dbDelta($sql);
 		}

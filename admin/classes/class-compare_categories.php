@@ -40,7 +40,7 @@ class WPEC_Compare_Categories_Class{
                 <tbody>
                 	<tr valign="top">
                     	<th class="titledesc" scope="rpw"><label for="category_name"><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit'){ _e('Edit Category Name', 'wpec_cp'); } else { _e('Category Name', 'wpec_cp'); } ?></label></th>
-                        <td class="forminp"><input type="text" name="category_name" id="category_name" value="<?php if (!empty($cat_data)) { echo stripslashes($cat_data->category_name); } ?>" style="min-width:300px" /></td>
+                        <td class="forminp"><input type="text" name="category_name" id="category_name" value="<?php if (!empty($cat_data)) { echo stripslashes(htmlentities($cat_data->category_name)); } ?>" style="min-width:300px" /></td>
                     </tr>
                 </tbody>
             </table>

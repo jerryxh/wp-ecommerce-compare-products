@@ -15,12 +15,18 @@
  * update_row()
  * update_items_order()
  * update_order()
+ * free_update_orders()
  * delete_rows()
  * delete_row()
  */
 class WPEC_Compare_Categories_Data{
 	function install_database(){
 		global $wpdb;
+		$collate = '';
+		if ( $wpdb->supports_collation() ) {
+			if( ! empty($wpdb->charset ) ) $collate .= "DEFAULT CHARACTER SET $wpdb->charset";
+			if( ! empty($wpdb->collate ) ) $collate .= " COLLATE $wpdb->collate";
+		}
 		$table_compare_categories = $wpdb->prefix. "wpec_compare_categories";
 		if($wpdb->get_var("SHOW TABLES LIKE '$table_compare_categories'") != $table_compare_categories){
 			$sql = "CREATE TABLE IF NOT EXISTS `{$table_compare_categories}` (
@@ -28,7 +34,7 @@ class WPEC_Compare_Categories_Data{
 				  `category_name` blob NOT NULL,
 				  `category_order` int(11) NOT NULL,
 				  PRIMARY KEY  (`id`)
-				) ENGINE=MyISAM  DEFAULT CHARSET=latin1;";
+				) $collate;";
 			require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 			dbDelta($sql);
 		}
@@ -48,6 +54,7 @@ class WPEC_Compare_Categories_Data{
 	
 	function auto_add_master_category() {
 		$master_category = 'Master Category';
+		WPEC_Compare_Categories_Data::free_update_orders();
 		$check_existed = WPEC_Compare_Categories_Data::get_count("category_name='".$master_category."'");
 		if ($check_existed < 1 ) {
 			$master_category_id = WPEC_Compare_Categories_Data::insert_row(array('category_name' => $master_category, 'category_order' => 0));
@@ -144,6 +151,13 @@ class WPEC_Compare_Categories_Data{
 		$table_name = $wpdb->prefix. "wpec_compare_categories";
 		$query = $wpdb->query("UPDATE {$table_name} SET category_order='$category_order' WHERE id='$category_id'");
 		return $query;
+	}
+	
+	function free_update_orders () {
+		global $wpdb;
+		$master_category = 'Master Category';
+		$table_compare_categories = $wpdb->prefix. "wpec_compare_categories";
+		$wpdb->query("UPDATE {$table_name} SET category_order=category_order+1 WHERE category_name != '{$master_category}'");
 	}
 	
 	function delete_rows($items=array()){

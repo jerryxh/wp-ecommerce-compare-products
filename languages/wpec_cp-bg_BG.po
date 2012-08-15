@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPEC Compare Products Pro FREE\n"
+"Project-Id-Version: WPEC Compare Products Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-15 11:16+0700\n"
+"POT-Creation-Date: 2012-08-15 11:17+0700\n"
 "PO-Revision-Date: 2012-08-15 11:17+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
@@ -17,40 +17,40 @@ msgstr ""
 #: classes/class-compare_filter.php:384
 #: widget/class-compare_widget.php:36
 msgid "Compare Products"
-msgstr ""
+msgstr "Сравняване на продукти"
 
 #: admin/compare_init.php:284
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: admin/compare_init.php:285
 msgid "Features"
-msgstr ""
+msgstr "Характеристики"
 
 #: admin/compare_init.php:286
 #: admin/classes/class-compare_products.php:295
 msgid "Products"
-msgstr ""
+msgstr "Продукти"
 
 #: admin/classes/class-compare_categories.php:27
 msgid "Edit Compare Product Categories"
-msgstr ""
+msgstr "Редактирай Продуктовите категории за сравняване"
 
 #: admin/classes/class-compare_categories.php:27
 msgid "Add Compare Product Categories"
-msgstr ""
+msgstr "Добави продуктови категории за сравняване"
 
 #: admin/classes/class-compare_categories.php:28
 msgid "Create Categories based on groups of products that share the same compare feature list."
-msgstr ""
+msgstr "Създайте категории, основани на групите от продукти, които споделят един и същи списък с характеристики."
 
 #: admin/classes/class-compare_categories.php:42
 msgid "Edit Category Name"
-msgstr ""
+msgstr "Редактирай името на категорията"
 
 #: admin/classes/class-compare_categories.php:42
 msgid "Category Name"
-msgstr ""
+msgstr "Име на категория"
 
 #: admin/classes/class-compare_categories.php:48
 #: admin/classes/class-compare_fields.php:199
@@ -60,121 +60,121 @@ msgstr ""
 #: admin/classes/class-compare_categories.php:48
 #: admin/classes/class-compare_fields.php:171
 msgid "Save"
-msgstr ""
+msgstr "Запази"
 
 #: admin/classes/class-compare_categories.php:48
 #: admin/classes/class-compare_fields.php:171
 msgid "Create"
-msgstr ""
+msgstr "Създай"
 
 #: admin/classes/class-compare_categories.php:48
 #: admin/classes/class-compare_fields.php:171
 #: admin/classes/class-compare_products.php:218
 msgid "Cancel"
-msgstr ""
+msgstr "Отмени"
 
 #: admin/classes/class-compare_categories.php:64
 msgid "You just save the order for compare categories."
-msgstr ""
+msgstr "New Compare category order successfully created."
 
 #: admin/classes/class-compare_fields.php:44
 msgid "Compare Feature Successfully edited"
-msgstr ""
+msgstr "Характеристиките за сравняване са успешно редактирани"
 
 #: admin/classes/class-compare_fields.php:46
 #: admin/classes/class-compare_fields.php:63
 msgid "That Compare Feature Name already exists. Please try again"
-msgstr ""
+msgstr "Great News! That Compare Feature Name already exists. Use the Feature search to find and edit it or use another name for the Compare Feature you are trying to create."
 
 #: admin/classes/class-compare_fields.php:58
 msgid "Compare Feature Successfully created"
-msgstr ""
+msgstr "New Compare Feature Successfully created"
 
 #: admin/classes/class-compare_fields.php:60
 msgid "Compare Feature Error created"
-msgstr ""
+msgstr "Грешка при създаването на характеристика за сравняване"
 
 #: admin/classes/class-compare_fields.php:73
 msgid "Compare Feature Successfully deleted"
-msgstr ""
+msgstr "Характеристиката за сравняване е успешно изтрита"
 
 #: admin/classes/class-compare_fields.php:75
 msgid "Please select Feature(s) to delete"
-msgstr ""
+msgstr "Моля, изберете характеристики, които да изтриете"
 
 #: admin/classes/class-compare_fields.php:83
 msgid "Compare Feature successfully removed"
-msgstr ""
+msgstr "Характеристиките за сравняване са успешно премахнати"
 
 #: admin/classes/class-compare_fields.php:87
 msgid "Compare Feature successfully deleted"
-msgstr ""
+msgstr "Характеристиките за сравняване са успешно изтрити"
 
 #: admin/classes/class-compare_fields.php:101
 msgid "Edit Compare Product Features"
-msgstr ""
+msgstr "Редактирай характеристиките за сравняване на продукти"
 
 #: admin/classes/class-compare_fields.php:101
 msgid "Add Compare Product Features"
-msgstr ""
+msgstr "Добави характеристики за сравнявани на продукти"
 
 #: admin/classes/class-compare_fields.php:117
 msgid "Edit Compare Features"
-msgstr ""
+msgstr "Редактирай характеристиките за сравняване"
 
 #: admin/classes/class-compare_fields.php:117
 msgid "Create New Compare Features"
-msgstr ""
+msgstr "Създай нови характеристики за сравняване"
 
 #: admin/classes/class-compare_fields.php:122
 #: admin/classes/class-compare_fields.php:291
 #: admin/classes/class-compare_fields.php:382
 msgid "Feature Name"
-msgstr ""
+msgstr "Име на характеристика"
 
 #: admin/classes/class-compare_fields.php:122
 msgid "This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height"
-msgstr ""
+msgstr "Това е името на характеристиката, което потребителите виждат в изкачащия прозорец за сравняване, например височина"
 
 #: admin/classes/class-compare_fields.php:124
 msgid "Feature Unit of Measurement"
-msgstr ""
+msgstr "Единица за измерване на характеристиката"
 
 #: admin/classes/class-compare_fields.php:124
 msgid "e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name."
-msgstr ""
+msgstr "например кг., мм., см., инчове - единицата за измерване се появява след името на характеристиката в скоби. Ако оставите това поле празно ще виждате само името на характеристиката."
 
 #: admin/classes/class-compare_fields.php:126
 msgid "Feature Input Type"
-msgstr ""
+msgstr "Въвеждане на вид характеристика"
 
 #: admin/classes/class-compare_fields.php:140
 msgid "Users don't see this. Use to set the data input field type that you will use on to enter the Products data for this feature."
-msgstr ""
+msgstr "Потребителите не виждат това. Използвайте, за да настроите типа на полето за въвеждане на данни, което ще използвате, за да въведете данните за тази характеристика."
 
 #: admin/classes/class-compare_fields.php:143
 msgid "Enter Input Type options"
-msgstr ""
+msgstr "Въведете варианти за типа на полето"
 
 #: admin/classes/class-compare_fields.php:143
 msgid "You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option."
-msgstr ""
+msgstr "Вие избрахте един от типовете: Кутия за отметка, Радио бутон, Падащ списък, Няколко избрани типа за въвеждане. Въведете вашите опции, един ред за всяка опция."
 
 #: admin/classes/class-compare_fields.php:147
 msgid "Assign Feature to Categories"
-msgstr ""
+msgstr "Присвояване на характеристика към Категории"
 
 #: admin/classes/class-compare_fields.php:163
 msgid "Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories."
-msgstr ""
+msgstr "Присвояване на характеристики към една или повече категории. Характеристики като цвят, размер, тегло могат да са приложими за много продуктови категории. Създайте характеристиката веднъж и я присвоете към една или повече категории."
 
 #: admin/classes/class-compare_fields.php:182
 msgid "Manage Compare Categories and Features"
-msgstr ""
+msgstr "Управление на Категориите и Характеристиките за сравняване"
 
 #: admin/classes/class-compare_fields.php:183
 msgid "Use drag and drop to change Category order and Feature order within Categories."
-msgstr ""
+msgstr "Използвайте функцията \"влачете и пуснете\", за да промените подредбата в списъците с категории и с характеристики за категориите."
 
 #: admin/classes/class-compare_fields.php:199
 #: admin/classes/class-compare_fields.php:213
@@ -184,152 +184,152 @@ msgstr ""
 #: admin/classes/class-compare_products.php:120
 #: admin/classes/class-compare_products.php:287
 msgid "Edit"
-msgstr ""
+msgstr "Редактирай"
 
 #: admin/classes/class-compare_fields.php:199
 #: admin/classes/class-compare_fields.php:306
 #: admin/classes/class-compare_fields.php:311
 #: admin/classes/class-compare_fields.php:394
 msgid "Delete"
-msgstr ""
+msgstr "Изтрий"
 
 #: admin/classes/class-compare_fields.php:213
 msgid "Are you sure you want to remove"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да премахнете?"
 
 #: admin/classes/class-compare_fields.php:213
 msgid "from"
-msgstr ""
+msgstr "от"
 
 #: admin/classes/class-compare_fields.php:213
 msgid "Remove"
-msgstr ""
+msgstr "Премахни"
 
 #: admin/classes/class-compare_fields.php:218
 msgid "You have not assigned any Features to this category yet. No Hurry!"
-msgstr ""
+msgstr "Не сте присвоили нито една характеристика към тази категория за сега. Не бързайте!"
 
 #: admin/classes/class-compare_fields.php:284
 msgid "Un-Assigned Features (Assign to a Category to activate)"
-msgstr ""
+msgstr "Неприсвоени характеристики (Присвои към категория, за да ги активираш)"
 
 #: admin/classes/class-compare_fields.php:290
 msgid "No"
-msgstr ""
+msgstr "Не"
 
 #: admin/classes/class-compare_fields.php:292
 #: admin/classes/class-compare_fields.php:383
 msgid "Type"
-msgstr ""
+msgstr "Вид"
 
 #: admin/classes/class-compare_fields.php:306
 #: admin/classes/class-compare_fields.php:394
 msgid "Are you sure you want to delete"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да изтриете?"
 
 #: admin/classes/class-compare_fields.php:311
 msgid "Are you sure about deleting this?"
-msgstr ""
+msgstr "Сигурни ли сте, че искате да изтриете това?"
 
 #: admin/classes/class-compare_fields.php:328
 msgid "You just save the order for Compare Features."
-msgstr ""
+msgstr "Току що запазихте подредбата на характеристиките за сравняване."
 
 #: admin/classes/class-compare_fields.php:335
 msgid "Categories & Features"
-msgstr ""
+msgstr "Категории и характеристики"
 
 #: admin/classes/class-compare_fields.php:335
 msgid "Add New"
-msgstr ""
+msgstr "Добави нов"
 
 #: admin/classes/class-compare_fields.php:349
 msgid "Search Features"
-msgstr ""
+msgstr "Търси характеристики"
 
 #: admin/classes/class-compare_fields.php:375
 msgid "Found"
-msgstr ""
+msgstr "Намерени"
 
 #: admin/classes/class-compare_fields.php:375
 msgid "feature(s)"
-msgstr ""
+msgstr "характеристика(и)"
 
 #: admin/classes/class-compare_fields.php:402
 msgid "Show"
-msgstr ""
+msgstr "Покажи"
 
 #: admin/classes/class-compare_fields.php:413
 msgid "Go"
-msgstr ""
+msgstr "Отиди"
 
 #: admin/classes/class-compare_fields.php:414
 msgid "Displaying"
-msgstr ""
+msgstr "Показване"
 
 #: admin/classes/class-compare_fields.php:414
 msgid "of"
-msgstr ""
+msgstr "от"
 
 #: admin/classes/class-compare_products.php:72
 #: admin/classes/class-compare_products.php:109
 msgid "Activated"
-msgstr ""
+msgstr "Активиран"
 
 #: admin/classes/class-compare_products.php:73
 #: admin/classes/class-compare_products.php:110
 msgid "Deactivated"
-msgstr ""
+msgstr "Деактивиран"
 
 #: admin/classes/class-compare_products.php:195
 #: classes/class-compare_metabox.php:58
 msgid "Activate Compare Feature for this Product"
-msgstr ""
+msgstr "Активирайте характеристика за сравняване за този продукт"
 
 #: admin/classes/class-compare_products.php:196
 msgid "Select a  Compare Category for this Product"
-msgstr ""
+msgstr "Изберете категория за сравняване за този продукт"
 
 #: admin/classes/class-compare_products.php:198
 #: classes/class-compare_metabox.php:61
 msgid "Select..."
-msgstr ""
+msgstr "Избери..."
 
 #: admin/classes/class-compare_products.php:217
 msgid "Update"
-msgstr ""
+msgstr "Актуализирай"
 
 #: admin/classes/class-compare_products.php:261
 msgid "Compare Product Feature Fields updated successfully"
-msgstr ""
+msgstr "Полетата за продуктовите характеристики за сравняване са актуализирани успешно"
 
 #: admin/classes/class-compare_products.php:265
 msgid "WPEC Compare Products Manager"
-msgstr ""
+msgstr "WPEC Сравняване на продукти"
 
 #: admin/classes/class-compare_products.php:282
 msgid "No."
-msgstr ""
+msgstr "Не."
 
 #: admin/classes/class-compare_products.php:283
 msgid "Product Name"
-msgstr ""
+msgstr "Продуктово име"
 
 #: admin/classes/class-compare_products.php:284
 msgid "Product Category"
-msgstr ""
+msgstr "Продуктова категория"
 
 #: admin/classes/class-compare_products.php:285
 msgid "Compare Category"
-msgstr ""
+msgstr "Категория за сравняване"
 
 #: admin/classes/class-compare_products.php:286
 msgid "Activated / Deactivated"
-msgstr ""
+msgstr "Активиран / Деактивиран"
 
 #: admin/classes/class-compare_products.php:296
 msgid "Find Product Name"
-msgstr ""
+msgstr "Открито продуктово име"
 
 #: admin/classes/class-compare_products.php:312
 msgid "Please upgrade to the Pro Version to activate Products express Compare feature manager"
@@ -337,113 +337,113 @@ msgstr ""
 
 #: admin/classes/class-compare_settings.php:53
 msgid "Compare Settings Successfully saved"
-msgstr ""
+msgstr "Настройките за сравняване са успешно запазени"
 
 #: admin/classes/class-compare_settings.php:56
 msgid "Compare Settings Successfully reseted"
-msgstr ""
+msgstr "Compare Settings Successfully reset"
 
 #: admin/classes/class-compare_settings.php:61
 msgid "Compare Pop-Up Window Setup"
-msgstr ""
+msgstr "Настройки на изкачащия прозорец за сравнение"
 
 #: admin/classes/class-compare_settings.php:66
 msgid "Pop-Up Window Header Image"
-msgstr ""
+msgstr "Заглавно изображение на изкачащия прозорец"
 
 #: admin/classes/class-compare_settings.php:69
 msgid "To add a header image to your Compare Pop-Up Window put the full URL of the image you want to use. Use file formats .jpg .png. jpeg Your image can be any size. If it is not as wide as the Pop-Up Container that you set below it will sit in the centre at the top. If it is wider the bottom scroll bar will come into play."
-msgstr ""
+msgstr "To add a header image to your Compare Pop-Up Window enter the full URL of the image. Use .jpg .png. jpeg "
 
 #: admin/classes/class-compare_settings.php:73
 msgid "Compare Pop-Up Width"
-msgstr ""
+msgstr "Ширина на изкачащия прозорец за сравнение"
 
 #: admin/classes/class-compare_settings.php:78
 msgid "Compare Pop-Up Height"
-msgstr ""
+msgstr "Височина на изкачащия прозорец за сравнение"
 
 #: admin/classes/class-compare_settings.php:83
 msgid "Pop-Up Container Height"
-msgstr ""
+msgstr "Височина на изкачащия контейнер"
 
 #: admin/classes/class-compare_settings.php:86
 msgid "Set at slightly less than the Pop-Up height to ensure that your Header Image and the Print button are always visible as users scroll down the products list of features."
-msgstr ""
+msgstr "Set at < the Pop-Up height to ensure that your Header Image and the Print button remain visible as users scroll down the products list of features."
 
 #: admin/classes/class-compare_settings.php:91
 msgid "Product Page Compare Buttons"
-msgstr ""
+msgstr "Бутони за сравняване в продуктовата страница"
 
 #: admin/classes/class-compare_settings.php:95
 msgid "Auto Add Compare button"
-msgstr ""
+msgstr "Автоматично добави бутон за сравняване"
 
 #: admin/classes/class-compare_settings.php:96
 #: admin/classes/class-compare_settings.php:101
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: admin/classes/class-compare_settings.php:100
 msgid "Manually set Show Compare button and/or Button Position"
-msgstr ""
+msgstr "Ръчно задай Показване на бутона за сравняване и/или позицията на бутона"
 
 #: admin/classes/class-compare_settings.php:103
 msgid "IMPORTANT! Select YES only it if you want to manually set / change the default position of the Compare Button / Link on your theme product pages. Use this function"
-msgstr ""
+msgstr "ВАЖНО! Избери ДА само ако желаете ръчно да настроите/промените позицията по подразбиране на бутона за сравнение / линка във вашите продуктови страници. Използвайте тази функция"
 
 #: admin/classes/class-compare_settings.php:103
 msgid "to do that."
-msgstr ""
+msgstr "за да направите това."
 
 #: admin/classes/class-compare_settings.php:107
 msgid "Button or Text"
-msgstr ""
+msgstr "Бутон или текст"
 
 #: admin/classes/class-compare_settings.php:108
 msgid "Button"
-msgstr ""
+msgstr "Бутон"
 
 #: admin/classes/class-compare_settings.php:108
 msgid "Link"
-msgstr ""
+msgstr "Линк"
 
 #: admin/classes/class-compare_settings.php:108
 msgid "Show Compare feature on products as a Button or Hyperlink Text."
-msgstr ""
+msgstr "Покажете функцията за сравнение в продуктите като бутон или хипервръзка."
 
 #: admin/classes/class-compare_settings.php:110
 msgid "If you select LINK - the hyperlinked text auto shows in your themes font and colour. It is not possible to auto know the Style and Colour of your themes BUTTONS as many themes have many different buttons. To set the style and Colour of the Compare button to the same as you theme use Class name 'bt_compare_this' for product pages and class name 'compare_button_go' for the sidebar widget."
-msgstr ""
+msgstr "To set the style and Colour of the Compare button to the same as your theme use Class name 'bt_compare_this' for product pages and class name 'compare_button_go' for the sidebar widget."
 
 #: admin/classes/class-compare_settings.php:114
 msgid "BUTTON or LINK text"
-msgstr ""
+msgstr "Бутон или хипервръзка"
 
 #: admin/classes/class-compare_settings.php:115
 msgid "Add the text you want to show on your Compare Button / Link on the Products pages"
-msgstr ""
+msgstr "Add text to show on Compare Button or as  Link text"
 
 #: admin/classes/class-compare_settings.php:119
 msgid "Show Compare Featured fields"
-msgstr ""
+msgstr "Покажи полетата с характеристики за сравняване"
 
 #: admin/classes/class-compare_settings.php:120
 msgid "To auto show and position the Product title and a list of the Compare features in your Themes product pages use this function"
-msgstr ""
+msgstr "To auto show and position the Product title and a list of the Compare features in your Themes product pages use this function"
 
 #: admin/classes/class-compare_settings.php:126
 msgid "Save changes"
-msgstr ""
+msgstr "Запази промените"
 
 #: admin/classes/class-compare_settings.php:127
 msgid "Reset Settings"
-msgstr ""
+msgstr "Възстановаване на настройките"
 
 #: classes/class-compare_filter.php:34
 #: classes/class-compare_filter.php:82
 msgid "Compare this"
-msgstr ""
+msgstr "Сравни това"
 
 #: classes/class-compare_filter.php:138
 #: classes/class-compare_filter.php:139
@@ -456,11 +456,11 @@ msgstr ""
 
 #: classes/class-compare_filter.php:384
 msgid "Print This Page"
-msgstr ""
+msgstr "Принтирай тази страница"
 
 #: classes/class-compare_filter.php:384
 msgid "Narrow your selection to 3 products and print!"
-msgstr ""
+msgstr "Изберете до 3 продукта и принтирайте!"
 
 #: classes/class-compare_filter.php:571
 msgid "Documentation"
@@ -472,23 +472,23 @@ msgstr ""
 
 #: classes/class-compare_metabox.php:18
 msgid "Compare Feature Fields"
-msgstr ""
+msgstr "Полета за сравняване на характеристики"
 
 #: classes/class-compare_metabox.php:59
 msgid "Select Compare Category for this Product"
-msgstr ""
+msgstr "Select a Compare Category for this Product"
 
 #: classes/class-compare_metabox.php:140
 msgid "Select value"
-msgstr ""
+msgstr "Избери стойност"
 
 #: classes/class-compare_metabox.php:184
 msgid "Do not have any field on this category, please add fields for it at"
-msgstr ""
+msgstr "No Feature have been assigned to this category, please add Features for it at"
 
 #: classes/class-compare_metabox.php:184
 msgid "this page"
-msgstr ""
+msgstr "тази страница"
 
 #: includes/class-compare_functions.php:180
 msgid "Clear All"
@@ -496,7 +496,7 @@ msgstr ""
 
 #: includes/class-compare_functions.php:180
 msgid "Compare"
-msgstr ""
+msgstr "Сравни това"
 
 #: includes/class-compare_functions.php:182
 #: includes/class-compare_functions.php:280
@@ -505,15 +505,15 @@ msgstr ""
 
 #: includes/class-compare_functions.php:216
 msgid "Avg. Customer Rating"
-msgstr ""
+msgstr "Средна оценка на клиентите"
 
 #: includes/class-compare_functions.php:227
 msgid "Add To Cart"
-msgstr ""
+msgstr "Добави в количката"
 
 #: includes/class-compare_functions.php:231
 msgid "This product has sold out."
-msgstr ""
+msgstr "Този продукт е продаден"
 
 #: includes/class-compare_functions.php:450
 #: includes/class-compare_functions.php:453
@@ -534,10 +534,58 @@ msgid "A3 WPEC extensions"
 msgstr ""
 
 #: widget/class-compare_widget.php:22
+#, fuzzy
 msgid "WPEC Compare Products"
-msgstr ""
+msgstr "Сравняване на продукти"
 
 #: widget/class-compare_widget.php:58
 msgid "Title"
 msgstr ""
 
+#~ msgid "No find the encryp.inc file. Please copy encryp.inc file to folder"
+#~ msgstr ""
+#~ "The plugin could not find the encryp.inc file. Please copy encryp.inc "
+#~ "file to folder"
+
+#~ msgid "encryp.inc was modified. Please keep it by default"
+#~ msgstr "encryp.inc беше променен. Моля, съхранете го по подразбиране."
+
+#~ msgid "Enter Your Plugin Authorization Key"
+#~ msgstr "Enter Your Authorization Code"
+
+#~ msgid "Authorization Key"
+#~ msgstr "Authorization Code"
+
+#~ msgid "Validate"
+#~ msgstr "Потвърждавам"
+
+#~ msgid "Compare Category Successfully edited"
+#~ msgstr "Категорията за сравняване е редактирана успешно"
+
+#~ msgid ""
+#~ "That Compare category name already exists or empty. Please try again."
+#~ msgstr ""
+#~ "Hey there - that Compare category name already exists. Please try a "
+#~ "different name for the category you are creating."
+
+#~ msgid "Compare Category Successfully created"
+#~ msgstr "Категорията за сравняване е създадена успешно"
+
+#~ msgid "Compare Category Error created"
+#~ msgstr "Грешка при създаване на Категорията за сравняване"
+
+#~ msgid "Compare Category deleted"
+#~ msgstr "Категорията за сравняване е изтрита"
+
+#~ msgid "Product Compare Feature Fields"
+#~ msgstr "Полета за продуктови характеристики за сравняване"
+
+#~ msgid "There is a new version of WPEC Compare Products available."
+#~ msgstr "Има нова версия на  WPEC Compare Products."
+
+#~ msgid ""
+#~ "Oops!! Something went wrong.<br/>Please try again or <a href='http://www."
+#~ "a3rev.com'>contact us</a>."
+#~ msgstr ""
+#~ "Опс! Възникна грешка.<br/>Моля опитайте отново или <a href='http://www."
+#~ "a3rev.com'>ни пишете</a>."

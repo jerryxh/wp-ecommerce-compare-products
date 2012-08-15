@@ -7,7 +7,7 @@
  *
  * upgrade_version_1_0_1()
  * upgrade_version_2_0()
- * upgrade_version_2_0_1()
+ * upgrade_version_2_0_3()
  */					
 class WPEC_Compare_Upgrade{
 	function upgrade_version_1_0_1(){
@@ -30,12 +30,29 @@ class WPEC_Compare_Upgrade{
 		WPEC_Compare_Data::add_features_to_master_category();
 	}
 	
-	function upgrade_version_2_0_1() {
+	function upgrade_version_2_0_3() {
+		
 		global $wpdb;
 		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_categories CHANGE `category_name` `category_name` blob NOT NULL";
 		$wpdb->query($sql);
 		
 		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_fields CHANGE `default_value` `default_value` blob NOT NULL";
+		$wpdb->query($sql);
+		
+		WPEC_Compare_Functions::auto_assign_master_category_to_all_products();
+		
+		$collate = '';
+		if ( $wpdb->supports_collation() ) {
+			if( ! empty($wpdb->charset ) ) $collate .= "DEFAULT CHARACTER SET $wpdb->charset";
+			if( ! empty($wpdb->collate ) ) $collate .= " COLLATE $wpdb->collate";
+		}
+		$sql = "ALTER TABLE ".$wpdb->prefix . "wpec_compare_fields $collate";
+		$wpdb->query($sql);
+		
+		$sql = "ALTER TABLE ".$wpdb->prefix . "wpec_compare_categories $collate";
+		$wpdb->query($sql);
+		
+		$sql = "ALTER TABLE ".$wpdb->prefix . "wpec_compare_cat_fields $collate";
 		$wpdb->query($sql);
 	}
 }

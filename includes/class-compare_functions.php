@@ -17,6 +17,7 @@
  * get_compare_list_html_widget()
  * get_compare_list_html_popup()
  * add_meta_all_products()
+ * auto_assign_master_category_to_all_products()
  * get_post_thumbnail()
  * modify_url()
  * printPage()
@@ -176,7 +177,7 @@ class WPEC_Compare_Functions{
 				$html .= '</li>';
 			}
 			$html .= '</ul>';
-			$html .= '<div class="compare_widget_action" style="margin-top:10px;"><a class="compare_clear_all" style="cursor:pointer;float:left;">Clear All</a> <input style="float:right;" type="button" name="compare_button_go" class="compare_button_go" value="'.__('Compare', 'wpec_cp').'" /><div style="clear:both"></div></div>';
+			$html .= '<div class="compare_widget_action" style="margin-top:10px;"><a class="compare_clear_all" style="cursor:pointer;float:left;">'.__( 'Clear All', 'wpec_cp' ).'</a> <input style="float:right;" type="button" name="compare_button_go" class="compare_button_go" value="'.__('Compare', 'wpec_cp').'" /><div style="clear:both"></div></div>';
 		}else{
 			$html .= '<div class="no_compare_list">'.__('You do not have any product to compare', 'wpec_cp').'.</div>';	
 		}
@@ -243,7 +244,7 @@ class WPEC_Compare_Functions{
 				$j++;
 				$html .= '<tr class="row_'.$j.'">';
 				if(trim($field_data->field_unit) != '')
-					$html .= '<td class="column_first">'.stripslashes($field_data->field_name).' ('.$field_data->field_unit.')</td>';
+					$html .= '<td class="column_first">'.stripslashes($field_data->field_name).' ('.trim(stripslashes($field_data->field_unit)).')</td>';
 				else
 					$html .= '<td class="column_first">'.stripslashes($field_data->field_name).'</td>';
 				$i = 0;
@@ -331,6 +332,19 @@ class WPEC_Compare_Functions{
 			}
 		}
 		
+	}
+	
+	function auto_assign_master_category_to_all_products() {
+		$master_category = 'Master Category';
+		$master_category_id = get_option('master_category_compare');
+		$all_products = get_posts(array('numberposts' => -1, 'post_type' => array('wpsc-product'), 'post_status' => array('publish', 'private')));		
+		if (is_array($all_products) && count($all_products) > 0) {
+			foreach ($all_products as $product) {
+				update_post_meta( $product->ID, '_wpsc_compare_category', $master_category_id );
+				update_post_meta( $product->ID, '_wpsc_compare_category_name', $master_category);
+			}
+		}
+
 	}
 	
 	function get_post_thumbnail($postid=0, $width=220, $height=180){

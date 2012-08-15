@@ -5,7 +5,7 @@
  * Call this function when plugin is activated
  */
 function wpec_compare_set_settings(){
-	update_option('a3rev_wpeccp_free_version', '2.0.1');
+	update_option('a3rev_wpeccp_free_version', '2.0.3');
 	WPEC_Compare_Settings::wpeccp_set_setting_default();	
 	wpec_compare_install();
 }
@@ -21,6 +21,7 @@ function wpec_compare_install(){
 	WPEC_Compare_Data::add_features_to_master_category();
 	WPEC_Compare_Functions::add_meta_all_products();
 	WPEC_Compare_Widget_Add::automatic_add_widget_to_sidebar();
+	WPEC_Compare_Functions::auto_assign_master_category_to_all_products();
 	update_option('a3rev_wpeccp_just_confirm', 1);
 }
 update_option('a3rev_wpeccp_plugin', 'wpec_compare');
@@ -131,11 +132,14 @@ add_action('init', 'wpeccp_init');
 		WPEC_Compare_Upgrade::upgrade_version_2_0();
 		update_option('a3rev_wpeccp_free_version', '2.0');
 	}
-	if(version_compare(get_option('a3rev_wpeccp_free_version'), '2.0.1') === -1){
-		WPEC_Compare_Upgrade::upgrade_version_2_0_1();
-		update_option('a3rev_wpeccp_free_version', '2.0.1');
+	if(version_compare(get_option('a3rev_wpeccp_free_version'), '2.0.3') === -1){
+		WPEC_Compare_Upgrade::upgrade_version_2_0_3();
+		update_option('a3rev_wpeccp_free_version', '2.0.3');
 	}
-	update_option('a3rev_wpeccp_free_version', '2.0.1');
+	update_option('a3rev_wpeccp_free_version', '2.0.3');
+
+// Add text on right of Visit the plugin on Plugin manager page
+add_filter( 'plugin_row_meta', array('WPEC_Compare_Hook_Filter', 'plugin_extra_links'), 10, 2 );
 
 // Add Menu Comparable Settings in E Commerce Plugins
 function wpeccp_add_menu_item_e_commerce() {

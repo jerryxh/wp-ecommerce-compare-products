@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: WP e-Commerce Compare Products
+Plugin Name: WP e-Commerce Compare Products Lite
 Plugin URI: http://www.a3rev.com/
-Description: WP e-Commerce Compare Products plugin.
-Version: 2.0
+Description: Compare Products uses your existing WP e-Commerce Product Categories and Product Variations to create Compare Product Features for all your products. A sidebar Compare basket is created that users add products to and view the Comparison in a Compare this pop-up screen.
+Version: 2.0.3
 Author: A3 Revolution Software Development team
 Author URI: http://www.a3rev.com/
 License: GPLv2 or later
@@ -105,6 +105,7 @@ along with this program; if not, <http://www.gnu.org/licenses/>.
 define('ECCP_FILE_PATH', dirname(__FILE__));
 define('ECCP_DIR_NAME', basename(ECCP_FILE_PATH));
 define('ECCP_FOLDER', dirname(plugin_basename(__FILE__)));
+define('ECCP_NAME', plugin_basename(__FILE__));
 define('ECCP_URL', WP_CONTENT_URL.'/plugins/'.ECCP_FOLDER);
 define( 'ECCP_JS_URL',  ECCP_URL . '/assets/js' );
 define( 'ECCP_IMAGES_URL',  ECCP_URL . '/assets/images' );

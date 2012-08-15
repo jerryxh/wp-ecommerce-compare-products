@@ -22,6 +22,7 @@
  * wpeccp_admin_script()
  * auto_create_compare_category()
  * auto_create_compare_feature()
+ * plugin_extra_links()
  */
 class WPEC_Compare_Hook_Filter{
 	
@@ -164,7 +165,7 @@ class WPEC_Compare_Hook_Filter{
 					if(is_array($field_value) && count($field_value) > 0) $field_value = implode(', ', $field_value);
 					elseif(is_array($field_value) && count($field_value) < 0) $field_value = __('N/A', 'wpec_cp');
 					if(trim($field_value) == '') $field_value = __('N/A', 'wpec_cp');
-					if (trim($field_data->field_unit) != '') $field_unit = ' <span class="compare_featured_unit">('.trim($field_data->field_unit).')</span>';
+					if (trim($field_data->field_unit) != '') $field_unit = ' <span class="compare_featured_unit">('.trim(stripslashes($field_data->field_unit)).')</span>';
 					if ($use_table_style) 
 						$html .= '<tr><th><span class="compare_featured_name">'.stripslashes($field_data->field_name).'</span>'.$field_unit.'</th><td '.$fixed_width.'><span class="compare_featured_value">'.$field_value.'</span></td></tr>';
 					else
@@ -556,11 +557,20 @@ class WPEC_Compare_Hook_Filter{
 		$term = get_term( $term_id, 'wpsc-variation' );
 		$check_existed = WPEC_Compare_Data::get_count("field_name='".trim($term->name)."'");
 		if ($check_existed < 1 && $term->parent == 0 ) {
-			$feature_id = WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($term->name)), 'field_type' => 'input-text', 'field_unit' => '', 'default_value' => '' ) );
+			$feature_id = WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($term->name)), 'field_type' => 'checkbox', 'field_unit' => '', 'default_value' => '' ) );
 			if ($feature_id !== false) {
 				WPEC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature_id);
 			}
 		}
+	}
+	
+	function plugin_extra_links($links, $plugin_name) {
+		if ( $plugin_name != ECCP_NAME) {
+			return $links;
+		}
+		$links[] = '<a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-compare-products/" target="_blank">'.__('Documentation', 'wpec_cp').'</a>';
+		$links[] = '<a href="http://a3rev.com/products-page/wp-e-commerce/wpec-compare-products/#help" target="_blank">'.__('Support', 'wpec_cp').'</a>';
+		return $links;
 	}
 }
 ?>

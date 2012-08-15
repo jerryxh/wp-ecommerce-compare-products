@@ -92,7 +92,7 @@ class WPEC_Compare_MetaBox{
 			foreach($compare_fields as $field_data){
 		?>
                 <tr class="form-field">
-                    <th valign="top" scope="row"><label for="<?php echo $field_data->field_key; ?>"><strong><?php echo stripslashes($field_data->field_name) ; ?> : </strong> <?php if(trim($field_data->field_unit) != ''){ ?>(<?php echo $field_data->field_unit; ?>)<?php } ?></label><br /><?php echo $field_data->field_description; ?></th>
+                    <th valign="top" scope="row"><label for="<?php echo $field_data->field_key; ?>"><strong><?php echo stripslashes($field_data->field_name) ; ?> : </strong> <?php if(trim($field_data->field_unit) != ''){ ?>(<?php echo trim(stripslashes($field_data->field_unit)); ?>)<?php } ?></label><br /><?php echo $field_data->field_description; ?></th>
                     <td>
                	<?php
 					$field_value = get_post_meta( $post_id, '_wpsc_compare_'.$field_data->field_key, true );
@@ -108,7 +108,7 @@ class WPEC_Compare_MetaBox{
 							if(!is_array($field_value)) $field_value = array();
 							if(is_array($field_option) && count($field_option) > 0){
 								foreach($field_option as $option_value){
-									$option_value = stripslashes($option_value);
+									$option_value = trim(stripslashes($option_value));
 									if(in_array($option_value, $field_value)){
 										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.htmlspecialchars($option_value).'" checked="checked" style="width:auto" />'.$option_value.' &nbsp;&nbsp;';
 									}else{
@@ -123,7 +123,7 @@ class WPEC_Compare_MetaBox{
 							$field_option = explode('<br />', $default_value);
 							if(is_array($field_option) && count($field_option) > 0){
 								foreach($field_option as $option_value){
-									$option_value = stripslashes($option_value);
+									$option_value = trim(stripslashes($option_value));
 									if($option_value == $field_value){
 										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.htmlspecialchars($option_value).'" checked="checked" style="width:auto" /> '.$option_value.' &nbsp;&nbsp;';
 									}else{
@@ -140,7 +140,7 @@ class WPEC_Compare_MetaBox{
 								echo '<option value="">'.__( "Select value", 'wpec_cp' ).'</option>';
 							if(is_array($field_option) && count($field_option) > 0){
 								foreach($field_option as $option_value){
-									$option_value = stripslashes($option_value);
+									$option_value = trim(stripslashes($option_value));
 									if($option_value == $field_value){
 										echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
 									}else{
@@ -159,7 +159,7 @@ class WPEC_Compare_MetaBox{
 							echo '<select multiple="multiple" name="_wpsc_compare_'.$field_data->field_key.'[]" id="'.$field_data->field_key.'" style="width:400px">';
 							if(is_array($field_option) && count($field_option) > 0){
 								foreach($field_option as $option_value){
-									$option_value = stripslashes($option_value);
+									$option_value = trim(stripslashes($option_value));
 									if(in_array($option_value, $field_value)){
 										echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
 									}else{
