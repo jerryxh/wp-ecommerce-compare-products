@@ -25,7 +25,7 @@ class WPEC_Compare_Data{
 	function install_database(){
 		global $wpdb;
 		$collate = '';
-		if ( $wpdb->supports_collation() ) {
+		if ( $wpdb->has_cap( 'collation' ) ) {
 			if( ! empty($wpdb->charset ) ) $collate .= "DEFAULT CHARACTER SET $wpdb->charset";
 			if( ! empty($wpdb->collate ) ) $collate .= " COLLATE $wpdb->collate";
 		}
@@ -64,7 +64,10 @@ class WPEC_Compare_Data{
 ';
 						}
 					}
-					$feature_id = WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->name)), 'field_type' => 'checkbox', 'field_unit' => '', 'default_value' => $default_value) );
+					if ( trim($default_value) != '')
+						$feature_id = WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->name)), 'field_type' => 'checkbox', 'field_unit' => '', 'default_value' => $default_value) );
+					else
+						$feature_id = WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->name)), 'field_type' => 'input-text', 'field_unit' => '', 'default_value' => $default_value) );
 					if ($feature_id !== false) {
 						WPEC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature_id);
 					}

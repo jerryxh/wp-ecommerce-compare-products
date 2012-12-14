@@ -557,7 +557,7 @@ class WPEC_Compare_Hook_Filter{
 		$term = get_term( $term_id, 'wpsc-variation' );
 		$check_existed = WPEC_Compare_Data::get_count("field_name='".trim($term->name)."'");
 		if ($check_existed < 1 && $term->parent == 0 ) {
-			$feature_id = WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($term->name)), 'field_type' => 'checkbox', 'field_unit' => '', 'default_value' => '' ) );
+			$feature_id = WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($term->name)), 'field_type' => 'input-text', 'field_unit' => '', 'default_value' => '' ) );
 			if ($feature_id !== false) {
 				WPEC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature_id);
 			}

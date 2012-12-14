@@ -42,7 +42,7 @@ class WPEC_Compare_Upgrade{
 		WPEC_Compare_Functions::auto_assign_master_category_to_all_products();
 		
 		$collate = '';
-		if ( $wpdb->supports_collation() ) {
+		if ( $wpdb->has_cap( 'collation' ) ) {
 			if( ! empty($wpdb->charset ) ) $collate .= "DEFAULT CHARACTER SET $wpdb->charset";
 			if( ! empty($wpdb->collate ) ) $collate .= " COLLATE $wpdb->collate";
 		}

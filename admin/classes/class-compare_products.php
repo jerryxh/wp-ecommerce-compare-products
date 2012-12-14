@@ -306,7 +306,7 @@ class WPEC_Compare_Products_Class{
 				showToggleBtn: false, //show or hide column toggle popup
 				showTableToggleBtn: false,
 				height: 'auto',
-				variations: <?php echo $cp_show_variations; ?>
+				variations: '<?php echo $cp_show_variations; ?>'
 			});
 			$(".edit_product_compare").live("click", function(ev){
 				return alert_upgrade('<?php _e( 'Please upgrade to the Pro Version to activate Products express Compare feature manager', 'wpec_cp' ); ?>');

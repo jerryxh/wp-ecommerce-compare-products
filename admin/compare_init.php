@@ -5,7 +5,7 @@
  * Call this function when plugin is activated
  */
 function wpec_compare_set_settings(){
-	update_option('a3rev_wpeccp_free_version', '2.0.3');
+	update_option('a3rev_wpeccp_free_version', '2.0.4');
 	WPEC_Compare_Settings::wpeccp_set_setting_default();	
 	wpec_compare_install();
 }
@@ -136,7 +136,7 @@ add_action('init', 'wpeccp_init');
 		WPEC_Compare_Upgrade::upgrade_version_2_0_3();
 		update_option('a3rev_wpeccp_free_version', '2.0.3');
 	}
-	update_option('a3rev_wpeccp_free_version', '2.0.3');
+	update_option('a3rev_wpeccp_free_version', '2.0.4');
 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WPEC_Compare_Hook_Filter', 'plugin_extra_links'), 10, 2 );

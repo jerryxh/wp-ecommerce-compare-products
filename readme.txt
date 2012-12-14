@@ -4,8 +4,8 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compare products, wp ecommerce compare products, e-commerce, ecommerce
 
 Requires at least: 2.92
-Tested up to: 3.4.1
-Stable tag: 2.0.3
+Tested up to: 3.5
+Stable tag: 2.0.4
 
 The Only Compare Products Plugin for WP e-Commerce. Add the compare products feature to your WP e-Commerce store toady with WP e-Commerce Compare Products. 
 
@@ -90,6 +90,12 @@ If you have any problems, questions or suggestions please post your request to t
 
 
 == Changelog ==
+
+= 2.0.4 - 2012/12/14 =
+
+* Fixed: Updated depreciated custom database collator $wpdb->supports_collation() with new WP3.5 function $wpdb->has_cap( 'collation' ). ÊSupports backward version compatibility.
+* Fixed: When Product attributes are auto created as Compare Features, if the Attribute has no terms then the value input field is created as Input Text - Single line instead of a Checkbox.
+* Fixed: On Compare Products admin tab, ajax not able to load the products list again after saving a product edit
 
 = 2.0.3 - 2012/08/15 =
 
