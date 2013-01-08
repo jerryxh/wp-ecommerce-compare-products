@@ -119,9 +119,9 @@ class WPEC_Compare_Fields_Class{
                 <tbody>
                 	<tr>
                     	<td>
-                        	<div class="field_title"><label for="field_name"><?php _e('Feature Name','wpec_cp'); ?></label></div> <input type="text" name="field_name" id="field_name" value="<?php if(!empty($field)) echo stripslashes(htmlentities($field->field_name)); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e('This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height', 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
+                        	<div class="field_title"><label for="field_name"><?php _e('Feature Name','wpec_cp'); ?></label></div> <input type="text" name="field_name" id="field_name" value="<?php if(!empty($field)) echo stripslashes($field->field_name); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e('This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height', 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
                             <div style="clear:both; height:20px"></div>
-                        	<div class="field_title"><label for="field_unit"><?php _e('Feature Unit of Measurement', 'wpec_cp'); ?></label></div> <input type="text" name="field_unit" id="field_unit" value="<?php if (!empty($field)) echo stripslashes(htmlentities($field->field_unit)); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e("e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name.", 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
+                        	<div class="field_title"><label for="field_unit"><?php _e('Feature Unit of Measurement', 'wpec_cp'); ?></label></div> <input type="text" name="field_unit" id="field_unit" value="<?php if (!empty($field)) echo stripslashes($field->field_unit); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e("e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name.", 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
                             <div style="clear:both; height:20px"></div>
                             <div class="field_title"><label for="field_type"><?php _e('Feature Input Type', 'wpec_cp'); ?></label></div>
                             <select style="min-width:300px;" name="field_type" id="field_type" class="chosen_select">
@@ -179,15 +179,21 @@ class WPEC_Compare_Fields_Class{
 		$compare_cats = WPEC_Compare_Categories_Data::get_results('', 'category_order ASC');
 		if (is_array($compare_cats) && count($compare_cats)>0) {
 ?>
+		<style type="text/css">
+	   	#a3rev_plugins_notice { background:#FFFBCC; border:2px solid #E6DB55; -webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; color: #555555; float: right; margin: 0px; padding: 0px 15px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 420px; right:0px; top:0px;}
+        </style>
         <h3><?php _e('Manage Compare Categories and Features', 'wpec_cp'); ?></h3>
         <p><?php _e('Use drag and drop to change Category order and Feature order within Categories.', 'wpec_cp') ?></p>
         <div class="updated below-h2 update_feature_order_message" style="display:none"><p></p></div>
         <div style="clear:both"></div>
         <ul style="margin:0; padding:0;" class="sorttable">
         <?php
+			$number_cat = 0;
 			foreach ($compare_cats as $cat) {
+				$number_cat++;
 				$compare_fields = WPEC_Compare_Categories_Fields_Data::get_results("cat_id='".$cat->id."'", 'cf.field_order ASC');
 ?>
+		<?php if ($number_cat == 2) { ?><div class="compare_upgrade_area"><?php echo WPEC_Compare_Functions::other_plugins_notice(); } ?>
         <li id="recordsArray_<?php echo $cat->id; ?>">
           <input type="hidden" name="compare_orders_<?php echo $cat->id; ?>" class="compare_category_id" value="<?php echo $cat->id; ?>"  />
   		  <table cellspacing="0" class="widefat post fixed sorttable" id="compare_orders_<?php echo $cat->id; ?>" style="width:535px; margin-bottom:20px;">
@@ -221,6 +227,7 @@ class WPEC_Compare_Fields_Class{
             </tbody>
           </table>
         </li>
+        <?php if ($number_cat == count($compare_cats) && $number_cat >= 2) { ?></div><?php } ?>
         <?php
 			}
 ?>
@@ -257,15 +264,6 @@ class WPEC_Compare_Fields_Class{
 									$("#compare_orders_"+cat_id).find(".compare_sort").each(function(index){
 										$(this).html(index+1);
 									});
-								});
-							}
-							});
-
-							$("ul.sorttable").sortable({ placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
-								var order = $(this).sortable("serialize") + '&action=wpeccp_update_cat_orders&security=<?php echo $wpeccp_update_cat_order; ?>';
-								$.post("<?php echo admin_url('admin-ajax.php'); ?>", order, function(theResponse){
-									$(".update_feature_order_message p").html(theResponse).show();
-									$(".update_feature_order_message").show();
 								});
 							}
 							});
@@ -363,7 +361,7 @@ class WPEC_Compare_Fields_Class{
 			
 			$link = WPEC_Compare_Functions::modify_url(array('pp' => '', 'rows' => $rows, 's_feature' => $keyword ) );
 			
-			$where = "LOWER(CONVERT(field_name USING latin1)) LIKE '%".trim($_REQUEST['s_feature'])."%'";
+			$where = "LOWER(field_name) LIKE '%".trim($_REQUEST['s_feature'])."%'";
 			
 			$total = WPEC_Compare_Data::get_count($where);
 			if ($end > $total) $end = $total;

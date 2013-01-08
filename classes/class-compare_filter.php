@@ -569,7 +569,7 @@ class WPEC_Compare_Hook_Filter{
 			return $links;
 		}
 		$links[] = '<a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-compare-products/" target="_blank">'.__('Documentation', 'wpec_cp').'</a>';
-		$links[] = '<a href="http://a3rev.com/products-page/wp-e-commerce/wpec-compare-products/#help" target="_blank">'.__('Support', 'wpec_cp').'</a>';
+		$links[] = '<a href="http://a3rev.com/shop/wpec-compare-products/#tab-reviews" target="_blank">'.__('Support', 'wpec_cp').'</a>';
 		return $links;
 	}
 }

@@ -57,7 +57,7 @@ class WPEC_Compare_Settings{
 		}
 		?>
         <?php $comparable_settings = get_option('comparable_settings'); ?>
-        <form action="edit.php?post_type=wpsc-product&page=wpsc-compare-settings" method="post" name="form_comparable_settings" id="form_comparable_settings">    
+        <form action="" method="post" name="form_comparable_settings" id="form_comparable_settings">    
         <h3><?php _e('Compare Pop-Up Window Setup', 'wpec_cp'); ?></h3>
         <?php echo $comparable_setting_msg; ?>  
 		<table cellspacing="0" class="form-table">

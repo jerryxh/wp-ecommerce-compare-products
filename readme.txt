@@ -5,7 +5,7 @@ Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compar
 
 Requires at least: 2.92
 Tested up to: 3.5
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 
 The Only Compare Products Plugin for WP e-Commerce. Add the compare products feature to your WP e-Commerce store toady with WP e-Commerce Compare Products. 
 
@@ -30,9 +30,9 @@ Complete and comprehensive plugin documentation [available here](http://docs.a3r
 
 When you install WP e-Commerce Compare Products you will see all the added functionality that the Premium Version offers. The plugin is designed so that the upgrade is completely seamless. Nothing changes or is lost when you upgrade. Upon upgrading all the PRO features of Compare Products you see on the Lite version dashboard are activated. This means you can activate, set up and use the free version completely risk free.
 
-[Home Page](http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/) |
+[Home Page](http://a3rev.com/shop/wpec-compare-products/) |
 [Documentation](http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-compare-products/) |
-[Support](http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/#help/)
+[Support](http://a3rev.com/shop/wpec-compare-products/#tab-reviews)
 
 = Localization =
 * English (default) - always include.
@@ -85,11 +85,17 @@ You can use this plugin when you have installed the WP e-Commerce plugin
 == Support ==
 
 
-If you have any problems, questions or suggestions please post your request to the [HELP tab](http://www.a3rev.com/products-page/wp-e-commerce/wpec-compare-products/#help) on the Pro Versions Home page.
+If you have any problems, questions or suggestions please post your request to the [HELP tab](http://a3rev.com/shop/wpec-compare-products/#tab-reviews) on the Pro Versions Home page.
 
 
 
 == Changelog ==
+
+= 2.0.5 - 2013/01/08 = 
+
+* Feature: Added support for Chinese Characters* Tweak: UI tweak - changed the order of the admin panel tabs so that the most used Features tab is moved to first tab.
+* Tweak: Added links to all other a3rev wordpress.org plugins from the Features tab* Tweak: Updated Support and Pro Version link URL's on wordpress.org description, plugins and plugins dashboard. Links were returning 404 errors since the launch of the all new a3rev.com mobile responsive site as the base e-commerce permalinks is changed.
+
 
 = 2.0.4 - 2012/12/14 =
 

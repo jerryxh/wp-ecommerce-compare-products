@@ -5,7 +5,7 @@
  * Call this function when plugin is activated
  */
 function wpec_compare_set_settings(){
-	update_option('a3rev_wpeccp_free_version', '2.0.4');
+	update_option('a3rev_wpeccp_free_version', '2.0.5');
 	WPEC_Compare_Settings::wpeccp_set_setting_default();	
 	wpec_compare_install();
 }
@@ -136,7 +136,7 @@ add_action('init', 'wpeccp_init');
 		WPEC_Compare_Upgrade::upgrade_version_2_0_3();
 		update_option('a3rev_wpeccp_free_version', '2.0.3');
 	}
-	update_option('a3rev_wpeccp_free_version', '2.0.4');
+	update_option('a3rev_wpeccp_free_version', '2.0.5');
 
 // Add text on right of Visit the plugin on Plugin manager page
 add_filter( 'plugin_row_meta', array('WPEC_Compare_Hook_Filter', 'plugin_extra_links'), 10, 2 );
@@ -173,6 +173,10 @@ function wpeccp_dashboard(){
 	<style>
 		#compare_extensions { background: url("<?php echo ECCP_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #F1F1F1; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 10px 0 5px; padding: 4px 8px 4px 38px; position: relative; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 200px;
 		}
+		.compare_upgrade_area { border:2px solid #FF0;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; margin-top:10px; padding:10px; position:relative}
+		.upgrade_extensions { background: #FFFBCC; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 4px 8px 4px 8px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 480px; right:10px; top:10px; border:1px solid #E6DB55}
+		.products_tab_extension{position:relative; float:right;}
+		
 		.form-table{margin:0;border-collapse:separate;}
 		.chzn-container{margin-right:2px;}
 		.field_title{width:205px; padding:0 8px 0 10px; float:left;}
@@ -281,14 +285,14 @@ function wpeccp_dashboard(){
 		}
 			$current_tab = (isset($_REQUEST['tab'])) ? $_REQUEST['tab'] : '';
 			$tabs = array(
-				'settings' => __( 'Settings', 'wpec_cp' ),
 				'features' => __( 'Features', 'wpec_cp' ),
-				'compare-products' => __( 'Products', 'wpec_cp' )
+				'compare-products' => __( 'Products', 'wpec_cp' ),
+				'settings' => __( 'Settings', 'wpec_cp' ),
 			);
 					
 			foreach ($tabs as $name => $label) :
 				echo '<a href="' . admin_url( 'edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=' . $name ) . '" class="nav-tab ';
-				if($current_tab == '' && $name == 'settings') echo 'nav-tab-active';
+				if($current_tab == '' && $name == 'features') echo 'nav-tab-active';
 				if( $current_tab==$name ) echo 'nav-tab-active';
 				echo '">' . $label . '</a>';
 			endforeach;
@@ -300,9 +304,15 @@ function wpeccp_dashboard(){
         </div>
         <div style="width:100%; float:left;">
         <?php
-		echo WPEC_Compare_Functions::compare_extension();
+		//echo WPEC_Compare_Functions::compare_extension();
 		switch ($current_tab) :
-			case 'features':
+			case 'settings':
+				WPEC_Compare_Settings::wpec_compare_settings_display();
+				break;
+			case 'compare-products':
+				WPEC_Compare_Products_Class::wpeccp_products_manager();
+				break;
+			default :
 				echo WPEC_Compare_Fields_Class::init_features_actions();
 				echo WPEC_Compare_Categories_Class::init_categories_actions();
 				if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'add-new') {
@@ -318,12 +328,6 @@ function wpeccp_dashboard(){
 					WPEC_Compare_Fields_Class::features_search_area();
 					WPEC_Compare_Fields_Class::wpeccp_features_orders();
 				}
-				break;
-			case 'compare-products':
-				WPEC_Compare_Products_Class::wpeccp_products_manager();
-				break;
-			default :
-				WPEC_Compare_Settings::wpec_compare_settings_display();
 				break;
 		endswitch;
 		?>

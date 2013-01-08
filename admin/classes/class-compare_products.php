@@ -262,9 +262,10 @@ class WPEC_Compare_Products_Class{
 			}
 		}
 ?>
+	<?php echo WPEC_Compare_Functions::products_tab_extension(); ?>
     <h3><?php _e('WPEC Compare Products Manager', 'wpec_cp'); ?></h3>
     <?php echo $compare_product_message; ?>
-    <div style="clear:both; margin-bottom:20px;"></div>
+    <div style="clear:both; margin-bottom:40px;"></div>
     <table id="wpeccp_products_manager" style="display:none"></table>
     <?php 
 		$wpeccp_products_manager = wp_create_nonce("wpeccp-products-manager");

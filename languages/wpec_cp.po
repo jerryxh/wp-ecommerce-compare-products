@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPEC Compare Products Pro FREE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-15 11:16+0700\n"
-"PO-Revision-Date: 2012-08-15 11:17+0700\n"
+"POT-Creation-Date: 2013-01-08 16:22+0700\n"
+"PO-Revision-Date: 2013-01-08 16:22+0700\n"
 "Last-Translator: Nguyen Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -19,61 +19,61 @@ msgstr ""
 msgid "Compare Products"
 msgstr ""
 
-#: admin/compare_init.php:284
-msgid "Settings"
-msgstr ""
-
-#: admin/compare_init.php:285
+#: admin/compare_init.php:288
 msgid "Features"
 msgstr ""
 
-#: admin/compare_init.php:286
-#: admin/classes/class-compare_products.php:295
+#: admin/compare_init.php:289
+#: admin/classes/class-compare_products.php:296
 msgid "Products"
 msgstr ""
 
-#: admin/classes/class-compare_categories.php:27
-msgid "Edit Compare Product Categories"
-msgstr ""
-
-#: admin/classes/class-compare_categories.php:27
-msgid "Add Compare Product Categories"
+#: admin/compare_init.php:290
+msgid "Settings"
 msgstr ""
 
 #: admin/classes/class-compare_categories.php:28
+msgid "Edit Compare Product Categories"
+msgstr ""
+
+#: admin/classes/class-compare_categories.php:28
+msgid "Add Compare Product Categories"
+msgstr ""
+
+#: admin/classes/class-compare_categories.php:29
 msgid "Create Categories based on groups of products that share the same compare feature list."
 msgstr ""
 
-#: admin/classes/class-compare_categories.php:42
+#: admin/classes/class-compare_categories.php:43
 msgid "Edit Category Name"
 msgstr ""
 
-#: admin/classes/class-compare_categories.php:42
+#: admin/classes/class-compare_categories.php:43
 msgid "Category Name"
 msgstr ""
 
-#: admin/classes/class-compare_categories.php:48
-#: admin/classes/class-compare_fields.php:199
+#: admin/classes/class-compare_categories.php:49
+#: admin/classes/class-compare_fields.php:205
 msgid "Please upgrade to the Pro Version to activate Compare categories"
 msgstr ""
 
-#: admin/classes/class-compare_categories.php:48
+#: admin/classes/class-compare_categories.php:49
 #: admin/classes/class-compare_fields.php:171
 msgid "Save"
 msgstr ""
 
-#: admin/classes/class-compare_categories.php:48
+#: admin/classes/class-compare_categories.php:49
 #: admin/classes/class-compare_fields.php:171
 msgid "Create"
 msgstr ""
 
-#: admin/classes/class-compare_categories.php:48
+#: admin/classes/class-compare_categories.php:49
 #: admin/classes/class-compare_fields.php:171
 #: admin/classes/class-compare_products.php:218
 msgid "Cancel"
 msgstr ""
 
-#: admin/classes/class-compare_categories.php:64
+#: admin/classes/class-compare_categories.php:66
 msgid "You just save the order for compare categories."
 msgstr ""
 
@@ -127,8 +127,8 @@ msgid "Create New Compare Features"
 msgstr ""
 
 #: admin/classes/class-compare_fields.php:122
-#: admin/classes/class-compare_fields.php:291
-#: admin/classes/class-compare_fields.php:382
+#: admin/classes/class-compare_fields.php:289
+#: admin/classes/class-compare_fields.php:380
 msgid "Feature Name"
 msgstr ""
 
@@ -168,106 +168,106 @@ msgstr ""
 msgid "Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories."
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:182
+#: admin/classes/class-compare_fields.php:185
 msgid "Manage Compare Categories and Features"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:183
+#: admin/classes/class-compare_fields.php:186
 msgid "Use drag and drop to change Category order and Feature order within Categories."
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:199
-#: admin/classes/class-compare_fields.php:213
-#: admin/classes/class-compare_fields.php:306
-#: admin/classes/class-compare_fields.php:394
+#: admin/classes/class-compare_fields.php:205
+#: admin/classes/class-compare_fields.php:219
+#: admin/classes/class-compare_fields.php:304
+#: admin/classes/class-compare_fields.php:392
 #: admin/classes/class-compare_products.php:83
 #: admin/classes/class-compare_products.php:120
-#: admin/classes/class-compare_products.php:287
+#: admin/classes/class-compare_products.php:288
 msgid "Edit"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:199
-#: admin/classes/class-compare_fields.php:306
-#: admin/classes/class-compare_fields.php:311
-#: admin/classes/class-compare_fields.php:394
+#: admin/classes/class-compare_fields.php:205
+#: admin/classes/class-compare_fields.php:304
+#: admin/classes/class-compare_fields.php:309
+#: admin/classes/class-compare_fields.php:392
 msgid "Delete"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:213
+#: admin/classes/class-compare_fields.php:219
 msgid "Are you sure you want to remove"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:213
+#: admin/classes/class-compare_fields.php:219
 msgid "from"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:213
+#: admin/classes/class-compare_fields.php:219
 msgid "Remove"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:218
+#: admin/classes/class-compare_fields.php:224
 msgid "You have not assigned any Features to this category yet. No Hurry!"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:284
+#: admin/classes/class-compare_fields.php:282
 msgid "Un-Assigned Features (Assign to a Category to activate)"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:290
+#: admin/classes/class-compare_fields.php:288
 msgid "No"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:292
-#: admin/classes/class-compare_fields.php:383
+#: admin/classes/class-compare_fields.php:290
+#: admin/classes/class-compare_fields.php:381
 msgid "Type"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:306
-#: admin/classes/class-compare_fields.php:394
+#: admin/classes/class-compare_fields.php:304
+#: admin/classes/class-compare_fields.php:392
 msgid "Are you sure you want to delete"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:311
+#: admin/classes/class-compare_fields.php:309
 msgid "Are you sure about deleting this?"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:328
+#: admin/classes/class-compare_fields.php:326
 msgid "You just save the order for Compare Features."
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:335
+#: admin/classes/class-compare_fields.php:333
 msgid "Categories & Features"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:335
+#: admin/classes/class-compare_fields.php:333
 msgid "Add New"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:349
+#: admin/classes/class-compare_fields.php:347
 msgid "Search Features"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:375
+#: admin/classes/class-compare_fields.php:373
 msgid "Found"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:375
+#: admin/classes/class-compare_fields.php:373
 msgid "feature(s)"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:402
+#: admin/classes/class-compare_fields.php:400
 msgid "Show"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:413
+#: admin/classes/class-compare_fields.php:411
 msgid "Go"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:414
+#: admin/classes/class-compare_fields.php:412
 msgid "Displaying"
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:414
+#: admin/classes/class-compare_fields.php:412
 msgid "of"
 msgstr ""
 
@@ -303,35 +303,35 @@ msgstr ""
 msgid "Compare Product Feature Fields updated successfully"
 msgstr ""
 
-#: admin/classes/class-compare_products.php:265
+#: admin/classes/class-compare_products.php:266
 msgid "WPEC Compare Products Manager"
 msgstr ""
 
-#: admin/classes/class-compare_products.php:282
+#: admin/classes/class-compare_products.php:283
 msgid "No."
 msgstr ""
 
-#: admin/classes/class-compare_products.php:283
+#: admin/classes/class-compare_products.php:284
 msgid "Product Name"
 msgstr ""
 
-#: admin/classes/class-compare_products.php:284
+#: admin/classes/class-compare_products.php:285
 msgid "Product Category"
 msgstr ""
 
-#: admin/classes/class-compare_products.php:285
+#: admin/classes/class-compare_products.php:286
 msgid "Compare Category"
 msgstr ""
 
-#: admin/classes/class-compare_products.php:286
+#: admin/classes/class-compare_products.php:287
 msgid "Activated / Deactivated"
 msgstr ""
 
-#: admin/classes/class-compare_products.php:296
+#: admin/classes/class-compare_products.php:297
 msgid "Find Product Name"
 msgstr ""
 
-#: admin/classes/class-compare_products.php:312
+#: admin/classes/class-compare_products.php:313
 msgid "Please upgrade to the Pro Version to activate Products express Compare feature manager"
 msgstr ""
 
@@ -531,6 +531,151 @@ msgstr ""
 
 #: includes/class-compare_functions.php:479
 msgid "A3 WPEC extensions"
+msgstr ""
+
+#: includes/class-compare_functions.php:485
+msgid "Please upgrade to the"
+msgstr ""
+
+#: includes/class-compare_functions.php:485
+#: includes/class-compare_functions.php:491
+msgid "Pro Version"
+msgstr ""
+
+#: includes/class-compare_functions.php:485
+msgid "to activate the power of Compare Categories. Find out more"
+msgstr ""
+
+#: includes/class-compare_functions.php:485
+msgid "here."
+msgstr ""
+
+#: includes/class-compare_functions.php:491
+msgid "Make managing the Compare products feature across your entire catalog a breeze. Upgrade to the"
+msgstr ""
+
+#: includes/class-compare_functions.php:491
+msgid "to activate this feature."
+msgstr ""
+
+#: includes/class-compare_functions.php:499
+msgid "Upgrade to Compare Products Pro"
+msgstr ""
+
+#: includes/class-compare_functions.php:500
+msgid "Visit the"
+msgstr ""
+
+#: includes/class-compare_functions.php:500
+msgid "a3rev website"
+msgstr ""
+
+#: includes/class-compare_functions.php:500
+msgid "to see all the extra features the Pro version of this plugin offers, like the Compare categories that you can see inside the yellow box. All of your Product Categories have been auto created here as Compare categories. The Lite Version uses only 1 category - The Master category. All of your product attributes have been auto created as Compare features under the Master category."
+msgstr ""
+
+#: includes/class-compare_functions.php:501
+msgid "Plugin Documentation"
+msgstr ""
+
+#: includes/class-compare_functions.php:502
+msgid "All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request"
+msgstr ""
+
+#: includes/class-compare_functions.php:502
+msgid "Visit the a3rev wiki."
+msgstr ""
+
+#: includes/class-compare_functions.php:503
+msgid "More a3rev Quality Plugins"
+msgstr ""
+
+#: includes/class-compare_functions.php:504
+msgid "Below is a list of the a3rev plugins that are available for free download from wordpress.org"
+msgstr ""
+
+#: includes/class-compare_functions.php:505
+msgid "WP e-Commerce Plugins"
+msgstr ""
+
+#: includes/class-compare_functions.php:508
+msgid "WP e-Commerce Dynamic Gallery"
+msgstr ""
+
+#: includes/class-compare_functions.php:509
+msgid "WP e-Commerce Predictive Search"
+msgstr ""
+
+#: includes/class-compare_functions.php:510
+msgid "WP e-Commerce Compare Products"
+msgstr ""
+
+#: includes/class-compare_functions.php:511
+msgid "WP e-Commerce Catalog Visibility & Email Inquiry"
+msgstr ""
+
+#: includes/class-compare_functions.php:512
+msgid "WP e-Commerce Grid View"
+msgstr ""
+
+#: includes/class-compare_functions.php:516
+msgid "WordPress Plugins"
+msgstr ""
+
+#: includes/class-compare_functions.php:519
+msgid "WordPress Email Template"
+msgstr ""
+
+#: includes/class-compare_functions.php:520
+msgid "Page View Count"
+msgstr ""
+
+#: includes/class-compare_functions.php:523
+msgid "WooCommerce Plugins"
+msgstr ""
+
+#: includes/class-compare_functions.php:526
+msgid "WooCommerce Dynamic Products Gallery"
+msgstr ""
+
+#: includes/class-compare_functions.php:527
+msgid "WooCommerce Predictive Search"
+msgstr ""
+
+#: includes/class-compare_functions.php:528
+msgid "WooCommerce Compare Products"
+msgstr ""
+
+#: includes/class-compare_functions.php:529
+msgid "WooCommerce Widget Product Slideshow"
+msgstr ""
+
+#: includes/class-compare_functions.php:530
+msgid "WooCommerce Email Inquiry & Cart Options"
+msgstr ""
+
+#: includes/class-compare_functions.php:530
+msgid " - Pro Version only from a3rev"
+msgstr ""
+
+#: includes/class-compare_functions.php:533
+msgid "Help spread the Word about this plugin"
+msgstr ""
+
+#: includes/class-compare_functions.php:534
+msgid "Things you can do to help others find this plugin"
+msgstr ""
+
+#: includes/class-compare_functions.php:536
+msgid "Rate this plugin 5"
+msgstr ""
+
+#: includes/class-compare_functions.php:536
+msgid "on WordPress.org"
+msgstr ""
+
+#: includes/class-compare_functions.php:537
+msgid "Mark the plugin as a fourite"
 msgstr ""
 
 #: widget/class-compare_widget.php:22
