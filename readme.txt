@@ -7,7 +7,7 @@ Requires at least: 2.92
 Tested up to: 3.5
 Stable tag: 2.0.5
 
-The Only Compare Products Plugin for WP e-Commerce. Add the compare products feature to your WP e-Commerce store toady with WP e-Commerce Compare Products. 
+The Only Compare Products Plugin for WP e-Commerce. Add the compare products feature to your WP e-Commerce store today with WP e-Commerce Compare Products. 
 
 == Description ==
 
