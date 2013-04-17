@@ -48,7 +48,6 @@ class WPEC_Compare_Data{
 	}
 	
 	function automatic_add_features() {
-		$master_category_id = get_option('master_category_compare');
 		$top_variations = get_terms("wpsc-variation", array('parent' => 0, 'hide_empty' => 0, 'hierarchical' => 0) );
 		if ( count($top_variations) > 0 ) {
 			foreach ($top_variations as $top_variation) {
@@ -65,27 +64,10 @@ class WPEC_Compare_Data{
 						}
 					}
 					if ( trim($default_value) != '')
-						$feature_id = WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->name)), 'field_type' => 'checkbox', 'field_unit' => '', 'default_value' => $default_value) );
+						WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->name)), 'field_type' => 'checkbox', 'field_unit' => '', 'default_value' => $default_value) );
 					else
-						$feature_id = WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->name)), 'field_type' => 'input-text', 'field_unit' => '', 'default_value' => $default_value) );
-					if ($feature_id !== false) {
-						WPEC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature_id);
-					}
+						WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($top_variation->name)), 'field_type' => 'input-text', 'field_unit' => '', 'default_value' => $default_value) );
 				}
-			}
-		}
-	}
-	
-	function add_features_to_master_category() {
-		$master_category_id = get_option('master_category_compare');
-		$features = WPEC_Compare_Data::get_results();
-		if (is_array($features) && count($features) > 0) {
-			foreach ($features as $feature) {
-				$check_existed = WPEC_Compare_Categories_Fields_Data::get_count("cat_id='".$master_category_id."' AND field_id='".$feature->id."'");
-				if($check_existed == 0){
-					WPEC_Compare_Categories_Fields_Data::insert_row($master_category_id, $feature->id);
-				}
-				WPEC_Compare_Categories_Fields_Data::delete_row("field_id='".$feature->id."' AND cat_id != '".$master_category_id."'");
 			}
 		}
 	}

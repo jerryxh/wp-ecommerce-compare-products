@@ -15,7 +15,6 @@
  * update_row()
  * update_items_order()
  * update_order()
- * free_update_orders()
  * delete_rows()
  * delete_row()
  */
@@ -49,23 +48,6 @@ class WPEC_Compare_Categories_Data{
 					WPEC_Compare_Categories_Data::insert_row(array('category_name' => trim(addslashes($category_product->name))));
 				}
 			}
-		}
-	}
-	
-	function auto_add_master_category() {
-		$master_category = 'Master Category';
-		WPEC_Compare_Categories_Data::free_update_orders();
-		$check_existed = WPEC_Compare_Categories_Data::get_count("category_name='".$master_category."'");
-		if ($check_existed < 1 ) {
-			$master_category_id = WPEC_Compare_Categories_Data::insert_row(array('category_name' => $master_category, 'category_order' => 0));
-			if ($master_category_id !== false ) {
-				update_option('master_category_compare' , $master_category_id);	
-			}
-		} else {
-			$master_category_data = WPEC_Compare_Categories_Data::get_results("category_name='".$master_category."'");
-			$master_category_id = $master_category_data[0]->id;
-			WPEC_Compare_Categories_Data::update_order($master_category_id, 0);
-			update_option('master_category_compare' , $master_category_id);
 		}
 	}
 	
@@ -151,13 +133,6 @@ class WPEC_Compare_Categories_Data{
 		$table_name = $wpdb->prefix. "wpec_compare_categories";
 		$query = $wpdb->query("UPDATE {$table_name} SET category_order='$category_order' WHERE id='$category_id'");
 		return $query;
-	}
-	
-	function free_update_orders () {
-		global $wpdb;
-		$master_category = 'Master Category';
-		$table_compare_categories = $wpdb->prefix. "wpec_compare_categories";
-		$wpdb->query("UPDATE {$table_name} SET category_order=category_order+1 WHERE category_name != '{$master_category}'");
 	}
 	
 	function delete_rows($items=array()){

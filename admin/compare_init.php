@@ -1,40 +1,73 @@
 <?php
 /* "Copyright 2012 A3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
-
 /**
  * Call this function when plugin is activated
  */
-function wpec_compare_set_settings(){
-	update_option('a3rev_wpeccp_free_version', '2.0.5');
-	WPEC_Compare_Settings::wpeccp_set_setting_default();	
-	wpec_compare_install();
-}
-
-/**
- * Call this function when plugin is confirmed
- */
 function wpec_compare_install(){
+	update_option('a3rev_wpeccp_version', '2.1.0');
+	$product_compare_id = WPEC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'wpec_cp'), '[product_comparison_page]' );
+	update_option('product_compare_id', $product_compare_id);
+	
+	WPEC_Compare_Widget_Style::set_settings_default();
+	WPEC_Compare_Widget_Title_Style::set_settings_default();
+	WPEC_Compare_Widget_Button_Style::set_settings_default();
+	WPEC_Compare_Widget_Clear_All_Style::set_settings_default();
+	WPEC_Compare_Widget_Thumbnail_Style::set_settings_default();
+	
+	WPEC_Compare_Product_Page_Settings::set_settings_default();
+	WPEC_Compare_Product_Page_Button_Style::set_settings_default();
+	WPEC_Compare_Product_Page_View_Compare_Style::set_settings_default();
+	WPEC_Compare_Product_Page_Tab::set_settings_default();
+		
+	WPEC_Compare_Grid_View_Settings::set_settings_default();
+	WPEC_Compare_Grid_View_Button_Style::set_settings_default();
+	WPEC_Compare_Grid_View_View_Compare_Style::set_settings_default();
+	
+	WPEC_Compare_Comparison_Page_Global_Settings::set_settings_default();
+	WPEC_Compare_Page_Style::set_settings_default();
+	WPEC_Compare_Table_Row_Style::set_settings_default();
+	WPEC_Compare_Table_Content_Style::set_settings_default();
+	WPEC_Compare_Price_Style::set_settings_default();
+	WPEC_Compare_AddToCart_Style::set_settings_default();
+	WPEC_Compare_ViewCart_Style::set_settings_default();
+	WPEC_Compare_Print_Message_Style::set_settings_default();
+	WPEC_Compare_Print_Button_Style::set_settings_default();
+	WPEC_Compare_Close_Window_Button_Style::set_settings_default();
+	
 	WPEC_Compare_Data::install_database();
 	WPEC_Compare_Categories_Data::install_database();
 	WPEC_Compare_Categories_Fields_Data::install_database();
-	WPEC_Compare_Categories_Data::auto_add_master_category();
-	WPEC_Compare_Data::add_features_to_master_category();
 	WPEC_Compare_Functions::add_meta_all_products();
 	WPEC_Compare_Widget_Add::automatic_add_widget_to_sidebar();
-	WPEC_Compare_Functions::auto_assign_master_category_to_all_products();
 	update_option('a3rev_wpeccp_just_confirm', 1);
+	
+	update_option('a3rev_wpeccp_just_installed', true);
 }
+
 update_option('a3rev_wpeccp_plugin', 'wpec_compare');
 
 /**
  * Load languages file
  */
 function wpeccp_init() {
+	if ( get_option('a3rev_wpeccp_just_installed') ) {
+		delete_option('a3rev_wpeccp_just_installed');
+		wp_redirect( ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'edit.php?post_type=wpsc-product&page=wpsc-compare-settings' ) ) : str_replace( 'https:', 'http:', admin_url( 'edit.php?post_type=wpsc-product&page=wpsc-compare-settings' ) ) ) );
+		exit;
+	}
 	load_plugin_textdomain( 'wpec_cp', false, ECCP_FOLDER.'/languages' );
 }
 // Add language
 add_action('init', 'wpeccp_init');
 
+// Plugin loaded
+add_action( 'plugins_loaded', array( 'WPEC_Compare_Functions', 'plugins_loaded' ), 8 );
+
+// Add text on right of Visit the plugin on Plugin manager page
+add_filter( 'plugin_row_meta', array('WPEC_Compare_Hook_Filter', 'plugin_extra_links'), 10, 2 );
+
+	// Replace the template file from plugin
+	add_filter('template_include', array('WPEC_Compare_Hook_Filter', 'template_loader') );
 
 	// Add Admin Menu
 	add_action( 'wpsc_add_submenu','wpeccp_add_menu_item_e_commerce' );
@@ -47,6 +80,10 @@ add_action('init', 'wpeccp_init');
 	add_action('wp_ajax_wpeccp_update_cat_orders', array('WPEC_Compare_Categories_Class', 'wpeccp_update_cat_orders') );
 	add_action('wp_ajax_nopriv_wpeccp_update_cat_orders', array('WPEC_Compare_Categories_Class', 'wpeccp_update_cat_orders') );
 	
+	// AJAX update compare popup
+	add_action('wp_ajax_wpeccp_update_compare_popup', array('WPEC_Compare_Hook_Filter', 'wpeccp_update_compare_popup') );
+	add_action('wp_ajax_nopriv_wpeccp_update_compare_popup', array('WPEC_Compare_Hook_Filter', 'wpeccp_update_compare_popup') );
+
 	// AJAX update compare widget
 	add_action('wp_ajax_wpeccp_update_compare_widget', array('WPEC_Compare_Hook_Filter', 'wpeccp_update_compare_widget') );
 	add_action('wp_ajax_nopriv_wpeccp_update_compare_widget', array('WPEC_Compare_Hook_Filter', 'wpeccp_update_compare_widget') );
@@ -75,25 +112,15 @@ add_action('init', 'wpeccp_init');
 	add_action('wp_ajax_wpeccp_product_get_fields', array('WPEC_Compare_MetaBox', 'wpeccp_product_get_fields') );
 	add_action('wp_ajax_nopriv_wpeccp_product_get_fields', array('WPEC_Compare_MetaBox', 'wpeccp_product_get_fields') );
 	
-	// AJAX get compare popup 
-	add_action('wp_ajax_wpeccp_get_popup', array('WPEC_Compare_Hook_Filter', 'wpeccp_get_popup') );
-	add_action('wp_ajax_nopriv_wpeccp_get_popup', array('WPEC_Compare_Hook_Filter', 'wpeccp_get_popup') );
-	
 	// AJAX get compare products 
 	add_action('wp_ajax_wpeccp_get_products', array('WPEC_Compare_Products_Class', 'wpeccp_get_products') );
 	add_action('wp_ajax_nopriv_wpeccp_get_products', array('WPEC_Compare_Products_Class', 'wpeccp_get_products') );
 	
-	// AJAX get product compare feature fields popup
-	add_action('wp_ajax_wpeccp_popup_features', array('WPEC_Compare_Products_Class', 'wpeccp_popup_features') );
-	add_action('wp_ajax_nopriv_wpeccp_popup_features', array('WPEC_Compare_Products_Class', 'wpeccp_popup_features') );
-	
-	add_action('get_header', array('WPEC_Compare_Hook_Filter','wpeccp_print_scripts'));
-	add_action('wp_print_styles', array('WPEC_Compare_Hook_Filter','wpeccp_print_styles'));
+	// Add Custom style on frontend
+	add_action( 'wp_head', array( 'WPEC_Compare_Hook_Filter', 'include_customized_style'), 11);
 	
 	// Add script into footer to hanlde the event from widget, popup
 	add_action('get_footer', array('WPEC_Compare_Hook_Filter', 'wpec_compare_footer_script'));
-	//add_action('the_post', array('WPEC_Compare_Hook_Filter', 'wpec_ajax_add_compare_button'));
-	//add_action('wpsc_start_product', array('WPEC_Compare_Hook_Filter', 'wpec_ajax_add_compare_button'));
 	
 	if((get_option('hide_addtocart_button') == 0) &&  (get_option('addtocart_or_buynow') !='1')){
 		require_once(ABSPATH.'wp-admin/includes/plugin.php');
@@ -119,27 +146,37 @@ add_action('init', 'wpeccp_init');
 		add_action('save_post', array('WPEC_Compare_MetaBox','save_compare_meta_boxes' ) );
 	}
 	if(in_array(basename($_SERVER['PHP_SELF']), array('admin.php', 'edit.php')) && isset($_REQUEST['page']) && in_array($_REQUEST['page'], array('wpsc-compare-settings'))){
+		add_action('admin_head', array('WPEC_Compare_Hook_Filter', 'wpeccp_admin_header_script'));
 		add_action('admin_footer', array('WPEC_Compare_Hook_Filter','wpeccp_admin_script'));
 	}
 	if (in_array(basename($_SERVER['PHP_SELF']), array('edit.php')) && isset($_REQUEST['page']) && in_array($_REQUEST['page'], array('wpsc-compare-settings')) && isset($_REQUEST['tab']) && in_array($_REQUEST['tab'], array('compare-products'))) {
 		add_action('admin_footer', array('WPEC_Compare_Products_Class', 'wpeccp_compare_products_script'));
 	}
-	if(version_compare(get_option('a3rev_wpeccp_free_version'), '1.0.1') === -1){
-		WPEC_Compare_Upgrade::upgrade_version_1_0_1();
-		update_option('a3rev_wpeccp_free_version', '1.0.1');
+	if(version_compare(get_option('a3rev_wpeccp_version'), '1.0.1') === -1){
+		WPEC_Compare_Functions::upgrade_version_1_0_1();
+		update_option('a3rev_wpeccp_version', '1.0.1');
 	}
-	if(version_compare(get_option('a3rev_wpeccp_free_version'), '2.0') === -1){
-		WPEC_Compare_Upgrade::upgrade_version_2_0();
-		update_option('a3rev_wpeccp_free_version', '2.0');
+	if(version_compare(get_option('a3rev_wpeccp_version'), '2.0') === -1){
+		WPEC_Compare_Functions::upgrade_version_2_0();
+		update_option('a3rev_wpeccp_version', '2.0');
 	}
-	if(version_compare(get_option('a3rev_wpeccp_free_version'), '2.0.3') === -1){
-		WPEC_Compare_Upgrade::upgrade_version_2_0_3();
-		update_option('a3rev_wpeccp_free_version', '2.0.3');
+	if(version_compare(get_option('a3rev_wpeccp_version'), '2.0.1') === -1){
+		WPEC_Compare_Functions::upgrade_version_2_0_1();
+		update_option('a3rev_wpeccp_version', '2.0.1');
 	}
-	update_option('a3rev_wpeccp_free_version', '2.0.5');
+	if(version_compare(get_option('a3rev_wpeccp_version'), '2.0.3') === -1){
+		WPEC_Compare_Functions::upgrade_version_2_0_3();
+		update_option('a3rev_wpeccp_version', '2.0.3');
+	}
+	
+	// Upgrade to 2.1.0
+	if(version_compare(get_option('a3rev_wpeccp_version'), '2.1.0') === -1){
+		WPEC_Compare_Functions::upgrade_version_2_1_0();
+		update_option('a3rev_wpeccp_version', '2.1.0');
+	}
+	
+	update_option('a3rev_wpeccp_version', '2.1.0');
 
-// Add text on right of Visit the plugin on Plugin manager page
-add_filter( 'plugin_row_meta', array('WPEC_Compare_Hook_Filter', 'plugin_extra_links'), 10, 2 );
 
 // Add Menu Comparable Settings in E Commerce Plugins
 function wpeccp_add_menu_item_e_commerce() {
@@ -149,20 +186,8 @@ function wpeccp_add_menu_item_e_commerce() {
 		update_option('a3rev_wpeccp_just_confirm', 0);
 	}
 	$products_page = 'edit.php?post_type=wpsc-product';
-	
-	//$compare_products_page = add_submenu_page( $products_page , __( 'Compare Products', 'wpec_cp' ), __( 'Compare Products', 'wpec_cp' ), 'manage_options', 'wpsc-compare-products', 'wpeccp_compare_products' );
-	//add_action('admin_print_scripts-' . $compare_products_page, array('WPEC_Compare_Products_Class','wpeccp_compare_products_script'));
-	
-	$comparable_settings_page = add_submenu_page( $products_page , __( 'Compare Products', 'wpec_cp' ), __( 'Compare Products', 'wpec_cp' ), 'manage_options', 'wpsc-compare-settings', 'wpeccp_dashboard' );
-}
-
-/**
- * Show right sidebar in dashboard page
- */
-function wpeccp_right_sidebar(){
-?>
-	
-<?php
+		
+	$comparable_settings_page = add_submenu_page( $products_page , __( 'Compare Settings', 'wpec_cp' ), __( 'Compare Comparison', 'wpec_cp' ), 'manage_options', 'wpsc-compare-settings', 'wpeccp_dashboard' );
 }
 
 /**
@@ -171,12 +196,7 @@ function wpeccp_right_sidebar(){
 function wpeccp_dashboard(){
 ?>
 	<style>
-		#compare_extensions { background: url("<?php echo ECCP_IMAGES_URL; ?>/logo_a3blue.png") no-repeat scroll 4px 6px #F1F1F1; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 10px 0 5px; padding: 4px 8px 4px 38px; position: relative; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 200px;
-		}
-		.compare_upgrade_area { border:2px solid #FF0;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; margin-top:10px; padding:10px; position:relative}
-		.upgrade_extensions { background: #FFFBCC; -webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px; border-radius: 4px 4px 4px 4px; color: #555555; float: right; margin: 0px; padding: 4px 8px 4px 8px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 480px; right:10px; top:10px; border:1px solid #E6DB55}
-		.products_tab_extension{position:relative; float:right;}
-		
+		.code, code { font-family: inherit; font-size:inherit; }
 		.form-table{margin:0;border-collapse:separate;}
 		.chzn-container{margin-right:2px;}
 		.field_title{width:205px; padding:0 8px 0 10px; float:left;}
@@ -184,7 +204,6 @@ function wpeccp_dashboard(){
 		.compare_set_1{width:46%; float:left; margin-right:5%; margin-bottom:15px;}
 		.compare_set_2{width:46%; float:left; margin-bottom:15px;}
 		.update_message{padding:10px; background-color:#FFFFCC;border:1px solid #DDDDDD;margin-bottom:15px;}
-		.wpeccp_read_more{text-decoration:underline; cursor:pointer; margin-left:40px; color:#06F;}
 		.ui-sortable-helper{}
 		.ui-state-highlight{background:#F6F6F6; height:24px; padding:8px 0 0; border:1px dotted #DDD; margin-bottom:20px;}
 		ul.compare_orders{float:left; margin:0; width:100%}
@@ -199,13 +218,18 @@ function wpeccp_dashboard(){
 		ul.compare_orders .c_field_type{width:120px; float:left;}
 		ul.compare_orders .c_field_manager{background:url(<?php echo ECCP_IMAGES_URL; ?>/icon_fields.png) no-repeat 0 0; width:16px; height:16px; display:inline-block;}
 		.tablenav-pages{float:right;}
-		.c_field_edit, .c_field_delete{cursor:pointer;}
 		.widefat th input {
 			vertical-align:middle;
 			padding:3px 8px;
 			margin:auto;
 		}
-
+		.widefat th, .widefat td {
+			overflow: inherit !important;	
+		}
+		.chzn-container-multi .chzn-choices {
+			min-height:100px;	
+		}
+		
 		ul.feature_compare_orders .compare_sort{margin-right:10px; float:none; width:auto;}
 		ul.feature_compare_orders .c_field_name{margin-right:10px;padding:5px 0 5px 20px; float:none; width:auto;}
 		ul.feature_compare_orders .c_field_action{float:right;}
@@ -215,21 +239,22 @@ function wpeccp_dashboard(){
 		.flexigrid div.sDiv .sDiv2 select{display:none;}
 		.flexigrid div.sDiv .cp_search, .flexigrid div.sDiv .cp_reset{cursor:pointer;}
 		.edit_product_compare{cursor:pointer; text-decoration:underline; color:#06F;}
-		.upgrade_message {color:#F00; font-size:16px;}
+		
+		.icon32-compare-product {
+			background:url(<?php echo ECCP_IMAGES_URL; ?>/a3-plugins.png) no-repeat left top !important;
+		}
+		.subsubsub { white-space:normal;}
+		.subsubsub li { white-space:nowrap;}
+		#wpec_compare_product_panel_container { position:relative; margin-top:10px;}
+		#wpec_compare_product_panel_fields {width:60%; float:left;}
+		#wpec_compare_product_upgrade_area { position:relative; margin-left: 60%; padding-left:10px;}
+		#wpec_compare_product_extensions { border:2px solid #E6DB55;-webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; color: #555555; margin: 0px; padding: 5px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); background:#FFFBCC; }
+		.pro_feature_fields { margin-right: -12px; position: relative; z-index: 10; border:2px solid #E6DB55;-webkit-border-radius:10px 0 0 10px;-moz-border-radius:10px 0 0 10px;-o-border-radius:10px 0 0 10px; border-radius: 10px 0 0 10px; border-right: 2px solid #FFFFFF; }
+		.pro_feature_fields h3, .pro_feature_fields p { margin-left:5px; }
 	</style>
     <script>
 		(function($){
 			$(function(){
-				$(".wpeccp_read_more").toggle(
-					function(){
-						$(this).html('Read Less');
-						$(this).siblings(".wpeccp_description_text").slideDown('slow');
-					},
-					function(){
-						$(this).html('Read More');
-						$(this).siblings(".wpeccp_description_text").slideUp('slow');
-					}
-				);
 				$("#field_type").change( function() {
 					var field_type = $(this).val();
 					if(field_type == 'checkbox' || field_type == 'radio' || field_type == 'drop-down' || field_type == 'multi-select'){
@@ -271,23 +296,23 @@ function wpeccp_dashboard(){
 		function alert_upgrade(text) {
 			var answer = confirm(text)
 			if (answer){
-				window.open("<?php echo A3REV_AUTHOR_URI; ?>", '_blank')
+				window.open("<?php echo ECCP_AUTHOR_URI; ?>", '_blank')
 			}else{
 				return false;
 			}
 		}
 	</script>
     <div class="wrap">
-    	<div class="icon32" id="icon-themes"><br></div><h2 class="nav-tab-wrapper">
+    	<div class="icon32 icon32-compare-product" id="icon32-compare-product"><br></div><h2 class="nav-tab-wrapper">
     <?php 
-		if(isset($_POST['wpeccp_pin_submit'])){
-			echo '<div id="message" class="updated fade"><p>'.get_option("a3rev_compare_message").'</p></div>';
-		}
 			$current_tab = (isset($_REQUEST['tab'])) ? $_REQUEST['tab'] : '';
 			$tabs = array(
 				'features' => __( 'Features', 'wpec_cp' ),
 				'compare-products' => __( 'Products', 'wpec_cp' ),
-				'settings' => __( 'Settings', 'wpec_cp' ),
+				'single-product' => __( 'Single Product', 'wpec_cp' ),
+				'widget-style' => __( 'Widget Style', 'wpec_cp' ),
+				'product-page-style' => __( 'Product Page Style', 'wpec_cp' ),
+				'comparison-page' => __( 'Comparison Page', 'wpec_cp' ),
 			);
 					
 			foreach ($tabs as $name => $label) :
@@ -299,20 +324,26 @@ function wpeccp_dashboard(){
 					
 		?>
 		</h2>
-        <div style="float:right; width:0%; margin-left:0%; margin-top:30px;">
-            <?php wpeccp_right_sidebar(); ?>
-        </div>
         <div style="width:100%; float:left;">
         <?php
-		//echo WPEC_Compare_Functions::compare_extension();
 		switch ($current_tab) :
-			case 'settings':
-				WPEC_Compare_Settings::wpec_compare_settings_display();
+			case 'single-product':
+				WPEC_Compare_Product_Page_Panel::panel_manager();
 				break;
 			case 'compare-products':
 				WPEC_Compare_Products_Class::wpeccp_products_manager();
 				break;
+			case 'widget-style':
+				WPEC_Compare_Widget_Style_Panel::panel_manager();
+				break;
+			case 'product-page-style':
+				WPEC_Compare_Grid_View_Panel::panel_manager();
+				break;
+			case 'comparison-page':
+				WPEC_Compare_Page_Panel::panel_manager();
+				break;
 			default :
+				echo '<div id="wpec_compare_product_panel_container"><div id="wpec_compare_product_panel_fields">';
 				echo WPEC_Compare_Fields_Class::init_features_actions();
 				echo WPEC_Compare_Categories_Class::init_categories_actions();
 				if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'add-new') {
@@ -328,35 +359,13 @@ function wpeccp_dashboard(){
 					WPEC_Compare_Fields_Class::features_search_area();
 					WPEC_Compare_Fields_Class::wpeccp_features_orders();
 				}
+				echo '</div><div id="wpec_compare_product_upgrade_area">'.WPEC_Compare_Functions::plugin_pro_notice().'</div></div>';
 				break;
 		endswitch;
 		?>
         </div>
-        <?php //if($current_tab == 'features') WPEC_Compare_Fields_Class::wpeccp_features_orders(); ?>
         <div style="clear:both; margin-bottom:20px;"></div>
     </div>
 <?php	
 }
-
-/**
- * Show Compare Products Manager page
- */
-function wpeccp_compare_products(){
-?>
-	<style type="text/css">
-	body .flexigrid div.sDiv{display:block;}
-	.flexigrid div.sDiv .sDiv2 select{display:none;}
-	.flexigrid div.sDiv .cp_search, .flexigrid div.sDiv .cp_reset{cursor:pointer;}
-	.edit_product_compare{cursor:pointer;}
-	</style>
-	<div class="wrap">
-        
-        <div style="">
-		<?php WPEC_Compare_Products_Class::wpeccp_products_manager(); ?>
-        </div>
-        <div style="clear:both; margin-bottom:20px;"></div>
-	</div>
-<?php
-}
-
 ?>

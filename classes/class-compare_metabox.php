@@ -12,13 +12,13 @@
  * save_compare_meta_boxes()
  */
 class WPEC_Compare_MetaBox{
-	function compare_meta_boxes(){
+	function compare_meta_boxes() {
 		global $post;
 		$pagename = 'wpsc-product';
 		add_meta_box( 'wpec_compare_feature_box', __('Compare Feature Fields', 'wpec_cp'), array('WPEC_Compare_MetaBox', 'wpec_compare_feature_box'), $pagename, 'normal', 'high' );
 	}
 	
-	function wpeccp_product_get_fields(){
+	function wpeccp_product_get_fields() {
 		check_ajax_referer( 'wpeccp-product-compare', 'security' );
 		$cat_id = $_REQUEST['cat_id'];
 		$post_id = $_REQUEST['post_id'];
@@ -28,7 +28,6 @@ class WPEC_Compare_MetaBox{
 	
 	function wpec_compare_feature_box() {
 		global $post;
-		$master_category_id = get_option('master_category_compare');
 		$wpeccp_product_compare = wp_create_nonce("wpeccp-product-compare");
 		$deactivate_compare_feature = get_post_meta( $post->ID, '_wpsc_deactivate_compare_feature', true );
 		$compare_category = get_post_meta( $post->ID, '_wpsc_compare_category', true );
@@ -36,48 +35,57 @@ class WPEC_Compare_MetaBox{
         <script type="text/javascript">
 		(function($){
 			$(function(){
+				$(document).on( 'click', '.deactivate_compare_feature', function(){
+					if ($(this).is(':checked')) {
+						$(this).siblings(".compare_feature_activate_form").show();
+					} else {
+						$(this).siblings(".compare_feature_activate_form").hide();
+					}
+				});
 				$("#compare_category").change(function(){
 					var cat_id = $(this).val();
 					var post_id = <?php echo $post->ID; ?>;
-					$(".compare_widget_loader").show();
+					$(".wpec_compare_widget_loader").show();
 					var data = {
                         action: 'wpeccp_product_get_fields',
                         cat_id: cat_id,
                         post_id: post_id,
                         security: '<?php echo $wpeccp_product_compare; ?>'
                     };
-                    $.post('<?php echo admin_url('admin-ajax.php'); ?>', data, function(response) {
-						$(".compare_widget_loader").hide();
+                    $.post('<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>', data, function(response) {
+						$(".wpec_compare_widget_loader").hide();
 						$("#compare_cat_fields").html(response);
 					});
 				});	
 			});	
 		})(jQuery);
 		</script>
-		<p><input id='deactivate_compare_feature' type='checkbox' value='no' <?php if ( $deactivate_compare_feature == 'no' ) echo 'checked="checked"'; else echo ''; ?> name='_wpsc_deactivate_compare_feature' />
-		<label for='deactivate_compare_feature' class='small'><?php _e( "Activate Compare Feature for this Product", 'wpec_cp' ); ?></label></p>
-        <p><label for='compare_category' class='small'><?php _e( "Select Compare Category for this Product", 'wpec_cp' ); ?></label> : 
-        	<select name="_wpsc_compare_category" id="compare_category" style="width:200px;">
-            	<option value="0"><?php _e('Select...', 'wpec_cp'); ?></option>
-        <?php
-			$compare_cats = WPEC_Compare_Categories_Data::get_results("id = '".$master_category_id."'", 'category_order ASC');
-			if(is_array($compare_cats) && count($compare_cats)>0){
-				foreach($compare_cats as $cat_data){
-					if($compare_category == $cat_data->id){
-						echo '<option selected="selected" value="'.$cat_data->id.'">'.stripslashes($cat_data->category_name).'</option>';	
-					}else{
-						echo '<option value="'.$cat_data->id.'">'.stripslashes($cat_data->category_name).'</option>';
-					}
-				}
-			}
-		?>
-            </select> <img class="compare_widget_loader" style="display:none;" src="<?php echo ECCP_IMAGES_URL; ?>/ajax-loader.gif" border=0 />
-        </p>
-        <div id="compare_cat_fields"><?php WPEC_Compare_MetaBox::wpec_show_field_of_cat($post->ID, $compare_category); ?></div>
+		<input id='deactivate_compare_feature' class="deactivate_compare_feature" type='checkbox' value='no' <?php if ( $deactivate_compare_feature == 'no' ) echo 'checked="checked"'; else echo ''; ?> name='_wpsc_deactivate_compare_feature' />
+		<label for='deactivate_compare_feature' class='small'><?php _e( "Activate Compare Feature for this Product", 'wpec_cp' ); ?></label>
+		<div class="compare_feature_activate_form" style=" <?php if ( $deactivate_compare_feature != 'no') { echo 'display:none;';} ?>">
+            <p><label for='compare_category' class='small'><?php _e( "Select Compare Category for this Product", 'wpec_cp' ); ?></label> : 
+                <select name="_wpsc_compare_category" id="compare_category" style="width:200px;">
+                    <option value="0"><?php _e('Select...', 'wpec_cp'); ?></option>
+            <?php
+                $compare_cats = WPEC_Compare_Categories_Data::get_results('', 'category_order ASC');
+                if (is_array($compare_cats) && count($compare_cats)>0) {
+                    foreach ($compare_cats as $cat_data) {
+                        if ($compare_category == $cat_data->id) {
+                            echo '<option selected="selected" value="'.$cat_data->id.'">'.stripslashes($cat_data->category_name).'</option>';	
+                        } else {
+                            echo '<option value="'.$cat_data->id.'">'.stripslashes($cat_data->category_name).'</option>';
+                        }
+                    }
+                }
+            ?>
+                </select> <img class="wpec_compare_widget_loader" style="display:none;" src="<?php echo ECCP_IMAGES_URL; ?>/ajax-loader.gif" border=0 />
+            </p>
+            <div id="compare_cat_fields"><?php WPEC_Compare_MetaBox::wpec_show_field_of_cat($post->ID, $compare_category); ?></div>
+        </div>
 <?php
 	}
 	
-	function wpec_show_field_of_cat($post_id=0, $cat_id=0){
+	function wpec_show_field_of_cat($post_id=0, $cat_id=0) {
 		if($cat_id > 0 && WPEC_Compare_Categories_Data::get_count("id='".$cat_id."'") > 0){
 ?>
 		<style>
@@ -87,9 +95,9 @@ class WPEC_Compare_MetaBox{
             <tbody>
         <?php
 		$compare_fields = WPEC_Compare_Categories_Fields_Data::get_results("cat_id='".$cat_id."'",'cf.field_order ASC');
-		if(is_array($compare_fields) && count($compare_fields)>0){
+		if (is_array($compare_fields) && count($compare_fields)>0) {
 			
-			foreach($compare_fields as $field_data){
+			foreach ($compare_fields as $field_data) {
 		?>
                 <tr class="form-field">
                     <th valign="top" scope="row"><label for="<?php echo $field_data->field_key; ?>"><strong><?php echo stripslashes($field_data->field_name) ; ?> : </strong> <?php if(trim($field_data->field_unit) != ''){ ?>(<?php echo trim(stripslashes($field_data->field_unit)); ?>)<?php } ?></label><br /><?php echo $field_data->field_description; ?></th>
@@ -104,14 +112,14 @@ class WPEC_Compare_MetaBox{
 						case "checkbox":
 							$default_value = nl2br($field_data->default_value);
 							$field_option = explode('<br />', $default_value);
-							if(is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
-							if(!is_array($field_value)) $field_value = array();
-							if(is_array($field_option) && count($field_option) > 0){
-								foreach($field_option as $option_value){
+							if (is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
+							if (!is_array($field_value)) $field_value = array();
+							if (is_array($field_option) && count($field_option) > 0) {
+								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
-									if(in_array($option_value, $field_value)){
+									if (in_array($option_value, $field_value)) {
 										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.htmlspecialchars($option_value).'" checked="checked" style="width:auto" />'.$option_value.' &nbsp;&nbsp;';
-									}else{
+									} else{
 										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.htmlspecialchars($option_value).'" style="width:auto" />'.$option_value.' &nbsp;&nbsp;';
 									}
 								}
@@ -121,12 +129,12 @@ class WPEC_Compare_MetaBox{
 						case "radio":
 							$default_value = nl2br($field_data->default_value);
 							$field_option = explode('<br />', $default_value);
-							if(is_array($field_option) && count($field_option) > 0){
-								foreach($field_option as $option_value){
+							if (is_array($field_option) && count($field_option) > 0) {
+								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
-									if($option_value == $field_value){
+									if ($option_value == $field_value) {
 										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.htmlspecialchars($option_value).'" checked="checked" style="width:auto" /> '.$option_value.' &nbsp;&nbsp;';
-									}else{
+									} else {
 										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.htmlspecialchars($option_value).'" style="width:auto" /> '.$option_value.' &nbsp;&nbsp;';
 									}
 								}
@@ -138,12 +146,12 @@ class WPEC_Compare_MetaBox{
 							$field_option = explode('<br />', $default_value);
 							echo '<select name="_wpsc_compare_'.$field_data->field_key.'" id="'.$field_data->field_key.'" style="width:400px">';
 								echo '<option value="">'.__( "Select value", 'wpec_cp' ).'</option>';
-							if(is_array($field_option) && count($field_option) > 0){
-								foreach($field_option as $option_value){
+							if (is_array($field_option) && count($field_option) > 0) {
+								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
-									if($option_value == $field_value){
+									if ($option_value == $field_value) {
 										echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
-									}else{
+									} else {
 										echo '<option value="'.htmlspecialchars($option_value).'">'.$option_value.'</option>';
 									}
 								}
@@ -154,15 +162,15 @@ class WPEC_Compare_MetaBox{
 						case "multi-select":
 							$default_value = nl2br($field_data->default_value);
 							$field_option = explode('<br />', $default_value);
-							if(is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
-							if(!is_array($field_value)) $field_value = array();
+							if (is_serialized($field_value)) $field_value = maybe_unserialize($field_value);
+							if (!is_array($field_value)) $field_value = array();
 							echo '<select multiple="multiple" name="_wpsc_compare_'.$field_data->field_key.'[]" id="'.$field_data->field_key.'" style="width:400px">';
-							if(is_array($field_option) && count($field_option) > 0){
-								foreach($field_option as $option_value){
+							if (is_array($field_option) && count($field_option) > 0) {
+								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
-									if(in_array($option_value, $field_value)){
+									if (in_array($option_value, $field_value)) {
 										echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
-									}else{
+									} else {
 										echo '<option value="'.htmlspecialchars($option_value).'">'.$option_value.'</option>';
 									}
 								}
@@ -191,14 +199,14 @@ class WPEC_Compare_MetaBox{
 		}
 	}
 	
-	function save_compare_meta_boxes($post_id){
+	function save_compare_meta_boxes($post_id) {
 		$post_status = get_post_status($post_id);
 		$post_type = get_post_type($post_id);
-		if($post_type == 'wpsc-product' && $post_status != false){
+		if ($post_type == 'wpsc-product' && $post_status != false) {
 			update_post_meta($post_id, '_wpsc_deactivate_compare_feature', 'yes');
-			if(isset($_REQUEST['_wpsc_deactivate_compare_feature']) && $_REQUEST['_wpsc_deactivate_compare_feature'] == 'no'){
+			if (isset($_REQUEST['_wpsc_deactivate_compare_feature']) && $_REQUEST['_wpsc_deactivate_compare_feature'] == 'no') {
 				update_post_meta($post_id, '_wpsc_deactivate_compare_feature', 'no');
-			}else{
+			} else {
 				update_post_meta($post_id, '_wpsc_deactivate_compare_feature', 'yes');
 			}
 			$compare_category = $_REQUEST['_wpsc_compare_category'];
@@ -208,8 +216,8 @@ class WPEC_Compare_MetaBox{
 			update_post_meta($post_id, '_wpsc_compare_category_name', $category_data->category_name);
 			
 			$compare_fields = WPEC_Compare_Categories_Fields_Data::get_results("cat_id='".$compare_category."'",'cf.field_order ASC');
-			if(is_array($compare_fields) && count($compare_fields)>0){
-				foreach($compare_fields as $field_data){
+			if (is_array($compare_fields) && count($compare_fields)>0) {
+				foreach ($compare_fields as $field_data) {
 					update_post_meta($post_id, '_wpsc_compare_'.$field_data->field_key, $_REQUEST['_wpsc_compare_'.$field_data->field_key]);
 				}
 			}

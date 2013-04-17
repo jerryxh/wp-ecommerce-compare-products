@@ -15,16 +15,43 @@ class WPEC_Compare_Categories_Class{
 		global $wpdb;
 		$cat_msg = '';
 		if(isset($_REQUEST['bt_save_cat'])){
+			$category_name = trim(strip_tags(addslashes($_REQUEST['category_name'])));
+			if(isset($_REQUEST['category_id']) && $_REQUEST['category_id'] > 0){
+				$old_data = WPEC_Compare_Categories_Data::get_row($_REQUEST['category_id']);
+				$count_category_name = WPEC_Compare_Categories_Data::get_count("category_name = '".$category_name."' AND id != '".$_REQUEST['category_id']."'");
+				if ($category_name != '' && $count_category_name == 0) {
+					$result = WPEC_Compare_Categories_Data::update_row($_REQUEST);
+					$wpdb->query('UPDATE '.$wpdb->prefix.'postmeta SET meta_value="'.$category_name.'" WHERE meta_value="'.$old_data->category_name.'" AND meta_key="_wpsc_compare_category_name" ');
+					$cat_msg = '<div class="updated below-h2" id="result_msg"><p>'.__('Compare Category Successfully edited', 'wpec_cp').'.</p></div>';
+				}else {
+					$cat_msg = '<div class="error below-h2" id="result_msg"><p>'.__('Nothing edited! You already have a Compare Category with that name. Use unique names to edit each Compare Category.', 'wpec_cp').'</p></div>';
+				}
+			}else{
+				$count_category_name = WPEC_Compare_Categories_Data::get_count("category_name = '".$category_name."'");
+				if ($category_name != '' && $count_category_name == 0) {
+					$category_id = WPEC_Compare_Categories_Data::insert_row($_REQUEST);
+					if ($category_id > 0) {
+						$cat_msg = '<div class="updated below-h2" id="result_msg"><p>'.__('Compare Category Successfully created', 'wpec_cp').'.</p></div>';
+					}else {
+						$cat_msg = '<div class="error below-h2" id="result_msg"><p>'.__('Compare Category Error created', 'wpec_cp').'.</p></div>';
+					}
+				}else {
+					$cat_msg = '<div class="error below-h2" id="result_msg"><p>'.__('Nothing created! You already have a Compare Category with that name. Use unique names to create each Compare Category.', 'wpec_cp').'</p></div>';
+				}
+			}
 		}
 		
 		if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-delete'){
+			$category_id = trim($_REQUEST['category_id']);
+			WPEC_Compare_Categories_Data::delete_row($category_id);
+			WPEC_Compare_Categories_Fields_Data::delete_row("cat_id='".$category_id."'");
+			$cat_msg = '<div class="updated below-h2" id="result_msg"><p>'.__('Compare Category deleted','wpec_cp').'.</p></div>';
 		}
 		return $cat_msg;
 	}
 	function wpec_compare_categories_manager(){
 		global $wpdb;	
 		?>
-        <div class="compare_upgrade_area"><?php echo WPEC_Compare_Functions::create_category_extension(); ?>
         <h3><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit'){ _e('Edit Compare Product Categories','wpec_cp'); }else{ _e('Add Compare Product Categories','wpec_cp'); } ?></h3>
         <p><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] != 'cat-edit'){ _e('Create Categories based on groups of products that share the same compare feature list.', 'wpec_cp'); } ?></p>
         <form action="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" method="post" name="form_add_compare" id="form_add_compare">
@@ -46,10 +73,9 @@ class WPEC_Compare_Categories_Class{
                 </tbody>
             </table>
             <p class="submit">
-	        	<input type="button" onclick="javascript:return alert_upgrade('<?php _e('Please upgrade to the Pro Version to activate Compare categories', 'wpec_cp') ; ?>');" name="bt_save_cat" id="bt_save_cat" class="button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') { _e('Save', 'wpec_cp'); }else { _e('Create', 'wpec_cp'); } ?>"  /> <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" style="text-decoration:none;"><input type="button" name="cancel" value="<?php _e('Cancel', 'wpec_cp'); ?>" class="button" /></a>
+	        	<input type="submit" name="bt_save_cat" id="bt_save_cat" class="button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') { _e('Save', 'wpec_cp'); }else { _e('Create', 'wpec_cp'); } ?>"  /> <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" style="text-decoration:none;"><input type="button" name="cancel" value="<?php _e('Cancel', 'wpec_cp'); ?>" class="button" /></a>
 	    	</p>
         </form>
-        </div>
 	<?php
 	}
 	

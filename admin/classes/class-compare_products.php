@@ -6,7 +6,6 @@
  * Table Of Contents
  *
  * wpeccp_get_products()
- * wpeccp_popup_features()
  * wpeccp_products_manager()
  * wpeccp_compare_products_script()
  */
@@ -95,7 +94,7 @@ class WPEC_Compare_Products_Class{
 					}
 				}
 				global $wpdb;
-				$sql = $wpdb->prepare( "SELECT tr.`object_id`
+				$sql = $wpdb->prepare( "SELECT DISTINCT tr.`object_id`
 						FROM `".$wpdb->term_relationships."` AS tr
 						LEFT JOIN `".$wpdb->posts."` AS posts
 						ON posts.`ID` = tr.`object_id`
@@ -128,102 +127,7 @@ class WPEC_Compare_Products_Class{
 		echo json_encode($jsonData);
 		die();
 	}
-	
-	function wpeccp_popup_features(){
-		check_ajax_referer( 'wpeccp-popup-features', 'security' );
-		$post_id = 0;
-		$paged = 1;
-		$rp = 10;
-		$sortname = 'title';
-		$sortorder = 'asc';
-		$cp_show_variations = 0;
-		$query = false;
-		$qtype = false;
-		$product_data = explode('|',$_REQUEST['product_data']);
-		if(is_array($product_data) && count($product_data) > 0){
-			$post_id = $product_data[0];
-			$paged = $product_data[1];
-			$rp = $product_data[2];
-			$sortname = $product_data[3];
-			$sortorder = $product_data[4];
-			$cp_show_variations = $product_data[5];
-			$qtype = $product_data[6];			
-		}
-		if(isset($_REQUEST['search_string']) && trim($_REQUEST['search_string']) != '') $query = trim($_REQUEST['search_string']);
 		
-		$wpeccp_product_compare = wp_create_nonce("wpeccp-product-compare");
-		$deactivate_compare_feature = get_post_meta( $post_id, '_wpsc_deactivate_compare_feature', true );
-		$compare_category = get_post_meta( $post_id, '_wpsc_compare_category', true );
-		?>
-        <style>
-		#compare_cat_fields table td input[type="text"], #compare_cat_fields table td textare, #compare_cat_fields table td select{ width:250px !important; }
-		</style>
-        <script type="text/javascript">
-		(function($){
-			$(function(){
-				$("#compare_category").change(function(){
-					var cat_id = $(this).val();
-					var post_id = <?php echo $post_id; ?>;
-					$(".compare_widget_loader").show();
-					var data = {
-                        action: 'wpeccp_product_get_fields',
-                        cat_id: cat_id,
-                        post_id: post_id,
-                        security: '<?php echo $wpeccp_product_compare; ?>'
-                    };
-                    $.post('<?php echo admin_url('admin-ajax.php'); ?>', data, function(response) {
-						$(".compare_widget_loader").hide();
-						$("#compare_cat_fields").html(response);
-					});
-				});	
-			});	
-		})(jQuery);
-		</script>
-		<div id="TB_iframeContent" style="position:relative;width:100%;">
-        <div style="padding:10px 25px;">
-        <form action="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=compare-products" method="post" name="form_product_features">
-        	<input type="hidden" name="paged" value="<?php echo $paged; ?>" />
-            <input type="hidden" name="rp" value="<?php echo $rp; ?>" />
-            <input type="hidden" name="sortname" value="<?php echo $sortname; ?>" />
-            <input type="hidden" name="sortorder" value="<?php echo $sortorder; ?>" />
-            <input type="hidden" name="cp_show_variations" value="<?php echo $cp_show_variations; ?>" />
-            <input type="hidden" name="qtype" value="<?php echo $qtype; ?>" />
-        	<input type="hidden" name="query" value="<?php echo $query; ?>" />
-        	<h3><?php echo get_the_title($post_id); ?></h3>
-            <input type="hidden" name="productid" value="<?php echo $post_id; ?>" />
-            <p><input id='deactivate_compare_feature' type='checkbox' value='no' <?php if ( $deactivate_compare_feature == 'no' ) echo 'checked="checked"'; else echo ''; ?> name='_wpsc_deactivate_compare_feature' style="float:none; width:auto; display:inline-block;" />
-            <label style="display:inline-block" for='deactivate_compare_feature' class='small'><?php _e( "Activate Compare Feature for this Product", 'wpec_cp' ); ?></label></p>
-            <label style="display:inline-block; float:left;" for='compare_category' class='small'><?php _e( "Select a  Compare Category for this Product", 'wpec_cp' ); ?> :</label>
-            <p style="margin:0; padding:0; margin-left:290px;"><select name="_wpsc_compare_category" id="compare_category" style="width:180px; margin-top:-2px;">
-                    <option value="0"><?php _e('Select...', 'wpec_cp'); ?></option>
-            <?php
-                $compare_cats = WPEC_Compare_Categories_Data::get_results("id = '".$master_category_id."'", 'category_order ASC');
-                if(is_array($compare_cats) && count($compare_cats)>0){
-                    foreach($compare_cats as $cat_data){
-                        if($compare_category == $cat_data->id){
-                            echo '<option selected="selected" value="'.$cat_data->id.'">'.stripslashes($cat_data->category_name).'</option>';	
-                        }else{
-                            echo '<option value="'.$cat_data->id.'">'.stripslashes($cat_data->category_name).'</option>';
-                        }
-                    }
-                }
-            ?>
-                </select> <img class="compare_widget_loader" style="display:none;" src="<?php echo ECCP_IMAGES_URL; ?>/ajax-loader.gif" border=0 />
-            </p>
-            <div style="clear:both; margin-bottom:10px;"></div>
-            <div id="compare_cat_fields" style=""><?php WPEC_Compare_MetaBox::wpec_show_field_of_cat($post_id, $compare_category); ?></div>
-            
-            <div style="text-align:left; display:inline-block; padding:10px 0 30px 0;">
-            	<input type="submit" name="bt_update_product_features" id="bt_update_product_features" class="button" value="<?php _e( "Update", 'wpec_cp' ); ?>" /> 
-                <a onclick="tb_remove(); return false;" href="#" style="color:#21759B; margin-left:10px;"><?php _e( "Cancel", 'wpec_cp' ); ?></a>
-            </div>
-        </form>
-        </div>
-        </div>
-		<?php        
-		die();
-	}
-	
 	function wpeccp_products_manager(){
 		$compare_product_message = '';
 		$paged = isset($_POST['paged']) ? $_POST['paged'] : 1;
@@ -254,19 +158,27 @@ class WPEC_Compare_Products_Class{
 					$compare_fields = WPEC_Compare_Categories_Fields_Data::get_results("cat_id='".$compare_category."'",'cf.field_order ASC');
 					if(is_array($compare_fields) && count($compare_fields)>0){
 						foreach($compare_fields as $field_data){
-							update_post_meta($post_id, '_wpsc_compare_'.$field_data->field_key, $_REQUEST['_wpsc_compare_'.$field_data->field_key]);
+							if ( isset($_REQUEST['_wpsc_compare_'.$field_data->field_key]) ) {
+								update_post_meta($post_id, '_wpsc_compare_'.$field_data->field_key, $_REQUEST['_wpsc_compare_'.$field_data->field_key]);
+							}
 						}
 					}
 				}
-				$compare_product_message = '<div class="updated " id="result_msg"><p>'.__('Compare Product Feature Fields updated successfully','wpec_cp').'.</p></div>';
+				$compare_product_message = '<div class="updated below-h2" id="result_msg"><p>'.__('Compare Product Feature Fields updated successfully','wpec_cp').'.</p></div>';
 			}
 		}
 ?>
-	<?php echo WPEC_Compare_Functions::products_tab_extension(); ?>
+<?php echo $compare_product_message; ?>
+<div id="wpec_compare_product_panel_container">
+<div id="wpec_compare_product_panel_fields">
+	<div class="pro_feature_fields" style="margin-top:15px; padding-left:5px; padding-bottom:10px;">
     <h3><?php _e('WPEC Compare Products Manager', 'wpec_cp'); ?></h3>
-    <?php echo $compare_product_message; ?>
-    <div style="clear:both; margin-bottom:40px;"></div>
+    <div style="clear:both; margin-bottom:20px;"></div>
     <table id="wpeccp_products_manager" style="display:none"></table>
+    </div>
+</div>
+<div id="wpec_compare_product_upgrade_area"><?php echo WPEC_Compare_Functions::plugin_pro_notice(); ?></div>
+</div>
     <?php 
 		$wpeccp_products_manager = wp_create_nonce("wpeccp-products-manager");
 		$wpeccp_popup_features = wp_create_nonce("wpeccp-popup-features");
@@ -275,17 +187,17 @@ class WPEC_Compare_Products_Class{
 	(function($){		
 		$(function(){
 			$("#wpeccp_products_manager").flexigrid({
-				url: '<?php echo admin_url("admin-ajax.php").'?action=wpeccp_get_products&security='.$wpeccp_products_manager; ?>',
+				url: '<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ).'?action=wpeccp_get_products&security='.$wpeccp_products_manager; ?>',
 				dataType: 'json',
 				width: 'auto',
 				resizable: false,
 				colModel : [
-					{display: '<?php _e( "No.", 'wpec_cp' ); ?>', name : 'number', width : 30, sortable : false, align: 'right'},
-					{display: '<?php _e( "Product Name", 'wpec_cp' ); ?>', name : 'title', width : 380, sortable : true, align: 'left'},
-					{display: '<?php _e( "Product Category", 'wpec_cp' ); ?>', name : 'cat', width : 160, sortable : false, align: 'left'},
-					{display: '<?php _e( "Compare Category", 'wpec_cp' ); ?>', name : '_wpsc_compare_category_name', width : 160, sortable : true, align: 'left'},
+					{display: '<?php _e( "No.", 'wpec_cp' ); ?>', name : 'number', width : 20, sortable : false, align: 'right'},
+					{display: '<?php _e( "Product Name", 'wpec_cp' ); ?>', name : 'title', width : 200, sortable : true, align: 'left'},
+					{display: '<?php _e( "Product Category", 'wpec_cp' ); ?>', name : 'cat', width : 110, sortable : false, align: 'left'},
+					{display: '<?php _e( "Compare Category", 'wpec_cp' ); ?>', name : '_wpsc_compare_category_name', width : 110, sortable : true, align: 'left'},
 					{display: '<?php _e( "Activated / Deactivated", 'wpec_cp' ) ;?>', name : '_wpsc_deactivate_compare_feature', width : 110, sortable : false, align: 'center'},
-					{display: '<?php _e( "Edit", 'wpec_cp' ); ?>', name : 'edit', width : 50, sortable : false, align: 'center'}
+					{display: '<?php _e( "Edit", 'wpec_cp' ); ?>', name : 'edit', width : 30, sortable : false, align: 'center'}
 					],
 				searchitems : [
 					{display: 'Product Name', name : 'title', isdefault: true}
@@ -309,7 +221,7 @@ class WPEC_Compare_Products_Class{
 				height: 'auto',
 				variations: '<?php echo $cp_show_variations; ?>'
 			});
-			$(".edit_product_compare").live("click", function(ev){
+			$(document).on("click", ".edit_product_compare", function(){
 				return alert_upgrade('<?php _e( 'Please upgrade to the Pro Version to activate Products express Compare feature manager', 'wpec_cp' ); ?>');
 			});
 		});		  
@@ -329,10 +241,7 @@ class WPEC_Compare_Products_Class{
 		// validate
 		wp_enqueue_script('wpeccp_flexigrid_script', ECCP_JS_URL . '/flexigrid/js/flexigrid'.$suffix.'.js');
 		wp_enqueue_style( 'wpeccp_flexigrid_style',ECCP_JS_URL . '/flexigrid/css/flexigrid'.$suffix.'.css' );
-		
-		//wp_enqueue_style('a3_lightbox_style', ECCP_JS_URL . '/lightbox/themes/default/jquery.lightbox.css');
-		//wp_enqueue_script('lightbox2_script', ECCP_JS_URL . '/lightbox/jquery.lightbox.js');
-		
+				
 		wp_enqueue_script('thickbox');
 		wp_enqueue_style('thickbox');
 	}

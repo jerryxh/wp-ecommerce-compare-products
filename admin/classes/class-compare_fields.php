@@ -11,7 +11,7 @@
  * wpeccp_update_orders()
  * features_search_area()
  */
-class WPEC_Compare_Fields_Class{	
+class WPEC_Compare_Fields_Class {	
 	public static $default_types = array(
 									'input-text' => array('name' => 'Input Text', 'description' => 'Use when option is single Line of Text'),
 									'text-area' => array('name' => 'Text Area', 'description' => 'When option is Multiple lines of Text'), 
@@ -23,7 +23,7 @@ class WPEC_Compare_Fields_Class{
 	
 	function init_features_actions() {
 		$result_msg = '';	
-		$master_category_id = get_option('master_category_compare');
+		
 		if(isset($_REQUEST['bt_save_field'])){
 			$field_name = trim(strip_tags(addslashes($_REQUEST['field_name'])));
 			if(isset($_REQUEST['field_id']) && $_REQUEST['field_id'] > 0){
@@ -32,18 +32,19 @@ class WPEC_Compare_Fields_Class{
 				if ($field_name != '' && $count_field_name == 0) {
 					$result = WPEC_Compare_Data::update_row($_REQUEST);
 					if(isset($_REQUEST['field_cats']) && count((array)$_REQUEST['field_cats']) > 0){
-						$cat_id = $master_category_id;
-						$check_existed = WPEC_Compare_Categories_Fields_Data::get_count("cat_id='".$cat_id."' AND field_id='".$field_id."'");
-						if($check_existed == 0){
-							WPEC_Compare_Categories_Fields_Data::insert_row($cat_id, $field_id);
+						foreach($_REQUEST['field_cats'] as $cat_id){
+							$check_existed = WPEC_Compare_Categories_Fields_Data::get_count("cat_id='".$cat_id."' AND field_id='".$field_id."'");
+							if($check_existed == 0){
+								WPEC_Compare_Categories_Fields_Data::insert_row($cat_id, $field_id);
+							}
 						}
-						WPEC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."' AND cat_id != '".$master_category_id."'");
+						WPEC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."' AND cat_id NOT IN(".implode(',', $_REQUEST['field_cats']).")");
 					}else{
 						WPEC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."'");
 					}
-					$result_msg = '<div class="updated" id="result_msg"><p>'.__('Compare Feature Successfully edited','wpec_cp').'.</p></div>';
+					$result_msg = '<div class="updated below-h2" id="result_msg"><p>'.__('Compare Feature Successfully edited','wpec_cp').'.</p></div>';
 				}else{
-					$result_msg = '<div class="error" id="result_msg"><p>'.__('That Compare Feature Name already exists. Please try again', 'wpec_cp').'.</p></div>';
+					$result_msg = '<div class="error below-h2" id="result_msg"><p>'.__('Nothing edited! You already have a Compare Feature with that name. Use the Features Search function to find it. Use unique names to edit each Compare Feature.', 'wpec_cp').'</p></div>';
 				}
 			}else{
 				$count_field_name = WPEC_Compare_Data::get_count("field_name = '".$field_name."'");
@@ -52,15 +53,16 @@ class WPEC_Compare_Fields_Class{
 					if($field_id > 0){
 						WPEC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."'");
 						if(isset($_REQUEST['field_cats']) && count((array)$_REQUEST['field_cats']) > 0){
-							$cat_id = $master_category_id;
-							WPEC_Compare_Categories_Fields_Data::insert_row($cat_id, $field_id);
+							foreach($_REQUEST['field_cats'] as $cat_id){
+								WPEC_Compare_Categories_Fields_Data::insert_row($cat_id, $field_id);
+							}
 						}
-						$result_msg = '<div class="updated " id="result_msg"><p>'.__('Compare Feature Successfully created','wpec_cp').'.</p></div>';
+						$result_msg = '<div class="updated below-h2" id="result_msg"><p>'.__('Compare Feature Successfully created','wpec_cp').'.</p></div>';
 					}else{
-						$result_msg = '<div class="error " id="result_msg"><p>'.__('Compare Feature Error created','wpec_cp').'.</p></div>';
+						$result_msg = '<div class="error below-h2" id="result_msg"><p>'.__('Compare Feature Error created','wpec_cp').'.</p></div>';
 					}
 				}else{
-					$result_msg = '<div class="error " id="result_msg"><p>'.__('That Compare Feature Name already exists. Please try again', 'wpec_cp').'.</p></div>';
+					$result_msg = '<div class="error below-h2" id="result_msg"><p>'.__('Nothing created! You already have a Compare Feature with that name. Use the Features Search function to find it. Use unique names to create each Compare Feature.', 'wpec_cp').'</p></div>';
 				}
 			}
 		}elseif(isset($_REQUEST['bt_delete'])){
@@ -70,9 +72,9 @@ class WPEC_Compare_Fields_Class{
 					WPEC_Compare_Data::delete_row($field_id);
 					WPEC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."'");
 				}
-				$result_msg = '<div class="updated " id="result_msg"><p>'.__('Compare Feature Successfully deleted','wpec_cp').'.</p></div>';
+				$result_msg = '<div class="updated below-h2" id="result_msg"><p>'.__('Compare Feature Successfully deleted','wpec_cp').'.</p></div>';
 			}else{
-				$result_msg = '<div class="updated " id="result_msg"><p>'.__('Please select Feature(s) to delete','wpec_cp').'.</p></div>';
+				$result_msg = '<div class="updated below-h2" id="result_msg"><p>'.__('Please select Feature(s) to delete','wpec_cp').'.</p></div>';
 			}
 		}
 		
@@ -80,20 +82,18 @@ class WPEC_Compare_Fields_Class{
 			$field_id = trim($_REQUEST['field_id']);
 			if(isset($_REQUEST['cat_id']) && $_REQUEST['cat_id'] > 0){
 				WPEC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."' AND cat_id='".$_REQUEST['cat_id']."'");
-				$result_msg = '<div class="updated " id="result_msg"><p>'.__('Compare Feature successfully removed','wpec_cp').'.</p></div>';
+				$result_msg = '<div class="updated below-h2" id="result_msg"><p>'.__('Compare Feature successfully removed','wpec_cp').'.</p></div>';
 			}else{
 				WPEC_Compare_Data::delete_row($field_id);
 				WPEC_Compare_Categories_Fields_Data::delete_row("field_id='".$field_id."'");
-				$result_msg = '<div class="updated " id="result_msg"><p>'.__('Compare Feature successfully deleted','wpec_cp').'.</p></div>';
+				$result_msg = '<div class="updated below-h2" id="result_msg"><p>'.__('Compare Feature successfully deleted','wpec_cp').'.</p></div>';
 			}
 		}
 		
 		return $result_msg;
 	}
-	function wpec_compare_manager(){
+	function wpec_compare_manager() {
 		global $wpdb;
-		$master_category_id = get_option('master_category_compare');
-		$master_category = 'Master Category';
 		?>
         <style>
 			#field_type_chzn{width:300px !important;}
@@ -124,7 +124,7 @@ class WPEC_Compare_Fields_Class{
                         	<div class="field_title"><label for="field_unit"><?php _e('Feature Unit of Measurement', 'wpec_cp'); ?></label></div> <input type="text" name="field_unit" id="field_unit" value="<?php if (!empty($field)) echo stripslashes($field->field_unit); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e("e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name.", 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
                             <div style="clear:both; height:20px"></div>
                             <div class="field_title"><label for="field_type"><?php _e('Feature Input Type', 'wpec_cp'); ?></label></div>
-                            <select style="min-width:300px;" name="field_type" id="field_type" class="chosen_select">
+                            <select style="min-width:300px;" name="field_type" id="field_type" class="chzn-select">
 								<?php
                                 foreach (WPEC_Compare_Fields_Class::$default_types as $type => $type_name) {
                                     if (!empty($field) && $type == $field->field_type) {
@@ -145,22 +145,30 @@ class WPEC_Compare_Fields_Class{
                             </div>
                             <div style="clear:both; height:20px"></div>
                             <div class="field_title"><label for="field_type"><?php _e('Assign Feature to Categories', 'wpec_cp'); ?></label></div>
-                            <div style="overflow:auto; width:290px; height:140px; float:left; padding:5px; margin:5px 3px 5px 0; border:1px solid #DDD;background:#FFF; clear:none;" class="widefat">
                             	<?php
-								echo '<input type="checkbox" name="field_cats[]" value="'.$master_category_id.'" checked="checked" /> '.$master_category.'<br />';
-								$all_cat = WPEC_Compare_Categories_Data::get_results("id != '".$master_category_id."'", 'category_order ASC');
+								$all_cat = WPEC_Compare_Categories_Data::get_results('', 'category_order ASC');
 								$cat_fields = WPEC_Compare_Categories_Fields_Data::get_catid_results($field_id);
 								if (is_array($all_cat) && count($all_cat) > 0) {
-									foreach ($all_cat as $cat) {
-										if (in_array($cat->id, (array)$cat_fields)) {
-											echo '<input type="checkbox" disabled="disabled" name="field_cats[]" value="'.$cat->id.'" checked="checked" /> '.stripslashes($cat->category_name).'<br />';
-										}else {
-											echo '<input type="checkbox" disabled="disabled" name="field_cats[]" value="'.$cat->id.'" /> '.stripslashes($cat->category_name).'<br />';
-										}
+								?>
+                                <select multiple="multiple" name="field_cats[]" data-placeholder="<?php _e('Select Compare Categories', 'wpec_cp'); ?>" style="width:300px; height:80px;" class="chzn-select">
+                                <?php
+								foreach ($all_cat as $cat) {
+									if (in_array($cat->id, (array)$cat_fields)) {
+								?>
+                                	<option value="<?php echo $cat->id; ?>" selected="selected"><?php echo stripslashes($cat->category_name); ?></option>
+                                <?php
+									}else {
+								?>
+                                	<option value="<?php echo $cat->id; ?>"><?php echo stripslashes($cat->category_name); ?></option>
+                                <?php	
 									}
 								}
 								?>
-                            </div> <img class="help_tip" tip='<?php _e("Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories.", 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
+                                </select>
+								<?php
+								}
+								?>
+                            <img class="help_tip" style="vertical-align:top;" tip='<?php _e("Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories.", 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
 
                             <div style="clear:both"></div>
                     	</td>
@@ -175,112 +183,13 @@ class WPEC_Compare_Fields_Class{
         <?php
 	}
 	
-	function wpeccp_features_orders(){   
-		$compare_cats = WPEC_Compare_Categories_Data::get_results('', 'category_order ASC');
-		if (is_array($compare_cats) && count($compare_cats)>0) {
-?>
-		<style type="text/css">
-	   	#a3rev_plugins_notice { background:#FFFBCC; border:2px solid #E6DB55; -webkit-border-radius:10px;-moz-border-radius:10px;-o-border-radius:10px; border-radius: 10px; color: #555555; float: right; margin: 0px; padding: 0px 15px; position: absolute; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); width: 420px; right:0px; top:0px;}
-        </style>
-        <h3><?php _e('Manage Compare Categories and Features', 'wpec_cp'); ?></h3>
-        <p><?php _e('Use drag and drop to change Category order and Feature order within Categories.', 'wpec_cp') ?></p>
-        <div class="updated below-h2 update_feature_order_message" style="display:none"><p></p></div>
-        <div style="clear:both"></div>
-        <ul style="margin:0; padding:0;" class="sorttable">
-        <?php
-			$number_cat = 0;
-			foreach ($compare_cats as $cat) {
-				$number_cat++;
-				$compare_fields = WPEC_Compare_Categories_Fields_Data::get_results("cat_id='".$cat->id."'", 'cf.field_order ASC');
-?>
-		<?php if ($number_cat == 2) { ?><div class="compare_upgrade_area"><?php echo WPEC_Compare_Functions::other_plugins_notice(); } ?>
-        <li id="recordsArray_<?php echo $cat->id; ?>">
-          <input type="hidden" name="compare_orders_<?php echo $cat->id; ?>" class="compare_category_id" value="<?php echo $cat->id; ?>"  />
-  		  <table cellspacing="0" class="widefat post fixed sorttable" id="compare_orders_<?php echo $cat->id; ?>" style="width:535px; margin-bottom:20px;">
-            <thead>
-            <tr>
-              <th width="30" style="white-space: nowrap;"><span class="c_field_name">&nbsp;</span></th>
-              <th><strong><?php echo stripslashes($cat->category_name) ;?></strong> :</th>
-              <th width="90"></th>
-              <th width="100" style="text-align:right; font-size:12px;white-space: nowrap;"><a onclick="javascript:return alert_upgrade('<?php _e('Please upgrade to the Pro Version to activate Compare categories', 'wpec_cp') ; ?>');" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>"><?php _e('Edit', 'wpec_cp') ?></a> | <a onclick="javascript:return alert_upgrade('<?php _e('Please upgrade to the Pro Version to activate Compare categories', 'wpec_cp') ; ?>');" title="<?php _e('Delete', 'wpec_cp') ?>" class="c_field_delete"><?php _e('Delete', 'wpec_cp') ?></a><?php if (is_array($compare_fields) && count($compare_fields)>0) { ?> | <span class="c_openclose_table c_close_table" id="expand_<?php echo $cat->id; ?>">&nbsp;</span><?php }else {?> | <span class="c_openclose_none">&nbsp;</span><?php }?></th>
-            </tr>
-            </thead>
-            <tbody class="expand_<?php echo $cat->id; ?>">
-               	<?php
-				if (is_array($compare_fields) && count($compare_fields)>0) {
-					$i= 0;
-					foreach ($compare_fields as $field_data) {
-						$i++;
-?>
-                <tr id="recordsArray_<?php echo $field_data->id; ?>" style="display:none"">
-                	<td><span class="compare_sort"><?php echo $i; ?></span>.</td>
-                    <td><div class="c_field_name"><?php echo stripslashes($field_data->field_name); ?></div></td>
-                    <td align="right"><?php echo WPEC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
-                    <td align="right"><a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>" ><?php _e('Edit', 'wpec_cp') ?></a> | <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>&cat_id=<?php echo $cat->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to remove', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?> <?php _e('from', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');" title="<?php _e('Remove', 'wpec_cp') ?>" ><?php _e('Remove', 'wpec_cp') ?></a></td>
-                </tr>
-                <?php
-					}
-				}else {
-					echo '<tr><td colspan="4">'.__('You have not assigned any Features to this category yet. No Hurry!', 'wpec_cp').'</td></tr>';
-				}
-?>
-            </tbody>
-          </table>
-        </li>
-        <?php if ($number_cat == count($compare_cats) && $number_cat >= 2) { ?></div><?php } ?>
-        <?php
-			}
-?>
-        </ul>
-        		<?php wp_enqueue_script('jquery-ui-sortable'); ?>
-                <?php $wpeccp_update_order = wp_create_nonce("wpeccp-update-order"); ?>
-                <?php $wpeccp_update_cat_order = wp_create_nonce("wpeccp-update-cat-order"); ?>
-                <script type="text/javascript">
-					(function($){
-						$(function(){
-							$(".c_openclose_table").toggle(function(){
-								$(this).removeClass("c_close_table");
-								$(this).addClass("c_open_table");
-								$("tbody."+$(this).attr('id')+" tr").css('display', '');
-							}, function(){
-								$(this).removeClass("c_open_table");
-								$(this).addClass("c_close_table");
-								$("tbody."+$(this).attr('id')+" tr").css('display', 'none');
-							});
-
-							var fixHelper = function(e, ui) {
-								ui.children().each(function() {
-									$(this).width($(this).width());
-								});
-								return ui;
-							};
-
-							$(".sorttable tbody").sortable({ helper: fixHelper, placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
-								var cat_id = $(this).parent('table').siblings(".compare_category_id").val();
-								var order = $(this).sortable("serialize") + '&action=wpeccp_update_orders&security=<?php echo $wpeccp_update_order; ?>&cat_id='+cat_id;
-								$.post("<?php echo admin_url('admin-ajax.php'); ?>", order, function(theResponse){
-									$(".update_feature_order_message p").html(theResponse);
-									$(".update_feature_order_message").show();
-									$("#compare_orders_"+cat_id).find(".compare_sort").each(function(index){
-										$(this).html(index+1);
-									});
-								});
-							}
-							});
-						});
-					})(jQuery);
-				</script>
-        <?php
-		}
-?>
-        <?php
+	function wpeccp_features_orders() {
 		$unavaliable_fields = WPEC_Compare_Categories_Fields_Data::get_unavaliable_field_results('field_name ASC');
 		if (is_array($unavaliable_fields) && count($unavaliable_fields) > 0) {
 			$un_i = 0;
 ?>
-
         <h3 id="#un_assigned"><?php _e('Un-Assigned Features (Assign to a Category to activate)', 'wpec_cp'); ?></h3>
-        <form action="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" method="post" name="form_delete_fields" id="form_delete_fields">
+        <form action="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" method="post" name="form_delete_fields" id="form_delete_fields" style="margin-bottom:30px;">
         	<table cellspacing="0" class="widefat post fixed" style="width:535px;">
             	<thead>
                 	<tr>
@@ -310,6 +219,107 @@ class WPEC_Compare_Fields_Class{
         </form>
         <?php
 		}
+		  
+		$compare_cats = WPEC_Compare_Categories_Data::get_results('', 'category_order ASC');
+		if (is_array($compare_cats) && count($compare_cats)>0) {
+?>
+        <h3><?php _e('Manage Compare Categories and Features', 'wpec_cp'); ?></h3>
+        <p><?php _e('Use drag and drop to change Category order and Feature order within Categories.', 'wpec_cp') ?></p>
+        <div class="updated below-h2 update_feature_order_message" style="display:none"><p></p></div>
+        <div style="clear:both"></div>
+        <ul style="margin:0; padding:0;" class="sorttable">
+        <?php
+			foreach ($compare_cats as $cat) {
+				$compare_fields = WPEC_Compare_Categories_Fields_Data::get_results("cat_id='".$cat->id."'", 'cf.field_order ASC');
+?>
+        <li id="recordsArray_<?php echo $cat->id; ?>">
+          <input type="hidden" name="compare_orders_<?php echo $cat->id; ?>" class="compare_category_id" value="<?php echo $cat->id; ?>"  />
+  		  <table cellspacing="0" class="widefat post fixed sorttable" id="compare_orders_<?php echo $cat->id; ?>" style="width:535px; margin-bottom:20px;">
+            <thead>
+            <tr>
+              <th width="30" style="white-space: nowrap;"><span class="c_field_name">&nbsp;</span></th>
+              <th><strong><?php echo stripslashes($cat->category_name) ;?></strong> :</th>
+              <th width="90"></th>
+              <th width="100" style="text-align:right; font-size:12px;white-space: nowrap;"><a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=cat-edit&category_id=<?php echo $cat->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>"><?php _e('Edit', 'wpec_cp') ?></a> | <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=cat-delete&category_id=<?php echo $cat->id; ?>" title="<?php _e('Delete', 'wpec_cp') ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');"><?php _e('Delete', 'wpec_cp') ?></a><?php if (is_array($compare_fields) && count($compare_fields)>0) { ?> | <span class="c_openclose_table c_close_table" id="expand_<?php echo $cat->id; ?>">&nbsp;</span><?php }else {?> | <span class="c_openclose_none">&nbsp;</span><?php }?></th>
+            </tr>
+            </thead>
+            <tbody class="expand_<?php echo $cat->id; ?>">
+               	<?php
+				if (is_array($compare_fields) && count($compare_fields)>0) {
+					$i= 0;
+					foreach ($compare_fields as $field_data) {
+						$i++;
+?>
+                <tr id="recordsArray_<?php echo $field_data->id; ?>" style="display:none">
+                	<td><span class="compare_sort"><?php echo $i; ?></span>.</td>
+                    <td><div class="c_field_name"><?php echo stripslashes($field_data->field_name); ?></div></td>
+                    <td align="right"><?php echo WPEC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
+                    <td align="right"><a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>" ><?php _e('Edit', 'wpec_cp') ?></a> | <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>&cat_id=<?php echo $cat->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to remove', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?> <?php _e('from', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');" title="<?php _e('Remove', 'wpec_cp') ?>" ><?php _e('Remove', 'wpec_cp') ?></a></td>
+                </tr>
+                <?php
+					}
+				}else {
+					echo '<tr><td colspan="4">'.__('You have not assigned any Features to this category yet. No Hurry!', 'wpec_cp').'</td></tr>';
+				}
+?>
+            </tbody>
+          </table>
+        </li>
+        <?php
+			}
+?>
+        </ul>
+        		<?php wp_enqueue_script('jquery-ui-sortable'); ?>
+                <?php $wpeccp_update_order = wp_create_nonce("wpeccp-update-order"); ?>
+                <?php $wpeccp_update_cat_order = wp_create_nonce("wpeccp-update-cat-order"); ?>
+                <script type="text/javascript">
+					(function($){
+						$(function(){
+							$(".c_openclose_table").click( function() {
+								if ( $(this).hasClass('c_close_table') ) {
+									$(this).removeClass("c_close_table");
+									$(this).addClass("c_open_table");
+									$("tbody."+$(this).attr('id')+" tr").css('display', '');
+								} else {
+									$(this).removeClass("c_open_table");
+									$(this).addClass("c_close_table");
+									$("tbody."+$(this).attr('id')+" tr").css('display', 'none');
+								}
+							});
+
+							var fixHelper = function(e, ui) {
+								ui.children().each(function() {
+									$(this).width($(this).width());
+								});
+								return ui;
+							};
+
+							$(".sorttable tbody").sortable({ helper: fixHelper, placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
+								var cat_id = $(this).parent('table').siblings(".compare_category_id").val();
+								var order = $(this).sortable("serialize") + '&action=wpeccp_update_orders&security=<?php echo $wpeccp_update_order; ?>&cat_id='+cat_id;
+								$.post("<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>", order, function(theResponse){
+									$(".update_feature_order_message p").html(theResponse);
+									$(".update_feature_order_message").show();
+									$("#compare_orders_"+cat_id).find(".compare_sort").each(function(index){
+										$(this).html(index+1);
+									});
+								});
+							}
+							});
+
+							$("ul.sorttable").sortable({ placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
+								var order = $(this).sortable("serialize") + '&action=wpeccp_update_cat_orders&security=<?php echo $wpeccp_update_cat_order; ?>';
+								$.post("<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>", order, function(theResponse){
+									$(".update_feature_order_message p").html(theResponse).show();
+									$(".update_feature_order_message").show();
+								});
+							}
+							});
+						});
+					})(jQuery);
+				</script>
+        <?php
+		}
 	}
 	
 	function wpeccp_update_orders(){
@@ -328,6 +338,7 @@ class WPEC_Compare_Fields_Class{
 	}
 	
 	function features_search_area() {
+		global $wpdb;
 	?>
     	<div id="icon-post" class="icon32 icon32-posts-post"><br></div>
         <h2><?php _e('Categories & Features', 'wpec_cp'); ?> <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=add-new" class="add-new-h2"><?php _e('Add New', 'wpec_cp'); ?></a></h2>
@@ -361,7 +372,11 @@ class WPEC_Compare_Fields_Class{
 			
 			$link = WPEC_Compare_Functions::modify_url(array('pp' => '', 'rows' => $rows, 's_feature' => $keyword ) );
 			
-			$where = "LOWER(field_name) LIKE '%".trim($_REQUEST['s_feature'])."%'";
+			$character = 'latin1';
+			if ( $wpdb->has_cap( 'collation' ) ) 
+				if( ! empty($wpdb->charset ) ) $character = "$wpdb->charset";
+			
+			$where = "LOWER( CONVERT( field_name USING ".$character.") ) LIKE '%".strtolower(trim($_REQUEST['s_feature']))."%'";
 			
 			$total = WPEC_Compare_Data::get_count($where);
 			if ($end > $total) $end = $total;

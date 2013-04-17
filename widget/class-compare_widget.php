@@ -23,6 +23,9 @@ class WPEC_Compare_Widget extends WP_Widget{
 
 	}
 	function widget($args, $instance) {
+		global $wpec_compare_widget_style, $wpec_compare_widget_title_style;
+		extract($wpec_compare_widget_style);
+		extract($wpec_compare_widget_title_style);
 		extract($args, EXTR_SKIP);
 		$compare_list = WPEC_Compare_Functions::get_compare_list();
 		$total_compare_product = 0;
@@ -30,13 +33,14 @@ class WPEC_Compare_Widget extends WP_Widget{
     	$title = empty($instance['title']) ? '' : apply_filters('widget_title', $instance['title']);
 
 		echo $before_widget;
+		
 		if ( $title != '')
-			echo $before_title . $title . ' <span id="total_compare_product">('.$total_compare_product.')</span>' . $after_title;
+			echo $before_title . $title . ' <span class="total_compare_product_container">'.$before_total_text.'<span id="total_compare_product">'.$total_compare_product.'</span>'.$after_total_text.'</span>' . $after_title;
 		else
-			echo $before_title . __( 'Compare Products', 'wpec_cp' ).' <span id="total_compare_product">('.$total_compare_product.')</span>' . $after_title;
+			echo $before_title . __( 'Compare Products', 'wpec_cp' ).' <span class="total_compare_product_container">'.$before_total_text.'<span id="total_compare_product">'.$total_compare_product.'</span>'.$after_total_text.'</span>' . $after_title;
 		
 		
-		echo '<div class="compare_widget_container">'.WPEC_Compare_Functions::get_compare_list_html_widget().'</div><div class="compare_widget_loader" style="display:none; text-align:center"><img src="'.ECCP_IMAGES_URL.'/ajax-loader.gif" border=0 /></div>';
+		echo '<div class="wpec_compare_widget_container">'.WPEC_Compare_Functions::get_compare_list_html_widget().'</div><div class="wpec_compare_widget_loader" style="display:none; text-align:center"><img src="'.ECCP_IMAGES_URL.'/ajax-loader.gif" border=0 /></div>';
 		
 		echo $after_widget;
 	
