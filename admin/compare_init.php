@@ -187,7 +187,7 @@ function wpeccp_add_menu_item_e_commerce() {
 	}
 	$products_page = 'edit.php?post_type=wpsc-product';
 		
-	$comparable_settings_page = add_submenu_page( $products_page , __( 'Compare Settings', 'wpec_cp' ), __( 'Compare Comparison', 'wpec_cp' ), 'manage_options', 'wpsc-compare-settings', 'wpeccp_dashboard' );
+	$comparable_settings_page = add_submenu_page( $products_page , __( 'Compare Settings', 'wpec_cp' ), __( 'Compare Products', 'wpec_cp' ), 'manage_options', 'wpsc-compare-settings', 'wpeccp_dashboard' );
 }
 
 /**
