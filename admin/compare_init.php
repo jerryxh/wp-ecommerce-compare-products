@@ -4,7 +4,7 @@
  * Call this function when plugin is activated
  */
 function wpec_compare_install(){
-	update_option('a3rev_wpeccp_version', '2.1.0');
+	update_option('a3rev_wpeccp_version', '2.1.1');
 	$product_compare_id = WPEC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'wpec_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 	
@@ -175,7 +175,7 @@ add_filter( 'plugin_row_meta', array('WPEC_Compare_Hook_Filter', 'plugin_extra_l
 		update_option('a3rev_wpeccp_version', '2.1.0');
 	}
 	
-	update_option('a3rev_wpeccp_version', '2.1.0');
+	update_option('a3rev_wpeccp_version', '2.1.1');
 
 
 // Add Menu Comparable Settings in E Commerce Plugins
