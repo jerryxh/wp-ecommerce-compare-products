@@ -123,7 +123,7 @@ You can use this plugin when you have installed the WP e-Commerce plugin
 == Changelog ==
 
 = 2.1.1 - 2013/04/23 =
-* Fixed: Text colour pickers not saving and displaying the hex number and hex colour in Font Colour, Font Link Colour and Font Hover colour selectors after editing and updating. The bug affected all font colour setting that use theme colours on install. These are the settings show an empty colour selector field on install.
+* Fixed: Text colour pickers not saving and displaying the hex number and hex colour in Font Colour, Font Link Colour and Font Hover colour selectors after editing and updating. The bug affected all font colour setting that use theme colours on install. These are the settings show an empty colour selector field on install
 
 = 2.1.0 - 2013/04/17 =
 * Feature: Removed Compare pop-up fly out powered by Fancybox and Lightbox tools and replaced with Product Comparisons opening in a new browser window. Using the new WordPress PrettyPhoto tool (as of v3.5) as the pop-up tool in testing we found supporting 3 pop-up scripts, PrettyPhoto, Fancybox and Lightbox was very buggy and troublesome. So we have removed all 3 pop-up scripts and replaced with open in browser window. The result is around 4,000 less lines of code in the plugin and a beautifully robust comparison result presentation.
