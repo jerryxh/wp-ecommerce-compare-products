@@ -67,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		?>
         <script type="text/javascript">
 			jQuery(document).ready(function($) {
-						var ajax_url = "<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) );?>";
+						var ajax_url = "<?php echo admin_url( 'admin-ajax.php', 'relative' );?>";
 						$(document).on("click", "#wpec_compare_print", function(){
 							$(".compare_print_container").printElement({
 								printBodyOptions:{

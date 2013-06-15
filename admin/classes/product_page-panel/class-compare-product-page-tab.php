@@ -57,7 +57,7 @@ class WPEC_Compare_Product_Page_Tab{
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$wpec_compare_product_page_tab = $_REQUEST['wpec_compare_product_page_tab'];
 			
-			if ( !isset($wpec_compare_product_page_tab['disable_compare_featured_tab']) ) $wpec_compare_product_page_tab['disable_compare_featured_tab'] = 0;
+			if ( !isset($wpec_compare_product_page_tab['disable_compare_featured_tab']) ) $wpec_compare_product_page_tab['disable_compare_featured_tab'] = 1;
 						
 			update_option('wpec_compare_product_page_tab', $wpec_compare_product_page_tab);
 		}elseif (isset($_REQUEST['bt_reset_settings'])) {
@@ -77,7 +77,7 @@ class WPEC_Compare_Product_Page_Tab{
 			<tbody>
             	<tr valign="top">
 					<th class="titledesc" scope="rpw"><label for="disable_compare_featured_tab"><?php _e('Compare Features Fields', 'wpec_cp'); ?></label></th>
-                    <td class="forminp"><label><input type="checkbox" name="wpec_compare_product_page_tab[disable_compare_featured_tab]" id="disable_compare_featured_tab" value="1" <?php if ( $disable_compare_featured_tab == 1) { echo 'checked="checked"';} ?> /> <?php _e('Check to activate the Compare features fields on Single Product pages.', 'wpec_cp'); ?></label></td>
+                    <td class="forminp"><label><input type="checkbox" name="wpec_compare_product_page_tab[disable_compare_featured_tab]" id="disable_compare_featured_tab" value="0" <?php checked ( $disable_compare_featured_tab, 0); ?> /> <?php _e('Check to activate the Compare features fields on Single Product pages.', 'wpec_cp'); ?></label></td>
                 </tr>
             </tbody>
         </table>

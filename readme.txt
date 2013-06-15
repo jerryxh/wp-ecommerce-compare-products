@@ -4,7 +4,7 @@ Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compar
 
 Requires at least: 2.92
 Tested up to: 3.5.1
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -121,6 +121,10 @@ You can use this plugin when you have installed the WP e-Commerce plugin
 
 
 == Changelog ==
+
+= 2.1.2 - 2013/06/15 =
+* Fix: Compare Features Tab on Product Page, Enable / Disable function. The 2 functions worked but the opposite of what they where supposed to. 
+* Tweak: Updated support URL link to the plugins wordpress.org support forum.
 
 = 2.1.1 - 2013/04/23 =
 * Fixed: Text colour pickers not saving and displaying the hex number and hex colour in Font Colour, Font Link Colour and Font Hover colour selectors after editing and updating. The bug affected all font colour setting that use theme colours on install. These are the settings show an empty colour selector field on install
@@ -266,6 +270,9 @@ MAJOR UPGRADE
 
 
 == Upgrade Notice ==
+
+= 2.1.2 =
+Bug fix for show Compare Features Tab on Product Page
 
 = 2.1.1 =
 Install this update now to fix a bug that is causing your text font colour selections to not be saved when update button is clicked.

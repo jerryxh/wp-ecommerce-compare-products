@@ -52,7 +52,7 @@ class WPEC_Compare_MetaBox{
                         post_id: post_id,
                         security: '<?php echo $wpeccp_product_compare; ?>'
                     };
-                    $.post('<?php echo ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) ) ); ?>', data, function(response) {
+                    $.post('<?php echo admin_url( 'admin-ajax.php', 'relative' );?>', data, function(response) {
 						$(".wpec_compare_widget_loader").hide();
 						$("#compare_cat_fields").html(response);
 					});
