@@ -3,8 +3,8 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compare products, wp ecommerce compare products, e-commerce, ecommerce
 
 Requires at least: 2.92
-Tested up to: 3.5.1
-Stable tag: 2.1.2
+Tested up to: 3.6
+Stable tag: 2.1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -121,6 +121,14 @@ You can use this plugin when you have installed the WP e-Commerce plugin
 
 
 == Changelog ==
+
+= 2.1.3 - 2013/08/20 =
+* Tweaks :
+	* Tested for full compatibility with WordPress v3.6.0
+	* Added PHP Public Static to functions in Class. Done so that Public Static warnings don't show in WP__DEBUG mode.
+	* Tweaked dashboard Yellow sidebar info and added link to the Pro Version 7 day FREE trail offer.
+* Fixes :
+	* Product Page button position over-riding Grid View button position settings. Changed 'product_page_button_position' to 'grid_view_button_position'
 
 = 2.1.2 - 2013/06/15 =
 * Fix: Compare Features Tab on Product Page, Enable / Disable function. The 2 functions worked but the opposite of what they where supposed to. 
@@ -270,6 +278,9 @@ MAJOR UPGRADE
 
 
 == Upgrade Notice ==
+
+= 2.1.3 =
+Upgrade your plugin now for 1 bug fix and full compatibility with WordPress 3.6.0
 
 = 2.1.2 =
 Bug fix for show Compare Features Tab on Product Page
