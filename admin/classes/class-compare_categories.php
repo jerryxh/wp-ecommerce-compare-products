@@ -9,9 +9,10 @@
  * wpec_compare_categories_manager()
  * wpeccp_update_cat_orders()
  */
-class WPEC_Compare_Categories_Class{
+class WPEC_Compare_Categories_Class
+{
 	
-	function init_categories_actions() {
+	public static function init_categories_actions() {
 		global $wpdb;
 		$cat_msg = '';
 		if(isset($_REQUEST['bt_save_cat'])){
@@ -49,7 +50,7 @@ class WPEC_Compare_Categories_Class{
 		}
 		return $cat_msg;
 	}
-	function wpec_compare_categories_manager(){
+	public static function wpec_compare_categories_manager(){
 		global $wpdb;	
 		?>
         <h3><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit'){ _e('Edit Compare Product Categories','wpec_cp'); }else{ _e('Add Compare Product Categories','wpec_cp'); } ?></h3>
@@ -79,7 +80,7 @@ class WPEC_Compare_Categories_Class{
 	<?php
 	}
 	
-	function wpeccp_update_cat_orders(){
+	public static function wpeccp_update_cat_orders(){
 		check_ajax_referer( 'wpeccp-update-cat-order', 'security' );
 		$updateRecordsArray 	= $_REQUEST['recordsArray'];
 		

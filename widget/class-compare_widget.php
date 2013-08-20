@@ -15,7 +15,8 @@ add_action( 'widgets_init', create_function('', 'return register_widget("WPEC_Co
  * update()
  * form()
  */
-class WPEC_Compare_Widget extends WP_Widget{
+class WPEC_Compare_Widget extends WP_Widget
+{
 
 	function WPEC_Compare_Widget() {
 		$widget_ops = array('classname' => 'wpec_compare_widget');
@@ -74,8 +75,9 @@ class WPEC_Compare_Widget extends WP_Widget{
  *
  * automatic_add_widget_to_sidebar()
  */
-class WPEC_Compare_Widget_Add{
-	function automatic_add_widget_to_sidebar(){
+class WPEC_Compare_Widget_Add
+{
+	public static function automatic_add_widget_to_sidebar(){
 		$add_to_sidebars = array('primary', 'primary-widget-area','sidebar-1');
 		$widget_name = 'wpec_compare_widget';
 		$sidebar_options = get_option('sidebars_widgets');

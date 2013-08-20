@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Product_Page_Tab{
-	function get_settings_default() {
+class WPEC_Compare_Product_Page_Tab
+{
+	public static function get_settings_default() {
 		$default_settings = array(			
 			'disable_compare_featured_tab'	=> 0,
 		);
@@ -20,7 +21,7 @@ class WPEC_Compare_Product_Page_Tab{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		$wpec_compare_product_page_tab = get_option('wpec_compare_product_page_tab');
 		if ( !is_array($wpec_compare_product_page_tab) ) $wpec_compare_product_page_tab = array();
 		
@@ -36,7 +37,7 @@ class WPEC_Compare_Product_Page_Tab{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_product_page_tab;
 		$wpec_compare_product_page_tab = get_option('wpec_compare_product_page_tab');
 		if ( !is_array($wpec_compare_product_page_tab) ) $wpec_compare_product_page_tab = array();
@@ -52,7 +53,7 @@ class WPEC_Compare_Product_Page_Tab{
 		return $wpec_compare_product_page_tab;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$wpec_compare_product_page_tab = $_REQUEST['wpec_compare_product_page_tab'];

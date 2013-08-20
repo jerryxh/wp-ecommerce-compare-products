@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Grid_View_View_Compare_Style{
-	function get_settings_default() {
+class WPEC_Compare_Grid_View_View_Compare_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'disable_gridview_view_compare'	=> 1,
 			
@@ -27,7 +28,7 @@ class WPEC_Compare_Grid_View_View_Compare_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WPEC_Compare_Grid_View_View_Compare_Style::get_settings_default();
 				
@@ -39,14 +40,14 @@ class WPEC_Compare_Grid_View_View_Compare_Style{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_gridview_view_compare_style;
 		$wpec_compare_gridview_view_compare_style = WPEC_Compare_Grid_View_View_Compare_Style::get_settings_default();
 		
 		return $wpec_compare_gridview_view_compare_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WPEC_Compare_Grid_View_View_Compare_Style::set_settings_default(true);

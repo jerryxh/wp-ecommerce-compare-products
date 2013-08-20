@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Widget_Button_Style{
-	function get_settings_default() {
+class WPEC_Compare_Widget_Button_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'compare_widget_button_type'	=> 'button',
 			'button_position'				=> 'right',
@@ -45,7 +46,7 @@ class WPEC_Compare_Widget_Button_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WPEC_Compare_Widget_Button_Style::get_settings_default();
 				
@@ -57,14 +58,14 @@ class WPEC_Compare_Widget_Button_Style{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_widget_button_style;
 		$wpec_compare_widget_button_style = WPEC_Compare_Widget_Button_Style::get_settings_default();
 		
 		return $wpec_compare_widget_button_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WPEC_Compare_Widget_Button_Style::set_settings_default(true);

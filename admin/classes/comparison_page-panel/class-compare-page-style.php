@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Page_Style{
-	function get_settings_default() {
+class WPEC_Compare_Page_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'header_bg_colour'				=> '#FFFFFF',
 			'header_bottom_border_size'		=> '3px',
@@ -32,7 +33,7 @@ class WPEC_Compare_Page_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		$wpec_compare_page_style = get_option('wpec_compare_page_style');
 		if ( !is_array($wpec_compare_page_style) ) $wpec_compare_page_style = array();
 		
@@ -48,7 +49,7 @@ class WPEC_Compare_Page_Style{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_page_style;
 		$wpec_compare_page_style = get_option('wpec_compare_page_style');
 		if ( !is_array($wpec_compare_page_style) ) $wpec_compare_page_style = array();
@@ -64,7 +65,7 @@ class WPEC_Compare_Page_Style{
 		return $wpec_compare_page_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$wpec_compare_page_style = $_REQUEST['wpec_compare_page_style'];

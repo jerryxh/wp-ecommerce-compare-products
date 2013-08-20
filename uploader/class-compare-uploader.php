@@ -13,9 +13,10 @@
  * inside_popup()
  * uploader_js()
  */
-class WPEC_Compare_Uploader {
+class WPEC_Compare_Uploader 
+{
 	
-	function uploader_init () {
+	public static function uploader_init () {
 		register_post_type( 'wpec_compare_images', array(
 			'labels' => array(
 				'name' => __( 'WPEC Compare Internal Container', 'wpec_cp' ),
@@ -32,7 +33,7 @@ class WPEC_Compare_Uploader {
 		) );
 	}
 	
-	function get_silentpost ( $option_key='' ) {
+	public static function get_silentpost ( $option_key='' ) {
 		global $wpdb;
 		$post_id = 1;
 		if ( $option_key != '' ) {
@@ -58,7 +59,7 @@ class WPEC_Compare_Uploader {
 		return $post_id;
 	}
 	
-	function upload_input ( $option_key, $option_name='', $default_value='', $help_text='', $input_wide='300px',$post_id=0 ) {
+	public static function upload_input ( $option_key, $option_name='', $default_value='', $help_text='', $input_wide='300px',$post_id=0 ) {
 		$output = '';
 		$value = '';
 		
@@ -105,7 +106,7 @@ class WPEC_Compare_Uploader {
 		return $output;
 	}
 	
-	function change_button_text( $translation, $original ) {
+	public static function change_button_text( $translation, $original ) {
 	    if ( isset( $_REQUEST['type'] ) ) { return $translation; }
 	    
 	    if ( $original == 'Insert into Post' ) {
@@ -116,18 +117,18 @@ class WPEC_Compare_Uploader {
 	    return $translation;
 	}
 	
-	function modify_tabs ( $tabs ) {
+	public static function modify_tabs ( $tabs ) {
 		if ( isset( $tabs['gallery'] ) ) { $tabs['gallery'] = str_replace( 'Gallery', __( 'Previously Uploaded', 'wpec_cp' ), $tabs['gallery'] ); }
 		return $tabs;
 	}
 	
-	function inside_popup () {
+	public static function inside_popup () {
 		if ( isset( $_REQUEST['a3_uploader'] ) && $_REQUEST['a3_uploader'] == 'yes' ) {
 			add_filter( 'media_upload_tabs', array('WPEC_Compare_Uploader', 'modify_tabs') );
 		}
 	}
 	
-	function uploader_js () {
+	public static function uploader_js () {
 		wp_enqueue_style( 'thickbox' );
 		wp_enqueue_style( 'a3-uploader-style', ECCP_URL . '/uploader/uploader.css' );
 		wp_enqueue_script( 'a3-uploader-script', ECCP_URL . '/uploader/uploader-script.js', array( 'jquery', 'thickbox' ) );

@@ -9,8 +9,9 @@
  * wpeccp_products_manager()
  * wpeccp_compare_products_script()
  */
-class WPEC_Compare_Products_Class{
-	function wpeccp_get_products(){
+class WPEC_Compare_Products_Class
+{
+	public static function wpeccp_get_products(){
 		check_ajax_referer( 'wpeccp-products-manager', 'security' );
 		
 		$paged = isset($_POST['page']) ? $_POST['page'] : 1;
@@ -93,33 +94,36 @@ class WPEC_Compare_Products_Class{
 						}
 					}
 				}
-				global $wpdb;
-				$sql = $wpdb->prepare( "SELECT DISTINCT tr.`object_id`
-						FROM `".$wpdb->term_relationships."` AS tr
-						LEFT JOIN `".$wpdb->posts."` AS posts
-						ON posts.`ID` = tr.`object_id`
-						WHERE tr.`term_taxonomy_id` IN (".implode(',', esc_sql( $variation_list ) ).") and posts.`post_parent` = %d", $product->ID );
-				$product_ids = $wpdb->get_col($sql);
 				
-				if(is_array($product_ids) && count($product_ids) > 0){
-					foreach($product_ids as $variation_id){
-						$compare_category = get_post_meta( $variation_id, '_wpsc_compare_category_name', true );
-						$deactivate_compare_feature = get_post_meta( $variation_id, '_wpsc_deactivate_compare_feature', true );
-						if($deactivate_compare_feature == 'no' && $compare_category != '') $status = '<font style="color:green">'.__( "Activated", 'wpec_cp' ).'</font>';
-						else $status = '<font style="color:red">'.__( "Deactivated", 'wpec_cp' ).'</font>';
-						
-						$entry = array(
-							'id' => $variation_id,
-							'cell' => array(
-								'number' => '',
-								'title' => '-- '.get_the_title($variation_id),
-								'cat' => $on_cats,
-								'_wpsc_compare_category_name' => $compare_category,
-								'_wpsc_deactivate_compare_feature' => $status,
-								'edit' => '<span rel="'.$variation_id.'|'.$paged.'|'.$rp.'|'.$sortname.'|'.$sortorder.'|'.$cp_show_variations.'|'.$qtype.'"  class="edit_product_compare">'.__( "Edit", 'wpec_cp' ).'</span>'
-							),
-						);
-						$jsonData['rows'][] = $entry;
+				if ( count($variation_list) > 0 ) {
+					global $wpdb;
+					$sql = $wpdb->prepare( "SELECT DISTINCT tr.`object_id`
+							FROM `".$wpdb->term_relationships."` AS tr
+							LEFT JOIN `".$wpdb->posts."` AS posts
+							ON posts.`ID` = tr.`object_id`
+							WHERE tr.`term_taxonomy_id` IN (".implode(',', esc_sql( $variation_list ) ).") and posts.`post_parent` = %d", $product->ID );
+					$product_ids = $wpdb->get_col($sql);
+					
+					if(is_array($product_ids) && count($product_ids) > 0){
+						foreach($product_ids as $variation_id){
+							$compare_category = get_post_meta( $variation_id, '_wpsc_compare_category_name', true );
+							$deactivate_compare_feature = get_post_meta( $variation_id, '_wpsc_deactivate_compare_feature', true );
+							if($deactivate_compare_feature == 'no' && $compare_category != '') $status = '<font style="color:green">'.__( "Activated", 'wpec_cp' ).'</font>';
+							else $status = '<font style="color:red">'.__( "Deactivated", 'wpec_cp' ).'</font>';
+							
+							$entry = array(
+								'id' => $variation_id,
+								'cell' => array(
+									'number' => '',
+									'title' => '-- '.get_the_title($variation_id),
+									'cat' => $on_cats,
+									'_wpsc_compare_category_name' => $compare_category,
+									'_wpsc_deactivate_compare_feature' => $status,
+									'edit' => '<span rel="'.$variation_id.'|'.$paged.'|'.$rp.'|'.$sortname.'|'.$sortorder.'|'.$cp_show_variations.'|'.$qtype.'"  class="edit_product_compare">'.__( "Edit", 'wpec_cp' ).'</span>'
+								),
+							);
+							$jsonData['rows'][] = $entry;
+						}
 					}
 				}
 			}
@@ -128,7 +132,7 @@ class WPEC_Compare_Products_Class{
 		die();
 	}
 		
-	function wpeccp_products_manager(){
+	public static function wpeccp_products_manager(){
 		$compare_product_message = '';
 		$paged = isset($_POST['paged']) ? $_POST['paged'] : 1;
 		$rp = isset($_POST['rp']) ? $_POST['rp'] : 10;
@@ -230,7 +234,7 @@ class WPEC_Compare_Products_Class{
 <?php
 	}
 	
-	function wpeccp_compare_products_script(){
+	public static function wpeccp_compare_products_script(){
 		echo'<style>
 			#TB_ajaxContent{padding-bottom:0 !important; padding-right:0 !important; height:auto !important; width:auto !important;}
 			#TB_iframeContent{width:auto !important; padding-right:10px !important; margin-bottom:0px !important; max-height:480px !important;}

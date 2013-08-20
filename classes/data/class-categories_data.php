@@ -18,8 +18,9 @@
  * delete_rows()
  * delete_row()
  */
-class WPEC_Compare_Categories_Data{
-	function install_database(){
+class WPEC_Compare_Categories_Data
+{
+	public static function install_database(){
 		global $wpdb;
 		$collate = '';
 		if ( $wpdb->has_cap( 'collation' ) ) {
@@ -39,7 +40,7 @@ class WPEC_Compare_Categories_Data{
 		}
 	}
 	
-	function automatic_add_compare_categories() {
+	public static function automatic_add_compare_categories() {
 		$terms = get_terms("wpsc_product_category", array('hide_empty' => 0));
 		if ( count($terms) > 0 ) {
 			foreach ($terms as $category_product) {
@@ -51,7 +52,7 @@ class WPEC_Compare_Categories_Data{
 		}
 	}
 	
-	function get_row($id, $where='', $output_type='OBJECT'){
+	public static function get_row($id, $where='', $output_type='OBJECT'){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_categories";
 		if(trim($where) != '')
@@ -60,7 +61,7 @@ class WPEC_Compare_Categories_Data{
 		return $result;
 	}
 	
-	function get_maximum_order($where=''){
+	public static function get_maximum_order($where=''){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_categories";
 		if(trim($where) != '')
@@ -70,7 +71,7 @@ class WPEC_Compare_Categories_Data{
 		return $maximum;
 	}
 	
-	function get_count($where=''){
+	public static function get_count($where=''){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_categories";
 		if(trim($where) != '')
@@ -80,7 +81,7 @@ class WPEC_Compare_Categories_Data{
 		return $count;
 	}
 	
-	function get_results($where='', $order='', $limit ='', $output_type='OBJECT'){
+	public static function get_results($where='', $order='', $limit ='', $output_type='OBJECT'){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_categories";
 		if(trim($where) != '')
@@ -93,7 +94,7 @@ class WPEC_Compare_Categories_Data{
 		return $result;
 	}
 	
-	function insert_row($args){
+	public static function insert_row($args){
 		global $wpdb;
 		extract($args);
 		$table_name = $wpdb->prefix. "wpec_compare_categories";
@@ -109,7 +110,7 @@ class WPEC_Compare_Categories_Data{
 		}
 	}
 	
-	function update_row($args){
+	public static function update_row($args){
 		global $wpdb;
 		extract($args);
 		$table_name = $wpdb->prefix. "wpec_compare_categories";
@@ -120,7 +121,7 @@ class WPEC_Compare_Categories_Data{
 		
 	}
 	
-	function update_items_order($item_orders=array()){
+	public static function update_items_order($item_orders=array()){
 		if(is_array($item_orders) && count($item_orders) > 0){
 			foreach($item_orders as $category_id => $category_order){
 				WPEC_Compare_Categories_Data::update_order($category_id, $category_order);
@@ -128,14 +129,14 @@ class WPEC_Compare_Categories_Data{
 		}
 	}
 	
-	function update_order($category_id, $category_order=0){
+	public static function update_order($category_id, $category_order=0){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_categories";
 		$query = $wpdb->query("UPDATE {$table_name} SET category_order='$category_order' WHERE id='$category_id'");
 		return $query;
 	}
 	
-	function delete_rows($items=array()){
+	public static function delete_rows($items=array()){
 		if(is_array($items) && count($items) > 0){
 			foreach($items as $category_id){
 				WPEC_Compare_Categories_Data::delete_row($category_id);
@@ -143,7 +144,7 @@ class WPEC_Compare_Categories_Data{
 		}
 	}
 	
-	function delete_row($category_id){
+	public static function delete_row($category_id){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_categories";
 		$result = $wpdb->query("DELETE FROM {$table_name} WHERE id='{$category_id}'");

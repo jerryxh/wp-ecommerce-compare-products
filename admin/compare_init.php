@@ -4,7 +4,7 @@
  * Call this function when plugin is activated
  */
 function wpec_compare_install(){
-	update_option('a3rev_wpeccp_version', '2.1.2');
+	update_option('a3rev_wpeccp_version', '2.1.3');
 	$product_compare_id = WPEC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'wpec_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 	
@@ -52,7 +52,7 @@ update_option('a3rev_wpeccp_plugin', 'wpec_compare');
 function wpeccp_init() {
 	if ( get_option('a3rev_wpeccp_just_installed') ) {
 		delete_option('a3rev_wpeccp_just_installed');
-		wp_redirect( ( ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace( 'http:', 'https:', admin_url( 'edit.php?post_type=wpsc-product&page=wpsc-compare-settings' ) ) : str_replace( 'https:', 'http:', admin_url( 'edit.php?post_type=wpsc-product&page=wpsc-compare-settings' ) ) ) );
+		wp_redirect( admin_url( 'edit.php?post_type=wpsc-product&page=wpsc-compare-settings', 'relative' ) );
 		exit;
 	}
 	load_plugin_textdomain( 'wpec_cp', false, ECCP_FOLDER.'/languages' );
@@ -175,7 +175,7 @@ add_filter( 'plugin_row_meta', array('WPEC_Compare_Hook_Filter', 'plugin_extra_l
 		update_option('a3rev_wpeccp_version', '2.1.0');
 	}
 	
-	update_option('a3rev_wpeccp_version', '2.1.2');
+	update_option('a3rev_wpeccp_version', '2.1.3');
 
 
 // Add Menu Comparable Settings in E Commerce Plugins
@@ -316,7 +316,7 @@ function wpeccp_dashboard(){
 			);
 					
 			foreach ($tabs as $name => $label) :
-				echo '<a href="' . admin_url( 'edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=' . $name ) . '" class="nav-tab ';
+				echo '<a href="' . admin_url( 'edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=' . $name, 'relative' ) . '" class="nav-tab ';
 				if($current_tab == '' && $name == 'features') echo 'nav-tab-active';
 				if( $current_tab==$name ) echo 'nav-tab-active';
 				echo '">' . $label . '</a>';

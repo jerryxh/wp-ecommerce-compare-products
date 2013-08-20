@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Price_Style{
-	function get_settings_default() {
+class WPEC_Compare_Price_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'disable_product_price'			=> 0,
 			'product_price_position'		=> 'both',
@@ -26,7 +27,7 @@ class WPEC_Compare_Price_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WPEC_Compare_Price_Style::get_settings_default();
 				
@@ -38,14 +39,14 @@ class WPEC_Compare_Price_Style{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_product_prices_style;
 		$wpec_compare_product_prices_style = WPEC_Compare_Price_Style::get_settings_default();
 		
 		return $wpec_compare_product_prices_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WPEC_Compare_Price_Style::set_settings_default(true);

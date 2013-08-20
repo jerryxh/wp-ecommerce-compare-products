@@ -11,7 +11,8 @@
  * wpeccp_update_orders()
  * features_search_area()
  */
-class WPEC_Compare_Fields_Class {	
+class WPEC_Compare_Fields_Class 
+{	
 	public static $default_types = array(
 									'input-text' => array('name' => 'Input Text', 'description' => 'Use when option is single Line of Text'),
 									'text-area' => array('name' => 'Text Area', 'description' => 'When option is Multiple lines of Text'), 
@@ -21,7 +22,7 @@ class WPEC_Compare_Fields_Class {
 									'multi-select' => array('name' => 'Multi Select', 'description' => 'Like Drop Down but mutiple select')
 								);
 	
-	function init_features_actions() {
+	public static function init_features_actions() {
 		$result_msg = '';	
 		
 		if(isset($_REQUEST['bt_save_field'])){
@@ -92,7 +93,7 @@ class WPEC_Compare_Fields_Class {
 		
 		return $result_msg;
 	}
-	function wpec_compare_manager() {
+	public static function wpec_compare_manager() {
 		global $wpdb;
 		?>
         <style>
@@ -183,7 +184,7 @@ class WPEC_Compare_Fields_Class {
         <?php
 	}
 	
-	function wpeccp_features_orders() {
+	public static function wpeccp_features_orders() {
 		$unavaliable_fields = WPEC_Compare_Categories_Fields_Data::get_unavaliable_field_results('field_name ASC');
 		if (is_array($unavaliable_fields) && count($unavaliable_fields) > 0) {
 			$un_i = 0;
@@ -322,7 +323,7 @@ class WPEC_Compare_Fields_Class {
 		}
 	}
 	
-	function wpeccp_update_orders(){
+	public static function wpeccp_update_orders(){
 		check_ajax_referer( 'wpeccp-update-order', 'security' );
 	
 		$updateRecordsArray 	= $_REQUEST['recordsArray'];
@@ -337,7 +338,7 @@ class WPEC_Compare_Fields_Class {
 		die();
 	}
 	
-	function features_search_area() {
+	public static function features_search_area() {
 		global $wpdb;
 	?>
     	<div id="icon-post" class="icon32 icon32-posts-post"><br></div>

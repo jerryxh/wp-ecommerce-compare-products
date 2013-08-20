@@ -21,8 +21,9 @@
  * check_field_key()
  * check_field_key_for_update()
  */
-class WPEC_Compare_Data{
-	function install_database(){
+class WPEC_Compare_Data
+{
+	public static function install_database(){
 		global $wpdb;
 		$collate = '';
 		if ( $wpdb->has_cap( 'collation' ) ) {
@@ -47,7 +48,7 @@ class WPEC_Compare_Data{
 		}
 	}
 	
-	function automatic_add_features() {
+	public static function automatic_add_features() {
 		$top_variations = get_terms("wpsc-variation", array('parent' => 0, 'hide_empty' => 0, 'hierarchical' => 0) );
 		if ( count($top_variations) > 0 ) {
 			foreach ($top_variations as $top_variation) {
@@ -72,7 +73,7 @@ class WPEC_Compare_Data{
 		}
 	}
 	
-	function get_row($id, $where='', $output_type='OBJECT'){
+	public static function get_row($id, $where='', $output_type='OBJECT'){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_fields";
 		if(trim($where) != '')
@@ -81,7 +82,7 @@ class WPEC_Compare_Data{
 		return $result;
 	}
 	
-	function get_maximum_order($where=''){
+	public static function get_maximum_order($where=''){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_fields";
 		if(trim($where) != '')
@@ -91,7 +92,7 @@ class WPEC_Compare_Data{
 		return $maximum;
 	}
 	
-	function get_count($where=''){
+	public static function get_count($where=''){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_fields";
 		if(trim($where) != '')
@@ -101,7 +102,7 @@ class WPEC_Compare_Data{
 		return $count;
 	}
 	
-	function get_results($where='', $order='', $limit ='', $output_type='OBJECT'){
+	public static function get_results($where='', $order='', $limit ='', $output_type='OBJECT'){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_fields";
 		if(trim($where) != '')
@@ -114,7 +115,7 @@ class WPEC_Compare_Data{
 		return $result;
 	}
 	
-	function insert_row($args){
+	public static function insert_row($args){
 		global $wpdb;
 		extract($args);
 		$table_name = $wpdb->prefix. "wpec_compare_fields";
@@ -150,7 +151,7 @@ class WPEC_Compare_Data{
 		}
 	}
 	
-	function update_row($args){
+	public static function update_row($args){
 		global $wpdb;
 		extract($args);
 		$table_name = $wpdb->prefix. "wpec_compare_fields";
@@ -162,14 +163,14 @@ class WPEC_Compare_Data{
 		return $query;
 	}
 	
-	function update_field_key($field_id, $field_key){
+	public static function update_field_key($field_id, $field_key){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_fields";
 		$query = $wpdb->query("UPDATE {$table_name} SET field_key='$field_key' WHERE id='$field_id'");
 		return $query;
 	}
 	
-	function update_items_order($item_orders=array()){
+	public static function update_items_order($item_orders=array()){
 		if(is_array($item_orders) && count($item_orders) > 0){
 			foreach($item_orders as $field_id => $field_order){
 				WPEC_Compare_Data::update_order($field_id, $field_order);
@@ -177,14 +178,14 @@ class WPEC_Compare_Data{
 		}
 	}
 	
-	function update_order($field_id, $field_order=0){
+	public static function update_order($field_id, $field_order=0){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_fields";
 		$query = $wpdb->query("UPDATE {$table_name} SET field_order='$field_order' WHERE id='$field_id'");
 		return $query;
 	}
 	
-	function delete_rows($items=array()){
+	public static function delete_rows($items=array()){
 		if(is_array($items) && count($items) > 0){
 			foreach($items as $field_id){
 				WPEC_Compare_Data::delete_row($field_id);
@@ -192,20 +193,20 @@ class WPEC_Compare_Data{
 		}
 	}
 	
-	function delete_row($field_id){
+	public static function delete_row($field_id){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_fields";
 		$result = $wpdb->query("DELETE FROM {$table_name} WHERE id='{$field_id}'");
 		return $result;
 	}
 	
-	function check_field_key($field_key){
+	public static function check_field_key($field_key){
 		$count = WPEC_Compare_Data::get_count("field_key='$field_key'");
 		if($count > 0) return false;
 		else return true;
 	}
 	
-	function check_field_key_for_update($field_id, $field_key){
+	public static function check_field_key_for_update($field_id, $field_key){
 		$count = WPEC_Compare_Data::get_count("id!='$field_id' AND field_key='$field_key'");
 		if($count > 0) return false;
 		else return true;

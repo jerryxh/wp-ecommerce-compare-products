@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Widget_Style{
-	function get_settings_default() {
+class WPEC_Compare_Widget_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'widget_text'					=> __('You do not have any product to compare.', 'wpec_cp'),
 			'text_font'						=> '',
@@ -24,7 +25,7 @@ class WPEC_Compare_Widget_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WPEC_Compare_Widget_Style::get_settings_default();
 				
@@ -37,14 +38,14 @@ class WPEC_Compare_Widget_Style{
 		}	
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_widget_style;
 		$wpec_compare_widget_style = WPEC_Compare_Widget_Style::get_settings_default();
 		
 		return $wpec_compare_widget_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WPEC_Compare_Widget_Style::set_settings_default(true);

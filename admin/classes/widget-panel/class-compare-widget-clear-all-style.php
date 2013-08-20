@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Widget_Clear_All_Style{
-	function get_settings_default() {
+class WPEC_Compare_Widget_Clear_All_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'clear_all_button_type'			=> 'link',
 			'clear_all_item_vertical'		=> 'below',
@@ -46,7 +47,7 @@ class WPEC_Compare_Widget_Clear_All_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WPEC_Compare_Widget_Clear_All_Style::get_settings_default();
 				
@@ -57,14 +58,14 @@ class WPEC_Compare_Widget_Clear_All_Style{
 		}	
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_widget_clear_all_style;
 		$wpec_compare_widget_clear_all_style = WPEC_Compare_Widget_Clear_All_Style::get_settings_default();
 		
 		return $wpec_compare_widget_clear_all_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WPEC_Compare_Widget_Clear_All_Style::set_settings_default(true);

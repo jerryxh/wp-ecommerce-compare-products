@@ -31,12 +31,13 @@
  * upgrade_version_2_0_3()
  * upgrade_version_2_1_0()
  */
-class WPEC_Compare_Functions{
+class WPEC_Compare_Functions
+{
 	
 	/** 
 	 * Set global variable when plugin loaded
 	 */
-	function plugins_loaded() {
+	public static function plugins_loaded() {
 		global $product_compare_id;
 		global $wpdb;
 		$product_compare_id = get_option('product_compare_id');
@@ -80,7 +81,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Get variations or child product from variable product and grouped product
 	 */
-	function get_variations($product_id) {
+	public static function get_variations($product_id) {
 		$wpsc_variations = new wpsc_variations( $product_id );
 		$product_avalibale = array();
 		$variation_list = array();
@@ -91,6 +92,9 @@ class WPEC_Compare_Functions{
 				}
 			}
 		}
+		
+		if ( count($variation_list) < 1 ) return $product_avalibale;
+		
 		global $wpdb;
 		$sql = $wpdb->prepare( "SELECT DISTINCT tr.`object_id`
 				FROM `".$wpdb->term_relationships."` AS tr
@@ -113,7 +117,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Get product url
 	 */
-	function get_product_url($product_id) {
+	public static function get_product_url($product_id) {
 		$mypost = get_post($product_id);
 		if ($mypost->post_parent > 0) {
 			$product_url = add_query_arg('variation_selected', $product_id, get_permalink($mypost->post_parent));
@@ -127,7 +131,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * check product or variation is deactivated or activated
 	 */
-	function check_product_activate_compare($product_id) {
+	public static function check_product_activate_compare($product_id) {
 		if (get_post_meta( $product_id, '_wpsc_deactivate_compare_feature', true ) != 'yes') {
 			return true;
 		} else {
@@ -138,7 +142,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Check product that is assigned the compare category for it
 	 */
-	function check_product_have_cat($product_id) {
+	public static function check_product_have_cat($product_id) {
 		$compare_category = get_post_meta( $product_id, '_wpsc_compare_category', true );
 		if ($compare_category > 0 && WPEC_Compare_Categories_Data::get_count("id='".$compare_category."'") > 0) {
 			$compare_fields = WPEC_Compare_Categories_Fields_Data::get_fieldid_results($compare_category);
@@ -155,7 +159,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Add a product or variations of product into compare widget list
 	 */
-	function add_product_to_compare_list($product_id) {
+	public static function add_product_to_compare_list($product_id) {
 		$product_list = WPEC_Compare_Functions::get_variations($product_id);
 		if (count($product_list) < 1 && WPEC_Compare_Functions::check_product_activate_compare($product_id) && WPEC_Compare_Functions::check_product_have_cat($product_id)) $product_list = array($product_id);
 		if (is_array($product_list) && count($product_list) > 0) {
@@ -175,7 +179,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Get list product ids , variation ids
 	 */
-	function get_compare_list() {
+	public static function get_compare_list() {
 		if (isset($_COOKIE['wpec_compare_list']))
 			$current_compare_list = (array) unserialize($_COOKIE['wpec_compare_list']);
 		else
@@ -194,7 +198,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Get total products in complare list
 	 */
-	function get_total_compare_list() {
+	public static function get_total_compare_list() {
 		if (isset($_COOKIE['wpec_compare_list']))
 			$current_compare_list = (array) unserialize($_COOKIE['wpec_compare_list']);
 		else
@@ -213,7 +217,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Remove a product out compare list
 	 */
-	function delete_product_on_compare_list($product_id) {
+	public static function delete_product_on_compare_list($product_id) {
 		if (isset($_COOKIE['wpec_compare_list']))
 			$current_compare_list = (array) unserialize($_COOKIE['wpec_compare_list']);
 		else
@@ -226,14 +230,14 @@ class WPEC_Compare_Functions{
 	/**
 	 * Clear compare list
 	 */
-	function clear_compare_list() {
+	public static function clear_compare_list() {
 		setcookie( "wpec_compare_list", serialize(array()), 0, COOKIEPATH, COOKIE_DOMAIN, false, true );
 	}
 	
 	/**
 	 * Get price of product, variation to show on popup compare
 	 */
-	function wpeccp_the_product_price( $product_id, $no_decimals = false, $only_normal_price = false ) {
+	public static function wpeccp_the_product_price( $product_id, $no_decimals = false, $only_normal_price = false ) {
 		global $wpsc_query, $wpsc_variations, $wpdb;
 		$price = $full_price = get_post_meta( $product_id, '_wpsc_price', true );
 	
@@ -261,7 +265,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Get compare widget on sidebar
 	 */
-	function get_compare_list_html_widget() {
+	public static function get_compare_list_html_widget() {
 		global $product_compare_id;
 		global $wpec_compare_widget_style, $wpec_compare_widget_button_style;
 		global $wpec_compare_comparison_page_global_settings;
@@ -318,7 +322,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Get compare list on popup
 	 */
-	function get_compare_list_html_popup() {
+	public static function get_compare_list_html_popup() {
 		global $wpec_compare_comparison_page_global_settings, $wpec_compare_page_style, $wpec_compare_table_style, $wpec_compare_table_content_style, $wpec_compare_addtocart_style, $wpec_compare_viewcart_style;
 		global $wpec_compare_product_prices_style;
 		$compare_list = WPEC_Compare_Functions::get_compare_list();
@@ -449,7 +453,7 @@ class WPEC_Compare_Functions{
 		return $html;
 	}
 	
-	function add_meta_all_products(){
+	public static function add_meta_all_products(){
 		
 		// Add deactivate compare feature meta for all products when activate this plugin
 		$have_deactivate_meta = get_posts(array('numberposts' => -1, 'post_type' => array('wpsc-product'), 'post_status' => array('publish', 'private'), 'meta_key' => '_wpsc_deactivate_compare_feature'));
@@ -501,7 +505,7 @@ class WPEC_Compare_Functions{
 		
 	}
 	
-	function get_post_thumbnail($postid=0, $width=220, $height=180, $class='') {
+	public static function get_post_thumbnail($postid=0, $width=220, $height=180, $class='') {
 		$mediumSRC = '';
 		// Get the product ID if none was passed
 		if ( empty( $postid ) )
@@ -556,7 +560,7 @@ class WPEC_Compare_Functions{
 		return $mediumSRC;
 	}
 	
-	function modify_url($mod=array()){
+	public static function modify_url($mod=array()){
 		$url = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https://' : 'http://';
  		$url .= isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : getenv('HTTP_HOST');
  		$url .= isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : getenv('REQUEST_URI');
@@ -592,7 +596,7 @@ class WPEC_Compare_Functions{
 		return $url;
 	}
 	
-	function printPage($link, $total = 0,$currentPage = 1,$div = 3,$rows = 5, $li = false, $a_class= ''){
+	public static function printPage($link, $total = 0,$currentPage = 1,$div = 3,$rows = 5, $li = false, $a_class= ''){
 		if(!$total || !$rows || !$div || $total<=$rows) return false;
 		$nPage = floor($total/$rows) + (($total%$rows)?1:0);
 		$nDiv  = floor($nPage/$div) + (($nPage%$div)?1:0);	
@@ -631,7 +635,7 @@ class WPEC_Compare_Functions{
 	/**
 	 * Create Page
 	 */
-	function create_page( $slug, $option, $page_title = '', $page_content = '', $post_parent = 0 ) {
+	public static function create_page( $slug, $option, $page_title = '', $page_content = '', $post_parent = 0 ) {
 		global $wpdb;
 				
 		$page_id = $wpdb->get_var( "SELECT ID FROM `" . $wpdb->posts . "` WHERE `post_content` LIKE '%$page_content%'  AND `post_type` = 'page' ORDER BY ID DESC LIMIT 1" );
@@ -654,7 +658,7 @@ class WPEC_Compare_Functions{
 		return $page_id;
 	}
 	
-	function get_font() {
+	public static function get_font() {
 		$fonts = array( 
 			'Arial, sans-serif'													=> __( 'Arial', 'wpec_cp' ),
 			'Verdana, Geneva, sans-serif'										=> __( 'Verdana', 'wpec_cp' ),
@@ -678,12 +682,14 @@ class WPEC_Compare_Functions{
 		return apply_filters('wpec_compare_fonts_support', $fonts );
 	}
 	
-	function plugin_pro_notice() {
+	public static function plugin_pro_notice() {
 		$html = '';
 		$html .= '<div id="wpec_compare_product_extensions">';
 		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><img src="'.ECCP_IMAGES_URL.'/a3logo.png" /></a>';
 		$html .= '<h3>'.__('Upgrade to Compare Product Pro', 'wpec_cp').'</h3>';
-		$html .= '<p>'.__("<strong>NOTE:</strong> Settings inside the Yellow border are Pro Version advanced Features and are not activated. Visit the", 'wpec_cp').' <a href="'.ECCP_AUTHOR_URI.'" target="_blank">'.__("a3rev site", 'wpec_cp').'</a> '.__("if you wish to upgrade to activate these features", 'wpec_cp').':</p>';
+		$html .= '<p>'.__("<strong>NOTE:</strong> All the functions inside the Yellow border on the plugins admin panel are extra functionality that is activated by upgrading to the Pro version", 'wpec_cp').':</p>';
+		$html .= '<h3>* <a href="'.ECCP_AUTHOR_URI.'" target="_blank">'.__('WP e-Commerce Compare Products Pro', 'wpec_cp').'</a></h3>';
+		$html .= '<h3>'.__('Activates these advanced Features', 'wpec_cp').':</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>1. '.__("Activate Products Express Manager - massive time saver, worth the price of the upgrade on its own.", 'wpec_cp').'</li>';
@@ -695,47 +701,42 @@ class WPEC_Compare_Functions{
 		$html .= '<li>7. '.__("Activate WYSIWYG table content style tools.", 'wpec_cp').'</li>';
 		$html .= '<li>8. '.__("Activate 'Add to Cart' button style option on compare table.", 'wpec_cp').'</li>';
 		$html .= '<li>9. '.__("Activate table empty cells text editor and background colour.", 'wpec_cp').'</li>';
-		$html .= '<li>10. '.__("Activate lifetime same day priority support.", 'wpec_cp').'</li>';
+		$html .= '<li>10. '.__("Activate same day priority support.", 'wpec_cp').'</li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '<h3>'.__('Plugin Documentation', 'wpec_cp').'</h3>';
-		$html .= '<p>'.__('All of our plugins have comprehensive online documentation. Please refer to the plugins docs before raising a support request', 'wpec_cp').'. <a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-compare-products/" target="_blank">'.__('Visit the a3rev wiki.', 'wpec_cp').'</a></p>';
-		$html .= '<h3>'.__('More a3rev Quality Plugins', 'wpec_cp').'</h3>';
-		$html .= '<p>'.__('Below is a list of the a3rev plugins that are available for free download from wordpress.org', 'wpec_cp').'</p>';
-		$html .= '<h3>'.__('WP e-Commerce Plugins', 'wpec_cp').'</h3>';
+		$html .= '<h3>'.__('Pro Version 7 day FREE trail', 'wpec_cp').'</h3>';
+		$html .= '<div> <a href="'.ECCP_AUTHOR_URI.'" target="_blank">'.__('Click here', 'wpec_cp').'</a> '.__('for a 7 day Free Trail of the awesome Pro Version features.', 'wpec_cp').'</div>';
+		$html .= '<h3>'.__('View this plugins', 'wpec_cp').' <a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-compare-products/" target="_blank">'.__('documentation', 'wpec_cp').'</a></h3>';
+		$html .= '<h3>'.__('Visit this plugins', 'wpec_cp').' <a href="http://wordpress.org/support/plugin/wp-ecommerce-compare-products/" target="_blank">'.__('support forum', 'wpec_cp').'</a></h3>';
+		$html .= '<h3>'.__('More FREE a3rev WP e-Commerce Plugins', 'wpec_cp').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-dynamic-gallery/" target="_blank">'.__('WP e-Commerce Dynamic Gallery', 'wpec_cp').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-predictive-search/" target="_blank">'.__('WP e-Commerce Predictive Search', 'wpec_cp').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('WP e-Commerce Compare Products', 'wpec_cp').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-catalog-visibility-and-email-inquiry/" target="_blank">'.__('WP e-Commerce Catalog Visibility & Email Inquiry', 'wpec_cp').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-e-commerce-grid-view/" target="_blank">'.__('WP e-Commerce Grid View', 'wpec_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-products-quick-view/" target="_blank">'.__('WP e-Commerce Products Quick View', 'wpec_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-dynamic-gallery/" target="_blank">'.__('WP e-Commerce Dynamic Gallery', 'wpec_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-predictive-search/" target="_blank">'.__('WP e-Commerce Predictive Search', 'wpec_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('WP e-Commerce Compare Products', 'wpec_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-catalog-visibility-and-email-inquiry/" target="_blank">'.__('WP e-Commerce Catalog Visibility & Email Inquiry', 'wpec_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-grid-view/" target="_blank">'.__('WP e-Commerce Grid View', 'wpec_cp').'</a></li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '<h3>'.__('WordPress Plugins', 'wpec_cp').'</h3>';
+		$html .= '<h3>'.__('FREE a3rev WordPress Plugins', 'wpec_cp').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'wpec_cp').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'wpec_cp').'</a></li>';
-		$html .= '</ul>';
-		$html .= '</p>';
-		$html .= '<h3>'.__('Help spread the Word about this plugin', 'wpec_cp').'</h3>';
-		$html .= '<p>'.__("Things you can do to help others find this plugin", 'wpec_cp');
-		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('Rate this plugin 5', 'wpec_cp').' <img src="'.ECCP_IMAGES_URL.'/stars.png" align="top" /> '.__('on WordPress.org', 'wpec_cp').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/extend/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('Mark the plugin as a fourite', 'wpec_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/contact-us-page-contact-people/" target="_blank">'.__('Contact Us Page - Contact People', 'wpec_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'wpec_cp').'</a></li>';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'wpec_cp').'</a></li>';
 		$html .= '</ul>';
 		$html .= '</p>';
 		$html .= '</div>';
 		return $html;
 	}
 	
-	function upgrade_version_1_0_1(){
+	public static function upgrade_version_1_0_1(){
 		WPEC_Compare_Categories_Data::install_database();
 		WPEC_Compare_Categories_Fields_Data::install_database();
 	}
 	
-	function upgrade_version_2_0() {
+	public static function upgrade_version_2_0() {
 		global $wpdb;
 		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_fields CHANGE `field_name` `field_name` blob NOT NULL";
 		$wpdb->query($sql);
@@ -747,7 +748,7 @@ class WPEC_Compare_Functions{
 		$wpdb->query($sql);
 	}
 	
-	function upgrade_version_2_0_1() {
+	public static function upgrade_version_2_0_1() {
 		global $wpdb;
 		$sql = "ALTER TABLE ". $wpdb->prefix . "wpec_compare_categories CHANGE `category_name` `category_name` blob NOT NULL";
 		$wpdb->query($sql);
@@ -756,7 +757,7 @@ class WPEC_Compare_Functions{
 		$wpdb->query($sql);
 	}
 	
-	function upgrade_version_2_0_3() {
+	public static function upgrade_version_2_0_3() {
 		global $wpdb;
 		$collate = '';
 		if ( $wpdb->has_cap( 'collation' ) ) {
@@ -773,7 +774,7 @@ class WPEC_Compare_Functions{
 		$wpdb->query($sql);
 	}
 	
-	function upgrade_version_2_1_0() {
+	public static function upgrade_version_2_1_0() {
 		WPEC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'wpec_cp'), '[product_comparison_page]' );
 		
 		$comparable_settings = get_option('comparable_settings');

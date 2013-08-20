@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Product_Page_Settings{
-	function get_settings_default() {
+class WPEC_Compare_Product_Page_Settings
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'product_page_button_position'	=> 'above',
 			'product_page_button_below_padding'=> 10,
@@ -25,7 +26,7 @@ class WPEC_Compare_Product_Page_Settings{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		$wpec_compare_product_page_settings = get_option('wpec_compare_product_page_settings');
 		if ( !is_array($wpec_compare_product_page_settings) ) $wpec_compare_product_page_settings = array();
 		
@@ -41,7 +42,7 @@ class WPEC_Compare_Product_Page_Settings{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_product_page_settings;
 		$wpec_compare_product_page_settings = get_option('wpec_compare_product_page_settings');
 		if ( !is_array($wpec_compare_product_page_settings) ) $wpec_compare_product_page_settings = array();
@@ -57,7 +58,7 @@ class WPEC_Compare_Product_Page_Settings{
 		return $wpec_compare_product_page_settings;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$wpec_compare_product_page_settings = $_REQUEST['wpec_compare_product_page_settings'];

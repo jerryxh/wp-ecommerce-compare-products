@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Table_Row_Style{
-	function get_settings_default() {
+class WPEC_Compare_Table_Row_Style
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'table_border_size'				=> '1px',
 			'table_border_style'			=> 'solid',
@@ -28,7 +29,7 @@ class WPEC_Compare_Table_Row_Style{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		
 		$default_settings = WPEC_Compare_Table_Row_Style::get_settings_default();
 				
@@ -40,14 +41,14 @@ class WPEC_Compare_Table_Row_Style{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_table_style;
 		$wpec_compare_table_style = WPEC_Compare_Table_Row_Style::get_settings_default();
 		
 		return $wpec_compare_table_style;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			WPEC_Compare_Table_Row_Style::set_settings_default(true);

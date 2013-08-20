@@ -25,9 +25,10 @@
  * auto_create_compare_feature()
  * plugin_extra_links()
  */
-class WPEC_Compare_Hook_Filter{
+class WPEC_Compare_Hook_Filter
+{
 	
-	function template_loader( $template ) {
+	public static function template_loader( $template ) {
 		global $product_compare_id;
 		global $post;
 
@@ -45,11 +46,11 @@ class WPEC_Compare_Hook_Filter{
 		return $template;
 	}
 	
-	function include_customized_style() {
+	public static function include_customized_style() {
 		include( ECCP_DIR. '/templates/customized_style.php' );
 	}
 	
-	function wpec_ajax_add_compare_button() {
+	public static function wpec_ajax_add_compare_button() {
 		global $post;
 		global $wpec_compare_product_page_settings;
 		global $wpec_compare_grid_view_settings;
@@ -112,7 +113,7 @@ class WPEC_Compare_Hook_Filter{
 				$compare_html = '<div class="wpec_grid_compare_button_container"><a class="wpec_bt_compare_this '.$compare_grid_view_class.' '.$compare_grid_view_custom_class.'" id="wpec_bt_compare_this_'.$product_id.'">'.$compare_grid_view_text.'</a>' . $view_compare_html . '<input type="hidden" id="input_wpec_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
 				
 				$button_position = 'before';
-				if ($wpec_compare_grid_view_settings['product_page_button_position'] == 'below') $button_position = 'after';
+				if ($wpec_compare_grid_view_settings['grid_view_button_position'] == 'below') $button_position = 'after';
 				
 			}
 			$script_add = '<script type="text/javascript">
@@ -134,7 +135,7 @@ class WPEC_Compare_Hook_Filter{
 		}
 	}
 	
-	function add_compare_button($product_id='') {
+	public static function add_compare_button($product_id='') {
 		global $post;
 		global $wpec_compare_product_page_button_style;
 		global $wpec_compare_comparison_page_global_settings;
@@ -177,14 +178,14 @@ class WPEC_Compare_Hook_Filter{
 		return $html;
 	}
 	
-	function show_compare_button() {
+	public static function show_compare_button() {
 		global $wpec_compare_product_page_settings;
 		if ($wpec_compare_product_page_settings['auto_add'] == 'yes') {
 			echo '<div class="wpsc_buy_button_container">'.WPEC_Compare_Hook_Filter::add_compare_button().'</div>';
 		}
 	}
 	
-	function show_compare_fields($product_id='', $use_table_style=true) {
+	public static function show_compare_fields($product_id='', $use_table_style=true) {
 		global $post, $wpec_compare_table_content_style;
 		if(trim($product_id) == '') $product_id = $post->ID;
 		$html = '';
@@ -250,7 +251,7 @@ class WPEC_Compare_Hook_Filter{
 		return $html;
 	}
 	
-	function wpeccp_add_to_compare() {
+	public static function wpeccp_add_to_compare() {
 		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		
 		$product_id 	= $_REQUEST['product_id'];
@@ -259,7 +260,7 @@ class WPEC_Compare_Hook_Filter{
 		die();
 	}
 	
-	function wpeccp_remove_from_popup_compare() {
+	public static function wpeccp_remove_from_popup_compare() {
 		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 	
 		$product_id 	= $_REQUEST['product_id'];
@@ -268,7 +269,7 @@ class WPEC_Compare_Hook_Filter{
 		die();
 	}
 	
-	function wpeccp_update_compare_popup() {
+	public static function wpeccp_update_compare_popup() {
 		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		$result = WPEC_Compare_Functions::get_compare_list_html_popup();
 		$result .= '<script src="'. ECCP_JS_URL.'/fixedcolumntable/fixedcolumntable.js"></script>';
@@ -276,34 +277,34 @@ class WPEC_Compare_Hook_Filter{
 		die();
 	}
 	
-	function wpeccp_update_compare_widget() {
+	public static function wpeccp_update_compare_widget() {
 		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		$result = WPEC_Compare_Functions::get_compare_list_html_widget();
 		echo json_encode( $result );
 		die();
 	}
 	
-	function wpeccp_update_total_compare() {
+	public static function wpeccp_update_total_compare() {
 		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		$result = WPEC_Compare_Functions::get_total_compare_list();
 		echo json_encode( $result );
 		die();
 	}
 	
-	function wpeccp_remove_from_compare() {
+	public static function wpeccp_remove_from_compare() {
 		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		$product_id 	= $_REQUEST['product_id'];
 		WPEC_Compare_Functions::delete_product_on_compare_list($product_id);
 		die();
 	}
 	
-	function wpeccp_clear_compare() {
+	public static function wpeccp_clear_compare() {
 		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		WPEC_Compare_Functions::clear_compare_list();
 		die();
 	}
 		
-	function wpec_compare_footer_script(){
+	public static function wpec_compare_footer_script(){
 		global $product_compare_id;
 		global $wpec_compare_comparison_page_global_settings;
 		$wpeccp_compare_events = wp_create_nonce("wpeccp-compare-events");
@@ -410,7 +411,7 @@ class WPEC_Compare_Hook_Filter{
 		echo $script_add_on;
 	}
 	
-	function wpeccp_admin_header_script() {
+	public static function wpeccp_admin_header_script() {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('farbtastic');
 		wp_enqueue_style('farbtastic');
@@ -418,7 +419,7 @@ class WPEC_Compare_Hook_Filter{
 		WPEC_Compare_Uploader::uploader_js();
 	}
 	
-	function wpeccp_admin_script(){
+	public static function wpeccp_admin_script(){
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
 		wp_enqueue_style( 'a3rev-chosen-style', ECCP_JS_URL . '/chosen/chosen.css' );
@@ -480,7 +481,7 @@ jQuery(window).load(function(){
 	<?php
     }
 	
-	function auto_create_compare_category($term_id) {
+	public static function auto_create_compare_category($term_id) {
 		$term = get_term( $term_id, 'wpsc_product_category' );
 		$check_existed = WPEC_Compare_Categories_Data::get_count("category_name='".trim($term->name)."'");
 		if ($check_existed < 1 ) {
@@ -488,7 +489,7 @@ jQuery(window).load(function(){
 		}
 	}
 	
-	function auto_create_compare_feature($term_id) {
+	public static function auto_create_compare_feature($term_id) {
 		$term = get_term( $term_id, 'wpsc-variation' );
 		$check_existed = WPEC_Compare_Data::get_count("field_name='".trim($term->name)."'");
 		if ($check_existed < 1 && $term->parent == 0 ) {
@@ -496,7 +497,7 @@ jQuery(window).load(function(){
 		}
 	}
 	
-	function plugin_extra_links($links, $plugin_name) {
+	public static function plugin_extra_links($links, $plugin_name) {
 		if ( $plugin_name != ECCP_NAME) {
 			return $links;
 		}

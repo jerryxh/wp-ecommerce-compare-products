@@ -11,8 +11,9 @@
  * panel_page()
  *
  */
-class WPEC_Compare_Grid_View_Settings{
-	function get_settings_default() {
+class WPEC_Compare_Grid_View_Settings
+{
+	public static function get_settings_default() {
 		$default_settings = array(
 			'grid_view_button_position'		=> 'above',
 			'grid_view_button_below_padding'=> 10,
@@ -23,7 +24,7 @@ class WPEC_Compare_Grid_View_Settings{
 		return $default_settings;
 	}
 	
-	function set_settings_default($reset=false) {
+	public static function set_settings_default($reset=false) {
 		$wpec_compare_grid_view_settings = get_option('wpec_compare_grid_view_settings');
 		if ( !is_array($wpec_compare_grid_view_settings) ) $wpec_compare_grid_view_settings = array();
 		
@@ -39,7 +40,7 @@ class WPEC_Compare_Grid_View_Settings{
 				
 	}
 	
-	function get_settings() {
+	public static function get_settings() {
 		global $wpec_compare_grid_view_settings;
 		$wpec_compare_grid_view_settings = get_option('wpec_compare_grid_view_settings');
 		if ( !is_array($wpec_compare_grid_view_settings) ) $wpec_compare_grid_view_settings = array();
@@ -55,7 +56,7 @@ class WPEC_Compare_Grid_View_Settings{
 		return $wpec_compare_grid_view_settings;
 	}
 		
-	function panel_page() {
+	public static function panel_page() {
 		$message = '';
 		if (isset($_REQUEST['bt_save_settings'])) {
 			$wpec_compare_grid_view_settings = $_REQUEST['wpec_compare_grid_view_settings'];

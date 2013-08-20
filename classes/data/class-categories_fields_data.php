@@ -18,8 +18,9 @@
  * insert_row()
  * delete_row()
  */
-class WPEC_Compare_Categories_Fields_Data{
-	function install_database(){
+class WPEC_Compare_Categories_Fields_Data
+{
+	public static function install_database(){
 		global $wpdb;
 		$collate = '';
 		if ( $wpdb->has_cap( 'collation' ) ) {
@@ -38,14 +39,14 @@ class WPEC_Compare_Categories_Fields_Data{
 		}
 	}
 	
-	function get_row($cat_id, $field_id, $output_type='OBJECT'){
+	public static function get_row($cat_id, $field_id, $output_type='OBJECT'){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_cat_fields";
 		$result = $wpdb->get_row("SELECT * FROM {$table_name} WHERE cat_id='$cat_id' AND field_id='$field_id' ", $output_type);
 		return $result;
 	}
 	
-	function get_count($where=''){
+	public static function get_count($where=''){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_cat_fields";
 		if(trim($where) != '')
@@ -55,7 +56,7 @@ class WPEC_Compare_Categories_Fields_Data{
 		return $count;
 	}
 	
-	function get_results($where='', $order='', $limit ='', $output_type='OBJECT'){
+	public static function get_results($where='', $order='', $limit ='', $output_type='OBJECT'){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_cat_fields";
 		$table_fields = $wpdb->prefix. "wpec_compare_fields";
@@ -70,7 +71,7 @@ class WPEC_Compare_Categories_Fields_Data{
 		return $result;
 	}
 	
-	function get_unavaliable_field_results($order='', $limit ='', $output_type='OBJECT'){
+	public static function get_unavaliable_field_results($order='', $limit ='', $output_type='OBJECT'){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_cat_fields";
 		$table_fields = $wpdb->prefix. "wpec_compare_fields";
@@ -83,7 +84,7 @@ class WPEC_Compare_Categories_Fields_Data{
 		return $result;
 	} 
 	
-	function get_maximum_order($where=''){
+	public static function get_maximum_order($where=''){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_cat_fields";
 		if(trim($where) != '')
@@ -93,7 +94,7 @@ class WPEC_Compare_Categories_Fields_Data{
 		return $maximum;
 	}
 	
-	function update_items_order($cat_id=0, $item_orders=array()){
+	public static function update_items_order($cat_id=0, $item_orders=array()){
 		if(is_array($item_orders) && count($item_orders) > 0){
 			foreach($item_orders as $field_id => $field_order){
 				WPEC_Compare_Categories_Fields_Data::update_order($cat_id, $field_id, $field_order);
@@ -101,14 +102,14 @@ class WPEC_Compare_Categories_Fields_Data{
 		}
 	}
 	
-	function update_order($cat_id, $field_id, $field_order=0){
+	public static function update_order($cat_id, $field_id, $field_order=0){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_cat_fields";
 		$query = $wpdb->query("UPDATE {$table_name} SET field_order='$field_order' WHERE field_id='$field_id' AND cat_id='$cat_id'");
 		return $query;
 	}
 	
-	function get_catid_results($field_id, $where='', $order='', $limit =''){
+	public static function get_catid_results($field_id, $where='', $order='', $limit =''){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_cat_fields";
 		$table_fields = $wpdb->prefix. "wpec_compare_fields";
@@ -122,7 +123,7 @@ class WPEC_Compare_Categories_Fields_Data{
 		return $result;
 	}
 	
-	function get_fieldid_results($cat_id, $where='', $order='', $limit =''){
+	public static function get_fieldid_results($cat_id, $where='', $order='', $limit =''){
 		global $wpdb;
 		$table_name = $wpdb->prefix . "wpec_compare_cat_fields";
 		$table_fields = $wpdb->prefix. "wpec_compare_fields";
@@ -136,7 +137,7 @@ class WPEC_Compare_Categories_Fields_Data{
 		return $result;
 	}
 	
-	function insert_row($cat_id, $field_id){
+	public static function insert_row($cat_id, $field_id){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_cat_fields";
 		$field_order = WPEC_Compare_Categories_Fields_Data::get_maximum_order("cat_id='".$cat_id."'");
@@ -149,7 +150,7 @@ class WPEC_Compare_Categories_Fields_Data{
 		}
 	}
 	
-	function delete_row($where){
+	public static function delete_row($where){
 		global $wpdb;
 		$table_name = $wpdb->prefix. "wpec_compare_cat_fields";
 		$result = $wpdb->query("DELETE FROM {$table_name} WHERE {$where}");

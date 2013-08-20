@@ -11,14 +11,15 @@
  * wpec_show_field_of_cat()
  * save_compare_meta_boxes()
  */
-class WPEC_Compare_MetaBox{
-	function compare_meta_boxes() {
+class WPEC_Compare_MetaBox
+{
+	public static function compare_meta_boxes() {
 		global $post;
 		$pagename = 'wpsc-product';
 		add_meta_box( 'wpec_compare_feature_box', __('Compare Feature Fields', 'wpec_cp'), array('WPEC_Compare_MetaBox', 'wpec_compare_feature_box'), $pagename, 'normal', 'high' );
 	}
 	
-	function wpeccp_product_get_fields() {
+	public static function wpeccp_product_get_fields() {
 		check_ajax_referer( 'wpeccp-product-compare', 'security' );
 		$cat_id = $_REQUEST['cat_id'];
 		$post_id = $_REQUEST['post_id'];
@@ -26,7 +27,7 @@ class WPEC_Compare_MetaBox{
 		die();
 	}
 	
-	function wpec_compare_feature_box() {
+	public static function wpec_compare_feature_box() {
 		global $post;
 		$wpeccp_product_compare = wp_create_nonce("wpeccp-product-compare");
 		$deactivate_compare_feature = get_post_meta( $post->ID, '_wpsc_deactivate_compare_feature', true );
@@ -85,7 +86,7 @@ class WPEC_Compare_MetaBox{
 <?php
 	}
 	
-	function wpec_show_field_of_cat($post_id=0, $cat_id=0) {
+	public static function wpec_show_field_of_cat($post_id=0, $cat_id=0) {
 		if($cat_id > 0 && WPEC_Compare_Categories_Data::get_count("id='".$cat_id."'") > 0){
 ?>
 		<style>
@@ -199,7 +200,7 @@ class WPEC_Compare_MetaBox{
 		}
 	}
 	
-	function save_compare_meta_boxes($post_id) {
+	public static function save_compare_meta_boxes($post_id) {
 		$post_status = get_post_status($post_id);
 		$post_type = get_post_type($post_id);
 		if ($post_type == 'wpsc-product' && $post_status != false) {
