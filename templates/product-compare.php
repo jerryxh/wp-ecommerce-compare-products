@@ -20,14 +20,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 <head>
 <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
 <?php global $post; ?>
+<?php $site_url = str_replace( 'http:', '', str_replace( 'https:', '', get_option('siteurl') ) ); ?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width; initial-scale=0.8; maximum-scale=1.0; minimum-scale=0.5;">
 <title><?php echo $post->post_title; ?> | <?php bloginfo('name'); ?></title>
 <meta name="description" content="Default Description" />
 <meta name="keywords" content="<?php bloginfo('name'); ?>" />
 <meta name="robots" content="INDEX,FOLLOW" />
-<script src="<?php echo get_option('siteurl'); ?>/wp-includes/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $site_url; ?>/wp-includes/js/jquery/jquery.js"></script>
 <script src="<?php echo ECCP_JS_URL; ?>/jquery.printElement.js"></script>
+<?php do_action('wpeccp_comparison_page_header'); ?>
 </head>
 <body>
 		<?php
@@ -42,6 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     	<div class="compare_print_container"><div id="compare_popup_container" class="compare_popup_container">
         <link type="text/css" href="<?php echo ECCP_JS_URL; ?>/fixedcolumntable/fixedcolumntable.css" rel="stylesheet" />
         <?php include( ECCP_DIR. '/templates/product_comparison_style.php' ); ?>
+        <?php do_action('wpeccp_comparison_table_before'); ?>
 				<div class="compare_heading">
 					<?php if ( $wpec_compare_logo != '') { ?>
                     <img class="compare_logo" src="<?php echo $wpec_compare_logo; ?>" alt="<?php _e('Compare Products', 'wpec_cp'); ?>" />
@@ -60,6 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                 <div class="compare_popup_wrap">
                     <?php echo WPEC_Compare_Functions::get_compare_list_html_popup();?>
                 </div>
+        <?php do_action('wpeccp_comparison_table_after'); ?>
         </div>
         </div>
         <?php
@@ -122,6 +126,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 						});
 			});
 		</script>
+        <?php do_action('wpeccp_comparison_page_footer'); ?>
         <script src="<?php echo ECCP_JS_URL; ?>/fixedcolumntable/fixedcolumntable.js"></script>
 </body>
 </html>

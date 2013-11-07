@@ -19,7 +19,9 @@ class WPEC_Compare_Fields_Class
 									'checkbox' => array('name' => 'Check Box', 'description' => 'Options in a row allows multiple select'), 
 									'radio' => array('name' => 'Radio button', 'description' => 'Like check box but only single select'), 
 									'drop-down' => array('name' => 'Drop Down', 'description' => 'Options in dropdown, only select one'), 
-									'multi-select' => array('name' => 'Multi Select', 'description' => 'Like Drop Down but mutiple select')
+									'multi-select' => array('name' => 'Multi Select', 'description' => 'Like Drop Down but mutiple select'),
+									'wp-video'	=> array('name' => 'Video Player', 'description' => 'Text Field to add Video URL'),
+									'wp-audio'	=> array('name' => 'Audio Player', 'description' => 'Text Field to add Audio URL'),
 								);
 	
 	public static function init_features_actions() {
@@ -128,7 +130,9 @@ class WPEC_Compare_Fields_Class
                             <select style="min-width:300px;" name="field_type" id="field_type" class="chzn-select">
 								<?php
                                 foreach (WPEC_Compare_Fields_Class::$default_types as $type => $type_name) {
-                                    if (!empty($field) && $type == $field->field_type) {
+                                    if ( in_array( $type, array( 'wp-video', 'wp-audio' ) ) ) {
+										echo '<option value="'.$type.'" >'.$type_name['name'].' - '.$type_name['description'].'</option>';
+									} elseif (!empty($field) && $type == $field->field_type) {
                                         echo '<option value="'.$type.'" selected="selected">'.$type_name['name'].' - '.$type_name['description'].'</option>';
                                     }else {
                                         echo '<option value="'.$type.'">'.$type_name['name'].' - '.$type_name['description'].'</option>';
@@ -180,6 +184,26 @@ class WPEC_Compare_Fields_Class
 	        	<input type="submit" name="bt_save_field" id="bt_save_field" class="button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit') { _e('Save', 'wpec_cp'); }else { _e('Create', 'wpec_cp'); } ?>"  /> <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" style="text-decoration:none;"><input type="button" name="cancel" value="<?php _e('Cancel', 'wpec_cp'); ?>" class="button" /></a>
 	    	</p>
         </form>
+        <script>
+(function($) {
+	$(document).ready(function() {
+		var old_type_selected = $("select#field_type").val();
+		$("select#field_type").on( 'change', function() {
+			var field_type = $(this).val();
+			if ( field_type == 'wp-video' || field_type == 'wp-audio' ) {
+				alert('<?php _e( 'This Type just is enabled on PRO version.', 'wpec_cp' ); ?>');
+				$(this).val( old_type_selected );
+				if(old_type_selected == 'checkbox' || old_type_selected == 'radio' || old_type_selected == 'drop-down' || old_type_selected == 'multi-select'){
+					$("#field_value").show();
+				}else{
+					$("#field_value").hide();
+				}
+			}
+			$("select#field_type").trigger("liszt:updated");
+		});
+	});
+})(jQuery);
+		</script>
         <div style="clear:both"></div>
         <?php
 	}

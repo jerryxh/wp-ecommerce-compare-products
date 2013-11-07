@@ -535,6 +535,9 @@ extract($wpec_compare_product_prices_style);
 }
 
 /* For Print Page*/
+.compare_popup_print .hide_in_print {
+	display: none !important;	
+}
 .compare_popup_print .compare_heading {
 	position:absolute !important;
 }

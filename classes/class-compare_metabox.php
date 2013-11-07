@@ -119,9 +119,9 @@ class WPEC_Compare_MetaBox
 								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
 									if (in_array($option_value, $field_value)) {
-										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.htmlspecialchars($option_value).'" checked="checked" style="width:auto" />'.$option_value.' &nbsp;&nbsp;';
+										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.esc_attr($option_value).'" checked="checked" style="width:auto" />'.esc_attr( $option_value ).' &nbsp;&nbsp;';
 									} else{
-										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.htmlspecialchars($option_value).'" style="width:auto" />'.$option_value.' &nbsp;&nbsp;';
+										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.esc_attr($option_value).'" style="width:auto" />'.esc_attr( $option_value ).' &nbsp;&nbsp;';
 									}
 								}
 							}
@@ -134,9 +134,9 @@ class WPEC_Compare_MetaBox
 								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
 									if ($option_value == $field_value) {
-										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.htmlspecialchars($option_value).'" checked="checked" style="width:auto" /> '.$option_value.' &nbsp;&nbsp;';
+										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.esc_attr($option_value).'" checked="checked" style="width:auto" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;';
 									} else {
-										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.htmlspecialchars($option_value).'" style="width:auto" /> '.$option_value.' &nbsp;&nbsp;';
+										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.esc_attr($option_value).'" style="width:auto" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;';
 									}
 								}
 							}
@@ -151,9 +151,9 @@ class WPEC_Compare_MetaBox
 								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
 									if ($option_value == $field_value) {
-										echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
+										echo '<option value="'.esc_attr($option_value).'" selected="selected">'.esc_attr( $option_value ).'</option>';
 									} else {
-										echo '<option value="'.htmlspecialchars($option_value).'">'.$option_value.'</option>';
+										echo '<option value="'.esc_attr($option_value).'">'.esc_attr( $option_value ).'</option>';
 									}
 								}
 							}
@@ -170,9 +170,9 @@ class WPEC_Compare_MetaBox
 								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
 									if (in_array($option_value, $field_value)) {
-										echo '<option value="'.htmlspecialchars($option_value).'" selected="selected">'.$option_value.'</option>';
+										echo '<option value="'.esc_attr($option_value).'" selected="selected">'.esc_attr( $option_value ).'</option>';
 									} else {
-										echo '<option value="'.htmlspecialchars($option_value).'">'.$option_value.'</option>';
+										echo '<option value="'.esc_attr($option_value).'">'.esc_attr( $option_value ).'</option>';
 									}
 								}
 							}
@@ -180,7 +180,7 @@ class WPEC_Compare_MetaBox
 							break;
 							
 						default:
-							echo '<input type="text" name="_wpsc_compare_'.$field_data->field_key.'" id="'.$field_data->field_key.'" value="'.$field_value.'" />';
+							echo '<input type="text" name="_wpsc_compare_'.$field_data->field_key.'" id="'.$field_data->field_key.'" value="'.esc_attr( $field_value ).'" />';
 							break;
 					}
 				?>
