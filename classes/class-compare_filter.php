@@ -5,7 +5,9 @@
  *
  * Table Of Contents
  *
+ * register_admin_screen()
  * template_loader()
+ * add_google_fonts()
  * include_customized_style()
  * wpec_ajax_add_compare_button()
  * add_compare_button()
@@ -19,14 +21,29 @@
  * wpeccp_remove_from_compare()
  * wpeccp_clear_compare()
  * wpec_compare_footer_script()
- * wpeccp_admin_header_script()
- * wpeccp_admin_script()
  * auto_create_compare_category()
  * auto_create_compare_feature()
+ * a3_wp_admin()
+ * admin_sidebar_menu_css()
  * plugin_extra_links()
  */
 class WPEC_Compare_Hook_Filter
 {
+	
+	public static function register_admin_screen () {
+		if (get_option('a3rev_wpeccp_just_confirm') == 1) {
+			WPEC_Compare_Data::automatic_add_features();
+			WPEC_Compare_Categories_Data::automatic_add_compare_categories();
+			update_option('a3rev_wpeccp_just_confirm', 0);
+		}
+		
+		$product_comparison = add_menu_page( __('Compare Products', 'wpec_cp'), __('WPEC Compare', 'wpec_cp'), 'manage_options', 'wpsc-compare-features', array( 'WPEC_Compare_Features_Panel', 'admin_screen' ), null, '25.222');
+		
+		$compare_features = add_submenu_page('wpsc-compare-features', __( 'Compare Category & Feature', 'wpec_cp' ), __( 'Category & Feature', 'wpec_cp' ), 'manage_options', 'wpsc-compare-features', array( 'WPEC_Compare_Features_Panel', 'admin_screen' ) );
+		
+		$compare_products = add_submenu_page('wpsc-compare-features', __( 'Compare Products Manager', 'wpec_cp' ), __( 'Product Manager', 'wpec_cp' ), 'manage_options', 'wpsc-compare-products', array( 'WPEC_Compare_Products_Class', 'wpeccp_products_manager' ) );
+				
+	} // End register_admin_screen()
 	
 	public static function template_loader( $template ) {
 		global $product_compare_id;
@@ -44,6 +61,34 @@ class WPEC_Compare_Hook_Filter
 		}
 	
 		return $template;
+	}
+	
+	public static function add_google_fonts() {
+		global $wpec_compare_fonts_face;
+		global $wpec_compare_product_page_button_style, $wpec_compare_product_page_view_compare_style;
+		$google_fonts = array( 
+							$wpec_compare_product_page_button_style['product_compare_link_font']['face'], 
+							$wpec_compare_product_page_button_style['button_font']['face'], 
+							$wpec_compare_product_page_view_compare_style['product_view_compare_link_font']['face'], 
+							$wpec_compare_product_page_view_compare_style['button_font']['face'], 
+						);
+						
+		$google_fonts = apply_filters( 'wpec_compare_google_fonts', $google_fonts );
+		
+		$wpec_compare_fonts_face->generate_google_webfonts( $google_fonts );
+	}
+	
+	public static function add_google_fonts_comparison_page() {
+		global $wpec_compare_fonts_face;
+		global $wpec_compare_page_style;
+		$google_fonts = array( 
+							$wpec_compare_page_style['no_product_message_font']['face'],
+							
+						);
+						
+		$google_fonts = apply_filters( 'wpec_comparison_page_google_fonts', $google_fonts );
+		
+		$wpec_compare_fonts_face->generate_google_webfonts( $google_fonts );
 	}
 	
 	public static function include_customized_style() {
@@ -68,7 +113,7 @@ class WPEC_Compare_Hook_Filter
 				global $wpec_compare_product_page_button_style;
 				global $wpec_compare_product_page_view_compare_style;
 				
-				$product_compare_custom_class = $wpec_compare_product_page_button_style['button_class'];
+				$product_compare_custom_class = '';
 				$product_compare_text = $wpec_compare_product_page_button_style['product_compare_button_text'];
 				$product_compare_class = 'wpec_bt_compare_this_button';
 				if ($wpec_compare_product_page_button_style['product_compare_button_type'] == 'link') {
@@ -83,7 +128,7 @@ class WPEC_Compare_Hook_Filter
 					$product_view_compare_text = $wpec_compare_product_page_view_compare_style['product_view_compare_link_text'];
 					$product_view_compare_class = 'wpec_bt_view_compare_link';
 					if ($wpec_compare_product_page_view_compare_style['product_view_compare_button_type'] == 'button') {
-						$product_view_compare_custom_class = $wpec_compare_product_page_view_compare_style['button_class'];
+						$product_view_compare_custom_class = '';
 						$product_view_compare_text = $wpec_compare_product_page_view_compare_style['product_view_compare_button_text'];
 						$product_view_compare_class = 'wpec_bt_view_compare_button';
 					}
@@ -104,7 +149,7 @@ class WPEC_Compare_Hook_Filter
 				global $wpec_compare_grid_view_button_style;
 				global $wpec_compare_gridview_view_compare_style;
 				
-				$compare_grid_view_custom_class = $wpec_compare_grid_view_button_style['button_class'];
+				$compare_grid_view_custom_class = '';
 				$compare_grid_view_text = $wpec_compare_grid_view_button_style['button_text'];
 				$compare_grid_view_class = 'wpec_bt_compare_this_button';
 				
@@ -146,7 +191,7 @@ class WPEC_Compare_Hook_Filter
 		$post_type = get_post_type($product_id);
 		$html = '';
 		if ($post_type == 'wpsc-product' && WPEC_Compare_Functions::check_product_activate_compare($product_id) && WPEC_Compare_Functions::check_product_have_cat($product_id)) {
-			$product_compare_custom_class = $wpec_compare_product_page_button_style['button_class'];
+			$product_compare_custom_class = '';
 			$product_compare_text = $wpec_compare_product_page_button_style['product_compare_button_text'];
 			$product_compare_class = 'wpec_bt_compare_this_button';
 			if ($wpec_compare_product_page_button_style['product_compare_button_type'] == 'link') {
@@ -161,7 +206,7 @@ class WPEC_Compare_Hook_Filter
 				$product_view_compare_text = $wpec_compare_product_page_view_compare_style['product_view_compare_link_text'];
 				$product_view_compare_class = 'wpec_bt_view_compare_link';
 				if ($wpec_compare_product_page_view_compare_style['product_view_compare_button_type'] == 'button') {
-					$product_view_compare_custom_class = $wpec_compare_product_page_view_compare_style['button_class'];
+					$product_view_compare_custom_class = '';
 					$product_view_compare_text = $wpec_compare_product_page_view_compare_style['product_view_compare_button_text'];
 					$product_view_compare_class = 'wpec_bt_view_compare_button';
 				}
@@ -411,76 +456,6 @@ class WPEC_Compare_Hook_Filter
 		echo $script_add_on;
 	}
 	
-	public static function wpeccp_admin_header_script() {
-		wp_enqueue_script('jquery');
-		wp_enqueue_script('farbtastic');
-		wp_enqueue_style('farbtastic');
-		
-		WPEC_Compare_Uploader::uploader_js();
-	}
-	
-	public static function wpeccp_admin_script(){
-		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-
-		wp_enqueue_style( 'a3rev-chosen-style', ECCP_JS_URL . '/chosen/chosen.css' );
-		wp_enqueue_script( 'chosen', ECCP_JS_URL . '/chosen/chosen.jquery'.$suffix.'.js', array(), false, true );
-		wp_enqueue_script( 'a3rev-chosen-script-init', ECCP_JS_URL.'/init-chosen.js', array(), false, true );
-		
-		wp_enqueue_style( 'tiptup_style', ECCP_JS_URL . '/tipTip/tipTip.css' );
-		echo '<script src="'.ECCP_JS_URL . '/tipTip/jquery.tipTip'.$suffix.'.js" type="text/javascript"></script>';	
-		?>
-<script type="text/javascript">
-jQuery(window).load(function(){
-	// Subsubsub tabs
-	jQuery('div.a3_subsubsub_section ul.subsubsub li a:eq(0)').addClass('current');
-	jQuery('div.a3_subsubsub_section .section:gt(0)').hide();
-	jQuery('div.a3_subsubsub_section ul.subsubsub li a').click(function(){
-		var $clicked = jQuery(this);
-		var $section = $clicked.closest('.a3_subsubsub_section');
-		var $target  = $clicked.attr('href');
-	
-		$section.find('a').removeClass('current');
-	
-		if ( $section.find('.section:visible').size() > 0 ) {
-			$section.find('.section:visible').fadeOut( 100, function() {
-				$section.find( $target ).fadeIn('fast');
-			});
-		} else {
-			$section.find( $target ).fadeIn('fast');
-		}
-	
-		$clicked.addClass('current');
-		jQuery('#last_tab').val( $target );
-	
-		return false;
-	});
-	<?php if (isset($_REQUEST['subtab']) && $_REQUEST['subtab']) echo 'jQuery("div.a3_subsubsub_section ul.subsubsub li a[href='.$_REQUEST['subtab'].']").click();'; ?>
-});
-(function($){		
-	$(function(){
-		// Tooltips
-		jQuery(".help_tip").tipTip({
-			"attribute" : "tip",
-			"fadeIn" : 50,
-			"fadeOut" : 50
-		});
-		// Color picker
-		$('.colorpick').each(function(){
-			$('.colorpickdiv', $(this).parent()).farbtastic(this);
-			$(this).on('click',function() {
-				if ( $(this).val() == "" ) $(this).val('#000000');
-				$('.colorpickdiv', $(this).parent() ).show();
-			});	
-		});
-		$(document).mousedown(function(){
-			$('.colorpickdiv').hide();
-		});
-	});		  
-})(jQuery);
-</script>
-	<?php
-    }
-	
 	public static function auto_create_compare_category($term_id) {
 		$term = get_term( $term_id, 'wpsc_product_category' );
 		$check_existed = WPEC_Compare_Categories_Data::get_count("category_name='".trim($term->name)."'");
@@ -495,6 +470,14 @@ jQuery(window).load(function(){
 		if ($check_existed < 1 && $term->parent == 0 ) {
 			WPEC_Compare_Data::insert_row(array('field_name' => trim(addslashes($term->name)), 'field_type' => 'input-text', 'field_unit' => '', 'default_value' => '' ) );
 		}
+	}
+	
+	public static function a3_wp_admin() {
+		wp_enqueue_style( 'a3rev-wp-admin-style', ECCP_CSS_URL . '/a3_wp_admin.css' );
+	}
+	
+	public static function admin_sidebar_menu_css() {
+		wp_enqueue_style( 'a3rev-wpec-cp-admin-sidebar-menu-style', ECCP_CSS_URL . '/admin_sidebar_menu.css' );
 	}
 	
 	public static function plugin_extra_links($links, $plugin_name) {

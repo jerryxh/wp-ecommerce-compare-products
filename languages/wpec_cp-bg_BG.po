@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPEC Compare Products Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-07 18:04+0700\n"
-"PO-Revision-Date: 2013-11-07 18:04+0700\n"
+"POT-Creation-Date: 2013-12-31 17:29+0700\n"
+"PO-Revision-Date: 2013-12-31 17:29+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -14,196 +14,232 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/compare_init.php:8 includes/class-compare_functions.php:778
+#: admin/admin-interface.php:125
+#, fuzzy
+msgid "Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/admin-interface.php:133
+msgid "Error: Settings can not save."
+msgstr ""
+
+#: admin/admin-interface.php:141
+#, fuzzy
+msgid "Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/admin-interface.php:162
+msgid "Thin"
+msgstr ""
+
+#: admin/admin-interface.php:163
+msgid "Thin/Italic"
+msgstr ""
+
+#: admin/admin-interface.php:164
+msgid "Normal"
+msgstr ""
+
+#: admin/admin-interface.php:165
+msgid "Italic"
+msgstr ""
+
+#: admin/admin-interface.php:166
+msgid "Bold"
+msgstr ""
+
+#: admin/admin-interface.php:167
+msgid "Bold/Italic"
+msgstr ""
+
+#: admin/admin-interface.php:177
+msgid "Solid"
+msgstr ""
+
+#: admin/admin-interface.php:178
+msgid "Double"
+msgstr ""
+
+#: admin/admin-interface.php:179
+msgid "Dashed"
+msgstr ""
+
+#: admin/admin-interface.php:180
+msgid "Dotted"
+msgstr ""
+
+#: admin/admin-interface.php:181
+msgid "Groove"
+msgstr ""
+
+#: admin/admin-interface.php:182
+msgid "Ridge"
+msgstr ""
+
+#: admin/admin-interface.php:183
+msgid "Inset"
+msgstr ""
+
+#: admin/admin-interface.php:184
+msgid "Outset"
+msgstr ""
+
+#: admin/admin-interface.php:1293 admin/admin-interface.php:1383
+#: admin/admin-interface.php:1412
+#: admin/settings/comparison-page/add-to-cart-settings.php:210
+#: admin/settings/comparison-page/global-settings.php:205
+#: admin/settings/comparison-page/global-settings.php:211
+#: admin/settings/comparison-page/print-page-settings.php:211
+#: admin/settings/comparison-page/product-prices-settings.php:208
+#: admin/settings/gridview-style/global-settings.php:210
+#: admin/settings/gridview-style/view-compare-settings.php:210
+#: admin/settings/product-page/compare-tab-settings.php:193
+#: admin/settings/product-page/global-settings.php:207
+#: admin/settings/product-page/global-settings.php:264
+#: admin/settings/product-page/global-settings.php:281
+#: admin/settings/product-page/view-compare-settings.php:195
+#: admin/settings/widget-style/product-thumbnails-settings.php:208
+#: admin/settings/widget-style/widget-title-settings.php:210
+#: admin/settings/widget-style/widget-title-settings.php:216
+msgid "ON"
+msgstr ""
+
+#: admin/admin-interface.php:1294 admin/admin-interface.php:1384
+#: admin/admin-interface.php:1413
+#: admin/settings/comparison-page/add-to-cart-settings.php:211
+#: admin/settings/comparison-page/global-settings.php:206
+#: admin/settings/comparison-page/global-settings.php:212
+#: admin/settings/comparison-page/print-page-settings.php:212
+#: admin/settings/comparison-page/product-prices-settings.php:209
+#: admin/settings/gridview-style/global-settings.php:211
+#: admin/settings/gridview-style/view-compare-settings.php:211
+#: admin/settings/product-page/compare-tab-settings.php:194
+#: admin/settings/product-page/global-settings.php:208
+#: admin/settings/product-page/global-settings.php:265
+#: admin/settings/product-page/global-settings.php:282
+#: admin/settings/product-page/view-compare-settings.php:196
+#: admin/settings/widget-style/product-thumbnails-settings.php:209
+#: admin/settings/widget-style/widget-title-settings.php:211
+#: admin/settings/widget-style/widget-title-settings.php:217
+msgid "OFF"
+msgstr ""
+
+#: admin/admin-interface.php:1454
+msgid "Width"
+msgstr ""
+
+#: admin/admin-interface.php:1456
+msgid "Height"
+msgstr ""
+
+#: admin/admin-interface.php:1458
+msgid "Hard Crop"
+msgstr ""
+
+#: admin/admin-interface.php:1536
+msgid "-- Default Fonts --"
+msgstr ""
+
+#: admin/admin-interface.php:1547
+msgid "-- Google Fonts --"
+msgstr ""
+
+#: admin/admin-interface.php:1588
+msgid "Preview your customized typography settings"
+msgstr ""
+
+#: admin/admin-interface.php:1722 admin/admin-interface.php:1981
+msgid "Preview your customized border settings"
+msgstr ""
+
+#: admin/admin-interface.php:1731 admin/admin-interface.php:1972
+#, fuzzy
+msgid "Rounded"
+msgstr "Намерени"
+
+#: admin/admin-interface.php:1732 admin/admin-interface.php:1973
+msgid "Square"
+msgstr ""
+
+#: admin/admin-interface.php:1742 admin/admin-interface.php:1986
+msgid "Top Left Corner"
+msgstr ""
+
+#: admin/admin-interface.php:1762 admin/admin-interface.php:2006
+msgid "Top Right Corner"
+msgstr ""
+
+#: admin/admin-interface.php:1782 admin/admin-interface.php:2026
+msgid "Bottom Right Corner"
+msgstr ""
+
+#: admin/admin-interface.php:1802 admin/admin-interface.php:2046
+msgid "Bottom Left Corner"
+msgstr ""
+
+#: admin/admin-interface.php:1895
+msgid "Preview your customized border styles settings"
+msgstr ""
+
+#: admin/admin-interface.php:2107
+msgid "YES"
+msgstr ""
+
+#: admin/admin-interface.php:2108
+msgid "NO"
+msgstr ""
+
+#: admin/admin-interface.php:2122
+msgid "Horizontal Shadow"
+msgstr ""
+
+#: admin/admin-interface.php:2140
+msgid "Vertical Shadow"
+msgstr ""
+
+#: admin/admin-interface.php:2158
+msgid "Blur Distance"
+msgstr ""
+
+#: admin/admin-interface.php:2176
+#, fuzzy
+msgid "Spread Size"
+msgstr "Избери стойност"
+
+#: admin/admin-interface.php:2194
+msgid "INNER"
+msgstr ""
+
+#: admin/admin-interface.php:2195
+msgid "OUTER"
+msgstr ""
+
+#: admin/admin-interface.php:2213
+msgid "Preview your customized box shadow settings"
+msgstr ""
+
+#: admin/admin-interface.php:2401
+msgid "Save changes"
+msgstr "Запази промените"
+
+#: admin/admin-interface.php:2402
+msgid "Reset Settings"
+msgstr "Възстановаване на настройките"
+
+#: admin/compare_init.php:8 includes/class-compare_functions.php:685
 #, fuzzy
 msgid "Product Comparison"
 msgstr "Бутони за сравняване в продуктовата страница"
 
-#: admin/compare_init.php:190
+#: admin/admin-pages/admin-product-comparison-page.php:63
 #, fuzzy
-msgid "Compare Settings"
+msgid "Compare Settings & Style"
 msgstr "Сравни това"
 
-#: admin/compare_init.php:190 templates/product-compare.php:50
-#: templates/product-compare.php:52 widget/class-compare_widget.php:41
-msgid "Compare Products"
-msgstr "Сравняване на продукти"
-
-#: admin/compare_init.php:310
-msgid "Features"
-msgstr "Характеристики"
-
-#: admin/compare_init.php:311 admin/classes/class-compare_products.php:212
-msgid "Products"
-msgstr "Продукти"
-
-#: admin/compare_init.php:312
+#: admin/admin-pages/admin-product-comparison-page.php:64
 #, fuzzy
-msgid "Single Product"
-msgstr "Открито продуктово име"
-
-#: admin/compare_init.php:313
-msgid "Widget Style"
-msgstr ""
-
-#: admin/compare_init.php:314
-#, fuzzy
-msgid "Product Page Style"
-msgstr "Продуктово име"
-
-#: admin/compare_init.php:315
-#, fuzzy
-msgid "Comparison Page"
-msgstr "Сравни това"
-
-#: admin/classes/class-compare-grid-view-panel.php:15
-#, fuzzy
-msgid "Product Page Style Successfully saved."
-msgstr "Настройките за сравняване са успешно запазени"
-
-#: admin/classes/class-compare-grid-view-panel.php:17
-#, fuzzy
-msgid "Product Page Style Successfully reseted."
-msgstr "Compare Settings Successfully reset"
-
-#: admin/classes/class-compare-grid-view-panel.php:26
-#, fuzzy
-msgid "Product Page Settings"
-msgstr "Бутони за сравняване в продуктовата страница"
-
-#: admin/classes/class-compare-grid-view-panel.php:27
-#, fuzzy
-msgid "Product Page Button"
-msgstr "Бутони за сравняване в продуктовата страница"
-
-#: admin/classes/class-compare-grid-view-panel.php:28
-#: admin/classes/class-compare-product-page-panel.php:28
-#, fuzzy
-msgid "View Compare"
-msgstr "Сравни това"
-
-#: admin/classes/class-compare-grid-view-panel.php:51
-#: admin/classes/class-compare-page-panel.php:92
-#: admin/classes/class-compare-product-page-panel.php:52
-#: admin/classes/class-compare-widget-style-panel.php:67
-msgid "Save changes"
-msgstr "Запази промените"
-
-#: admin/classes/class-compare-grid-view-panel.php:52
-#: admin/classes/class-compare-page-panel.php:93
-#: admin/classes/class-compare-product-page-panel.php:53
-#: admin/classes/class-compare-widget-style-panel.php:68
-msgid "Reset Settings"
-msgstr "Възстановаване на настройките"
-
-#: admin/classes/class-compare-page-panel.php:15
-#, fuzzy
-msgid "Comparison Table Style Successfully saved."
-msgstr "Настройките за сравняване са успешно запазени"
-
-#: admin/classes/class-compare-page-panel.php:17
-#, fuzzy
-msgid "Comparison Table Style Successfully reseted."
-msgstr "Compare Settings Successfully reset"
-
-#: admin/classes/class-compare-page-panel.php:26
-#, fuzzy
-msgid "Global Settings"
+msgid "Settings & Style"
 msgstr "Настройки"
-
-#: admin/classes/class-compare-page-panel.php:27
-msgid "Page Style"
-msgstr ""
-
-#: admin/classes/class-compare-page-panel.php:28
-msgid "Table Style"
-msgstr ""
-
-#: admin/classes/class-compare-page-panel.php:29
-msgid "Table Content Style"
-msgstr ""
-
-#: admin/classes/class-compare-page-panel.php:30
-#, fuzzy
-msgid "Product Prices"
-msgstr "Продукти"
-
-#: admin/classes/class-compare-page-panel.php:31
-#, fuzzy
-msgid "Add to Cart"
-msgstr "Добави в количката"
-
-#: admin/classes/class-compare-page-panel.php:32
-msgid "Checkout Link"
-msgstr ""
-
-#: admin/classes/class-compare-page-panel.php:33
-#, fuzzy
-msgid "Print Page"
-msgstr "Принтирай тази страница"
-
-#: admin/classes/class-compare-page-panel.php:34
-msgid "Close Window Button"
-msgstr ""
-
-#: admin/classes/class-compare-product-page-panel.php:15
-#, fuzzy
-msgid "Compare Single Product Page Settings Successfully saved."
-msgstr "Настройките за сравняване са успешно запазени"
-
-#: admin/classes/class-compare-product-page-panel.php:17
-#, fuzzy
-msgid "Compare Single Product Page Settings Successfully reseted."
-msgstr "Compare Settings Successfully reset"
-
-#: admin/classes/class-compare-product-page-panel.php:26
-#, fuzzy
-msgid "Single Product Page Settings"
-msgstr "Бутони за сравняване в продуктовата страница"
-
-#: admin/classes/class-compare-product-page-panel.php:27
-#, fuzzy
-msgid "Single Product Page Compare Button"
-msgstr "Бутони за сравняване в продуктовата страница"
-
-#: admin/classes/class-compare-product-page-panel.php:29
-#, fuzzy
-msgid "Single Product Page Compare Feature Fields"
-msgstr "Полета за продуктови характеристики за сравняване"
-
-#: admin/classes/class-compare-widget-style-panel.php:15
-#, fuzzy
-msgid "Widget Style Successfully saved."
-msgstr "Настройките за сравняване са успешно запазени"
-
-#: admin/classes/class-compare-widget-style-panel.php:17
-#, fuzzy
-msgid "Widget Style Successfully reseted."
-msgstr "Compare Settings Successfully reset"
-
-#: admin/classes/class-compare-widget-style-panel.php:26
-#, fuzzy
-msgid "Compare Widget"
-msgstr "Ширина на изкачащия прозорец за сравнение"
-
-#: admin/classes/class-compare-widget-style-panel.php:27
-msgid "Widget Title"
-msgstr ""
-
-#: admin/classes/class-compare-widget-style-panel.php:28
-#, fuzzy
-msgid "Compare Button"
-msgstr "Автоматично добави бутон за сравняване"
-
-#: admin/classes/class-compare-widget-style-panel.php:29
-msgid "Clear all Items"
-msgstr ""
-
-#: admin/classes/class-compare-widget-style-panel.php:30
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:68
-#, fuzzy
-msgid "Product Thumbnails"
-msgstr "Продукти"
 
 #: admin/classes/class-compare_categories.php:26
 msgid "Compare Category Successfully edited"
@@ -258,17 +294,17 @@ msgid "Category Name"
 msgstr "Име на категория"
 
 #: admin/classes/class-compare_categories.php:77
-#: admin/classes/class-compare_fields.php:184
+#: admin/classes/class-compare_fields.php:190
 msgid "Save"
 msgstr "Запази"
 
 #: admin/classes/class-compare_categories.php:77
-#: admin/classes/class-compare_fields.php:184
+#: admin/classes/class-compare_fields.php:190
 msgid "Create"
 msgstr "Създай"
 
 #: admin/classes/class-compare_categories.php:77
-#: admin/classes/class-compare_fields.php:184
+#: admin/classes/class-compare_fields.php:191
 msgid "Cancel"
 msgstr "Отмени"
 
@@ -318,29 +354,23 @@ msgstr "Характеристиките за сравняване са успе
 msgid "Compare Feature successfully deleted"
 msgstr "Характеристиките за сравняване са успешно изтрити"
 
-#: admin/classes/class-compare_fields.php:104
+#: admin/classes/class-compare_fields.php:101
 msgid "Edit Compare Product Features"
 msgstr "Редактирай характеристиките за сравняване на продукти"
 
-#: admin/classes/class-compare_fields.php:104
+#: admin/classes/class-compare_fields.php:101
 msgid "Add Compare Product Features"
 msgstr "Добави характеристики за сравнявани на продукти"
 
-#: admin/classes/class-compare_fields.php:120
+#: admin/classes/class-compare_fields.php:117
 msgid "Edit Compare Features"
 msgstr "Редактирай характеристиките за сравняване"
 
-#: admin/classes/class-compare_fields.php:120
+#: admin/classes/class-compare_fields.php:117
 msgid "Create New Compare Features"
 msgstr "Създай нови характеристики за сравняване"
 
-#: admin/classes/class-compare_fields.php:125
-#: admin/classes/class-compare_fields.php:223
-#: admin/classes/class-compare_fields.php:420
-msgid "Feature Name"
-msgstr "Име на характеристика"
-
-#: admin/classes/class-compare_fields.php:125
+#: admin/classes/class-compare_fields.php:124
 msgid ""
 "This is the Feature Name that users see in the Compare Fly-Out Window, for "
 "example-  System Height"
@@ -348,11 +378,13 @@ msgstr ""
 "Това е името на характеристиката, което потребителите виждат в изкачащия "
 "прозорец за сравняване, например височина"
 
-#: admin/classes/class-compare_fields.php:127
-msgid "Feature Unit of Measurement"
-msgstr "Единица за измерване на характеристиката"
+#: admin/classes/class-compare_fields.php:124
+#: admin/classes/class-compare_fields.php:230
+#: admin/classes/class-compare_fields.php:426
+msgid "Feature Name"
+msgstr "Име на характеристика"
 
-#: admin/classes/class-compare_fields.php:127
+#: admin/classes/class-compare_fields.php:128
 msgid ""
 "e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the "
 "Feature name in (brackets). If you leave this blank you will just see the "
@@ -362,11 +394,11 @@ msgstr ""
 "името на характеристиката в скоби. Ако оставите това поле празно ще виждате "
 "само името на характеристиката."
 
-#: admin/classes/class-compare_fields.php:129
-msgid "Feature Input Type"
-msgstr "Въвеждане на вид характеристика"
+#: admin/classes/class-compare_fields.php:128
+msgid "Feature Unit of Measurement"
+msgstr "Единица за измерване на характеристиката"
 
-#: admin/classes/class-compare_fields.php:145
+#: admin/classes/class-compare_fields.php:132
 msgid ""
 "Users don't see this. Use to set the data input field type that you will use "
 "on to enter the Products data for this feature."
@@ -375,11 +407,11 @@ msgstr ""
 "въвеждане на данни, което ще използвате, за да въведете данните за тази "
 "характеристика."
 
-#: admin/classes/class-compare_fields.php:148
-msgid "Enter Input Type options"
-msgstr "Въведете варианти за типа на полето"
+#: admin/classes/class-compare_fields.php:132
+msgid "Feature Input Type"
+msgstr "Въвеждане на вид характеристика"
 
-#: admin/classes/class-compare_fields.php:148
+#: admin/classes/class-compare_fields.php:153
 msgid ""
 "You have selected one of the Check Box, Radio Button, Drop Down, Mutli "
 "Select Input Types. Type your Options here, one line for each option."
@@ -388,16 +420,11 @@ msgstr ""
 "Няколко избрани типа за въвеждане. Въведете вашите опции, един ред за всяка "
 "опция."
 
-#: admin/classes/class-compare_fields.php:152
-msgid "Assign Feature to Categories"
-msgstr "Присвояване на характеристика към Категории"
+#: admin/classes/class-compare_fields.php:153
+msgid "Enter Input Type options"
+msgstr "Въведете варианти за типа на полето"
 
-#: admin/classes/class-compare_fields.php:158
-#, fuzzy
-msgid "Select Compare Categories"
-msgstr "Select a Compare Category for this Product"
-
-#: admin/classes/class-compare_fields.php:176
+#: admin/classes/class-compare_fields.php:157
 msgid ""
 "Assign features to one or more Categories. Features such as Colour, Size, "
 "Weight can be applicable to many Product categories. Create the Feature once "
@@ -408,55 +435,64 @@ msgstr ""
 "категории. Създайте характеристиката веднъж и я присвоете към една или "
 "повече категории."
 
-#: admin/classes/class-compare_fields.php:194
+#: admin/classes/class-compare_fields.php:157
+msgid "Assign Feature to Categories"
+msgstr "Присвояване на характеристика към Категории"
+
+#: admin/classes/class-compare_fields.php:164
+#, fuzzy
+msgid "Select Compare Categories"
+msgstr "Select a Compare Category for this Product"
+
+#: admin/classes/class-compare_fields.php:201
 msgid "This Type just is enabled on PRO version."
 msgstr ""
 
-#: admin/classes/class-compare_fields.php:216
+#: admin/classes/class-compare_fields.php:223
 msgid "Un-Assigned Features (Assign to a Category to activate)"
 msgstr "Неприсвоени характеристики (Присвои към категория, за да ги активираш)"
 
-#: admin/classes/class-compare_fields.php:222
+#: admin/classes/class-compare_fields.php:229
 msgid "No"
 msgstr "Не"
 
-#: admin/classes/class-compare_fields.php:224
-#: admin/classes/class-compare_fields.php:421
+#: admin/classes/class-compare_fields.php:231
+#: admin/classes/class-compare_fields.php:427
 msgid "Type"
 msgstr "Вид"
 
-#: admin/classes/class-compare_fields.php:238
-#: admin/classes/class-compare_fields.php:268
-#: admin/classes/class-compare_fields.php:282
-#: admin/classes/class-compare_fields.php:432
+#: admin/classes/class-compare_fields.php:245
+#: admin/classes/class-compare_fields.php:275
+#: admin/classes/class-compare_fields.php:289
+#: admin/classes/class-compare_fields.php:438
 #: admin/classes/class-compare_products.php:83
 #: admin/classes/class-compare_products.php:122
-#: admin/classes/class-compare_products.php:204
+#: admin/classes/class-compare_products.php:225
 msgid "Edit"
 msgstr "Редактирай"
 
-#: admin/classes/class-compare_fields.php:238
-#: admin/classes/class-compare_fields.php:268
-#: admin/classes/class-compare_fields.php:432
+#: admin/classes/class-compare_fields.php:245
+#: admin/classes/class-compare_fields.php:275
+#: admin/classes/class-compare_fields.php:438
 msgid "Are you sure you want to delete"
 msgstr "Сигурни ли сте, че искате да изтриете?"
 
-#: admin/classes/class-compare_fields.php:238
-#: admin/classes/class-compare_fields.php:243
-#: admin/classes/class-compare_fields.php:268
-#: admin/classes/class-compare_fields.php:432
+#: admin/classes/class-compare_fields.php:245
+#: admin/classes/class-compare_fields.php:250
+#: admin/classes/class-compare_fields.php:275
+#: admin/classes/class-compare_fields.php:438
 msgid "Delete"
 msgstr "Изтрий"
 
-#: admin/classes/class-compare_fields.php:243
+#: admin/classes/class-compare_fields.php:250
 msgid "Are you sure about deleting this?"
 msgstr "Сигурни ли сте, че искате да изтриете това?"
 
-#: admin/classes/class-compare_fields.php:251
+#: admin/classes/class-compare_fields.php:258
 msgid "Manage Compare Categories and Features"
 msgstr "Управление на Категориите и Характеристиките за сравняване"
 
-#: admin/classes/class-compare_fields.php:252
+#: admin/classes/class-compare_fields.php:259
 msgid ""
 "Use drag and drop to change Category order and Feature order within "
 "Categories."
@@ -464,63 +500,62 @@ msgstr ""
 "Използвайте функцията \"влачете и пуснете\", за да промените подредбата в "
 "списъците с категории и с характеристики за категориите."
 
-#: admin/classes/class-compare_fields.php:282
+#: admin/classes/class-compare_fields.php:289
 msgid "Are you sure you want to remove"
 msgstr "Сигурни ли сте, че искате да премахнете?"
 
-#: admin/classes/class-compare_fields.php:282
+#: admin/classes/class-compare_fields.php:289
 msgid "from"
 msgstr "от"
 
-#: admin/classes/class-compare_fields.php:282
-#: includes/class-compare_functions.php:364
-#: uploader/class-compare-uploader.php:82
+#: admin/classes/class-compare_fields.php:289
+#: includes/class-compare_functions.php:337
 msgid "Remove"
 msgstr "Премахни"
 
-#: admin/classes/class-compare_fields.php:287
+#: admin/classes/class-compare_fields.php:294
 msgid "You have not assigned any Features to this category yet. No Hurry!"
 msgstr ""
 "Не сте присвоили нито една характеристика към тази категория за сега. Не "
 "бързайте!"
 
-#: admin/classes/class-compare_fields.php:361
+#: admin/classes/class-compare_fields.php:368
 msgid "You just save the order for Compare Features."
 msgstr "Току що запазихте подредбата на характеристиките за сравняване."
 
-#: admin/classes/class-compare_fields.php:369
+#: admin/classes/class-compare_fields.php:376
 msgid "Categories & Features"
 msgstr "Категории и характеристики"
 
-#: admin/classes/class-compare_fields.php:369
+#: admin/classes/class-compare_fields.php:376
 msgid "Add New"
 msgstr "Добави нов"
 
-#: admin/classes/class-compare_fields.php:383
+#: admin/classes/class-compare_fields.php:389
 msgid "Search Features"
 msgstr "Търси характеристики"
 
-#: admin/classes/class-compare_fields.php:413
+#: admin/classes/class-compare_fields.php:419
 msgid "Found"
 msgstr "Намерени"
 
-#: admin/classes/class-compare_fields.php:413
+#: admin/classes/class-compare_fields.php:419
 msgid "feature(s)"
 msgstr "характеристика(и)"
 
-#: admin/classes/class-compare_fields.php:440
+#: admin/classes/class-compare_fields.php:446
 msgid "Show"
 msgstr "Покажи"
 
-#: admin/classes/class-compare_fields.php:451
+#: admin/classes/class-compare_fields.php:457
 msgid "Go"
 msgstr "Отиди"
 
-#: admin/classes/class-compare_fields.php:452
+#: admin/classes/class-compare_fields.php:458
 msgid "Displaying"
 msgstr "Показване"
 
-#: admin/classes/class-compare_fields.php:452
+#: admin/classes/class-compare_fields.php:458
 msgid "of"
 msgstr "от"
 
@@ -540,1044 +575,458 @@ msgstr ""
 "Полетата за продуктовите характеристики за сравняване са актуализирани "
 "успешно"
 
-#: admin/classes/class-compare_products.php:179
+#: admin/classes/class-compare_products.php:193
 msgid "WPEC Compare Products Manager"
 msgstr "WPEC Сравняване на продукти"
 
-#: admin/classes/class-compare_products.php:199
+#: admin/classes/class-compare_products.php:220
 msgid "No."
 msgstr "Не."
 
-#: admin/classes/class-compare_products.php:200
+#: admin/classes/class-compare_products.php:221
 msgid "Product Name"
 msgstr "Продуктово име"
 
-#: admin/classes/class-compare_products.php:201
+#: admin/classes/class-compare_products.php:222
 msgid "Product Category"
 msgstr "Продуктова категория"
 
-#: admin/classes/class-compare_products.php:202
+#: admin/classes/class-compare_products.php:223
 msgid "Compare Category"
 msgstr "Категория за сравняване"
 
-#: admin/classes/class-compare_products.php:203
+#: admin/classes/class-compare_products.php:224
 msgid "Activated / Deactivated"
 msgstr "Активиран / Деактивиран"
 
-#: admin/classes/class-compare_products.php:213
+#: admin/classes/class-compare_products.php:233
+msgid "Products"
+msgstr "Продукти"
+
+#: admin/classes/class-compare_products.php:234
 msgid "Find Product Name"
 msgstr "Открито продуктово име"
 
-#: admin/classes/class-compare_products.php:229
+#: admin/classes/class-compare_products.php:250
 msgid ""
 "Please upgrade to the Pro Version to activate Products express Compare "
 "feature manager"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:21
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:28
+#: admin/includes/uploader/class-uploader.php:149
+msgid "Upload"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:169
+msgid "View File"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:188
 #, fuzzy
-msgid "Add to cart"
+msgid "Use this Image"
+msgstr "тази страница"
+
+#: admin/includes/uploader/class-uploader.php:189
+msgid "Use as"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:199
+msgid "Previously Uploaded"
+msgstr ""
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:81
+#, fuzzy
+msgid "Add to Cart Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:82
+msgid "Error: Add to Cart Settings can not save."
+msgstr ""
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:83
+#, fuzzy
+msgid "Add to Cart Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:155
+#, fuzzy
+msgid "Add to Cart"
 msgstr "Добави в количката"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:99
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:96
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:96
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:98
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:116
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:127
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:97
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:97
-msgid "Settings"
-msgstr "Настройки"
+#: admin/settings/comparison-page/add-to-cart-settings.php:199
+#, fuzzy
+msgid "Add to Cart Feature"
+msgstr "Добави в количката"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:103
+#: admin/settings/comparison-page/add-to-cart-settings.php:203
 #, fuzzy
 msgid "Add To Cart Link"
 msgstr "Добави в количката"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:104
-msgid " Check to deactivate the Add To Cart link on Comparison Table"
-msgstr ""
+#: admin/settings/comparison-page/add-to-cart-settings.php:221
+#, fuzzy
+msgid "Add To Cart Button / Hyperlink"
+msgstr "Добави в количката"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:107
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:100
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:100
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:102
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:120
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:131
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:101
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:101
-msgid "Button or Text"
+#: admin/settings/comparison-page/add-to-cart-settings.php:225
+#: admin/settings/comparison-page/close-window-button-settings.php:201
+#: admin/settings/comparison-page/print-page-settings.php:244
+#: admin/settings/gridview-style/compare-button-settings.php:200
+#: admin/settings/product-page/compare-button-settings.php:185
+#: admin/settings/product-page/view-compare-settings.php:210
+#: admin/settings/widget-style/clear-all-items-settings.php:200
+#: admin/settings/widget-style/compare-button-settings.php:200
+#, fuzzy
+msgid "Button or Hyperlink Type"
 msgstr "Бутон или текст"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:108
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:101
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:101
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:103
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:121
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:132
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:102
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:102
+#: admin/settings/comparison-page/add-to-cart-settings.php:232
+#: admin/settings/comparison-page/close-window-button-settings.php:208
+#: admin/settings/comparison-page/print-page-settings.php:251
+#: admin/settings/gridview-style/compare-button-settings.php:207
+#: admin/settings/product-page/compare-button-settings.php:192
+#: admin/settings/product-page/view-compare-settings.php:217
+#: admin/settings/widget-style/clear-all-items-settings.php:207
+#: admin/settings/widget-style/compare-button-settings.php:207
 msgid "Button"
 msgstr "Бутон"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:108
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:260
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:101
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:249
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:101
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:249
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:103
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:78
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:121
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:272
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:132
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:279
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:102
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:260
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:102
-msgid "Linked Text"
+#: admin/settings/comparison-page/add-to-cart-settings.php:233
+#: admin/settings/comparison-page/close-window-button-settings.php:209
+#: admin/settings/comparison-page/print-page-settings.php:252
+#: admin/settings/gridview-style/compare-button-settings.php:208
+#: admin/settings/product-page/compare-button-settings.php:193
+#: admin/settings/product-page/view-compare-settings.php:218
+#: admin/settings/widget-style/clear-all-items-settings.php:208
+#: admin/settings/widget-style/compare-button-settings.php:208
+msgid "Hyperlink"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:111
+#: admin/settings/comparison-page/add-to-cart-settings.php:236
 msgid "Added To Cart Success Icon"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:112
-#, fuzzy
-msgid "Added To Cart Success"
-msgstr "Добави в количката"
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:112
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:107
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:125
+#: admin/settings/comparison-page/add-to-cart-settings.php:237
+#: admin/settings/gridview-style/compare-button-settings.php:212
+#: admin/settings/product-page/compare-button-settings.php:197
 msgid "Upload a 16px x 16px image, support .jpg, .pgn, .jpeg, .gif formats."
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:117
+#: admin/settings/comparison-page/add-to-cart-settings.php:245
+#, fuzzy
+msgid "Add To Cart Hyperlink Styling"
+msgstr "Добави в количката"
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:250
+#: admin/settings/comparison-page/close-window-button-settings.php:218
+#: admin/settings/comparison-page/print-page-settings.php:261
+#: admin/settings/gridview-style/compare-button-settings.php:225
+#: admin/settings/gridview-style/view-compare-settings.php:226
+#: admin/settings/product-page/compare-button-settings.php:210
+#: admin/settings/product-page/view-compare-settings.php:227
+#: admin/settings/widget-style/clear-all-items-settings.php:242
+#: admin/settings/widget-style/compare-button-settings.php:230
+#, fuzzy
+msgid "Hyperlink Text"
+msgstr "Сравни това"
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:253
+#: admin/settings/comparison-page/add-to-cart-settings.php:277
+#, fuzzy
+msgid "Add to cart"
+msgstr "Добави в количката"
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:256
+#: admin/settings/comparison-page/close-window-button-settings.php:224
+#: admin/settings/comparison-page/print-page-settings.php:267
+#: admin/settings/gridview-style/compare-button-settings.php:231
+#: admin/settings/gridview-style/view-compare-settings.php:232
+#: admin/settings/product-page/compare-button-settings.php:216
+#: admin/settings/product-page/view-compare-settings.php:233
+#: admin/settings/widget-style/clear-all-items-settings.php:248
+#: admin/settings/widget-style/compare-button-settings.php:236
+msgid "Hyperlink Font"
+msgstr ""
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:262
+#: admin/settings/comparison-page/close-window-button-settings.php:230
+#: admin/settings/comparison-page/print-page-settings.php:273
+#: admin/settings/gridview-style/compare-button-settings.php:238
+#: admin/settings/gridview-style/view-compare-settings.php:239
+#: admin/settings/product-page/compare-button-settings.php:223
+#: admin/settings/product-page/view-compare-settings.php:240
+#: admin/settings/widget-style/clear-all-items-settings.php:255
+#: admin/settings/widget-style/compare-button-settings.php:243
+msgid "Hyperlink Hover Colour"
+msgstr ""
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:269
 msgid "Add To Cart Button Styling"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:121
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:110
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:110
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:116
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:134
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:141
+#: admin/settings/comparison-page/add-to-cart-settings.php:274
+#: admin/settings/comparison-page/close-window-button-settings.php:242
+#: admin/settings/comparison-page/print-page-settings.php:285
+#: admin/settings/gridview-style/compare-button-settings.php:250
+#: admin/settings/product-page/compare-button-settings.php:235
+#: admin/settings/product-page/view-compare-settings.php:252
+#: admin/settings/widget-style/clear-all-items-settings.php:267
+#: admin/settings/widget-style/compare-button-settings.php:255
 #, fuzzy
 msgid "Button Text"
 msgstr "Бутон или текст"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:123
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:262
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:112
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:251
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:112
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:251
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:69
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:118
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:257
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:80
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:135
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:274
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:142
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:281
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:123
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:262
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:132
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:271
-#: admin/classes/widget-panel/class-compare-widget-style.php:80
-msgid "For default"
+#: admin/settings/comparison-page/add-to-cart-settings.php:280
+#: admin/settings/comparison-page/close-window-button-settings.php:248
+#: admin/settings/comparison-page/print-page-settings.php:291
+#: admin/settings/gridview-style/compare-button-settings.php:256
+#: admin/settings/product-page/compare-button-settings.php:241
+#: admin/settings/product-page/view-compare-settings.php:258
+#: admin/settings/widget-style/clear-all-items-settings.php:273
+#: admin/settings/widget-style/compare-button-settings.php:261
+#, fuzzy
+msgid "Button Padding"
+msgstr "Бутон"
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:281
+#: admin/settings/comparison-page/close-window-button-settings.php:249
+#: admin/settings/comparison-page/print-page-settings.php:292
+#: admin/settings/gridview-style/compare-button-settings.php:257
+#: admin/settings/product-page/compare-button-settings.php:242
+#: admin/settings/product-page/view-compare-settings.php:259
+#: admin/settings/widget-style/clear-all-items-settings.php:274
+#: admin/settings/widget-style/compare-button-settings.php:262
+msgid "Padding from Button text to Button border"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:123
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:262
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:112
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:251
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:112
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:251
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:69
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:118
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:257
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:80
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:135
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:274
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:142
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:281
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:123
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:262
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:132
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:271
-#: admin/classes/widget-panel/class-compare-widget-style.php:80
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:316
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:322
-msgid "or enter text"
+#: admin/settings/comparison-page/add-to-cart-settings.php:286
+#: admin/settings/comparison-page/close-window-button-settings.php:254
+#: admin/settings/comparison-page/print-page-settings.php:297
+#: admin/settings/gridview-style/compare-button-settings.php:262
+#: admin/settings/product-page/compare-button-settings.php:247
+#: admin/settings/product-page/view-compare-settings.php:264
+#: admin/settings/widget-style/clear-all-items-settings.php:279
+#: admin/settings/widget-style/compare-button-settings.php:267
+#: admin/settings/widget-style/widget-title-settings.php:263
+msgid "Top/Bottom"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:127
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:116
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:91
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:141
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:116
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:122
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:139
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:146
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:127
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:136
+#: admin/settings/comparison-page/add-to-cart-settings.php:292
+#: admin/settings/comparison-page/close-window-button-settings.php:260
+#: admin/settings/comparison-page/print-page-settings.php:303
+#: admin/settings/gridview-style/compare-button-settings.php:268
+#: admin/settings/product-page/compare-button-settings.php:253
+#: admin/settings/product-page/view-compare-settings.php:270
+#: admin/settings/widget-style/clear-all-items-settings.php:285
+#: admin/settings/widget-style/compare-button-settings.php:273
+#: admin/settings/widget-style/widget-title-settings.php:269
+msgid "Left/Right"
+msgstr ""
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:299
+#: admin/settings/comparison-page/close-window-button-settings.php:267
+#: admin/settings/comparison-page/page-style-settings.php:184
+#: admin/settings/comparison-page/page-style-settings.php:202
+#: admin/settings/comparison-page/print-page-settings.php:310
+#: admin/settings/gridview-style/compare-button-settings.php:275
+#: admin/settings/product-page/compare-button-settings.php:260
+#: admin/settings/product-page/view-compare-settings.php:277
+#: admin/settings/widget-style/clear-all-items-settings.php:292
+#: admin/settings/widget-style/compare-button-settings.php:280
 msgid "Background Colour"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:129
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:118
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:118
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:124
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:141
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:148
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:129
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:138
-#, fuzzy
-msgid "Button colour. Default"
-msgstr "Бутон или текст"
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:134
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:123
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:123
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:129
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:146
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:153
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:134
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:143
-msgid "Background Colour Gradient From"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:136
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:143
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:163
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:174
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:187
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:188
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:207
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:226
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:238
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:244
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:279
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:298
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:310
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:316
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:323
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:125
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:132
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:152
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:163
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:176
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:177
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:196
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:215
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:227
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:233
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:268
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:287
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:299
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:305
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:312
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:93
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:113
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:124
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:143
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:156
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:166
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:183
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:202
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:214
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:220
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:90
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:113
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:132
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:144
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:150
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:125
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:132
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:152
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:163
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:176
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:177
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:196
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:215
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:227
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:233
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:268
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:287
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:299
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:305
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:312
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:67
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:84
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:103
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:115
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:121
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:95
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:114
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:126
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:132
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:143
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:166
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:185
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:197
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:203
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:216
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:222
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:240
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:259
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:271
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:277
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:301
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:320
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:332
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:338
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:71
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:78
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:104
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:115
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:134
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:140
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:86
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:105
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:117
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:123
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:130
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:131
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:138
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:158
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:169
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:182
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:183
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:239
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:148
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:155
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:175
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:186
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:199
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:200
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:256
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:155
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:162
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:182
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:193
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:206
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:207
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:263
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:74
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:80
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:95
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:115
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:126
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:132
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:140
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:142
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:111
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:136
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:143
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:163
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:174
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:187
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:188
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:244
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:120
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:145
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:152
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:172
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:183
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:196
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:197
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:253
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:157
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:174
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:183
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:228
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:244
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:260
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:276
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:288
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:302
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:304
+#: admin/settings/comparison-page/add-to-cart-settings.php:300
+#: admin/settings/comparison-page/add-to-cart-settings.php:307
+#: admin/settings/comparison-page/add-to-cart-settings.php:315
+#: admin/settings/comparison-page/close-window-button-settings.php:268
+#: admin/settings/comparison-page/close-window-button-settings.php:275
+#: admin/settings/comparison-page/close-window-button-settings.php:283
+#: admin/settings/comparison-page/page-style-settings.php:185
+#: admin/settings/comparison-page/page-style-settings.php:203
+#: admin/settings/comparison-page/print-page-settings.php:311
+#: admin/settings/comparison-page/print-page-settings.php:318
+#: admin/settings/comparison-page/print-page-settings.php:326
+#: admin/settings/comparison-page/table-content-style-settings.php:243
+#: admin/settings/comparison-page/table-style-settings.php:200
+#: admin/settings/comparison-page/table-style-settings.php:207
+#: admin/settings/gridview-style/compare-button-settings.php:276
+#: admin/settings/gridview-style/compare-button-settings.php:283
+#: admin/settings/gridview-style/compare-button-settings.php:291
+#: admin/settings/product-page/compare-button-settings.php:261
+#: admin/settings/product-page/compare-button-settings.php:268
+#: admin/settings/product-page/compare-button-settings.php:276
+#: admin/settings/product-page/view-compare-settings.php:278
+#: admin/settings/product-page/view-compare-settings.php:285
+#: admin/settings/product-page/view-compare-settings.php:293
+#: admin/settings/widget-style/clear-all-items-settings.php:293
+#: admin/settings/widget-style/clear-all-items-settings.php:300
+#: admin/settings/widget-style/clear-all-items-settings.php:308
+#: admin/settings/widget-style/compare-button-settings.php:281
+#: admin/settings/widget-style/compare-button-settings.php:288
+#: admin/settings/widget-style/compare-button-settings.php:296
+#: admin/settings/widget-style/product-thumbnails-settings.php:245
+#: admin/settings/widget-style/widget-title-settings.php:295
 #, fuzzy
 msgid "Default"
 msgstr "Изтрий"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:141
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:130
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:130
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:136
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:153
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:160
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:141
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:150
+#: admin/settings/comparison-page/add-to-cart-settings.php:306
+#: admin/settings/comparison-page/close-window-button-settings.php:274
+#: admin/settings/comparison-page/print-page-settings.php:317
+#: admin/settings/gridview-style/compare-button-settings.php:282
+#: admin/settings/product-page/compare-button-settings.php:267
+#: admin/settings/product-page/view-compare-settings.php:284
+#: admin/settings/widget-style/clear-all-items-settings.php:299
+#: admin/settings/widget-style/compare-button-settings.php:287
+msgid "Background Colour Gradient From"
+msgstr ""
+
+#: admin/settings/comparison-page/add-to-cart-settings.php:314
+#: admin/settings/comparison-page/close-window-button-settings.php:282
+#: admin/settings/comparison-page/print-page-settings.php:325
+#: admin/settings/gridview-style/compare-button-settings.php:290
+#: admin/settings/product-page/compare-button-settings.php:275
+#: admin/settings/product-page/view-compare-settings.php:292
+#: admin/settings/widget-style/clear-all-items-settings.php:307
+#: admin/settings/widget-style/compare-button-settings.php:295
 msgid "Background Colour Gradient To"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:148
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:137
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:137
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:89
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:143
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:160
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:167
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:148
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:157
-msgid "Border Size"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:151
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:214
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:286
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:140
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:203
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:275
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:101
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:190
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:120
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:140
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:203
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:275
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:91
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:102
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:173
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:247
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:308
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:92
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:93
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:146
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:209
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:281
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:104
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:163
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:226
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:298
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:170
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:233
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:305
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:103
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:151
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:214
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:286
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:160
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:223
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:295
-#: admin/classes/widget-panel/class-compare-widget-style.php:104
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:133
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:216
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:232
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:248
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:264
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:352
+#: admin/settings/comparison-page/add-to-cart-settings.php:321
+#: admin/settings/comparison-page/close-window-button-settings.php:289
+#: admin/settings/comparison-page/print-page-settings.php:332
+#: admin/settings/gridview-style/compare-button-settings.php:297
+#: admin/settings/product-page/compare-button-settings.php:282
+#: admin/settings/product-page/view-compare-settings.php:299
+#: admin/settings/widget-style/clear-all-items-settings.php:314
+#: admin/settings/widget-style/compare-button-settings.php:302
 #, fuzzy
-msgid "Select Size"
-msgstr "Избери стойност"
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:167
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:156
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:156
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:108
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:162
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:179
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:186
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:167
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:176
-msgid "Border Style"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:170
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:174
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:159
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:163
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:120
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:124
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:159
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:163
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:111
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:115
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:165
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:169
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:182
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:186
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:189
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:193
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:122
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:126
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:170
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:174
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:179
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:183
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:284
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:288
-msgid "Solid"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:171
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:160
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:121
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:160
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:112
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:166
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:183
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:190
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:123
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:171
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:180
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:285
-msgid "Double"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:172
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:161
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:122
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:161
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:113
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:167
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:184
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:191
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:124
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:172
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:181
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:286
-msgid "Dashed"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:173
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:162
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:123
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:162
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:114
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:168
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:185
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:192
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:125
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:173
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:182
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:287
-msgid "Dotted"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:178
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:167
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:167
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:119
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:173
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:190
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:197
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:178
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:187
-msgid "Border Colour"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:180
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:169
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:130
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:169
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:121
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:175
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:192
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:199
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:180
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:189
-msgid "Border colour. Default"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:185
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:174
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:174
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:180
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:197
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:204
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:185
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:194
-msgid "Border Rounded"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:187
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:176
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:176
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:182
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:199
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:206
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:139
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:187
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:196
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:301
-msgid "Rounded Corners"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:188
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:177
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:177
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:183
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:200
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:207
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:140
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:188
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:197
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:302
-msgid "Rounded Value"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:190
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:179
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:179
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:185
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:202
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:209
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:142
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:190
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:199
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:304
-msgid "Square Corners"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:194
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:266
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:183
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:255
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:170
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:100
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:183
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:255
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:71
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:82
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:153
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:227
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:288
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:73
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:189
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:84
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:206
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:278
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:213
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:285
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:194
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:266
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:203
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:275
-#: admin/classes/widget-panel/class-compare-widget-style.php:84
-#, fuzzy
-msgid "Font"
-msgstr "Намерени"
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:197
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:269
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:186
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:258
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:173
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:103
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:186
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:258
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:74
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:85
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:156
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:230
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:291
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:76
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:192
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:264
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:87
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:209
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:281
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:216
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:288
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:197
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:269
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:206
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:278
-#: admin/classes/widget-panel/class-compare-widget-style.php:87
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:115
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:335
-#, fuzzy
-msgid "Select Font"
-msgstr "Избери стойност"
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:207
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:279
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:196
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:268
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:183
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:113
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:196
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:268
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:84
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:95
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:166
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:240
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:301
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:86
-#: includes/class-compare_functions.php:668
-msgid "Tahoma"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:211
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:200
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:200
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:206
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:223
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:230
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:211
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:220
-#, fuzzy
-msgid "Button Font Size"
+msgid "Button Border"
 msgstr "Бутон или текст"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:230
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:219
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:219
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:225
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:242
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:249
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:230
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:239
+#: admin/settings/comparison-page/add-to-cart-settings.php:327
+#: admin/settings/comparison-page/close-window-button-settings.php:295
+#: admin/settings/comparison-page/print-page-settings.php:338
+#: admin/settings/gridview-style/compare-button-settings.php:303
+#: admin/settings/product-page/compare-button-settings.php:288
+#: admin/settings/product-page/view-compare-settings.php:305
+#: admin/settings/widget-style/clear-all-items-settings.php:320
+#: admin/settings/widget-style/compare-button-settings.php:308
 #, fuzzy
-msgid "Button Font Style"
+msgid "Button Font"
 msgstr "Бутон или текст"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:233
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:305
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:222
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:294
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:209
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:139
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:222
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:294
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:110
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:121
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:192
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:266
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:327
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:112
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:228
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:300
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:123
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:245
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:317
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:252
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:324
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:233
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:305
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:242
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:314
-#: admin/classes/widget-panel/class-compare-widget-style.php:123
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:152
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:371
+#: admin/settings/comparison-page/add-to-cart-settings.php:333
+#: admin/settings/comparison-page/close-window-button-settings.php:301
+#: admin/settings/comparison-page/print-page-settings.php:344
+#: admin/settings/gridview-style/compare-button-settings.php:309
+#: admin/settings/product-page/compare-button-settings.php:294
+#: admin/settings/product-page/view-compare-settings.php:311
+#: admin/settings/widget-style/clear-all-items-settings.php:326
+#: admin/settings/widget-style/compare-button-settings.php:314
 #, fuzzy
-msgid "Select Style"
-msgstr "Избери стойност"
+msgid "Button Shadow"
+msgstr "Бутон"
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:234
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:306
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:310
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:223
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:295
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:210
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:214
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:140
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:223
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:295
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:111
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:115
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:122
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:193
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:197
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:267
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:328
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:113
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:117
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:229
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:301
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:124
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:246
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:318
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:253
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:325
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:234
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:306
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:243
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:315
-#: admin/classes/widget-panel/class-compare-widget-style.php:124
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:153
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:372
-msgid "Normal"
+#: admin/settings/comparison-page/close-window-button-settings.php:81
+#, fuzzy
+msgid "Close Window Button Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/comparison-page/close-window-button-settings.php:82
+msgid "Error: Close Window Button Settings can not save."
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:235
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:307
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:224
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:296
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:211
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:141
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:224
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:296
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:112
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:123
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:194
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:268
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:329
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:114
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:230
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:302
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:125
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:247
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:319
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:254
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:326
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:235
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:307
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:244
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:316
-#: admin/classes/widget-panel/class-compare-widget-style.php:125
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:154
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:373
-msgid "Italic"
+#: admin/settings/comparison-page/close-window-button-settings.php:83
+#, fuzzy
+msgid "Close Window Button Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/comparison-page/close-window-button-settings.php:153
+msgid "Close Window Button"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:236
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:238
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:308
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:225
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:227
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:297
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:299
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:212
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:142
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:144
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:225
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:227
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:297
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:299
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:113
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:124
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:126
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:195
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:269
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:271
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:330
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:332
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:115
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:231
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:303
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:126
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:248
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:320
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:255
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:327
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:236
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:308
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:245
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:317
-#: admin/classes/widget-panel/class-compare-widget-style.php:126
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:155
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:157
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:374
-msgid "Bold"
+#: admin/settings/comparison-page/close-window-button-settings.php:197
+msgid "Close Window Button / Hyperlink"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:237
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:309
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:226
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:298
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:213
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:143
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:226
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:298
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:114
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:125
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:196
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:270
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:331
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:116
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:232
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:304
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:127
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:249
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:321
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:256
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:328
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:237
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:309
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:246
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:318
-#: admin/classes/widget-panel/class-compare-widget-style.php:127
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:156
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:375
-msgid "Bold/Italic"
+#: admin/settings/comparison-page/close-window-button-settings.php:213
+msgid "Compare Table Close Window Hyperlink Styling"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:242
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:231
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:231
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:237
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:254
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:261
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:242
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:251
-msgid "Button Font Colour"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:249
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:238
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:238
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:244
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:261
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:268
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:249
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:258
-msgid "CSS Class"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:250
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:239
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:239
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:245
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:262
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:269
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:250
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:259
-msgid "Enter your own button CSS class"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:256
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:245
-msgid "Add To Cart Linked Text Styling"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:283
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:272
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:187
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:117
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:272
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:88
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:99
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:170
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:244
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:305
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:90
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:101
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:295
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:302
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:283
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:292
-#: admin/classes/widget-panel/class-compare-widget-style.php:101
-msgid "Font Size"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:302
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:291
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:206
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:136
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:291
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:107
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:118
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:189
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:263
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:324
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:109
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:120
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:314
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:321
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:302
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:311
-#: admin/classes/widget-panel/class-compare-widget-style.php:120
-msgid "Font Style"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:314
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:303
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:218
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:148
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:303
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:119
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:130
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:201
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:275
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:336
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:121
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:132
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:326
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:333
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:314
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:323
-#: admin/classes/widget-panel/class-compare-widget-style.php:132
-msgid "Font Colour"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-addtocart-style.php:321
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:310
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:310
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:128
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:139
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:333
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:340
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:321
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:330
-msgid "Font Hover Colour"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:20
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:37
+#: admin/settings/comparison-page/close-window-button-settings.php:221
+#: admin/settings/comparison-page/close-window-button-settings.php:245
 msgid "Close window"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:106
+#: admin/settings/comparison-page/close-window-button-settings.php:237
 msgid "Compare Table Close Window Button Styling"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-close-window-button-style.php:245
-msgid "Compare Table Close Window Linked Text Styling"
+#: admin/settings/comparison-page/global-settings.php:82
+#, fuzzy
+msgid "Comparison Page Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/comparison-page/global-settings.php:83
+msgid "Error: Comparison Page Settings can not save."
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:80
+#: admin/settings/comparison-page/global-settings.php:84
+#, fuzzy
+msgid "Comparison Page Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/comparison-page/global-settings.php:137
+#: admin/settings/widget-style/compare-widget-settings.php:152
+#, fuzzy
+msgid "General Settings"
+msgstr "Настройки"
+
+#: admin/settings/comparison-page/global-settings.php:181
 #, fuzzy
 msgid "Comparison Page Header Image"
 msgstr "Заглавно изображение на изкачащия прозорец"
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:84
+#: admin/settings/comparison-page/global-settings.php:185
 #, fuzzy
-msgid "Upload Page Header Image"
+msgid "Header Image"
 msgstr "Заглавно изображение на изкачащия прозорец"
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:85
-#, fuzzy
-msgid "Compare Logo"
-msgstr "Сравни това"
-
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:85
+#: admin/settings/comparison-page/global-settings.php:186
 msgid "Upload an image with formats .jpg, .pgn, .jpeg. Any size."
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:90
+#: admin/settings/comparison-page/global-settings.php:193
 #, fuzzy
 msgid "Comparison Page Window"
 msgstr "Настройки на изкачащия прозорец за сравнение"
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:94
-msgid "Open Comparison Page In"
-msgstr ""
+#: admin/settings/comparison-page/global-settings.php:197
+#, fuzzy
+msgid "Open Compare Table in"
+msgstr "Сравни това"
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:96
+#: admin/settings/comparison-page/global-settings.php:204
 msgid "On Screen Window"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:97
+#: admin/settings/comparison-page/global-settings.php:210
 msgid "New Window"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:97
+#: admin/settings/comparison-page/global-settings.php:210
 msgid ""
 "(Recommended - more mobile devise friendly, can't be blocked by pop-up "
 "blockers)"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:102
+#: admin/settings/comparison-page/global-settings.php:218
 msgid "Comparison Page Shortcode"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:106
+#: admin/settings/comparison-page/global-settings.php:219
 msgid ""
 "A 'Product Comparison' page with the shortcode [product_comparison_page] "
 "inserted should have been auto created on install. If not you need to "
@@ -1585,500 +1034,641 @@ msgid ""
 "so the plugin knows where to find it."
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:109
+#: admin/settings/comparison-page/global-settings.php:223
 #, fuzzy
 msgid "Product Comparison Page"
 msgstr "Полета за продуктови характеристики за сравняване"
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:112
+#: admin/settings/comparison-page/global-settings.php:224
+msgid "Page contents"
+msgstr ""
+
+#: admin/settings/comparison-page/global-settings.php:229
 #, fuzzy
 msgid "Select Page"
 msgstr "Избери стойност"
 
-#: admin/classes/comparison_page-panel/class-compare-comparison-page-global-settings.php:124
-msgid "Page contents"
+#: admin/settings/comparison-page/page-style-settings.php:81
+#, fuzzy
+msgid "Comparison Page Style successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/comparison-page/page-style-settings.php:82
+#, fuzzy
+msgid "Error: Comparison Page Styles can not save."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/comparison-page/page-style-settings.php:83
+#, fuzzy
+msgid "Comparison Page Style successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/comparison-page/page-style-settings.php:136
+msgid "Page Style"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:25
-#: admin/classes/widget-panel/class-compare-widget-style.php:18
-msgid "You do not have any product to compare."
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:87
+#: admin/settings/comparison-page/page-style-settings.php:180
 msgid "Comparison Page Header"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:98
-msgid "Bottom Border Size"
+#: admin/settings/comparison-page/page-style-settings.php:191
+msgid "Bottom Border"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:117
-msgid "Bottom Border Style"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:128
-msgid "Bottom Border Colour"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:137
+#: admin/settings/comparison-page/page-style-settings.php:198
 #, fuzzy
 msgid "Comparison Page Body"
 msgstr "Категория за сравняване"
 
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:150
+#: admin/settings/comparison-page/page-style-settings.php:210
 msgid "Comparison Empty Window Message"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:154
+#: admin/settings/comparison-page/page-style-settings.php:214
 msgid "Comparison Empty Window Message Text"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:160
+#: admin/settings/comparison-page/page-style-settings.php:215
+#: admin/settings/comparison-page/print-page-settings.php:227
+msgid "Default <code>'[default_value]'</code>"
+msgstr ""
+
+#: admin/settings/comparison-page/page-style-settings.php:218
+#: admin/settings/widget-style/compare-widget-settings.php:215
+msgid "You do not have any product to compare."
+msgstr ""
+
+#: admin/settings/comparison-page/page-style-settings.php:221
 msgid "Text Alignment"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:163
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:166
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:141
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:109
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:118
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:172
+#: admin/settings/comparison-page/page-style-settings.php:222
+msgid "Default <code>Center</code>."
+msgstr ""
+
+#: admin/settings/comparison-page/page-style-settings.php:228
+#: admin/settings/comparison-page/table-content-style-settings.php:206
+#: admin/settings/comparison-page/table-style-settings.php:235
+#: admin/settings/gridview-style/global-settings.php:258
+#: admin/settings/product-page/global-settings.php:245
+#: admin/settings/widget-style/clear-all-items-settings.php:230
+#: admin/settings/widget-style/compare-button-settings.php:218
+#: admin/settings/widget-style/product-thumbnails-settings.php:239
+#: admin/settings/widget-style/widget-title-settings.php:241
+msgid "Left"
+msgstr ""
+
+#: admin/settings/comparison-page/page-style-settings.php:229
+#: admin/settings/comparison-page/table-content-style-settings.php:207
+#: admin/settings/widget-style/clear-all-items-settings.php:231
+#: admin/settings/widget-style/compare-button-settings.php:219
+#: admin/settings/widget-style/widget-title-settings.php:242
 #, fuzzy
 msgid "Center"
 msgstr "Създай"
 
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:164
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:142
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:87
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:110
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:119
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:171
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:174
-msgid "Left"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-page-style.php:165
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:140
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:143
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:88
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:108
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:111
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:117
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:120
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:173
+#: admin/settings/comparison-page/page-style-settings.php:230
+#: admin/settings/comparison-page/table-content-style-settings.php:208
+#: admin/settings/comparison-page/table-style-settings.php:240
+#: admin/settings/gridview-style/global-settings.php:265
+#: admin/settings/product-page/global-settings.php:251
+#: admin/settings/widget-style/clear-all-items-settings.php:232
+#: admin/settings/widget-style/compare-button-settings.php:220
+#: admin/settings/widget-style/product-thumbnails-settings.php:240
+#: admin/settings/widget-style/widget-title-settings.php:243
 msgid "Right"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:76
+#: admin/settings/comparison-page/page-style-settings.php:234
+#: admin/settings/comparison-page/print-page-settings.php:233
 #, fuzzy
-msgid "Product Price Settings"
-msgstr "Бутони за сравняване в продуктовата страница"
+msgid "Message Font"
+msgstr "Избери стойност"
 
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:80
+#: admin/settings/comparison-page/print-page-settings.php:81
 #, fuzzy
-msgid "Product Price"
-msgstr "Продуктово име"
+msgid "Print Page Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
 
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:81
-msgid " Check to deactivate the Product Price on Comparison Table"
+#: admin/settings/comparison-page/print-page-settings.php:82
+msgid "Error: Print Page Settings can not save."
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:84
+#: admin/settings/comparison-page/print-page-settings.php:83
 #, fuzzy
-msgid "Product Price Position"
-msgstr "Бутони за сравняване в продуктовата страница"
+msgid "Print Page Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
 
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:87
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:90
-msgid "Top and Bottom"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:88
-msgid "Top Only"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:89
-msgid "Bottom Only"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-price-style.php:96
-msgid "Price Font"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:20
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:37
+#: admin/settings/comparison-page/print-page-settings.php:156
 #, fuzzy
-msgid "Print this page"
+msgid "Print Page"
 msgstr "Принтирай тази страница"
 
-#: admin/classes/comparison_page-panel/class-compare-print-button-style.php:106
-msgid "Compare Table Print Button Styling"
-msgstr ""
-
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:18
+#: admin/settings/comparison-page/print-page-settings.php:200
 #, fuzzy
-msgid "Refine slections to 3 products and print!"
-msgstr "Изберете до 3 продукта и принтирайте!"
+msgid "Print Comparison Page Feature"
+msgstr "Полета за продуктови характеристики за сравняване"
 
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:61
+#: admin/settings/comparison-page/print-page-settings.php:204
+#, fuzzy
+msgid "Print Page Feature"
+msgstr "Принтирай тази страница"
+
+#: admin/settings/comparison-page/print-page-settings.php:222
 #, fuzzy
 msgid "Print Page Message"
 msgstr "Принтирай тази страница"
 
-#: admin/classes/comparison_page-panel/class-compare-print-message-style.php:65
+#: admin/settings/comparison-page/print-page-settings.php:226
 msgid "Print Page Message Text"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:34
-msgid "N/A"
+#: admin/settings/comparison-page/print-page-settings.php:230
+#, fuzzy
+msgid "Refine selections to 3 products and print!"
+msgstr "Изберете до 3 продукта и принтирайте!"
+
+#: admin/settings/comparison-page/print-page-settings.php:240
+#, fuzzy
+msgid "Compare Table Print Button / Hyperlink"
+msgstr ""
+"Покажете функцията за сравнение в продуктите като бутон или хипервръзка."
+
+#: admin/settings/comparison-page/print-page-settings.php:256
+msgid "Compare Table Print Hyperlink Styling"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:78
+#: admin/settings/comparison-page/print-page-settings.php:264
+#: admin/settings/comparison-page/print-page-settings.php:288
+#, fuzzy
+msgid "Print this page"
+msgstr "Принтирай тази страница"
+
+#: admin/settings/comparison-page/print-page-settings.php:280
+msgid "Compare Table Print Button Styling"
+msgstr ""
+
+#: admin/settings/comparison-page/product-prices-settings.php:81
+#, fuzzy
+msgid "Product Prices Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/comparison-page/product-prices-settings.php:82
+#, fuzzy
+msgid "Error: Product Prices Settings can not save."
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/comparison-page/product-prices-settings.php:83
+#, fuzzy
+msgid "Product Prices Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/comparison-page/product-prices-settings.php:153
+#, fuzzy
+msgid "Product Prices"
+msgstr "Продукти"
+
+#: admin/settings/comparison-page/product-prices-settings.php:197
+#, fuzzy
+msgid "Product Prices On Compare Table"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/comparison-page/product-prices-settings.php:201
+#, fuzzy
+msgid "Product Price"
+msgstr "Продуктово име"
+
+#: admin/settings/comparison-page/product-prices-settings.php:213
+#, fuzzy
+msgid "Product Price Settings"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/comparison-page/product-prices-settings.php:218
+#, fuzzy
+msgid "Product Price Position"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/comparison-page/product-prices-settings.php:219
+msgid "Default <code>Top and Bottom</code>."
+msgstr ""
+
+#: admin/settings/comparison-page/product-prices-settings.php:225
+msgid "Top and Bottom"
+msgstr ""
+
+#: admin/settings/comparison-page/product-prices-settings.php:226
+msgid "Top Only"
+msgstr ""
+
+#: admin/settings/comparison-page/product-prices-settings.php:227
+msgid "Bottom Only"
+msgstr ""
+
+#: admin/settings/comparison-page/product-prices-settings.php:231
+msgid "Price Font"
+msgstr ""
+
+#: admin/settings/comparison-page/table-content-style-settings.php:81
+#, fuzzy
+msgid "Table Content Style successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/comparison-page/table-content-style-settings.php:82
+msgid "Error: Table Content Style can not save."
+msgstr ""
+
+#: admin/settings/comparison-page/table-content-style-settings.php:83
+#, fuzzy
+msgid "Table Content Style successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/comparison-page/table-content-style-settings.php:151
+msgid "Table Content Style"
+msgstr ""
+
+#: admin/settings/comparison-page/table-content-style-settings.php:195
 #, fuzzy
 msgid "Compare Feature Titles (Left Fixed Column)"
 msgstr "Полета за сравняване на характеристики"
 
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:137
+#: admin/settings/comparison-page/table-content-style-settings.php:199
 msgid "Title Alignment"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:149
+#: admin/settings/comparison-page/table-content-style-settings.php:200
+#: admin/settings/widget-style/clear-all-items-settings.php:224
+#: admin/settings/widget-style/compare-button-settings.php:212
+msgid "Default <code>Right</code>."
+msgstr ""
+
+#: admin/settings/comparison-page/table-content-style-settings.php:212
+#, fuzzy
+msgid "Title Font"
+msgstr "Избери стойност"
+
+#: admin/settings/comparison-page/table-content-style-settings.php:219
 msgid "Table Rows Feature Values Font"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:210
+#: admin/settings/comparison-page/table-content-style-settings.php:223
+#, fuzzy
+msgid "Values Font"
+msgstr "Избери стойност"
+
+#: admin/settings/comparison-page/table-content-style-settings.php:230
 msgid "Empty Feature Values Row Cell Display"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:214
+#: admin/settings/comparison-page/table-content-style-settings.php:234
 msgid "Default Text"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:220
+#: admin/settings/comparison-page/table-content-style-settings.php:235
+msgid "if nothing is enter in here nothing shows"
+msgstr ""
+
+#: admin/settings/comparison-page/table-content-style-settings.php:242
 msgid "Cell Background Colour"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-content-style.php:284
+#: admin/settings/comparison-page/table-content-style-settings.php:249
+#: admin/settings/comparison-page/table-content-style-settings.php:260
+#, fuzzy
+msgid "Font"
+msgstr "Намерени"
+
+#: admin/settings/comparison-page/table-content-style-settings.php:256
 #, fuzzy
 msgid "Product Name Font"
 msgstr "Продуктово име"
 
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:65
-msgid "Table Background"
+#: admin/settings/comparison-page/table-style-settings.php:81
+#, fuzzy
+msgid "Table Style successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/comparison-page/table-style-settings.php:82
+msgid "Error: Table Style can not save."
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:69
+#: admin/settings/comparison-page/table-style-settings.php:83
+#, fuzzy
+msgid "Table Style successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/comparison-page/table-style-settings.php:151
+#: admin/settings/comparison-page/table-style-settings.php:195
+msgid "Table Style"
+msgstr ""
+
+#: admin/settings/comparison-page/table-style-settings.php:199
 msgid "Table Heading Background Colour"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:76
+#: admin/settings/comparison-page/table-style-settings.php:206
 msgid "Alternate Rows Background Colour"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:85
+#: admin/settings/comparison-page/table-style-settings.php:213
 msgid "Table Border"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:128
+#: admin/settings/comparison-page/table-style-settings.php:219
 msgid "Table Row Padding"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:132
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:189
-msgid "Padding Top/Bottom"
+#: admin/settings/comparison-page/table-style-settings.php:224
+#: admin/settings/gridview-style/global-settings.php:245
+#: admin/settings/product-page/global-settings.php:234
+#: admin/settings/widget-style/widget-title-settings.php:281
+msgid "Top"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-table-style.php:138
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:191
-msgid "Padding Left/Right"
+#: admin/settings/comparison-page/table-style-settings.php:229
+#: admin/settings/gridview-style/global-settings.php:251
+#: admin/settings/product-page/global-settings.php:239
+#: admin/settings/widget-style/widget-title-settings.php:287
+msgid "Bottom"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:18
-msgid "Go to Checkout &rarr;"
+#: admin/settings/comparison-page/view-cart-settings.php:81
+#, fuzzy
+msgid "Checkout Link Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/comparison-page/view-cart-settings.php:82
+msgid "Error: Checkout Link Settings can not save."
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:63
-msgid "View Cart Linked Text Styling"
+#: admin/settings/comparison-page/view-cart-settings.php:83
+#, fuzzy
+msgid "Checkout Link Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/comparison-page/view-cart-settings.php:151
+msgid "Checkout Link"
 msgstr ""
 
-#: admin/classes/comparison_page-panel/class-compare-viewcart-style.php:67
+#: admin/settings/comparison-page/view-cart-settings.php:195
+msgid "Checkout Hyperlink Styling"
+msgstr ""
+
+#: admin/settings/comparison-page/view-cart-settings.php:199
 msgid "Checkout Text"
 msgstr ""
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:20
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:37
-#, fuzzy
-msgid "Compare This"
-msgstr "Сравни това"
+#: admin/settings/comparison-page/view-cart-settings.php:202
+msgid "Go to Checkout &rarr;"
+msgstr ""
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:106
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:124
+#: admin/settings/comparison-page/view-cart-settings.php:205
+#, fuzzy
+msgid "Checkout Font"
+msgstr "Избери стойност"
+
+#: admin/settings/comparison-page/view-cart-settings.php:211
+msgid "Checkout Hover Colour"
+msgstr ""
+
+#: admin/settings/gridview-style/compare-button-settings.php:81
+#, fuzzy
+msgid "Product Card Compare Button Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/gridview-style/compare-button-settings.php:82
+#, fuzzy
+msgid "Error: Product Card Compare Button Settings can not save."
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/gridview-style/compare-button-settings.php:83
+#, fuzzy
+msgid "Product Card Compare Button Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/gridview-style/compare-button-settings.php:152
+#, fuzzy
+msgid "Product Card Compare Button"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/gridview-style/compare-button-settings.php:196
+#, fuzzy
+msgid "Product Card Compare Button / Hyperlink "
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/gridview-style/compare-button-settings.php:211
+#: admin/settings/product-page/compare-button-settings.php:196
 #, fuzzy
 msgid "Compare Success Icon"
 msgstr "Сравняване на продукти"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:107
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:125
+#: admin/settings/gridview-style/compare-button-settings.php:220
 #, fuzzy
-msgid "Compare Product Success"
-msgstr "Сравняване на продукти"
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:112
-#, fuzzy
-msgid "Product Page Compare Button Styling"
+msgid "Product Card Compare Hyperlink Styling"
 msgstr "Бутони за сравняване в продуктовата страница"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:202
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:221
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:233
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:274
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:293
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:305
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:311
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:318
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:97
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:116
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:128
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:134
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:141
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:219
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:238
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:250
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:291
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:310
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:322
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:328
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:335
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:226
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:245
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:257
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:298
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:317
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:329
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:335
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:342
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:207
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:226
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:238
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:279
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:298
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:310
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:316
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:323
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:216
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:235
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:247
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:288
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:307
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:319
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:325
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:332
-#: admin/classes/widget-panel/class-compare-widget-style.php:97
-#: admin/classes/widget-panel/class-compare-widget-style.php:116
-#: admin/classes/widget-panel/class-compare-widget-style.php:128
-#: admin/classes/widget-panel/class-compare-widget-style.php:134
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:126
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:145
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:163
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:345
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:364
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:376
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:382
-msgid "&lt;empty&gt; to use theme style"
-msgstr ""
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:251
+#: admin/settings/gridview-style/compare-button-settings.php:228
+#: admin/settings/gridview-style/compare-button-settings.php:253
 #, fuzzy
-msgid "Product Page Compare Linked Text Styling"
-msgstr "Бутони за сравняване в продуктовата страница"
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:255
-#, fuzzy
-msgid "Compare Link Text"
+msgid "Compare This"
 msgstr "Сравни това"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:261
-msgid "Link Text Font"
-msgstr ""
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:278
-msgid "Link Text Font Size"
-msgstr ""
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:297
-msgid "Link Text Font Style"
-msgstr ""
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:309
-msgid "Link Text Font Colour"
-msgstr ""
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-button-style.php:316
-msgid "Link Text Font Hover Colour"
-msgstr ""
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:79
+#: admin/settings/gridview-style/compare-button-settings.php:245
 #, fuzzy
-msgid "Product Page Compare Button/Link Position"
+msgid "Product Card Compare Button Styling"
 msgstr "Бутони за сравняване в продуктовата страница"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:80
-msgid ""
-"Configure how the Compare feature shows on the Default, Listing and Grid "
-"View layouts on your themes Product Page, Product Category and Product Tag "
-"Pages."
+#: admin/settings/gridview-style/global-settings.php:82
+#, fuzzy
+msgid "Product Card Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/gridview-style/global-settings.php:83
+msgid "Error: Product Card Settings can not save."
 msgstr ""
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:84
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:86
+#: admin/settings/gridview-style/global-settings.php:84
+#, fuzzy
+msgid "Product Card Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/gridview-style/global-settings.php:155
+#, fuzzy
+msgid "Product Card Settings"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/gridview-style/global-settings.php:198
+#, fuzzy
+msgid "Show Compare On Product Cards"
+msgstr "Редактирай Продуктовите категории за сравняване"
+
+#: admin/settings/gridview-style/global-settings.php:203
+#: admin/settings/product-page/global-settings.php:200
+#, fuzzy
+msgid "Compare Button / Text"
+msgstr "Автоматично добави бутон за сравняване"
+
+#: admin/settings/gridview-style/global-settings.php:215
+#, fuzzy
+msgid "Compare Button / Linked text Postion"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/gridview-style/global-settings.php:216
+msgid ""
+"Position applies to all product cards on the Shop, Product Category and "
+"Product Tag pages."
+msgstr ""
+
+#: admin/settings/gridview-style/global-settings.php:222
+#: admin/settings/product-page/global-settings.php:217
 msgid "Button/Link Position relative to Add to Cart Button"
 msgstr ""
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:86
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:88
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:109
+#: admin/settings/gridview-style/global-settings.php:223
+#, fuzzy
+msgid ""
+"<strong>Tip:</strong> Change position if Compare Button/Link does not show "
+"on Product Cards."
+msgstr "Add text to show on Compare Button or as  Link text"
+
+#: admin/settings/gridview-style/global-settings.php:229
+#: admin/settings/product-page/global-settings.php:224
+#: admin/settings/widget-style/clear-all-items-settings.php:218
 msgid "Above"
 msgstr ""
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:86
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:88
-msgid "Padding Bottom"
-msgstr ""
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:88
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:90
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:108
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:110
+#: admin/settings/gridview-style/global-settings.php:230
+#: admin/settings/product-page/global-settings.php:225
+#: admin/settings/widget-style/clear-all-items-settings.php:219
 msgid "Below"
 msgstr ""
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:88
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:90
-msgid "Padding Top"
+#: admin/settings/gridview-style/global-settings.php:238
+#: admin/settings/product-page/global-settings.php:228
+#, fuzzy
+msgid "Button Margin"
+msgstr "Бутон"
+
+#: admin/settings/gridview-style/view-compare-settings.php:81
+#, fuzzy
+msgid "View Compare Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/gridview-style/view-compare-settings.php:82
+msgid "Error: View Compare Settings can not save."
 msgstr ""
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:90
+#: admin/settings/gridview-style/view-compare-settings.php:83
 #, fuzzy
-msgid "Change position if Compare Button/Link does not show on Product Page."
-msgstr "Add text to show on Compare Button or as  Link text"
+msgid "View Compare Settings successfully reseted."
+msgstr "Характеристиките за сравняване са успешно изтрити"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:96
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:64
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:103
-#: admin/classes/product_page-panel/class-compare-product-page-tab.php:76
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:117
+#: admin/settings/gridview-style/view-compare-settings.php:155
+#: admin/settings/product-page/view-compare-settings.php:140
 #, fuzzy
-msgid "Activate / Deactivate"
-msgstr "Активиран / Деактивиран"
+msgid "View Compare"
+msgstr "Сравни това"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:100
+#: admin/settings/gridview-style/view-compare-settings.php:199
+#: admin/settings/product-page/view-compare-settings.php:184
 #, fuzzy
-msgid "Product Page Compare"
+msgid "View Compare Link Feature"
+msgstr "Редактирай характеристиките за сравняване"
+
+#: admin/settings/gridview-style/view-compare-settings.php:203
+#, fuzzy
+msgid "View Compare on Product Cards"
+msgstr "Редактирай Продуктовите категории за сравняване"
+
+#: admin/settings/gridview-style/view-compare-settings.php:221
+#: admin/settings/product-page/view-compare-settings.php:222
+#, fuzzy
+msgid "View Compare Hyperlink Styling"
 msgstr "Бутони за сравняване в продуктовата страница"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-settings.php:101
-msgid ""
-"Check to deactivate the Compare feature on Product Page Default, Listing or "
-"Grid View layout."
-msgstr ""
-
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:20
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:21
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:38
+#: admin/settings/gridview-style/view-compare-settings.php:229
+#: admin/settings/product-page/view-compare-settings.php:230
+#: admin/settings/product-page/view-compare-settings.php:255
 #, fuzzy
 msgid "View Compare &rarr;"
 msgstr "Редактирай характеристиките за сравняване"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:68
+#: admin/settings/product-page/compare-button-settings.php:81
 #, fuzzy
-msgid "View Compare on Product Page"
-msgstr "Редактирай Продуктовите категории за сравняване"
+msgid "Product Page Compare Button Settings successfully saved."
+msgstr "Бутони за сравняване в продуктовата страница"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:69
-msgid ""
-"Check to deactivate the View Compare feature on Product Page Default, "
-"Listing or Grid View layout."
-msgstr ""
+#: admin/settings/product-page/compare-button-settings.php:82
+#, fuzzy
+msgid "Error: Product Page Compare Button Settings can not save."
+msgstr "Бутони за сравняване в продуктовата страница"
 
-#: admin/classes/grid_view-panel/class-compare-grid-view-view-compare-style.php:74
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:275
-msgid "View Compare Linked Text Styling"
-msgstr ""
+#: admin/settings/product-page/compare-button-settings.php:83
+#, fuzzy
+msgid "Product Page Compare Button Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
 
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:20
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:37
+#: admin/settings/product-page/compare-button-settings.php:137
+#, fuzzy
+msgid "Product Page Compare Button"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/product-page/compare-button-settings.php:181
+#, fuzzy
+msgid "Product Page Compare Button / Hyperlink "
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/product-page/compare-button-settings.php:205
+#, fuzzy
+msgid "Product Page Compare Hyperlink Styling"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/product-page/compare-button-settings.php:213
+#: admin/settings/product-page/compare-button-settings.php:238
 #, fuzzy
 msgid "Compare This*"
 msgstr "Сравни това"
 
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:130
+#: admin/settings/product-page/compare-button-settings.php:230
 #, fuzzy
-msgid "Single Product Page Compare Button Styling"
+msgid "Product Page Compare Button Styling"
 msgstr "Бутони за сравняване в продуктовата страница"
 
-#: admin/classes/product_page-panel/class-compare-product-page-button-style.php:268
+#: admin/settings/product-page/compare-tab-settings.php:82
 #, fuzzy
-msgid "Single Product Page Compare Linked Text Styling"
-msgstr "Бутони за сравняване в продуктовата страница"
+msgid "Product Page Compare Feature Fields Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
 
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:82
+#: admin/settings/product-page/compare-tab-settings.php:83
 #, fuzzy
-msgid "Single Product Page Compare Button/Link Position"
-msgstr "Бутони за сравняване в продуктовата страница"
+msgid "Error: Product Page Compare Feature Fields Settings can not save."
+msgstr "Полета за продуктови характеристики за сравняване"
 
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:92
-msgid ""
-"Change position if Compare Button/Link does not show on Single Product Page."
-msgstr ""
-
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:96
+#: admin/settings/product-page/compare-tab-settings.php:84
 #, fuzzy
-msgid "Manually set Compare button position"
-msgstr ""
-"Ръчно задай Показване на бутона за сравняване и/или позицията на бутона"
+msgid "Product Page Compare Feature Fields Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
 
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:97
-msgid ""
-"Check to deactivate default button position settings created by the plugin."
-msgstr ""
-
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:98
+#: admin/settings/product-page/compare-tab-settings.php:139
+#: admin/settings/product-page/compare-tab-settings.php:182
 #, fuzzy
-msgid ""
-"Then use this function to manually postion the Compare button on Single "
-"Product pages"
-msgstr "Add text to show on Compare Button or as  Link text"
+msgid "Product Page Compare Feature Fields"
+msgstr "Полета за продуктови характеристики за сравняване"
 
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:107
-#, fuzzy
-msgid "Single Product Page Compare"
-msgstr "Бутони за сравняване в продуктовата страница"
-
-#: admin/classes/product_page-panel/class-compare-product-page-settings.php:108
-#, fuzzy
-msgid "Check to deactivate the Compare feature on all single product pages."
-msgstr "Активирайте характеристика за сравняване за този продукт"
-
-#: admin/classes/product_page-panel/class-compare-product-page-tab.php:80
+#: admin/settings/product-page/compare-tab-settings.php:186
 #, fuzzy
 msgid "Compare Features Fields"
 msgstr "Полета за сравняване на характеристики"
 
-#: admin/classes/product_page-panel/class-compare-product-page-tab.php:81
-#, fuzzy
-msgid "Check to activate the Compare features fields on Single Product pages."
-msgstr "Активирайте характеристика за сравняване за този продукт"
-
-#: admin/classes/product_page-panel/class-compare-product-page-tab.php:86
+#: admin/settings/product-page/compare-tab-settings.php:198
 #, fuzzy
 msgid "Compare Feature Fields Function"
 msgstr "Полета за сравняване на характеристики"
 
-#: admin/classes/product_page-panel/class-compare-product-page-tab.php:90
+#: admin/settings/product-page/compare-tab-settings.php:200
 msgid "Show Compare Featured fields"
 msgstr "Покажи полетата с характеристики за сравняване"
 
-#: admin/classes/product_page-panel/class-compare-product-page-tab.php:91
+#: admin/settings/product-page/compare-tab-settings.php:200
 #, fuzzy
 msgid ""
 "To auto show and position the Product title and a list of the Compare "
@@ -2087,294 +1677,458 @@ msgstr ""
 "To auto show and position the Product title and a list of the Compare "
 "features in your Themes product pages use this function"
 
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:121
+#: admin/settings/product-page/global-settings.php:82
 #, fuzzy
-msgid "View Compare on Single Product Page"
+msgid "Product Page Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/product-page/global-settings.php:83
+#, fuzzy
+msgid "Error: Product Page Settings can not save."
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/product-page/global-settings.php:84
+#, fuzzy
+msgid "Product Page Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/product-page/global-settings.php:153
+#, fuzzy
+msgid "Product Page Settings"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/product-page/global-settings.php:196
+#, fuzzy
+msgid "Show Compare On Product Pages"
 msgstr "Редактирай Продуктовите категории за сравняване"
 
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:122
+#: admin/settings/product-page/global-settings.php:212
 #, fuzzy
-msgid "Check to deactivate the View Compare feature on Single Product Page"
-msgstr "Активирайте характеристика за сравняване за този продукт"
+msgid "Product Page Compare Button/Link Position"
+msgstr "Бутони за сравняване в продуктовата страница"
 
-#: admin/classes/product_page-panel/class-compare-product-page-view-compare-style.php:137
+#: admin/settings/product-page/global-settings.php:218
+msgid "Position relative to Add to Cart button location"
+msgstr ""
+
+#: admin/settings/product-page/global-settings.php:257
+#, fuzzy
+msgid "Manually set Compare button position"
+msgstr ""
+"Ръчно задай Показване на бутона за сравняване и/или позицията на бутона"
+
+#: admin/settings/product-page/global-settings.php:258
+msgid ""
+"ON to deactivate default button position settings created by the plugin."
+msgstr ""
+
+#: admin/settings/product-page/global-settings.php:258
+#, fuzzy
+msgid ""
+"Then use this function to manually postion the Compare button on product "
+"pages"
+msgstr "Add text to show on Compare Button or as  Link text"
+
+#: admin/settings/product-page/global-settings.php:269
+msgid "House Keeping :"
+msgstr ""
+
+#: admin/settings/product-page/global-settings.php:273
+msgid "Clean up on Deletion"
+msgstr ""
+
+#: admin/settings/product-page/global-settings.php:274
+msgid ""
+"On deletion (not deactivate) the plugin will completely remove all tables "
+"and data it created, leaving no trace it was ever here."
+msgstr ""
+
+#: admin/settings/product-page/view-compare-settings.php:81
+#, fuzzy
+msgid "Product Page View Compare Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/product-page/view-compare-settings.php:82
+#, fuzzy
+msgid "Error: Product Page View Compare Settings can not save."
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/product-page/view-compare-settings.php:83
+#, fuzzy
+msgid "Product Page View Compare Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/product-page/view-compare-settings.php:188
+#, fuzzy
+msgid "View Compare on Product Page"
+msgstr "Редактирай Продуктовите категории за сравняване"
+
+#: admin/settings/product-page/view-compare-settings.php:206
+#, fuzzy
+msgid "Product Page View Compare Button / Hyperlink "
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/product-page/view-compare-settings.php:247
 msgid "View Compare Button Styling"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:64
-msgid "Product Thumbnails in Widget"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:69
-msgid ""
-"Check to show Product Thumbnails when items added to the Compare Widget."
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:72
-msgid "Thumbnail Wide"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:78
-msgid "Thumbnail Padding"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:84
-msgid "Thumbnail Alignment"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:93
-msgid "Thumbnail Background Colour"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:100
-msgid "Thumbnail Border Size"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:119
-msgid "Thumbnail Border Style"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:130
-msgid "Thumbnail Border Colour"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-thumbnail-style.php:137
-msgid "Thumbnail Border Rounded"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:21
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:38
-msgid "Compare"
-msgstr "Сравни това"
-
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:105
-msgid "Compare Widget Button/Text Position"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:117
-msgid "Compare Widget Button Styling"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:121
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:130
+#: admin/settings/widget-style/clear-all-items-settings.php:81
 #, fuzzy
-msgid "Widget Button Text"
-msgstr "Бутон или текст"
+msgid "Widget Clear All Items Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
 
-#: admin/classes/widget-panel/class-compare-widget-button-style.php:256
-msgid "Compare Widget Linked Text Styling"
+#: admin/settings/widget-style/clear-all-items-settings.php:82
+msgid "Error: Widget Clear All Items Settings can not save."
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:22
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:39
-msgid "Clear All"
+#: admin/settings/widget-style/clear-all-items-settings.php:83
+#, fuzzy
+msgid "Widget Clear All Items Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/widget-style/clear-all-items-settings.php:152
+msgid "Clear All Items"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:105
+#: admin/settings/widget-style/clear-all-items-settings.php:196
+msgid "'Clear All' Items Button / Hyperlink"
+msgstr ""
+
+#: admin/settings/widget-style/clear-all-items-settings.php:211
 msgid "'Clear All' Items Vertical Align"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:110
-msgid "Relative to Compare Widget Button. Default"
+#: admin/settings/widget-style/clear-all-items-settings.php:212
+msgid "Relative to Compare Widget Button."
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:114
+#: admin/settings/widget-style/clear-all-items-settings.php:212
+msgid "Default <code>Below</code>."
+msgstr ""
+
+#: admin/settings/widget-style/clear-all-items-settings.php:223
 msgid "'Clear All' Items Horizontal Align"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:126
-msgid "'Clear All' Items Button Styling"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:265
+#: admin/settings/widget-style/clear-all-items-settings.php:237
 msgid "'Clear All' Items Linked Text Styling"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-clear-all-style.php:269
-msgid "Clear All Text"
+#: admin/settings/widget-style/clear-all-items-settings.php:245
+#: admin/settings/widget-style/clear-all-items-settings.php:270
+msgid "Clear All"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-style.php:62
+#: admin/settings/widget-style/clear-all-items-settings.php:262
+msgid "'Clear All' Items Button Styling"
+msgstr ""
+
+#: admin/settings/widget-style/compare-button-settings.php:81
+#, fuzzy
+msgid "Widget Compare Button Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/widget-style/compare-button-settings.php:82
+#, fuzzy
+msgid "Error: Widget Compare Button Settings can not save."
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/widget-style/compare-button-settings.php:83
+#, fuzzy
+msgid "Widget Compare Button Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/widget-style/compare-button-settings.php:152
+#, fuzzy
+msgid "Compare Button"
+msgstr "Автоматично добави бутон за сравняване"
+
+#: admin/settings/widget-style/compare-button-settings.php:196
+msgid "Compare Widget Button / Hyperlink "
+msgstr ""
+
+#: admin/settings/widget-style/compare-button-settings.php:211
+#, fuzzy
+msgid "Compare Widget Button/Hyperlink Position"
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: admin/settings/widget-style/compare-button-settings.php:225
+#, fuzzy
+msgid "Compare Widget Hyperlink Styling"
+msgstr "Ширина на изкачащия прозорец за сравнение"
+
+#: admin/settings/widget-style/compare-button-settings.php:233
+#: admin/settings/widget-style/compare-button-settings.php:258
+msgid "Compare"
+msgstr "Сравни това"
+
+#: admin/settings/widget-style/compare-button-settings.php:250
+msgid "Compare Widget Button Styling"
+msgstr ""
+
+#: admin/settings/widget-style/compare-widget-settings.php:82
+#, fuzzy
+msgid "Compare Widget General Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/widget-style/compare-widget-settings.php:83
+msgid "Error: Compare Widget General Settings can not save."
+msgstr ""
+
+#: admin/settings/widget-style/compare-widget-settings.php:84
+#, fuzzy
+msgid "Compare Widget General Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/widget-style/compare-widget-settings.php:195
 msgid "Remove Single Item Icon"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-style.php:66
+#: admin/settings/widget-style/compare-widget-settings.php:199
 msgid "Remove from widget Icon"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-style.php:68
-msgid "Basket Icon"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-style.php:68
+#: admin/settings/widget-style/compare-widget-settings.php:200
 msgid "Upload a 10px x 10px image, support .jpg, .pgn, .jpeg, .gif formats."
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-style.php:74
+#: admin/settings/widget-style/compare-widget-settings.php:208
 msgid "Widget \"Nothing to Compare Text\""
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-style.php:78
+#: admin/settings/widget-style/compare-widget-settings.php:212
 msgid "Nothing to Compare Text"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:95
-msgid "Widget Title Setup"
+#: admin/settings/widget-style/compare-widget-settings.php:218
+#, fuzzy
+msgid "Text Font"
+msgstr "Избери стойност"
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:81
+#, fuzzy
+msgid "Widget Product Thumbnails Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:82
+msgid "Error: Widget Product Thumbnails Settings can not save."
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:96
+#: admin/settings/widget-style/product-thumbnails-settings.php:83
+#, fuzzy
+msgid "Widget Product Thumbnails Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:152
+#: admin/settings/widget-style/product-thumbnails-settings.php:200
+#, fuzzy
+msgid "Product Thumbnails"
+msgstr "Продукти"
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:196
+msgid "Product Thumbnails in Widget"
+msgstr ""
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:201
+msgid "ON to show Product Thumbnails when items added to the Compare Widget."
+msgstr ""
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:217
+msgid "Thumbnail Wide"
+msgstr ""
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:218
+#: admin/settings/widget-style/product-thumbnails-settings.php:226
+msgid "Default <code>'[default_value]'</code>px"
+msgstr ""
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:225
+msgid "Thumbnail Padding"
+msgstr ""
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:233
+msgid "Thumbnail Alignment"
+msgstr ""
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:244
+msgid "Thumbnail Background Colour"
+msgstr ""
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:251
+msgid "Thumbnail Border"
+msgstr ""
+
+#: admin/settings/widget-style/product-thumbnails-settings.php:257
+msgid "Thumbnail Shadow"
+msgstr ""
+
+#: admin/settings/widget-style/widget-title-settings.php:81
+#, fuzzy
+msgid "Widget Title Settings successfully saved."
+msgstr "Настройките за сравняване са успешно запазени"
+
+#: admin/settings/widget-style/widget-title-settings.php:82
+msgid "Error: Widget Title Settings can not save."
+msgstr ""
+
+#: admin/settings/widget-style/widget-title-settings.php:83
+#, fuzzy
+msgid "Widget Title Settings successfully reseted."
+msgstr "Compare Settings Successfully reset"
+
+#: admin/settings/widget-style/widget-title-settings.php:152
+msgid "Widget Title"
+msgstr ""
+
+#: admin/settings/widget-style/widget-title-settings.php:196
+msgid "Widget Title Setup "
+msgstr ""
+
+#: admin/settings/widget-style/widget-title-settings.php:197
 msgid ""
 "Custom settings below apply style to the 'Title' you add on the Compare "
 "Widget."
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:100
+#: admin/settings/widget-style/widget-title-settings.php:201
 msgid "Widget Title Style"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:102
+#: admin/settings/widget-style/widget-title-settings.php:209
 msgid "Use Default Theme Style for Widget Title"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:102
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:316
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:322
+#: admin/settings/widget-style/widget-title-settings.php:209
 msgid "default"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:103
+#: admin/settings/widget-style/widget-title-settings.php:215
+#: admin/settings/widget-style/widget-title-settings.php:223
 msgid "Customized Style for Widget Title"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:112
+#: admin/settings/widget-style/widget-title-settings.php:228
 msgid "Widget Title Text Font"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:130
-msgid "Widget Title Text Font Size"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:149
-msgid "Widget Title Text Font Style"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:161
-msgid "Widget Title Text Font Colour"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:168
+#: admin/settings/widget-style/widget-title-settings.php:234
 msgid "Widget Title Container Align"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:178
+#: admin/settings/widget-style/widget-title-settings.php:235
+msgid "Default <code>Left</code>."
+msgstr ""
+
+#: admin/settings/widget-style/widget-title-settings.php:247
 msgid "Widget Title Container Wide"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:181
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:183
+#: admin/settings/widget-style/widget-title-settings.php:254
 #, fuzzy
 msgid "Auto"
 msgstr "Бутон"
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:182
+#: admin/settings/widget-style/widget-title-settings.php:255
 msgid "Full"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:187
+#: admin/settings/widget-style/widget-title-settings.php:258
 msgid "Widget Title Container Padding"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:196
+#: admin/settings/widget-style/widget-title-settings.php:276
 msgid "Widget Title Container Margin"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:198
-msgid "Margin Top"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:200
-msgid "Margin Bottom"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:205
+#: admin/settings/widget-style/widget-title-settings.php:294
 msgid "Widget Title Container Background Colour"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:212
-msgid "Widget Title Container Border Size"
+#: admin/settings/widget-style/widget-title-settings.php:301
+msgid "Widget Title Container Border"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:214
-msgid "Border Top"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:230
-msgid "Border Bottom"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:246
-msgid "Border Left"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:262
-msgid "Border Right"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:281
-msgid "Widget Title Container Border Style"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:292
-msgid "Widget Title Container Border Colour"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:299
-msgid "Widget Title Container Border Rounded"
-msgstr ""
-
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:310
+#: admin/settings/widget-style/widget-title-settings.php:308
 #, fuzzy
 msgid "Comparable Products Counter (0)"
 msgstr "Сравняване на продукти"
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:314
+#: admin/settings/widget-style/widget-title-settings.php:312
 msgid "To show before number"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:320
+#: admin/settings/widget-style/widget-title-settings.php:319
 msgid "To show after number"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:328
+#: admin/settings/widget-style/widget-title-settings.php:327
 msgid "Compare Count Number Styling"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:332
+#: admin/settings/widget-style/widget-title-settings.php:331
 msgid "Count Number Font"
 msgstr ""
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:349
-msgid "Count Number Font Size"
-msgstr ""
+#: admin/tabs/comparison-page-tab.php:78
+#, fuzzy
+msgid "Comparison Page"
+msgstr "Сравни това"
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:368
-msgid "Count Number Font Style"
-msgstr ""
+#: admin/tabs/gridview-style-tab.php:78
+#, fuzzy
+msgid "Product Cards"
+msgstr "Бутони за сравняване в продуктовата страница"
 
-#: admin/classes/widget-panel/class-compare-widget-title-style.php:380
-msgid "Count Number Font Colour"
-msgstr ""
+#: admin/tabs/product-page-tab.php:78
+#, fuzzy
+msgid "Product Page"
+msgstr "Продуктово име"
 
-#: classes/class-compare_filter.php:321
+#: admin/tabs/widget-style-tab.php:78
+#, fuzzy
+msgid "Compare Widget"
+msgstr "Ширина на изкачащия прозорец за сравнение"
+
+#: classes/class-compare_filter.php:40 templates/product-compare.php:50
+#: templates/product-compare.php:52 widget/class-compare_widget.php:41
+msgid "Compare Products"
+msgstr "Сравняване на продукти"
+
+#: classes/class-compare_filter.php:40
+#, fuzzy
+msgid "WPEC Compare"
+msgstr "Сравни това"
+
+#: classes/class-compare_filter.php:42
+#, fuzzy
+msgid "Compare Category & Feature"
+msgstr "Категорията за сравняване е изтрита"
+
+#: classes/class-compare_filter.php:42
+#, fuzzy
+msgid "Category & Feature"
+msgstr "Категории и характеристики"
+
+#: classes/class-compare_filter.php:44
+#, fuzzy
+msgid "Compare Products Manager"
+msgstr "WPEC Сравняване на продукти"
+
+#: classes/class-compare_filter.php:44
+#, fuzzy
+msgid "Product Manager"
+msgstr "Продуктово име"
+
+#: classes/class-compare_filter.php:366
 #, fuzzy
 msgid "Product_Comparison"
 msgstr "Бутони за сравняване в продуктовата страница"
 
-#: classes/class-compare_filter.php:504
+#: classes/class-compare_filter.php:487
 msgid "Documentation"
 msgstr ""
 
-#: classes/class-compare_filter.php:505
+#: classes/class-compare_filter.php:488
 msgid "Support"
 msgstr ""
 
@@ -2394,264 +2148,158 @@ msgstr "Select a Compare Category for this Product"
 msgid "Select..."
 msgstr "Избери..."
 
-#: classes/class-compare_metabox.php:149
+#: classes/class-compare_metabox.php:154
 msgid "Select value"
 msgstr "Избери стойност"
 
-#: classes/class-compare_metabox.php:193
+#: classes/class-compare_metabox.php:198
 msgid "Do not have any field on this category, please add fields for it at"
 msgstr ""
 "No Feature have been assigned to this category, please add Features for it at"
 
-#: classes/class-compare_metabox.php:193
+#: classes/class-compare_metabox.php:198
 msgid "this page"
 msgstr "тази страница"
 
-#: includes/class-compare_functions.php:367
+#: includes/class-compare_functions.php:340
 msgid "Avg. Customer Rating"
 msgstr "Средна оценка на клиентите"
 
-#: includes/class-compare_functions.php:373
+#: includes/class-compare_functions.php:346
 msgid "Buy Now"
 msgstr ""
 
-#: includes/class-compare_functions.php:608
-#: includes/class-compare_functions.php:611
+#: includes/class-compare_functions.php:545
+#: includes/class-compare_functions.php:548
 msgid "Back"
 msgstr ""
 
-#: includes/class-compare_functions.php:625
-#: includes/class-compare_functions.php:628
+#: includes/class-compare_functions.php:562
+#: includes/class-compare_functions.php:565
 msgid "Next"
 msgstr ""
 
-#: includes/class-compare_functions.php:663
-msgid "Arial"
-msgstr ""
-
-#: includes/class-compare_functions.php:664
-msgid "Verdana"
-msgstr ""
-
-#: includes/class-compare_functions.php:665
-msgid "Trebuchet"
-msgstr ""
-
-#: includes/class-compare_functions.php:666
-msgid "Georgia"
-msgstr ""
-
-#: includes/class-compare_functions.php:667
-msgid "Times New Roman"
-msgstr ""
-
-#: includes/class-compare_functions.php:669
-msgid "Palatino"
-msgstr ""
-
-#: includes/class-compare_functions.php:670
-msgid "Helvetica*"
-msgstr ""
-
-#: includes/class-compare_functions.php:671
-msgid "Calibri*"
-msgstr ""
-
-#: includes/class-compare_functions.php:672
-msgid "Myriad Pro*"
-msgstr ""
-
-#: includes/class-compare_functions.php:673
-msgid "Lucida"
-msgstr ""
-
-#: includes/class-compare_functions.php:674
-msgid "Arial Black"
-msgstr ""
-
-#: includes/class-compare_functions.php:675
-msgid "Gill Sans*"
-msgstr ""
-
-#: includes/class-compare_functions.php:676
-msgid "Geneva*"
-msgstr ""
-
-#: includes/class-compare_functions.php:677
-msgid "Impact"
-msgstr ""
-
-#: includes/class-compare_functions.php:678
-msgid "Courier"
-msgstr ""
-
-#: includes/class-compare_functions.php:679
-msgid "Century Gothic"
-msgstr ""
-
-#: includes/class-compare_functions.php:689
+#: includes/class-compare_functions.php:601
 #, fuzzy
 msgid "Upgrade to Compare Product Pro"
 msgstr "Редактирай характеристиките за сравняване на продукти"
 
-#: includes/class-compare_functions.php:690
+#: includes/class-compare_functions.php:602
 msgid ""
 "<strong>NOTE:</strong> All the functions inside the Yellow border on the "
 "plugins admin panel are extra functionality that is activated by upgrading "
 "to the Pro version"
 msgstr ""
 
-#: includes/class-compare_functions.php:691
+#: includes/class-compare_functions.php:603
 #, fuzzy
 msgid "WP e-Commerce Compare Products Pro"
 msgstr "Сравняване на продукти"
 
-#: includes/class-compare_functions.php:692
+#: includes/class-compare_functions.php:604
 msgid "Activates these advanced Features"
 msgstr ""
 
-#: includes/class-compare_functions.php:695
-msgid ""
-"Activate Products Express Manager - massive time saver, worth the price of "
-"the upgrade on its own."
-msgstr ""
-
-#: includes/class-compare_functions.php:696
-msgid "Activate Widget Custom Style and layout settings."
-msgstr ""
-
-#: includes/class-compare_functions.php:697
-msgid "Activate Product Page WYSIWYG Button creator."
-msgstr ""
-
-#: includes/class-compare_functions.php:698
-msgid "Activate Product Page text link instead of button option."
-msgstr ""
-
-#: includes/class-compare_functions.php:699
+#: includes/class-compare_functions.php:607
 #, fuzzy
-msgid "Activate Product Page 'View Compare' feature."
+msgid "Activate Compare - Products Manager."
+msgstr "WPEC Сравняване на продукти"
+
+#: includes/class-compare_functions.php:608
+#, fuzzy
+msgid "Activate the Compare Audio & Video feature."
 msgstr "Бутони за сравняване в продуктовата страница"
 
-#: includes/class-compare_functions.php:700
-msgid "Activate WYSIWYG table style tools."
+#: includes/class-compare_functions.php:609
+msgid "Activate all Compare Widget settings."
 msgstr ""
 
-#: includes/class-compare_functions.php:701
-msgid "Activate WYSIWYG table content style tools."
+#: includes/class-compare_functions.php:610
+#, fuzzy
+msgid "Activate all Product Card Settings."
+msgstr "Бутони за сравняване в продуктовата страница"
+
+#: includes/class-compare_functions.php:611
+msgid "Activate all Comparison Table style Settings."
 msgstr ""
 
-#: includes/class-compare_functions.php:702
-msgid "Activate 'Add to Cart' button style option on compare table."
-msgstr ""
-
-#: includes/class-compare_functions.php:703
-msgid "Activate table empty cells text editor and background colour."
-msgstr ""
-
-#: includes/class-compare_functions.php:704
+#: includes/class-compare_functions.php:612
 msgid "Activate same day priority support."
 msgstr ""
 
-#: includes/class-compare_functions.php:707
+#: includes/class-compare_functions.php:615
 msgid "Pro Version 7 day FREE trail"
 msgstr ""
 
-#: includes/class-compare_functions.php:708
+#: includes/class-compare_functions.php:616
 msgid "Click here"
 msgstr ""
 
-#: includes/class-compare_functions.php:708
+#: includes/class-compare_functions.php:616
 msgid "for a 7 day Free Trail of the awesome Pro Version features."
 msgstr ""
 
-#: includes/class-compare_functions.php:709
+#: includes/class-compare_functions.php:617
 msgid "View this plugins"
 msgstr ""
 
-#: includes/class-compare_functions.php:709
+#: includes/class-compare_functions.php:617
 msgid "documentation"
 msgstr ""
 
-#: includes/class-compare_functions.php:710
+#: includes/class-compare_functions.php:618
 #, fuzzy
 msgid "Visit this plugins"
 msgstr "Принтирай тази страница"
 
-#: includes/class-compare_functions.php:710
+#: includes/class-compare_functions.php:618
 msgid "support forum"
 msgstr ""
 
-#: includes/class-compare_functions.php:711
+#: includes/class-compare_functions.php:619
 msgid "More FREE a3rev WP e-Commerce Plugins"
 msgstr ""
 
-#: includes/class-compare_functions.php:714
+#: includes/class-compare_functions.php:622
 #, fuzzy
 msgid "WP e-Commerce Products Quick View"
 msgstr "Сравняване на продукти"
 
-#: includes/class-compare_functions.php:715
+#: includes/class-compare_functions.php:623
 msgid "WP e-Commerce Dynamic Gallery"
 msgstr ""
 
-#: includes/class-compare_functions.php:716
+#: includes/class-compare_functions.php:624
 msgid "WP e-Commerce Predictive Search"
 msgstr ""
 
-#: includes/class-compare_functions.php:717
+#: includes/class-compare_functions.php:625
 #, fuzzy
 msgid "WP e-Commerce Compare Products"
 msgstr "Сравняване на продукти"
 
-#: includes/class-compare_functions.php:718
+#: includes/class-compare_functions.php:626
 msgid "WP e-Commerce Catalog Visibility & Email Inquiry"
 msgstr ""
 
-#: includes/class-compare_functions.php:719
+#: includes/class-compare_functions.php:627
 msgid "WP e-Commerce Grid View"
 msgstr ""
 
-#: includes/class-compare_functions.php:722
+#: includes/class-compare_functions.php:630
 msgid "FREE a3rev WordPress Plugins"
 msgstr ""
 
-#: includes/class-compare_functions.php:725
+#: includes/class-compare_functions.php:633
 msgid "Contact Us Page - Contact People"
 msgstr ""
 
-#: includes/class-compare_functions.php:726
+#: includes/class-compare_functions.php:634
 msgid "WordPress Email Template"
 msgstr ""
 
-#: includes/class-compare_functions.php:727
+#: includes/class-compare_functions.php:635
 msgid "Page View Count"
-msgstr ""
-
-#: uploader/class-compare-uploader.php:22
-#, fuzzy
-msgid "WPEC Compare Internal Container"
-msgstr "WPEC Сравняване на продукти"
-
-#: uploader/class-compare-uploader.php:77
-msgid "Upload"
-msgstr ""
-
-#: uploader/class-compare-uploader.php:97
-msgid "View File"
-msgstr ""
-
-#: uploader/class-compare-uploader.php:113
-#, fuzzy
-msgid "Use this Image"
-msgstr "тази страница"
-
-#: uploader/class-compare-uploader.php:114
-msgid "Use as"
-msgstr ""
-
-#: uploader/class-compare-uploader.php:121
-msgid "Previously Uploaded"
 msgstr ""
 
 #: widget/class-compare_widget.php:23
@@ -2662,6 +2310,90 @@ msgstr "Сравняване на продукти"
 #: widget/class-compare_widget.php:63
 msgid "Title"
 msgstr ""
+
+#~ msgid "Features"
+#~ msgstr "Характеристики"
+
+#, fuzzy
+#~ msgid "Single Product"
+#~ msgstr "Открито продуктово име"
+
+#, fuzzy
+#~ msgid "Product Page Style"
+#~ msgstr "Продуктово име"
+
+#, fuzzy
+#~ msgid "Product Page Button"
+#~ msgstr "Бутони за сравняване в продуктовата страница"
+
+#, fuzzy
+#~ msgid "Added To Cart Success"
+#~ msgstr "Добави в количката"
+
+#, fuzzy
+#~ msgid "Button colour. Default"
+#~ msgstr "Бутон или текст"
+
+#, fuzzy
+#~ msgid "Button Font Style"
+#~ msgstr "Бутон или текст"
+
+#, fuzzy
+#~ msgid "Select Style"
+#~ msgstr "Избери стойност"
+
+#, fuzzy
+#~ msgid "Compare Logo"
+#~ msgstr "Сравни това"
+
+#, fuzzy
+#~ msgid "Compare Product Success"
+#~ msgstr "Сравняване на продукти"
+
+#, fuzzy
+#~ msgid "Activate / Deactivate"
+#~ msgstr "Активиран / Деактивиран"
+
+#, fuzzy
+#~ msgid "Single Product Page Compare Button Styling"
+#~ msgstr "Бутони за сравняване в продуктовата страница"
+
+#, fuzzy
+#~ msgid "Single Product Page Compare Linked Text Styling"
+#~ msgstr "Бутони за сравняване в продуктовата страница"
+
+#, fuzzy
+#~ msgid "Single Product Page Compare Button/Link Position"
+#~ msgstr "Бутони за сравняване в продуктовата страница"
+
+#, fuzzy
+#~ msgid "Single Product Page Compare"
+#~ msgstr "Бутони за сравняване в продуктовата страница"
+
+#, fuzzy
+#~ msgid "Check to deactivate the Compare feature on all single product pages."
+#~ msgstr "Активирайте характеристика за сравняване за този продукт"
+
+#, fuzzy
+#~ msgid ""
+#~ "Check to activate the Compare features fields on Single Product pages."
+#~ msgstr "Активирайте характеристика за сравняване за този продукт"
+
+#, fuzzy
+#~ msgid "View Compare on Single Product Page"
+#~ msgstr "Редактирай Продуктовите категории за сравняване"
+
+#, fuzzy
+#~ msgid "Check to deactivate the View Compare feature on Single Product Page"
+#~ msgstr "Активирайте характеристика за сравняване за този продукт"
+
+#, fuzzy
+#~ msgid "Widget Button Text"
+#~ msgstr "Бутон или текст"
+
+#, fuzzy
+#~ msgid "WPEC Compare Internal Container"
+#~ msgstr "WPEC Сравняване на продукти"
 
 #, fuzzy
 #~ msgid "Compare Comparison"
@@ -2743,10 +2475,6 @@ msgstr ""
 
 #~ msgid "Link"
 #~ msgstr "Линк"
-
-#~ msgid "Show Compare feature on products as a Button or Hyperlink Text."
-#~ msgstr ""
-#~ "Покажете функцията за сравнение в продуктите като бутон или хипервръзка."
 
 #~ msgid ""
 #~ "If you select LINK - the hyperlinked text auto shows in your themes font "

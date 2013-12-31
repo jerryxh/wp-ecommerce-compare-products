@@ -131,7 +131,7 @@ class WPEC_Compare_Products_Class
 		echo json_encode($jsonData);
 		die();
 	}
-		
+	
 	public static function wpeccp_products_manager(){
 		$compare_product_message = '';
 		$paged = isset($_POST['paged']) ? $_POST['paged'] : 1;
@@ -172,26 +172,47 @@ class WPEC_Compare_Products_Class
 			}
 		}
 ?>
-<?php echo $compare_product_message; ?>
-<div id="wpec_compare_product_panel_container">
-<div id="wpec_compare_product_panel_fields">
-	<div class="pro_feature_fields" style="margin-top:15px; padding-left:5px; padding-bottom:10px;">
-    <h3><?php _e('WPEC Compare Products Manager', 'wpec_cp'); ?></h3>
+<style>
+	.update_message{padding:10px; background-color:#FFFFCC;border:1px solid #DDDDDD;margin-bottom:15px;}
+	body .flexigrid div.sDiv{display:block;}
+	.flexigrid div.sDiv .sDiv2 select{display:none;}
+	.flexigrid div.sDiv .cp_search, .flexigrid div.sDiv .cp_reset{cursor:pointer;}
+	.edit_product_compare{cursor:pointer; text-decoration:underline; color:#06F;}
+	.icon32-compare-product {
+		background:url(<?php echo ECCP_IMAGES_URL; ?>/a3-plugins.png) no-repeat left top !important;
+	}
+	.pro_feature_fields {
+		padding:10px;	
+	}
+</style>
+<div id="htmlForm">
+<div style="clear:both"></div>
+<div class="wrap a3rev_panel_container a3rev_manager_panel_container">
+	<div id="a3_plugin_panel_container"><div id="a3_plugin_panel_fields">
+	<div class="icon32 icon32-compare-product" id="icon32-compare-product"><br></div>
+	<h2><?php _e('WPEC Compare Products Manager', 'wpec_cp'); ?></h2>
+    <?php echo $compare_product_message; ?>
     <div style="clear:both; margin-bottom:20px;"></div>
+    <div class="pro_feature_fields">
     <table id="wpeccp_products_manager" style="display:none"></table>
     </div>
-</div>
-<div id="wpec_compare_product_upgrade_area"><?php echo WPEC_Compare_Functions::plugin_pro_notice(); ?></div>
-</div>
     <?php 
 		$wpeccp_products_manager = wp_create_nonce("wpeccp-products-manager");
 		$wpeccp_popup_features = wp_create_nonce("wpeccp-popup-features");
 	?>
     <script type="text/javascript">
+		function alert_upgrade(text) {
+			var answer = confirm(text)
+			if (answer){
+				window.open("<?php echo ECCP_AUTHOR_URI; ?>", '_blank')
+			}else{
+				return false;
+			}
+		}
 	(function($){		
 		$(function(){
 			$("#wpeccp_products_manager").flexigrid({
-				url: '<?php echo admin_url( 'admin-ajax.php', 'relative' ) .'?action=wpeccp_get_products&security='.$wpeccp_products_manager; ?>',
+				url: '<?php echo admin_url( 'admin-ajax.php' , 'relative' ) .'?action=wpeccp_get_products&security='.$wpeccp_products_manager; ?>',
 				dataType: 'json',
 				width: 'auto',
 				resizable: false,
@@ -231,6 +252,9 @@ class WPEC_Compare_Products_Class
 		});		  
 	})(jQuery);
 	</script>
+</div><div id="a3_plugin_panel_upgrade_area"><div id="a3_plugin_panel_extensions"><?php echo WPEC_Compare_Functions::plugin_pro_notice(); ?></div></div></div>
+</div>
+</div>
 <?php
 	}
 	
@@ -240,14 +264,15 @@ class WPEC_Compare_Products_Class
 			#TB_iframeContent{width:auto !important; padding-right:10px !important; margin-bottom:0px !important; max-height:480px !important;}
 		</style>';
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.pack';
+		$fancy_suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		
 		//wp_enqueue_script('jquery');
 		// validate
 		wp_enqueue_script('wpeccp_flexigrid_script', ECCP_JS_URL . '/flexigrid/js/flexigrid'.$suffix.'.js');
 		wp_enqueue_style( 'wpeccp_flexigrid_style',ECCP_JS_URL . '/flexigrid/css/flexigrid'.$suffix.'.css' );
-				
-		wp_enqueue_script('thickbox');
-		wp_enqueue_style('thickbox');
+		
+		//wp_enqueue_script('thickbox');
+		//wp_enqueue_style('thickbox');
 	}
 }
 ?>

@@ -199,7 +199,6 @@ function setLocationRemove(url) {
         e.preventDefault();
         return false
     });
-    $('#product_comparison').scrollCompare();
     $('#product_comparison td').hover(function () {
         $(this).parent('tr').find('td').addClass("row-hover");
     }, function () {
@@ -209,4 +208,7 @@ function setLocationRemove(url) {
         window.print();
         e.preventDefault();
     });
+	$(document).ready(function () {
+		$('#product_comparison').scrollCompare();
+	});
 })(jQuery);

@@ -53,7 +53,7 @@ class WPEC_Compare_MetaBox
                         post_id: post_id,
                         security: '<?php echo $wpeccp_product_compare; ?>'
                     };
-                    $.post('<?php echo admin_url( 'admin-ajax.php', 'relative' );?>', data, function(response) {
+                    $.post('<?php echo admin_url( 'admin-ajax.php' , 'relative'); ?>', data, function(response) {
 						$(".wpec_compare_widget_loader").hide();
 						$("#compare_cat_fields").html(response);
 					});
@@ -90,9 +90,14 @@ class WPEC_Compare_MetaBox
 		if($cat_id > 0 && WPEC_Compare_Categories_Data::get_count("id='".$cat_id."'") > 0){
 ?>
 		<style>
-			.form-table th{padding-left:0px !important;}
+			.comparison_category_features_data th{padding-left:0px !important;}
+			@media screen and ( max-width: 782px ) {
+				.comparison_category_features_data textarea, .comparison_category_features_data input[type="text"], .comparison_category_features_data input[type="email"], .comparison_category_features_data input[type="number"], .comparison_category_features_data input[type="password"], .comparison_category_features_data select {
+					width: 100% !important;	
+				}
+			}
 		</style>
-		<table cellspacing="0" cellpadding="5" style="width: 100%;" class="form-table">
+		<table cellspacing="0" cellpadding="5" style="width: 100%;" class="form-table comparison_category_features_data">
             <tbody>
         <?php
 		$compare_fields = WPEC_Compare_Categories_Fields_Data::get_results("cat_id='".$cat_id."'",'cf.field_order ASC');
@@ -107,7 +112,7 @@ class WPEC_Compare_MetaBox
 					$field_value = get_post_meta( $post_id, '_wpsc_compare_'.$field_data->field_key, true );
 					switch($field_data->field_type){
 						case "text-area":
-							echo '<textarea name="_wpsc_compare_'.$field_data->field_key.'" id="'.$field_data->field_key.'">'.$field_value.'</textarea>';
+							echo '<textarea style="width:400px" name="_wpsc_compare_'.$field_data->field_key.'" id="'.$field_data->field_key.'">'.$field_value.'</textarea>';
 							break;
 							
 						case "checkbox":
@@ -119,9 +124,9 @@ class WPEC_Compare_MetaBox
 								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
 									if (in_array($option_value, $field_value)) {
-										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.esc_attr($option_value).'" checked="checked" style="width:auto" />'.esc_attr( $option_value ).' &nbsp;&nbsp;';
+										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.esc_attr($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" />'.esc_attr( $option_value ).' &nbsp;&nbsp;';
 									} else{
-										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.esc_attr($option_value).'" style="width:auto" />'.esc_attr( $option_value ).' &nbsp;&nbsp;';
+										echo '<input type="checkbox" name="_wpsc_compare_'.$field_data->field_key.'[]" value="'.esc_attr($option_value).'" style="float:none; width:auto; display:inline-block;" />'.esc_attr( $option_value ).' &nbsp;&nbsp;';
 									}
 								}
 							}
@@ -134,9 +139,9 @@ class WPEC_Compare_MetaBox
 								foreach ($field_option as $option_value) {
 									$option_value = trim(stripslashes($option_value));
 									if ($option_value == $field_value) {
-										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.esc_attr($option_value).'" checked="checked" style="width:auto" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;';
+										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.esc_attr($option_value).'" checked="checked" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;';
 									} else {
-										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.esc_attr($option_value).'" style="width:auto" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;';
+										echo '<input type="radio" name="_wpsc_compare_'.$field_data->field_key.'" value="'.esc_attr($option_value).'" style="float:none; width:auto; display:inline-block;" /> '.esc_attr( $option_value ).' &nbsp;&nbsp;';
 									}
 								}
 							}
@@ -180,7 +185,7 @@ class WPEC_Compare_MetaBox
 							break;
 							
 						default:
-							echo '<input type="text" name="_wpsc_compare_'.$field_data->field_key.'" id="'.$field_data->field_key.'" value="'.esc_attr( $field_value ).'" />';
+							echo '<input style="width:400px" type="text" name="_wpsc_compare_'.$field_data->field_key.'" id="'.$field_data->field_key.'" value="'.esc_attr( $field_value ).'" />';
 							break;
 					}
 				?>
@@ -190,7 +195,7 @@ class WPEC_Compare_MetaBox
 			}
 		}else{
 		?>
-        		<tr><td><i style="text-decoration:blink"><?php _e('Do not have any field on this category, please add fields for it at', 'wpec_cp'); ?> <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" target="_blank"><?php _e('this page', 'wpec_cp'); ?></a></i></td></tr>
+        		<tr><td><i style="text-decoration:blink"><?php _e('Do not have any field on this category, please add fields for it at', 'wpec_cp'); ?> <a href="admin.php?page=wpsc-compare-features" target="_blank"><?php _e('this page', 'wpec_cp'); ?></a></i></td></tr>
         <?php	
 		}
 		?>

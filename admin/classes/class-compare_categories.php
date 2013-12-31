@@ -53,9 +53,9 @@ class WPEC_Compare_Categories_Class
 	public static function wpec_compare_categories_manager(){
 		global $wpdb;	
 		?>
-        <h3><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit'){ _e('Edit Compare Product Categories','wpec_cp'); }else{ _e('Add Compare Product Categories','wpec_cp'); } ?></h3>
+        <h2><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit'){ _e('Edit Compare Product Categories','wpec_cp'); }else{ _e('Add Compare Product Categories','wpec_cp'); } ?></h2>
         <p><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] != 'cat-edit'){ _e('Create Categories based on groups of products that share the same compare feature list.', 'wpec_cp'); } ?></p>
-        <form action="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" method="post" name="form_add_compare" id="form_add_compare">
+        <form action="admin.php?page=wpsc-compare-features" method="post" name="form_add_compare" id="form_add_compare">
         <?php
 			if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit'){
 				$category_id = $_REQUEST['category_id'];
@@ -74,7 +74,7 @@ class WPEC_Compare_Categories_Class
                 </tbody>
             </table>
             <p class="submit">
-	        	<input type="submit" name="bt_save_cat" id="bt_save_cat" class="button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') { _e('Save', 'wpec_cp'); }else { _e('Create', 'wpec_cp'); } ?>"  /> <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" style="text-decoration:none;"><input type="button" name="cancel" value="<?php _e('Cancel', 'wpec_cp'); ?>" class="button" /></a>
+	        	<input type="submit" name="bt_save_cat" id="bt_save_cat" class="button button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'cat-edit') { _e('Save', 'wpec_cp'); }else { _e('Create', 'wpec_cp'); } ?>"  /> <input type="button" class="button" onclick="window.location='admin.php?page=wpsc-compare-features'" value="<?php _e('Cancel', 'wpec_cp'); ?>" />
 	    	</p>
         </form>
 	<?php

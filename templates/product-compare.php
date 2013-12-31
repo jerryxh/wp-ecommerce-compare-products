@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		$wpec_compare_logo = get_option('wpec_compare_logo');
 		$suffix	= defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		
-		global $wpec_compare_page_style, $wpec_compare_print_button_style, $wpec_compare_close_window_button_style, $wpec_compare_viewcart_style;
+		global $wpec_compare_page_style, $wpec_compare_close_window_button_style, $wpec_compare_viewcart_style;
 		global $wpec_compare_comparison_page_global_settings;
-		global $wpec_compare_print_message_style;
+		global $wpec_compare_print_page_settings;
 		
 ?>
 <!doctype html>
@@ -34,11 +34,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 <body>
 		<?php
 			$print_button_class = 'compare_print_button_type';
-			$print_custom_class = $wpec_compare_print_button_style['button_class'];
-			$print_button_text = $wpec_compare_print_button_style['button_text'];
+			$print_custom_class = '';
+			$print_button_text = $wpec_compare_print_page_settings['button_text'];
 		
 			$close_button_class = 'compare_close_button_type';
-			$close_custom_class = $wpec_compare_close_window_button_style['button_class'];
+			$close_custom_class = '';
 			$close_button_text = $wpec_compare_close_window_button_style['button_text'];
 		?>
     	<div class="compare_print_container"><div id="compare_popup_container" class="compare_popup_container">
@@ -53,9 +53,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                     <?php } ?>
                     <div class="print_control">
                         <?php if ($wpec_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') { ?><a class="wpec_compare_close <?php echo $close_button_class ;?> <?php echo $close_custom_class ;?>" href="#" onClick="window.close();"><span><?php echo $close_button_text ;?></span></a><?php } ?>
+                        <?php if ( $wpec_compare_print_page_settings['enable_print_page_feature'] == 1 ) { ?>
                         <a id="wpec_compare_print" class="wpec_compare_print <?php echo $print_button_class ;?> <?php echo $print_custom_class ;?>" href="#"><span><?php echo $print_button_text ;?></span></a>
                         <div style="clear:both;"></div>
-                    	<div class="wpec_compare_print_msg"><?php echo $wpec_compare_print_message_style['print_message_text'];?></div>
+                    	<div class="wpec_compare_print_msg"><?php echo $wpec_compare_print_page_settings['print_message_text'];?></div>
+                        <?php } ?>
                     </div>
                 </div>
             	<div style="clear:both;"></div>
@@ -71,7 +73,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		?>
         <script type="text/javascript">
 			jQuery(document).ready(function($) {
-						var ajax_url = "<?php echo admin_url( 'admin-ajax.php', 'relative' );?>";
+						var ajax_url = "<?php echo admin_url( 'admin-ajax.php' , 'relative');?>";
+						<?php if ( $wpec_compare_print_page_settings['enable_print_page_feature'] == 1 ) { ?>
 						$(document).on("click", "#wpec_compare_print", function(){
 							$(".compare_print_container").printElement({
 								printBodyOptions:{
@@ -80,6 +83,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								}
 							});
 						});
+						<?php } ?>
 						$(document).on("click", ".wpec_compare_popup_remove_product", function(){
 							var popup_remove_product_id = $(this).attr("rel");
 							$(".popup_wpec_compare_widget_loader").show();
@@ -91,6 +95,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								security: 		"<?php echo $wpeccp_compare_events; ?>"
 							};
 							$.post( ajax_url, data, function(response) {
+								$("body").trigger("wpeccp_popup_remove_product_from_compare_list", [popup_remove_product_id]);
 								data = {
 									action: 		"wpeccp_update_compare_popup",
 									security: 		"<?php echo $wpeccp_compare_events; ?>"
@@ -100,6 +105,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									$(".popup_wpec_compare_widget_loader").hide();
 									$(".compare_popup_wrap").html(result);
 								});
+								$("body").trigger("wpeccp_update_compare_popup");
 								
 								data = {
 									action: 		"wpeccp_update_compare_widget",

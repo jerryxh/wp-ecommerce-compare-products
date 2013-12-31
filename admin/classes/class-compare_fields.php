@@ -98,11 +98,8 @@ class WPEC_Compare_Fields_Class
 	public static function wpec_compare_manager() {
 		global $wpdb;
 		?>
-        <style>
-			#field_type_chzn{width:300px !important;}
-		</style>
-        <h3 id="add_feature"><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit'){ _e('Edit Compare Product Features','wpec_cp'); }else{ _e('Add Compare Product Features','wpec_cp'); } ?></h3>
-        <form action="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" method="post" name="form_add_compare" id="form_add_compare">
+        <h2 id="add_feature"><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit'){ _e('Edit Compare Product Features','wpec_cp'); }else{ _e('Add Compare Product Features','wpec_cp'); } ?></h2>
+        <form action="admin.php?page=wpsc-compare-features" method="post" name="form_add_compare" id="form_add_compare">
         <?php
 			$have_value = false;
 			if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit'){
@@ -115,26 +112,33 @@ class WPEC_Compare_Fields_Class
 				$field_id = 0;
 			}
 		?>
-        	<table cellspacing="0" class="widefat post fixed form-table">
+        	<table cellspacing="0" class="widefat post fixed">
             	<thead>
                 	<tr><th class="manage-column" scope="col"><?php if(isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit'){ _e('Edit Compare Features','wpec_cp'); }else{ _e('Create New Compare Features','wpec_cp'); } ?></th></tr>
                 </thead>
                 <tbody>
                 	<tr>
                     	<td>
-                        	<div class="field_title"><label for="field_name"><?php _e('Feature Name','wpec_cp'); ?></label></div> <input type="text" name="field_name" id="field_name" value="<?php if(!empty($field)) echo stripslashes($field->field_name); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e('This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height', 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
-                            <div style="clear:both; height:20px"></div>
-                        	<div class="field_title"><label for="field_unit"><?php _e('Feature Unit of Measurement', 'wpec_cp'); ?></label></div> <input type="text" name="field_unit" id="field_unit" value="<?php if (!empty($field)) echo stripslashes($field->field_unit); ?>" style="min-width:300px" /> <img class="help_tip" tip='<?php _e("e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name.", 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
-                            <div style="clear:both; height:20px"></div>
-                            <div class="field_title"><label for="field_type"><?php _e('Feature Input Type', 'wpec_cp'); ?></label></div>
-                            <select style="min-width:300px;" name="field_type" id="field_type" class="chzn-select">
+                        	<table cellspacing="0" class="form-table">
+                            	<tr>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e('This is the Feature Name that users see in the Compare Fly-Out Window, for example-  System Height', 'wpec_cp') ?>"></div> <label for="field_name"><?php _e('Feature Name', 'wpec_cp'); ?></label></th>
+                                    <td><input type="text" name="field_name" id="field_name" value="<?php if (!empty($field)) echo stripslashes($field->field_name); ?>" style="width:350px" /></td>
+                                </tr>
+                                <tr>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e("e.g kgs, mm, lbs, cm, inches - the unit of measurement shows after the Feature name in (brackets). If you leave this blank you will just see the Feature name.", 'wpec_cp') ?>"></div> <label for="field_unit"><?php _e('Feature Unit of Measurement', 'wpec_cp'); ?></label></th>
+                                    <td><input type="text" name="field_unit" id="field_unit" value="<?php if (!empty($field)) echo stripslashes($field->field_unit); ?>" style="width:350px" /></td>
+                                </tr>
+                                <tr>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e("Users don't see this. Use to set the data input field type that you will use on to enter the Products data for this feature.", 'wpec_cp') ?>"></div> <label for="field_type"><?php _e('Feature Input Type', 'wpec_cp'); ?></label></th>
+                                    <td>
+                            <select style="width:350px;" name="field_type" id="field_type" class="chzn-select">
 								<?php
                                 foreach (WPEC_Compare_Fields_Class::$default_types as $type => $type_name) {
                                     if ( in_array( $type, array( 'wp-video', 'wp-audio' ) ) ) {
 										echo '<option value="'.$type.'" >'.$type_name['name'].' - '.$type_name['description'].'</option>';
 									} elseif (!empty($field) && $type == $field->field_type) {
                                         echo '<option value="'.$type.'" selected="selected">'.$type_name['name'].' - '.$type_name['description'].'</option>';
-                                    }else {
+                                    } else {
                                         echo '<option value="'.$type.'">'.$type_name['name'].' - '.$type_name['description'].'</option>';
                                     }
                                 }
@@ -142,20 +146,22 @@ class WPEC_Compare_Fields_Class
                                     $have_value = true;
                                 }
                                 ?>
-                            </select> <img class="help_tip" tip="<?php _e("Users don't see this. Use to set the data input field type that you will use on to enter the Products data for this feature.", 'wpec_cp') ?>" src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
-                            <div style="clear:both; height:20px"></div>
-                            <div id="field_value" <?php if (!$have_value) { echo 'style="display:none"';} ?>>
-                                <div class="field_title"><label for="default_value"><?php _e('Enter Input Type options', 'wpec_cp'); ?></label></div> <textarea style="min-width:300px;height:100px;" name="default_value" id="default_value"><?php if (!empty($field)) echo stripslashes($field->default_value); ?></textarea> <img class="help_tip" tip="<?php _e("You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option.", 'wpec_cp') ?>" src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
-                                <div style="clear:both"></div>
-                            </div>
-                            <div style="clear:both; height:20px"></div>
-                            <div class="field_title"><label for="field_type"><?php _e('Assign Feature to Categories', 'wpec_cp'); ?></label></div>
+                            </select>
+                            		</td>
+                            	</tr>
+                                <tr id="field_value" <?php if (!$have_value) { echo 'style="display:none"';} ?>>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e("You have selected one of the Check Box, Radio Button, Drop Down, Mutli Select Input Types. Type your Options here, one line for each option.", 'wpec_cp') ?>"></div> <label for="default_value"><?php _e('Enter Input Type options', 'wpec_cp'); ?></label></th>
+                                    <td><textarea style="width:350px;height:100px;" name="default_value" id="default_value"><?php if (!empty($field)) echo stripslashes($field->default_value); ?></textarea></td>
+                                </tr>
+                                <tr>
+                                	<th><div class="help_tip a3-plugin-ui-icon a3-plugin-ui-help-icon" data-tip="<?php _e("Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories.", 'wpec_cp') ?>"></div> <label for="field_type"><?php _e('Assign Feature to Categories', 'wpec_cp'); ?></label></th>
+                                    <td>
                             	<?php
 								$all_cat = WPEC_Compare_Categories_Data::get_results('', 'category_order ASC');
 								$cat_fields = WPEC_Compare_Categories_Fields_Data::get_catid_results($field_id);
 								if (is_array($all_cat) && count($all_cat) > 0) {
 								?>
-                                <select multiple="multiple" name="field_cats[]" data-placeholder="<?php _e('Select Compare Categories', 'wpec_cp'); ?>" style="width:300px; height:80px;" class="chzn-select">
+                                <select multiple="multiple" name="field_cats[]" data-placeholder="<?php _e('Select Compare Categories', 'wpec_cp'); ?>" style="width:350px; height:80px;" class="chzn-select">
                                 <?php
 								foreach ($all_cat as $cat) {
 									if (in_array($cat->id, (array)$cat_fields)) {
@@ -173,15 +179,16 @@ class WPEC_Compare_Fields_Class
 								<?php
 								}
 								?>
-                            <img class="help_tip" style="vertical-align:top;" tip='<?php _e("Assign features to one or more Categories. Features such as Colour, Size, Weight can be applicable to many Product categories. Create the Feature once and assign it to one or multiple categories.", 'wpec_cp') ?>' src="<?php echo ECCP_IMAGES_URL; ?>/help.png" />
-
-                            <div style="clear:both"></div>
+                            		</td>
+                                </tr>
+                        	</table>
                     	</td>
                     </tr>
                 </tbody>
             </table>
             <p class="submit">
-	        	<input type="submit" name="bt_save_field" id="bt_save_field" class="button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit') { _e('Save', 'wpec_cp'); }else { _e('Create', 'wpec_cp'); } ?>"  /> <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" style="text-decoration:none;"><input type="button" name="cancel" value="<?php _e('Cancel', 'wpec_cp'); ?>" class="button" /></a>
+	        	<input type="submit" name="bt_save_field" id="bt_save_field" class="button button-primary" value="<?php if (isset($_REQUEST['act']) && $_REQUEST['act'] == 'field-edit') { _e('Save', 'wpec_cp'); }else { _e('Create', 'wpec_cp'); } ?>"  /> 
+                <input type="button" class="button" onclick="window.location='admin.php?page=wpsc-compare-features'" value="<?php _e('Cancel', 'wpec_cp'); ?>" />
 	    	</p>
         </form>
         <script>
@@ -214,12 +221,12 @@ class WPEC_Compare_Fields_Class
 			$un_i = 0;
 ?>
         <h3 id="#un_assigned"><?php _e('Un-Assigned Features (Assign to a Category to activate)', 'wpec_cp'); ?></h3>
-        <form action="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" method="post" name="form_delete_fields" id="form_delete_fields" style="margin-bottom:30px;">
+        <form action="admin.php?page=wpsc-compare-features" method="post" name="form_delete_fields" id="form_delete_fields" style="margin-bottom:30px;">
         	<table cellspacing="0" class="widefat post fixed" style="width:535px;">
             	<thead>
                 	<tr>
-                    	<th width="30" class="manage-column" scope="col" style="white-space: nowrap;"><input id="toggle1" class="toggle" type="checkbox" style="margin:0;" /></th>
-                        <th width="35" class="manage-column" scope="col" style="white-space: nowrap;"><?php _e('No', 'wpec_cp'); ?></th>
+                    	<th width="25" class="manage-column" scope="col" style="white-space: nowrap;"><input id="toggle1" class="toggle" type="checkbox" style="margin:0;" /></th>
+                        <th width="30" class="manage-column" scope="col" style="white-space: nowrap;"><?php _e('No', 'wpec_cp'); ?></th>
                         <th class="manage-column" scope="col"><?php _e('Feature Name', 'wpec_cp'); ?></th>
                         <th width="90" class="manage-column" scope="col" style="text-align:right"><?php _e('Type', 'wpec_cp'); ?></th>
                         <th width="100" class="manage-column" scope="col" style="text-align:right"></th>
@@ -235,12 +242,12 @@ class WPEC_Compare_Fields_Class
                         <td><?php echo $un_i; ?></td>
                         <td><?php echo stripslashes($field_data->field_name); ?></td>
                         <td align="right"><?php echo WPEC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
-                        <td align="right"><a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>" ><?php _e('Edit', 'wpec_cp') ?></a> | <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'wpec_cp') ?>" ><?php _e('Delete', 'wpec_cp') ?></a></td>
+                        <td align="right"><a href="admin.php?page=wpsc-compare-features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>" ><?php _e('Edit', 'wpec_cp') ?></a> | <a href="admin.php?page=wpsc-compare-features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'wpec_cp') ?>" ><?php _e('Delete', 'wpec_cp') ?></a></td>
                 	</tr>
                  <?php } ?>
                 </tbody>
             </table>
-            <div style="margin-top:10px;"><input type="submit" name="bt_delete" id="bt_delete" class="button-primary" value="<?php _e('Delete', 'wpec_cp') ; ?>" onclick="if (confirm('<?php _e('Are you sure about deleting this?', 'wpec_cp') ; ?>')) return true; else return false" /></div>
+            <div style="margin-top:10px;"><input type="submit" name="bt_delete" id="bt_delete" class="button button-primary" value="<?php _e('Delete', 'wpec_cp') ; ?>" onclick="if (confirm('<?php _e('Are you sure about deleting this?', 'wpec_cp') ; ?>')) return true; else return false" /></div>
         </form>
         <?php
 		}
@@ -262,10 +269,10 @@ class WPEC_Compare_Fields_Class
   		  <table cellspacing="0" class="widefat post fixed sorttable" id="compare_orders_<?php echo $cat->id; ?>" style="width:535px; margin-bottom:20px;">
             <thead>
             <tr>
-              <th width="30" style="white-space: nowrap;"><span class="c_field_name">&nbsp;</span></th>
+              <th width="25" style="white-space: nowrap;"><span class="c_field_name">&nbsp;</span></th>
               <th><strong><?php echo stripslashes($cat->category_name) ;?></strong> :</th>
               <th width="90"></th>
-              <th width="100" style="text-align:right; font-size:12px;white-space: nowrap;"><a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=cat-edit&category_id=<?php echo $cat->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>"><?php _e('Edit', 'wpec_cp') ?></a> | <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=cat-delete&category_id=<?php echo $cat->id; ?>" title="<?php _e('Delete', 'wpec_cp') ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');"><?php _e('Delete', 'wpec_cp') ?></a><?php if (is_array($compare_fields) && count($compare_fields)>0) { ?> | <span class="c_openclose_table c_close_table" id="expand_<?php echo $cat->id; ?>">&nbsp;</span><?php }else {?> | <span class="c_openclose_none">&nbsp;</span><?php }?></th>
+              <th width="100" style="text-align:right; font-size:12px;white-space: nowrap;"><a href="admin.php?page=wpsc-compare-features&act=cat-edit&category_id=<?php echo $cat->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>"><?php _e('Edit', 'wpec_cp') ?></a> | <a href="admin.php?page=wpsc-compare-features&act=cat-delete&category_id=<?php echo $cat->id; ?>" title="<?php _e('Delete', 'wpec_cp') ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');"><?php _e('Delete', 'wpec_cp') ?></a><?php if (is_array($compare_fields) && count($compare_fields)>0) { ?> | <span class="c_openclose_table c_close_table" id="expand_<?php echo $cat->id; ?>">&nbsp;</span><?php }else {?> | <span class="c_openclose_none">&nbsp;</span><?php }?></th>
             </tr>
             </thead>
             <tbody class="expand_<?php echo $cat->id; ?>">
@@ -279,7 +286,7 @@ class WPEC_Compare_Fields_Class
                 	<td><span class="compare_sort"><?php echo $i; ?></span>.</td>
                     <td><div class="c_field_name"><?php echo stripslashes($field_data->field_name); ?></div></td>
                     <td align="right"><?php echo WPEC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
-                    <td align="right"><a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>" ><?php _e('Edit', 'wpec_cp') ?></a> | <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>&cat_id=<?php echo $cat->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to remove', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?> <?php _e('from', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');" title="<?php _e('Remove', 'wpec_cp') ?>" ><?php _e('Remove', 'wpec_cp') ?></a></td>
+                    <td align="right"><a href="admin.php?page=wpsc-compare-features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>" ><?php _e('Edit', 'wpec_cp') ?></a> | <a href="admin.php?page=wpsc-compare-features&act=field-delete&field_id=<?php echo $field_data->id; ?>&cat_id=<?php echo $cat->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to remove', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?> <?php _e('from', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($cat->category_name); ?>');" title="<?php _e('Remove', 'wpec_cp') ?>" ><?php _e('Remove', 'wpec_cp') ?></a></td>
                 </tr>
                 <?php
 					}
@@ -322,7 +329,7 @@ class WPEC_Compare_Fields_Class
 							$(".sorttable tbody").sortable({ helper: fixHelper, placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
 								var cat_id = $(this).parent('table').siblings(".compare_category_id").val();
 								var order = $(this).sortable("serialize") + '&action=wpeccp_update_orders&security=<?php echo $wpeccp_update_order; ?>&cat_id='+cat_id;
-								$.post("<?php echo admin_url( 'admin-ajax.php', 'relative' );?>", order, function(theResponse){
+								$.post("<?php echo admin_url( 'admin-ajax.php' , 'relative' ); ?>", order, function(theResponse){
 									$(".update_feature_order_message p").html(theResponse);
 									$(".update_feature_order_message").show();
 									$("#compare_orders_"+cat_id).find(".compare_sort").each(function(index){
@@ -334,7 +341,7 @@ class WPEC_Compare_Fields_Class
 
 							$("ul.sorttable").sortable({ placeholder: "ui-state-highlight", opacity: 0.8, cursor: 'move', update: function() {
 								var order = $(this).sortable("serialize") + '&action=wpeccp_update_cat_orders&security=<?php echo $wpeccp_update_cat_order; ?>';
-								$.post("<?php echo admin_url( 'admin-ajax.php', 'relative' );?>", order, function(theResponse){
+								$.post("<?php echo admin_url( 'admin-ajax.php' , 'relative' ); ?>", order, function(theResponse){
 									$(".update_feature_order_message p").html(theResponse).show();
 									$(".update_feature_order_message").show();
 								});
@@ -365,12 +372,11 @@ class WPEC_Compare_Fields_Class
 	public static function features_search_area() {
 		global $wpdb;
 	?>
-    	<div id="icon-post" class="icon32 icon32-posts-post"><br></div>
-        <h2><?php _e('Categories & Features', 'wpec_cp'); ?> <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=add-new" class="add-new-h2"><?php _e('Add New', 'wpec_cp'); ?></a></h2>
+    	<div class="icon32 icon32-compare-product" id="icon32-compare-product"><br></div>
+        <h2><?php _e('Categories & Features', 'wpec_cp'); ?> <a href="admin.php?page=wpsc-compare-features&act=add-new" class="add-new-h2"><?php _e('Add New', 'wpec_cp'); ?></a></h2>
         <div style="clear:both;height:12px"></div>
-        <form method="get" action="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features" name="compare_search_features">
-        	<input type="hidden" name="post_type" value="wpsc-product"  />
-            <input type="hidden" name="page" value="wpsc-compare-settings"  />
+        <form method="get" action="admin.php?page=wpsc-compare-features" name="compare_search_features">
+            <input type="hidden" name="page" value="wpsc-compare-features"  />
             <input type="hidden" name="tab" value="features"  />
         <?php
 		$s_feature = '';
@@ -380,7 +386,7 @@ class WPEC_Compare_Fields_Class
                 <tbody>
                 	<tr valign="top">
                     	<th class="titledesc" scope="rpw" style="padding-left:0;"><input type="text" name="s_feature" id="s_feature" value="<?php echo $s_feature; ?>" style="min-width:300px" /></th>
-                        <td class="forminp" style="padding-right:0; text-align:right;"><input type="submit" id="search_features" name="" value="<?php _e('Search Features', 'wpec_cp'); ?>" class="button"></td>
+                        <td class="forminp search_features_td" style="padding-right:0; text-align:right;"><input type="submit" id="search_features" name="" value="<?php _e('Search Features', 'wpec_cp'); ?>" class="button"></td>
                     </tr>
                 </tbody>
             </table>
@@ -395,7 +401,7 @@ class WPEC_Compare_Fields_Class
 			$div = 5;
 			$keyword = trim(stripslashes($_REQUEST['s_feature']));
 			
-			$link = WPEC_Compare_Functions::modify_url(array('pp' => '', 'rows' => $rows, 's_feature' => $keyword ) );
+			$link = add_query_arg(array('pp' => '', 'rows' => $rows, 's_feature' => $keyword ) );
 			
 			$character = 'latin1';
 			if ( $wpdb->has_cap( 'collation' ) ) 
@@ -429,7 +435,7 @@ class WPEC_Compare_Fields_Class
                 	<tr>
                         <td><?php echo stripslashes($field_data->field_name); ?></td>
                         <td align="right"><?php echo WPEC_Compare_Fields_Class::$default_types[$field_data->field_type]['name']; ?></td>
-                        <td align="right"><a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>" ><?php _e('Edit', 'wpec_cp') ?></a> | <a href="edit.php?post_type=wpsc-product&page=wpsc-compare-settings&tab=features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'wpec_cp') ?>" ><?php _e('Delete', 'wpec_cp') ?></a></td>
+                        <td align="right"><a href="admin.php?page=wpsc-compare-features&act=field-edit&field_id=<?php echo $field_data->id; ?>" class="c_field_edit" title="<?php _e('Edit', 'wpec_cp') ?>" ><?php _e('Edit', 'wpec_cp') ?></a> | <a href="admin.php?page=wpsc-compare-features&act=field-delete&field_id=<?php echo $field_data->id; ?>" class="c_field_delete" onclick="javascript:return confirmation('<?php _e('Are you sure you want to delete', 'wpec_cp') ; ?> #<?php echo htmlspecialchars($field_data->field_name); ?>');" title="<?php _e('Delete', 'wpec_cp') ?>" ><?php _e('Delete', 'wpec_cp') ?></a></td>
                 	</tr>
                  <?php } ?>
                 </tbody>

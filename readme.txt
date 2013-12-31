@@ -3,8 +3,8 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compare products, wp ecommerce compare products, e-commerce, ecommerce
 
 Requires at least: 3.5
-Tested up to: 3.7.1
-Stable tag: 2.1.4
+Tested up to: 3.8.0
+Stable tag: 2.1.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -21,7 +21,6 @@ This allows users to firstly add products to a compare widget basket, then at th
 Chosen products are compared side-by-side, feature by feature, price-by-price. Discard products from the table at the click of a mose as you hone in on the product that is the one for you. Save the comparison as a PDF or print it. 
  
 = Key Features =
-* In Version 2.1.0 we launch our the brand new feature, In-Plugin Custom Styling 
 * Get a taste for what it is like to be able to style and set the layout of every element of this plugins front end output from the admin panel.
 * Create the perfect layout and look for your compare features without touching the theme or plugin code.
 * Theme updates and changing a theme does not affect the layout and styles you create. It is all in the plugin, independent of the theme.
@@ -40,22 +39,25 @@ Chosen products are compared side-by-side, feature by feature, price-by-price. D
 
 We love the Compare Products feature that the big e-commerce sites have. We have looked at them all and over 12 months have developed what we believe is a product comparison extension for WP e-Commerce that is better than any of them.
 
-We distribute the plugin in 2 versions - This FREE lite version and an advanced featured Pro Version.  Today thousands of WP e-Commerce stores owners successfully use the Free lite version to provide the Product Comparison feature we love - to their customers.
+= Mobile Platform App style admin interface =
 
-= Support =
+Just like the new WordPress v3.8.0 version we believe that you should be able to tweak your WP e-Commerce Compare Products settings 'on the fly' from your mobile or tablet.
 
-If you have any problem with setting up the Free lite version please post your support request here on the WordPress support forum. PLEASE if you have a problem DO NOT just give the plugin a bad star rating and review without first requesting support. Giving the plugin a bagging without affording us the opportunity to help solve the issue is in our opinion just incredibly unfair.
+* 100% compatible with WordPress v3.8.0 admin interface.
+* Compatibility from WP e-Commerce version 3.8.5 up to and including WP e-Commerce v3.8.13.1
+* App style admin interface.
+* Admin interface is optimized for iOS and Android mobile and tablet platforms.
 
-Once you have the plugin installed and activated please refer to the plugins comprehensive [Online Documentation](http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-compare-products/) and guide to setting up the Compare Products plugin on your WP e-Commerce store.If you have questions - agin please post them to the support forum here.
+= Lite Version Support =
 
+As a Lite Version user please post all support requests to the plugins WordPress Support forum. We do not watch that forum and posting there you will be relying on another user for support not an a3rev team member. Pro Version License holders have 'write' access to the a3rev support forum and priority support, not from support staff but from the developers.
 
 = PRO Version Upgrade =
 
 * When you install WP e-Commerce Compare Products you will see all the added functionality that the PRO Version offers right there in the admin panel.
 * The plugin is designed so that the upgrade is completely seamless. 
 * When you upgrade nothing changes except all the features of Compare Products you see on the lite version are activated. 
-* This means you can activate, set up and use the free version and then if you find you want the added features and functionality you can upgrade, completely risk free.  
-
+* This means you can activate, set up and use the free version and then if you find you want the added features and functionality you can upgrade, completely risk free. 
 
 = Pro Version Features =
 
@@ -70,10 +72,8 @@ Once you have the plugin installed and activated please refer to the plugins com
 * Activates 'Add to Cart', 'View Checkout' custom style feature on the comparison table.
 * Activates full Comparison Table layout and style functions.   
 
-
 View these features on the [Pro Version Demo site here](http://store.a3dev.net/shop/) Add some products to the Compare basket and try the comparison table. It is a beautiful presentation.
 View all the Pro Version features [here on the a3rev site](http://a3rev.com/shop/wpec-compare-products/)
-
 
 [Home Page](http://a3rev.com/shop/wpec-compare-products/) |
 [Documentation](http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-compare-products/) |
@@ -85,7 +85,6 @@ View all the Pro Version features [here on the a3rev site](http://a3rev.com/shop
 * Your translation? Please [send it to us](http://www.a3rev.com/contact-us-page/) We'll acknowledge your work and link to your site.
 Please [Contact us](http://www.a3rev.com/contact-us-page/) if you'd like to provide a translation or an update.
 
-
 == Screenshots ==
 
 1. screenshot-1.jpg
@@ -94,14 +93,12 @@ Please [Contact us](http://www.a3rev.com/contact-us-page/) if you'd like to prov
 
 3. screenshot-3.jpg
 
-
 == Installation ==
 
 To install WP e-Commerce  Compare Products:
 1. Download the WP e-Commerce Compare Products plugin  
 2. Upload the wp-ecommerce-compare-products folder to your /wp-content/plugins/ directory
-3. Activate the ‘WP e-Commerce Compare Products from the Plugins menu within WordPress
-
+3. Activate the √îWP e-Commerce Compare Products from the Plugins menu within WordPress
 
 == Usage ==
 
@@ -122,8 +119,30 @@ To install WP e-Commerce  Compare Products:
 
 You can use this plugin when you have installed the WP e-Commerce plugin
 
-
 == Changelog ==
+
+= 2.1.5 - 2013/12/31 =
+* Feature - Upgraded the plugin to the newly developed a3rev admin panel app interface.
+* Feature - a3rev Plugin Framework admin interface 100% Compatibility with WordPress v3.8.0 with backward compatibility.
+* Feature - a3rev framework admin interface 100% iOS and Android compatible.
+* Feature - Dashboard switches and sliders use Vector based display that shows when WordPress version 3.8.0 is activated.
+* Feature - All plugin .jpg icons and images use Vector based display for full compatibility with new WordPress version.
+* Feature - New admin UI features check boxes replaced by switches, some dropdowns replaced by sliders.
+* Feature - Added 4 new border display types, Grove, Ridge, Inset, Outset
+* Feature - Button Corner style - Rounded - Can now set a rounded value for each corner of the button to create many different button styles.
+* Feature - New Border / Button shadow features. Create shadow external or internal, set wide of shadow.
+* Feature - Replaced colour picker with new WordPress 3.6.0 colour picker.
+* Feature - Added choice of 350 Google fonts to the existing 17 websafe fonts in all new single row font editor.
+* Feature - New on page instant previews for Fonts editor, create border and shadow style. 
+* Feature - Added intuitive triggers for settings. When switched ON a features corresponding feature settings show, when OFF they hide.
+* Feature - Added House keeping function to settings. Clean up on Deletion.  Option - Choose if you ever delete this plugin it will completely remove all tables and data it created.
+* Tweak - Moved plugin settings from wp-admin Settings > Shop menu to its own menu item on the wp-admin sidebar.
+* Tweak - Changed plugins menu item name from Product Comparison to WPEC Compare.
+* Tweak - Added main sub menu items, Category & Feature | Product Manager | Settings & Style
+* Tweak - Yellow sidebar on Pro Version Menus does not show in Mobile screens to optimize admin panel screen space.
+* Tweak - Numerous admin description text tweaks and typo fix ups.
+* Tweak - Tested 100% compatible with WP 3.8.0
+* Tweak - Tested 100% compatible with WP e-Commerce Version 3.8.13.1
 
 = 2.1.4 -2013/11/07 =
 * Tweak - added esc_attr() to text input fields to support hyphen character
@@ -210,7 +229,6 @@ You can use this plugin when you have installed the WP e-Commerce plugin
 * Fix - Added site page ownership information to Compare Window so browsers recognized window as part of the site.
 * Fix - Bug for users who have https: (SSL) on their sites wp-admin but have http on sites front end. This was causing a -1 to show when products added to Compare Widget wp-admin with SSL applied only allows https: but the url of admin-ajax.php is http: and it is denied hence returning the ajax -1 error. Fixed by writing a filter to recognize when https is configured on wp-admin and parsing correctly.  
 
-
 = 2.0.5 - 2013/01/08 = 
 * Tweak - Added support for Chinese Characters
 * Tweak - UI tweak - changed the order of the admin panel tabs so that the most used Features tab is moved to first tab.
@@ -218,7 +236,7 @@ You can use this plugin when you have installed the WP e-Commerce plugin
 * Tweak - Updated Support and Pro Version link URL's on wordpress.org description, plugins and plugins dashboard. Links were returning 404 errors since the launch of the all new a3rev.com mobile responsive site as the base e-commerce permalinks is changed.
 
 = 2.0.4 - 2012/12/14 =
-* Fix - Updated depreciated custom database collator $wpdb->supports_collation() with new WP3.5 function $wpdb->has_cap( 'collation' ). ÊSupports backward version compatibility.
+* Fix - Updated depreciated custom database collator $wpdb->supports_collation() with new WP3.5 function $wpdb->has_cap( 'collation' ). √¶Supports backward version compatibility.
 * Fix - When Product attributes are auto created as Compare Features, if the Attribute has no terms then the value input field is created as Input Text - Single line instead of a Checkbox.
 * Fix - On Compare Products admin tab, ajax not able to load the products list again after saving a product edit
 
@@ -235,7 +253,7 @@ You can use this plugin when you have installed the WP e-Commerce plugin
 MAJOR UPGRADE
 * Feature - All Product Categories auto created as Compare Categories when plugin is activated. Feature is activated on upgrade.
 * Feature - All Product Variations auto added to Master Category as Compare Features when the plugin is first activated.
-* Feature – When Product Categories or Sub categories are created they are auto created as Compare categories. The plugin only listens to Create new so edits to Product categories are ignored.
+* Feature √ê When Product Categories or Sub categories are created they are auto created as Compare categories. The plugin only listens to Create new so edits to Product categories are ignored.
 * Feature: When parent product variations are created they are auto created as Compare Features. Child product variations and edits are ignored. 
 * Feature - Complete rework of admin user interface - Combined Features and Categories tabs into a single tab - Added Products Tab. Greatly enhanced user experience and ease of use.
 * Feature - Moved Create New Categories and Features to a single on page assessable from an 'add new' button on Features tab.
@@ -243,7 +261,7 @@ MAJOR UPGRADE
 * Feature - Added support for use of special characters in Feature Fields.
 * Feature - Added support for use of Cyrillic Symbols in Feature Fields.
 * Feature - Added support for use of sup tags in Feature Fields.
-* Feature - Language file added to support localization – looking for people to do translations.
+* Feature - Language file added to support localization √ê looking for people to do translations.
 * Fixed - WP e-Commerce version updates editing Product Page Compare meta field values which caused Compare feature when activated from product page not updating Compare category name and show as activated on the Compare Products Admin Page.
 * Fixed - Can't create Compare Feature if user does not have a default value set in SQL. Changed INSERT INTO SQL command output to cater for this relatively rare occurrence.
 * Tweak - Replaced all Category Edit | Delete icons with WordPress link text. Replace edit icon on Product Update table with text link.
@@ -285,6 +303,9 @@ MAJOR UPGRADE
 
 
 == Upgrade Notice ==
+
+= 2.1.5 =
+Major Upgrade ‚Äì Plugin converted to the a3rev plugin framework. 100% WP 3.8.0 and WPEC 3.8.13.1 compatible. 14 x new * Features, 7 x * Tweaks.
 
 = 2.1.4 =
 Upgrade now for 1 bug fix and full compatibility with WordPress 3.7.1

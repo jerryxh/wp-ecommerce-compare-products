@@ -1,5 +1,7 @@
 <style>
 <?php
+global $wpec_compare_admin_interface, $wpec_compare_fonts_face;
+
 // Grid View Button Style
 global $wpec_compare_page_style;
 extract($wpec_compare_page_style);
@@ -12,62 +14,39 @@ body {
 	background-color: <?php echo $body_bg_colour; ?> !important;
 }
 
+.compare_print_container {
+	z-index:9;	
+}
 /* Comparison Page Header Style */
 .compare_heading {
 	/*Background*/
 	background-color: <?php echo $header_bg_colour; ?> !important;
 	/*Border*/
-	border-bottom: <?php echo $header_bottom_border_size; ?> <?php echo $header_bottom_border_style; ?> <?php echo $header_bottom_border_colour; ?> !important;
+	border-bottom: <?php echo esc_attr( $header_bottom_border['width'] ); ?> <?php echo esc_attr( $header_bottom_border['style'] ); ?> <?php echo esc_attr( $header_bottom_border['color'] ); ?> !important;
 }
 
 /* Comparison Empty Window Message Style */
 .no_compare_list {
 	text-align: <?php echo $no_product_message_align; ?>;
 	/* Font */
-	font-family: <?php echo $no_product_message_font; ?> !important;
-	font-size: <?php echo $no_product_message_font_size; ?> !important;
-	color: <?php echo $no_product_message_font_colour; ?> !important;
-<?php if ( stristr($no_product_message_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($no_product_message_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $no_product_message_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_page_style['no_product_message_font'] ); ?>
 }
 
 <?php
 // Print Message Style
-global $wpec_compare_print_message_style;
-extract($wpec_compare_print_message_style);
+global $wpec_compare_print_page_settings;
+extract($wpec_compare_print_page_settings);
 ?>
 
 /* Print Message Style */
 .wpec_compare_print_msg {
 	text-align: right;
 	/* Font */
-	font-family: <?php echo $print_message_font; ?> !important;
-	font-size: <?php echo $print_message_font_size; ?> !important;
-	color: <?php echo $print_message_font_colour; ?> !important;
-<?php if ( stristr($print_message_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($print_message_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $print_message_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_print_page_settings['print_message_font'] ); ?>
 }
 
 <?php
 // Print Button Style
-global $wpec_compare_print_button_style;
-extract($wpec_compare_print_button_style);
 ?>
 
 /* Print Button Style */
@@ -80,6 +59,8 @@ extract($wpec_compare_print_button_style);
 	padding: 7px 10px !important;
 }
 .compare_print_button_type {
+	padding: <?php echo $print_button_padding_tb; ?>px <?php echo $print_button_padding_lr; ?>px !important;
+	
 	/*Background*/
 	background-color: <?php echo $button_bg_colour; ?> !important;
 	background: -webkit-gradient(
@@ -97,31 +78,13 @@ extract($wpec_compare_print_button_style);
 	
 		
 	/*Border*/
-	border: <?php echo $button_border_size; ?> <?php echo $button_border_style; ?> <?php echo $button_border_colour; ?> !important;
-<?php if ($button_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
+	<?php echo $wpec_compare_admin_interface->generate_border_css( $wpec_compare_print_page_settings['button_border'] ); ?>
+	
+	/* Shadow */
+	<?php echo $wpec_compare_admin_interface->generate_shadow_css( $wpec_compare_print_page_settings['print_button_shadow'] ); ?>
 	
 	/* Font */
-	font-family: <?php echo $button_font; ?> !important;
-	font-size: <?php echo $button_font_size; ?> !important;
-	color: <?php echo $button_font_colour; ?> !important;
-<?php if ( stristr($button_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($button_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $button_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_print_page_settings['button_font'] ); ?>
 	
 	text-align: center !important;
 	text-shadow: 0 -1px 0 hsla(0,0%,0%,.3);
@@ -130,19 +93,7 @@ extract($wpec_compare_print_button_style);
 .compare_print_link_type {
 	position:relative;
 	/* Font */
-	font-family: <?php echo $print_link_font; ?> !important;
-	font-size: <?php echo $print_link_font_size; ?> !important;
-	color: <?php echo $print_link_font_colour; ?> !important;
-<?php if ( stristr($print_link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($print_link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $print_link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_print_page_settings['print_link_font'] ); ?>
 }
 .compare_print_link_type:hover {
 	color: <?php echo $print_link_font_hover_colour; ?> !important;
@@ -164,6 +115,8 @@ extract($wpec_compare_close_window_button_style);
 	margin: 0 10px 5px 0 !important;
 }
 .compare_close_button_type {
+	padding: <?php echo $close_button_padding_tb; ?>px <?php echo $close_button_padding_lr; ?>px !important;
+	
 	/*Background*/
 	background-color: <?php echo $button_bg_colour; ?> !important;
 	background: -webkit-gradient(
@@ -181,31 +134,13 @@ extract($wpec_compare_close_window_button_style);
 	
 		
 	/*Border*/
-	border: <?php echo $button_border_size; ?> <?php echo $button_border_style; ?> <?php echo $button_border_colour; ?> !important;
-<?php if ($button_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $button_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
+	<?php echo $wpec_compare_admin_interface->generate_border_css( $wpec_compare_close_window_button_style['button_border'] ); ?>
+	
+	/* Shadow */
+	<?php echo $wpec_compare_admin_interface->generate_shadow_css( $wpec_compare_close_window_button_style['close_button_shadow'] ); ?>
 	
 	/* Font */
-	font-family: <?php echo $button_font; ?> !important;
-	font-size: <?php echo $button_font_size; ?> !important;
-	color: <?php echo $button_font_colour; ?> !important;
-<?php if ( stristr($button_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($button_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $button_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_close_window_button_style['button_font'] ); ?>
 	
 	text-align: center !important;
 	text-shadow: 0 -1px 0 hsla(0,0%,0%,.3);
@@ -214,19 +149,7 @@ extract($wpec_compare_close_window_button_style);
 .compare_close_link_type {
 	position:relative;
 	/* Font */
-	font-family: <?php echo $close_link_font; ?> !important;
-	font-size: <?php echo $close_link_font_size; ?> !important;
-	color: <?php echo $close_link_font_colour; ?> !important;
-<?php if ( stristr($close_link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($close_link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $close_link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_close_window_button_style['close_link_font'] ); ?>
 }
 .compare_close_link_type:hover {
 	color: <?php echo $close_link_font_hover_colour; ?> !important;
@@ -247,12 +170,12 @@ extract($wpec_compare_table_style);
 }
 #product_comparison {
 	/*Border*/
-	border: <?php echo $table_border_size; ?> <?php echo $table_border_style; ?> <?php echo $table_border_colour; ?> !important;
+	<?php echo $wpec_compare_admin_interface->generate_border_css( $wpec_compare_table_style['table_border'] ); ?>
 	border-collapse:collapse !important;
 }
 #nameTable {
 	/*Border*/
-	border: <?php echo $table_border_size; ?> <?php echo $table_border_style; ?> <?php echo $table_border_colour; ?> !important;
+	<?php echo $wpec_compare_admin_interface->generate_border_css( $wpec_compare_table_style['table_border'] ); ?>
 	border-collapse:collapse !important;
 }
 
@@ -266,18 +189,18 @@ tr.row_2 td, tr.row_2 th {
 }
 /* Tabe Cell Style */
 #product_comparison td, #nameTable td {
-	border-right: <?php echo $table_border_size; ?> <?php echo $table_border_style; ?> <?php echo $table_border_colour; ?> !important;
-	border-bottom: <?php echo $table_border_size; ?> <?php echo $table_border_style; ?> <?php echo $table_border_colour; ?> !important;
+	border-right: <?php echo $table_border['width']; ?> <?php echo $table_border['style']; ?> <?php echo $table_border['color']; ?> !important;
+	border-bottom: <?php echo $table_border['width']; ?> <?php echo $table_border['style']; ?> <?php echo $table_border['color']; ?> !important;
 	border-left:none;
 }
 #product_comparison th, #nameTable th {
 	border:none;	
 }
-#bg-labels span, .td-spacer, {
-	padding-top: <?php echo $row_padding_topbottom; ?>px !important;
-	padding-bottom: <?php echo $row_padding_topbottom; ?>px !important;
-	padding-left: <?php echo $row_padding_leftright; ?>px !important;
-	padding-right: <?php echo $row_padding_leftright; ?>px !important;
+#bg-labels span, .td-spacer {
+	padding-top: <?php echo $table_row_padding_top; ?>px !important;
+	padding-bottom: <?php echo $table_row_padding_bottom; ?>px !important;
+	padding-left: <?php echo $table_row_padding_left; ?>px !important;
+	padding-right: <?php echo $table_row_padding_right; ?>px !important;
 }
 
 <?php
@@ -289,7 +212,7 @@ extract($wpec_compare_addtocart_style);
 .compare_add_cart a.add_to_cart_button_type {
 	position:relative;
 	display:inline-block;
-	padding: 5px 10px !important;
+	padding: <?php echo $addtocart_button_padding_tb; ?>px <?php echo $addtocart_button_padding_lr; ?>px !important;
 	margin-bottom:5px !important;
 	
 	/*Background*/
@@ -309,31 +232,13 @@ extract($wpec_compare_addtocart_style);
 	
 		
 	/*Border*/
-	border: <?php echo $addtocart_button_border_size; ?> <?php echo $addtocart_button_border_style; ?> <?php echo $addtocart_button_border_colour; ?> !important;
-<?php if ($addtocart_button_border_rounded == 'rounded') { ?>
-	-webkit-border-radius: <?php echo $addtocart_button_border_rounded_value; ?>px !important;
-	-moz-border-radius: <?php echo $addtocart_button_border_rounded_value; ?>px !important;
-	border-radius: <?php echo $addtocart_button_border_rounded_value; ?>px !important;
-<?php } else { ?>
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
-<?php } ?>
-
+	<?php echo $wpec_compare_admin_interface->generate_border_css( $wpec_compare_addtocart_style['addtocart_button_border'] ); ?>
+	
+	/* Shadow */
+	<?php echo $wpec_compare_admin_interface->generate_shadow_css( $wpec_compare_addtocart_style['addtocart_button_shadow'] ); ?>
+	
 	/* Font */
-	font-family: <?php echo $addtocart_button_font; ?> !important;
-	font-size: <?php echo $addtocart_button_font_size; ?> !important;
-	color: <?php echo $addtocart_button_font_colour; ?> !important;
-<?php if ( stristr($addtocart_button_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($addtocart_button_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $addtocart_button_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_addtocart_style['addtocart_button_font'] ); ?>
 
 	text-align: center !important;
 	text-shadow: 0 -1px 0 hsla(0,0%,0%,.3);
@@ -343,19 +248,7 @@ extract($wpec_compare_addtocart_style);
 .compare_add_cart a.add_to_cart_link_type {
 	position:relative;
 	/* Font */
-	font-family: <?php echo $addtocart_link_font; ?> !important;
-	font-size: <?php echo $addtocart_link_font_size; ?> !important;
-	color: <?php echo $addtocart_link_font_colour; ?> !important;
-<?php if ( stristr($addtocart_link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($addtocart_link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $addtocart_link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_addtocart_style['addtocart_link_font'] ); ?>
 }
 .compare_add_cart a.add_to_cart_link_type:hover {
 	color: <?php echo $addtocart_link_font_hover_colour; ?> !important;
@@ -390,19 +283,7 @@ extract($wpec_compare_viewcart_style);
 .compare_add_cart a.added_to_cart {
 	display:block;
 	/* Font */
-	font-family: <?php echo $viewcart_link_font; ?> !important;
-	font-size: <?php echo $viewcart_link_font_size; ?> !important;
-	color: <?php echo $viewcart_link_font_colour; ?> !important;
-<?php if ( stristr($viewcart_link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($viewcart_link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $viewcart_link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_viewcart_style['viewcart_link_font'] ); ?>
 }
 .compare_add_cart a.added_to_cart:hover {
 	color: <?php echo $viewcart_link_font_hover_colour; ?> !important;
@@ -411,19 +292,7 @@ extract($wpec_compare_viewcart_style);
 	display:block;
 	visibility:hidden;
 	/* Font */
-	font-family: <?php echo $viewcart_link_font; ?> !important;
-	font-size: <?php echo $viewcart_link_font_size; ?> !important;
-	color: <?php echo $viewcart_link_font_colour; ?> !important;
-<?php if ( stristr($viewcart_link_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($viewcart_link_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $viewcart_link_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_viewcart_style['viewcart_link_font'] ); ?>
 }
 
 
@@ -436,19 +305,7 @@ extract($wpec_compare_table_content_style);
 /* Compare Feature Titles ( Left Fixed Column) Style */
 .compare_value {
 	/* Font */
-	font-family: <?php echo $feature_title_font; ?> !important;
-	font-size: <?php echo $feature_title_font_size; ?> !important;
-	color: <?php echo $feature_title_font_colour; ?> !important;
-<?php if ( stristr($feature_title_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($feature_title_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $feature_title_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_table_content_style['feature_title_font'] ); ?>
 	
 	text-align: <?php echo $feature_title_align; ?> !important;
 }
@@ -456,19 +313,10 @@ extract($wpec_compare_table_content_style);
 /* Table Rows Feature Values Font */
 .td-spacer {
 	/* Font */
-	font-family: <?php echo $content_font; ?> !important;
-	font-size: <?php echo $content_font_size; ?> !important;
-	color: <?php echo $content_font_colour; ?> !important;
-<?php if ( stristr($content_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($content_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $content_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_table_content_style['content_font'] ); ?>
+}
+.td-spacer iframe {
+	z-index:8;	
 }
 
 /* Empty Feature Values Row Cell Display */
@@ -478,37 +326,13 @@ extract($wpec_compare_table_content_style);
 }
 .empty_text {
 	/* Font */
-	font-family: <?php echo $empty_font; ?> !important;
-	font-size: <?php echo $empty_font_size; ?> !important;
-	color: <?php echo $empty_font_colour; ?> !important;
-<?php if ( stristr($empty_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($empty_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $empty_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_table_content_style['empty_font'] ); ?>
 }
 
 /* Product Name Font */
 .compare_product_name {
 	/* Font */
-	font-family: <?php echo $product_name_font; ?> !important;
-	font-size: <?php echo $product_name_font_size; ?> !important;
-	color: <?php echo $product_name_font_colour; ?> !important;
-<?php if ( stristr($product_name_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($product_name_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $product_name_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_table_content_style['product_name_font'] ); ?>
 }
 
 <?php
@@ -519,19 +343,7 @@ extract($wpec_compare_product_prices_style);
 /* Price Style */
 .compare_price {
 	/* Font */
-	font-family: <?php echo $price_font; ?> !important;
-	font-size: <?php echo $price_font_size; ?> !important;
-	color: <?php echo $price_font_colour; ?> !important;
-<?php if ( stristr($price_font_style, 'bold') !== FALSE) { ?>
-	font-weight: bold !important;
-<?php } ?>
-<?php if ( stristr($price_font_style, 'italic') !== FALSE) { ?>
-	font-style:italic !important;
-<?php } ?>
-<?php if ( $price_font_style == 'normal') { ?>
-	font-weight: normal !important;
-	font-style: normal !important;
-<?php } ?>
+	<?php echo $wpec_compare_fonts_face->generate_font_css( $wpec_compare_product_prices_style['price_font'] ); ?>
 }
 
 /* For Print Page*/
@@ -543,10 +355,10 @@ extract($wpec_compare_product_prices_style);
 }
 .compare_popup_print .compare_value {
 	text-align: <?php echo $feature_title_align; ?> !important;
-	padding-top: <?php echo $row_padding_topbottom; ?>px !important;
-	padding-bottom: <?php echo $row_padding_topbottom; ?>px !important;
-	padding-left: <?php echo $row_padding_leftright; ?>px !important;
-	padding-right: <?php echo $row_padding_leftright; ?>px !important;
+	padding-top: <?php echo $table_row_padding_top; ?>px !important;
+	padding-bottom: <?php echo $table_row_padding_bottom; ?>px !important;
+	padding-left: <?php echo $table_row_padding_left; ?>px !important;
+	padding-right: <?php echo $table_row_padding_right; ?>px !important;
 	width:215px !important;
 }
 .compare_popup_print #product_comparison th, .compare_popup_print #product_comparison td {
