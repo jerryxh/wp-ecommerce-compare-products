@@ -194,6 +194,7 @@ class WPEC_Compare_Products_Class
     <?php echo $compare_product_message; ?>
     <div style="clear:both; margin-bottom:20px;"></div>
     <div class="pro_feature_fields">
+    <?php global $wpec_compare_admin_init; $wpec_compare_admin_init->upgrade_top_message(true); ?>
     <table id="wpeccp_products_manager" style="display:none"></table>
     </div>
     <?php 

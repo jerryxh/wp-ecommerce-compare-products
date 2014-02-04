@@ -36,7 +36,7 @@ class WPEC_Compare_Admin_UI
 	 * @var string
 	 * You must change to correct pro plugin page url on a3rev site
 	 */
-	public $pro_plugin_page_url = 'ttp://a3rev.com/shop/wpec-compare-products/';
+	public $pro_plugin_page_url = 'http://a3rev.com/shop/wpec-compare-products/';
 	
 	/**
 	 * @var string
