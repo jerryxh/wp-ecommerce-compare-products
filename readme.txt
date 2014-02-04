@@ -3,8 +3,8 @@ Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compare products, wp ecommerce compare products, e-commerce, ecommerce
 
 Requires at least: 3.5
-Tested up to: 3.8.0
-Stable tag: 2.1.5
+Tested up to: 3.8.1
+Stable tag: 2.1.5.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -120,6 +120,10 @@ To install WP e-Commerce  Compare Products:
 You can use this plugin when you have installed the WP e-Commerce plugin
 
 == Changelog ==
+
+= 2.1.5.1 - 2014/02/04 =
+* Tweak - Added description text to the top of each Pro Version yellow border section
+* Fix - Undefined index: _wpsc_compare_category in class-compare_metabox.php
 
 = 2.1.5 - 2013/12/31 =
 * Feature - Upgraded the plugin to the newly developed a3rev admin panel app interface.
@@ -303,6 +307,9 @@ MAJOR UPGRADE
 
 
 == Upgrade Notice ==
+
+= 2.1.5.1 =
+Upgrade now for undefined index bug fix that surfaced in version 2.1.5
 
 = 2.1.5 =
 Major Upgrade – Plugin converted to the a3rev plugin framework. 100% WP 3.8.0 and WPEC 3.8.13.1 compatible. 14 x new * Features, 7 x * Tweaks.

@@ -215,16 +215,21 @@ class WPEC_Compare_MetaBox
 			} else {
 				update_post_meta($post_id, '_wpsc_deactivate_compare_feature', 'yes');
 			}
-			$compare_category = $_REQUEST['_wpsc_compare_category'];
-			update_post_meta($post_id, '_wpsc_compare_category', $compare_category);
+			
+			$compare_category = 0;
+			if ( isset($_REQUEST['_wpsc_compare_category']) ) {
+				$compare_category = $_REQUEST['_wpsc_compare_category'];
+				update_post_meta($post_id, '_wpsc_compare_category', $compare_category);
+			}
 			
 			$category_data = WPEC_Compare_Categories_Data::get_row($compare_category);
-			update_post_meta($post_id, '_wpsc_compare_category_name', $category_data->category_name);
+			if ( $category_data != NULL ) update_post_meta($post_id, '_wpsc_compare_category_name', $category_data->category_name);
 			
 			$compare_fields = WPEC_Compare_Categories_Fields_Data::get_results("cat_id='".$compare_category."'",'cf.field_order ASC');
 			if (is_array($compare_fields) && count($compare_fields)>0) {
 				foreach ($compare_fields as $field_data) {
-					update_post_meta($post_id, '_wpsc_compare_'.$field_data->field_key, $_REQUEST['_wpsc_compare_'.$field_data->field_key]);
+					if ( isset( $_REQUEST['_wpsc_compare_'.$field_data->field_key] ) )
+						update_post_meta($post_id, '_wpsc_compare_'.$field_data->field_key, $_REQUEST['_wpsc_compare_'.$field_data->field_key]);
 				}
 			}
 		}

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPEC Compare Products Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-31 17:29+0700\n"
-"PO-Revision-Date: 2013-12-31 17:29+0700\n"
+"POT-Creation-Date: 2014-02-04 14:20+0700\n"
+"PO-Revision-Date: 2014-02-04 14:20+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "MIME-Version: 1.0\n"
@@ -82,8 +82,8 @@ msgstr ""
 msgid "Outset"
 msgstr ""
 
-#: admin/admin-interface.php:1293 admin/admin-interface.php:1383
-#: admin/admin-interface.php:1412
+#: admin/admin-interface.php:1294 admin/admin-interface.php:1384
+#: admin/admin-interface.php:1413
 #: admin/settings/comparison-page/add-to-cart-settings.php:210
 #: admin/settings/comparison-page/global-settings.php:205
 #: admin/settings/comparison-page/global-settings.php:211
@@ -102,8 +102,8 @@ msgstr ""
 msgid "ON"
 msgstr ""
 
-#: admin/admin-interface.php:1294 admin/admin-interface.php:1384
-#: admin/admin-interface.php:1413
+#: admin/admin-interface.php:1295 admin/admin-interface.php:1385
+#: admin/admin-interface.php:1414
 #: admin/settings/comparison-page/add-to-cart-settings.php:211
 #: admin/settings/comparison-page/global-settings.php:206
 #: admin/settings/comparison-page/global-settings.php:212
@@ -122,104 +122,120 @@ msgstr ""
 msgid "OFF"
 msgstr ""
 
-#: admin/admin-interface.php:1454
+#: admin/admin-interface.php:1455
 msgid "Width"
 msgstr ""
 
-#: admin/admin-interface.php:1456
+#: admin/admin-interface.php:1457
 msgid "Height"
 msgstr ""
 
-#: admin/admin-interface.php:1458
+#: admin/admin-interface.php:1459
 msgid "Hard Crop"
 msgstr ""
 
-#: admin/admin-interface.php:1536
+#: admin/admin-interface.php:1537
 msgid "-- Default Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:1547
+#: admin/admin-interface.php:1548
 msgid "-- Google Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:1588
+#: admin/admin-interface.php:1589
 msgid "Preview your customized typography settings"
 msgstr ""
 
-#: admin/admin-interface.php:1722 admin/admin-interface.php:1981
+#: admin/admin-interface.php:1723 admin/admin-interface.php:1982
 msgid "Preview your customized border settings"
 msgstr ""
 
-#: admin/admin-interface.php:1731 admin/admin-interface.php:1972
+#: admin/admin-interface.php:1732 admin/admin-interface.php:1973
 msgid "Rounded"
 msgstr ""
 
-#: admin/admin-interface.php:1732 admin/admin-interface.php:1973
+#: admin/admin-interface.php:1733 admin/admin-interface.php:1974
 msgid "Square"
 msgstr ""
 
-#: admin/admin-interface.php:1742 admin/admin-interface.php:1986
+#: admin/admin-interface.php:1743 admin/admin-interface.php:1987
 msgid "Top Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1762 admin/admin-interface.php:2006
+#: admin/admin-interface.php:1763 admin/admin-interface.php:2007
 msgid "Top Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1782 admin/admin-interface.php:2026
+#: admin/admin-interface.php:1783 admin/admin-interface.php:2027
 msgid "Bottom Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1802 admin/admin-interface.php:2046
+#: admin/admin-interface.php:1803 admin/admin-interface.php:2047
 msgid "Bottom Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1895
+#: admin/admin-interface.php:1896
 msgid "Preview your customized border styles settings"
 msgstr ""
 
-#: admin/admin-interface.php:2107
+#: admin/admin-interface.php:2108
 msgid "YES"
 msgstr ""
 
-#: admin/admin-interface.php:2108
+#: admin/admin-interface.php:2109
 msgid "NO"
 msgstr ""
 
-#: admin/admin-interface.php:2122
+#: admin/admin-interface.php:2123
 msgid "Horizontal Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2140
+#: admin/admin-interface.php:2141
 msgid "Vertical Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2158
+#: admin/admin-interface.php:2159
 msgid "Blur Distance"
 msgstr ""
 
-#: admin/admin-interface.php:2176
+#: admin/admin-interface.php:2177
 msgid "Spread Size"
 msgstr ""
 
-#: admin/admin-interface.php:2194
+#: admin/admin-interface.php:2195
 msgid "INNER"
 msgstr ""
 
-#: admin/admin-interface.php:2195
+#: admin/admin-interface.php:2196
 msgid "OUTER"
 msgstr ""
 
-#: admin/admin-interface.php:2213
+#: admin/admin-interface.php:2214
 msgid "Preview your customized box shadow settings"
 msgstr ""
 
-#: admin/admin-interface.php:2401
+#: admin/admin-interface.php:2402
 msgid "Save changes"
 msgstr ""
 
-#: admin/admin-interface.php:2402
+#: admin/admin-interface.php:2403
 msgid "Reset Settings"
+msgstr ""
+
+#: admin/admin-ui.php:127
+#, php-format
+msgid "Settings inside this yellow border are %s Features."
+msgstr ""
+
+#: admin/admin-ui.php:129
+#, php-format
+msgid ""
+"Upgrade to the <a href=\"%s\" target=\"_blank\">%s</a> to activate these "
+"settings."
+msgstr ""
+
+#: admin/admin-ui.php:131 admin/admin-ui.php:133
+msgid "Pro Version"
 msgstr ""
 
 #: admin/compare_init.php:8 includes/class-compare_functions.php:685

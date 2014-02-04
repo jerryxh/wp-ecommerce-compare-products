@@ -34,6 +34,12 @@ class WPEC_Compare_Admin_UI
 	
 	/**
 	 * @var string
+	 * You must change to correct pro plugin page url on a3rev site
+	 */
+	public $pro_plugin_page_url = 'ttp://a3rev.com/shop/wpec-compare-products/';
+	
+	/**
+	 * @var string
 	 */
 	public $admin_plugin_url;
 	
@@ -113,11 +119,33 @@ class WPEC_Compare_Admin_UI
 	}
 	
 	/*-----------------------------------------------------------------------------------*/
+	/* upgrade_top_message() */
+	/* Show upgrade top message for pro fields
+	/*-----------------------------------------------------------------------------------*/
+	public function upgrade_top_message( $echo = false ) {
+		$upgrade_top_message = sprintf( '<div class="pro_feature_top_message">' 
+			. __( 'Settings inside this yellow border are %s Features.', 'wpec_cp' ) 
+			. '<br />' 
+			. __( 'Upgrade to the <a href="%s" target="_blank">%s</a> to activate these settings.', 'wpec_cp' ) 
+			. '</div>'
+			, apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpec_cp' ) )
+			, apply_filters( $this->plugin_name . '_pro_plugin_page_url', $this->pro_plugin_page_url )
+			, apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpec_cp' ) ) 
+		);
+		
+		$upgrade_top_message = apply_filters( $this->plugin_name . '_upgrade_top_message', $upgrade_top_message );
+		
+		if ( $echo ) echo $upgrade_top_message;
+		else return $upgrade_top_message;
+		
+	}
+	
+	/*-----------------------------------------------------------------------------------*/
 	/* pro_fields_before() */
 	/* Start of yellow box on right for pro fields
 	/*-----------------------------------------------------------------------------------*/
 	public function pro_fields_before( $echo = true ) {
-		echo apply_filters( $this->plugin_name . '_pro_fields_before', '<div class="pro_feature_fields">' );
+		echo apply_filters( $this->plugin_name . '_pro_fields_before', '<div class="pro_feature_fields">'. $this->upgrade_top_message() );
 	}
 	
 	/*-----------------------------------------------------------------------------------*/
