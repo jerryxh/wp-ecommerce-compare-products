@@ -63,6 +63,38 @@ class WPEC_Compare_Hook_Filter
 		return $template;
 	}
 	
+	public static function nocache_ours_page() {
+		global $product_compare_id;
+		
+		$wpeccp_page_uris   = array();
+		// Exclude querystring when using page ID
+		$wpeccp_page_uris[] = 'p=' . $product_compare_id;
+		$wpeccp_page_uris[] = 'page_id=' . $product_compare_id;
+		
+		// Exclude permalinks
+		$comparision_page      = get_post( $product_compare_id );
+		
+		if ( ! is_null( $comparision_page ) )
+			$wpeccp_page_uris[] = '/' . $comparision_page->post_name;
+		
+		if ( is_array( $wpeccp_page_uris ) ) {
+			foreach( $wpeccp_page_uris as $uri ) {
+				if ( strstr( $_SERVER['REQUEST_URI'], $uri ) ) {
+					if ( ! defined( 'DONOTCACHEPAGE' ) )
+						define( "DONOTCACHEPAGE", "true" );
+		
+					if ( ! defined( 'DONOTCACHEOBJECT' ) )
+						define( "DONOTCACHEOBJECT", "true" );
+		
+					if ( ! defined( 'DONOTCACHEDB' ) )
+						define( "DONOTCACHEDB", "true" );
+		
+					nocache_headers();
+				}
+			}
+		}
+	}
+	
 	public static function add_google_fonts() {
 		global $wpec_compare_fonts_face;
 		global $wpec_compare_product_page_button_style, $wpec_compare_product_page_view_compare_style;
@@ -108,6 +140,9 @@ class WPEC_Compare_Hook_Filter
 		
 		if ($post->post_type == 'wpsc-product' && WPEC_Compare_Functions::check_product_activate_compare($product_id) && WPEC_Compare_Functions::check_product_have_cat($product_id) ) {
 			
+			$widget_compare_popup_view_button = '';
+			if ( $wpec_compare_comparison_page_global_settings['open_compare_type'] != 'new_page' ) $widget_compare_popup_view_button = 'wpec_bt_view_compare_popup';
+			
 			if ( is_singular('wpsc-product') ) {
 				
 				global $wpec_compare_product_page_button_style;
@@ -136,7 +171,7 @@ class WPEC_Compare_Hook_Filter
 					if ($wpec_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') {
 						$product_compare_page = '#';
 					}
-					$view_compare_html = '<div style="clear:both;"></div><a class="wpec_bt_view_compare '.$product_view_compare_class.' '.$product_view_compare_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="" style="display:none;">'.$product_view_compare_text.'</a>';
+					$view_compare_html = '<div style="clear:both;"></div><a class="wpec_bt_view_compare '.$widget_compare_popup_view_button.' '.$product_view_compare_class.' '.$product_view_compare_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="" style="display:none;">'.$product_view_compare_text.'</a>';
 				}
 				
 				$compare_html = '<div class="wpec_compare_button_container"><a class="wpec_bt_compare_this '.$product_compare_class.' '.$product_compare_custom_class.'" id="wpec_bt_compare_this_'.$product_id.'">'.$product_compare_text.'</a>' . $view_compare_html . '<input type="hidden" id="input_wpec_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
@@ -191,6 +226,10 @@ class WPEC_Compare_Hook_Filter
 		$post_type = get_post_type($product_id);
 		$html = '';
 		if ($post_type == 'wpsc-product' && WPEC_Compare_Functions::check_product_activate_compare($product_id) && WPEC_Compare_Functions::check_product_have_cat($product_id)) {
+			
+			$widget_compare_popup_view_button = '';
+			if ( $wpec_compare_comparison_page_global_settings['open_compare_type'] != 'new_page' ) $widget_compare_popup_view_button = 'wpec_bt_view_compare_popup';
+			
 			$product_compare_custom_class = '';
 			$product_compare_text = $wpec_compare_product_page_button_style['product_compare_button_text'];
 			$product_compare_class = 'wpec_bt_compare_this_button';
@@ -214,7 +253,7 @@ class WPEC_Compare_Hook_Filter
 				if ($wpec_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') {
 					$product_compare_page = '#';
 				}
-				$view_compare_html = '<div style="clear:both;"></div><a class="wpec_bt_view_compare '.$product_view_compare_class.' '.$product_view_compare_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="" style="display:none;">'.$product_view_compare_text.'</a>';
+				$view_compare_html = '<div style="clear:both;"></div><a class="wpec_bt_view_compare '.$widget_compare_popup_view_button.' '.$product_view_compare_class.' '.$product_view_compare_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="" style="display:none;">'.$product_view_compare_text.'</a>';
 			}
 			
 			$html .= '<div class="wpec_compare_button_container"><a class="wpec_bt_compare_this '.$product_compare_class.' '.$product_compare_custom_class.'" id="wpec_bt_compare_this_'.$product_id.'">'.$product_compare_text.'</a>' . $view_compare_html . '<input type="hidden" id="input_wpec_bt_compare_this_'.$product_id.'" name="product_compare_'.$product_id.'" value="'.$product_id.'" /></div>';
@@ -358,17 +397,18 @@ class WPEC_Compare_Hook_Filter
 		$script_add_on = '';
 		$script_add_on .= '<script type="text/javascript">
 				jQuery(document).ready(function($) {
-						var ajax_url = "'. admin_url( 'admin-ajax.php', 'relative' ) .'"';
-		if ($wpec_compare_comparison_page_global_settings['open_compare_type'] != 'new_page') {
+						var ajax_url = "'. admin_url( 'admin-ajax.php', 'relative' ) .'";
+						wpec_compare_widget_load();';
+						
 			$script_add_on .= '
-						$(document).on("click", ".wpec_compare_button_go, .wpec_bt_view_compare", function (event){
+						$(document).on("click", ".wpec_compare_popup_button_go, .wpec_bt_view_compare_popup", function (event){
 							var compare_url = "'.get_permalink($product_compare_id).'";
 							window.open(compare_url, "'.__('Product_Comparison', 'wpec_cp').'", "scrollbars=1, width=980, height=650");
 							event.preventDefault();
 							return false;
 					 
 					  });';
-		}
+
 		$script_add_on .= '
 						$(document).on("click", ".wpec_bt_compare_this", function(){
 							var bt_compare_current = $(this);
@@ -450,6 +490,21 @@ class WPEC_Compare_Hook_Filter
 								total_compare = $.parseJSON( response );
 								$("#total_compare_product").html(total_compare);
 							});
+						}
+						
+						function wpec_compare_widget_load() {
+							$(".wpec_compare_widget_loader").show();
+							$(".wpec_compare_widget_container").html("");
+							var data = {
+								action: 		"wpeccp_update_compare_widget",
+								security: 		"'.$wpeccp_compare_events.'"
+							};
+							$.post( ajax_url, data, function(response) {
+								result = $.parseJSON( response );
+								$(".wpec_compare_widget_loader").hide();
+								$(".wpec_compare_widget_container").html(result);
+							});
+							wpec_update_total_compare_list();
 						}
 					});		  
 				</script>';
