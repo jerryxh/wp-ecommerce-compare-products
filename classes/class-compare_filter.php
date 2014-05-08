@@ -362,14 +362,12 @@ class WPEC_Compare_Hook_Filter
 	}
 	
 	public static function wpeccp_update_compare_widget() {
-		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		$result = WPEC_Compare_Functions::get_compare_list_html_widget();
 		echo json_encode( $result );
 		die();
 	}
 	
 	public static function wpeccp_update_total_compare() {
-		check_ajax_referer( 'wpeccp-compare-events', 'security' );
 		$result = WPEC_Compare_Functions::get_total_compare_list();
 		echo json_encode( $result );
 		die();
@@ -392,7 +390,6 @@ class WPEC_Compare_Hook_Filter
 		global $product_compare_id;
 		global $wpec_compare_comparison_page_global_settings;
 		$wpeccp_compare_events = wp_create_nonce("wpeccp-compare-events");
-		$wpeccp_compare_popup = wp_create_nonce("wpeccp-compare-popup");
 		
 		$script_add_on = '';
 		$script_add_on .= '<script type="text/javascript">
@@ -427,7 +424,6 @@ class WPEC_Compare_Hook_Filter
 								bt_compare_current.siblings(".wpec_bt_view_compare").show();
 								data = {
 									action: 		"wpeccp_update_compare_widget",
-									security: 		"'.$wpeccp_compare_events.'"
 								};
 								$.post( ajax_url, data, function(response) {
 									result = $.parseJSON( response );
@@ -450,7 +446,6 @@ class WPEC_Compare_Hook_Filter
 							$.post( ajax_url, data, function(response) {
 								data = {
 									action: 		"wpeccp_update_compare_widget",
-									security: 		"'.$wpeccp_compare_events.'"
 								};
 								$.post( ajax_url, data, function(response) {
 									result = $.parseJSON( response );
@@ -470,7 +465,6 @@ class WPEC_Compare_Hook_Filter
 							$.post( ajax_url, data, function(response) {
 								data = {
 									action: 		"wpeccp_update_compare_widget",
-									security: 		"'.$wpeccp_compare_events.'"
 								};
 								$.post( ajax_url, data, function(response) {
 									result = $.parseJSON( response );
@@ -484,7 +478,6 @@ class WPEC_Compare_Hook_Filter
 						function wpec_update_total_compare_list(){
 							var data = {
 								action: 		"wpeccp_update_total_compare",
-								security: 		"'.$wpeccp_compare_events.'"
 							};
 							$.post( ajax_url, data, function(response) {
 								total_compare = $.parseJSON( response );
@@ -497,7 +490,6 @@ class WPEC_Compare_Hook_Filter
 							$(".wpec_compare_widget_container").html("");
 							var data = {
 								action: 		"wpeccp_update_compare_widget",
-								security: 		"'.$wpeccp_compare_events.'"
 							};
 							$.post( ajax_url, data, function(response) {
 								result = $.parseJSON( response );
