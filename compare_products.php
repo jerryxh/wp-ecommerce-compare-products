@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP e-Commerce Compare Products LITE
 Description: Compare Products uses your existing WP e-Commerce Product Categories and Product Variations to create Compare Product Features for all your products. A sidebar Compare basket is created that users add products to and view the Comparison in a Compare this pop-up screen.
-Version: 2.1.5.3
+Version: 2.1.5.4
 Author: A3 Revolution
 Author URI: http://www.a3rev.com/
 License: This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007

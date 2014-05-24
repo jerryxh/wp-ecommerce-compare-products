@@ -1,91 +1,92 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPEC Compare Products Pro\n"
+"Project-Id-Version: WPEC Compare Products Lite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-04 14:20+0700\n"
-"PO-Revision-Date: 2014-02-04 14:20+0700\n"
+"POT-Creation-Date: 2014-05-24 12:17+0700\n"
+"PO-Revision-Date: 2014-05-24 12:17+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
+"Language: bg_BG\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/admin-interface.php:125
+#: admin/admin-interface.php:127
 #, fuzzy
 msgid "Settings successfully saved."
 msgstr "Настройките за сравняване са успешно запазени"
 
-#: admin/admin-interface.php:133
+#: admin/admin-interface.php:135
 msgid "Error: Settings can not save."
 msgstr ""
 
-#: admin/admin-interface.php:141
+#: admin/admin-interface.php:143
 #, fuzzy
 msgid "Settings successfully reseted."
 msgstr "Compare Settings Successfully reset"
 
-#: admin/admin-interface.php:162
+#: admin/admin-interface.php:164
 msgid "Thin"
 msgstr ""
 
-#: admin/admin-interface.php:163
+#: admin/admin-interface.php:165
 msgid "Thin/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:164
+#: admin/admin-interface.php:166
 msgid "Normal"
 msgstr ""
 
-#: admin/admin-interface.php:165
+#: admin/admin-interface.php:167
 msgid "Italic"
 msgstr ""
 
-#: admin/admin-interface.php:166
+#: admin/admin-interface.php:168
 msgid "Bold"
 msgstr ""
 
-#: admin/admin-interface.php:167
+#: admin/admin-interface.php:169
 msgid "Bold/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:177
+#: admin/admin-interface.php:179
 msgid "Solid"
 msgstr ""
 
-#: admin/admin-interface.php:178
+#: admin/admin-interface.php:180
 msgid "Double"
 msgstr ""
 
-#: admin/admin-interface.php:179
+#: admin/admin-interface.php:181
 msgid "Dashed"
 msgstr ""
 
-#: admin/admin-interface.php:180
+#: admin/admin-interface.php:182
 msgid "Dotted"
 msgstr ""
 
-#: admin/admin-interface.php:181
+#: admin/admin-interface.php:183
 msgid "Groove"
 msgstr ""
 
-#: admin/admin-interface.php:182
+#: admin/admin-interface.php:184
 msgid "Ridge"
 msgstr ""
 
-#: admin/admin-interface.php:183
+#: admin/admin-interface.php:185
 msgid "Inset"
 msgstr ""
 
-#: admin/admin-interface.php:184
+#: admin/admin-interface.php:186
 msgid "Outset"
 msgstr ""
 
-#: admin/admin-interface.php:1294 admin/admin-interface.php:1384
-#: admin/admin-interface.php:1413
+#: admin/admin-interface.php:1298 admin/admin-interface.php:1388
+#: admin/admin-interface.php:1417
 #: admin/settings/comparison-page/add-to-cart-settings.php:210
 #: admin/settings/comparison-page/global-settings.php:205
 #: admin/settings/comparison-page/global-settings.php:211
@@ -104,8 +105,8 @@ msgstr ""
 msgid "ON"
 msgstr ""
 
-#: admin/admin-interface.php:1295 admin/admin-interface.php:1385
-#: admin/admin-interface.php:1414
+#: admin/admin-interface.php:1299 admin/admin-interface.php:1389
+#: admin/admin-interface.php:1418
 #: admin/settings/comparison-page/add-to-cart-settings.php:211
 #: admin/settings/comparison-page/global-settings.php:206
 #: admin/settings/comparison-page/global-settings.php:212
@@ -124,128 +125,107 @@ msgstr ""
 msgid "OFF"
 msgstr ""
 
-#: admin/admin-interface.php:1455
+#: admin/admin-interface.php:1459
 msgid "Width"
 msgstr ""
 
-#: admin/admin-interface.php:1457
+#: admin/admin-interface.php:1461
 msgid "Height"
 msgstr ""
 
-#: admin/admin-interface.php:1459
+#: admin/admin-interface.php:1463
 msgid "Hard Crop"
 msgstr ""
 
-#: admin/admin-interface.php:1537
+#: admin/admin-interface.php:1541
 msgid "-- Default Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:1548
+#: admin/admin-interface.php:1552
 msgid "-- Google Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:1589
+#: admin/admin-interface.php:1593
 msgid "Preview your customized typography settings"
 msgstr ""
 
-#: admin/admin-interface.php:1723 admin/admin-interface.php:1982
+#: admin/admin-interface.php:1727 admin/admin-interface.php:1986
 msgid "Preview your customized border settings"
 msgstr ""
 
-#: admin/admin-interface.php:1732 admin/admin-interface.php:1973
+#: admin/admin-interface.php:1736 admin/admin-interface.php:1977
 #, fuzzy
 msgid "Rounded"
 msgstr "Намерени"
 
-#: admin/admin-interface.php:1733 admin/admin-interface.php:1974
+#: admin/admin-interface.php:1737 admin/admin-interface.php:1978
 msgid "Square"
 msgstr ""
 
-#: admin/admin-interface.php:1743 admin/admin-interface.php:1987
+#: admin/admin-interface.php:1747 admin/admin-interface.php:1991
 msgid "Top Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1763 admin/admin-interface.php:2007
+#: admin/admin-interface.php:1767 admin/admin-interface.php:2011
 msgid "Top Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1783 admin/admin-interface.php:2027
+#: admin/admin-interface.php:1787 admin/admin-interface.php:2031
 msgid "Bottom Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1803 admin/admin-interface.php:2047
+#: admin/admin-interface.php:1807 admin/admin-interface.php:2051
 msgid "Bottom Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:1896
+#: admin/admin-interface.php:1900
 msgid "Preview your customized border styles settings"
 msgstr ""
 
-#: admin/admin-interface.php:2108
+#: admin/admin-interface.php:2112
 msgid "YES"
 msgstr ""
 
-#: admin/admin-interface.php:2109
+#: admin/admin-interface.php:2113
 msgid "NO"
 msgstr ""
 
-#: admin/admin-interface.php:2123
+#: admin/admin-interface.php:2127
 msgid "Horizontal Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2141
+#: admin/admin-interface.php:2145
 msgid "Vertical Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2159
+#: admin/admin-interface.php:2163
 msgid "Blur Distance"
 msgstr ""
 
-#: admin/admin-interface.php:2177
+#: admin/admin-interface.php:2181
 #, fuzzy
 msgid "Spread Size"
 msgstr "Избери стойност"
 
-#: admin/admin-interface.php:2195
+#: admin/admin-interface.php:2199
 msgid "INNER"
 msgstr ""
 
-#: admin/admin-interface.php:2196
+#: admin/admin-interface.php:2200
 msgid "OUTER"
 msgstr ""
 
-#: admin/admin-interface.php:2214
+#: admin/admin-interface.php:2218
 msgid "Preview your customized box shadow settings"
 msgstr ""
 
-#: admin/admin-interface.php:2402
+#: admin/admin-interface.php:2407
 msgid "Save changes"
 msgstr "Запази промените"
 
-#: admin/admin-interface.php:2403
+#: admin/admin-interface.php:2408
 msgid "Reset Settings"
 msgstr "Възстановаване на настройките"
-
-#: admin/admin-ui.php:127
-#, php-format
-msgid "Settings inside this yellow border are %s Features."
-msgstr ""
-
-#: admin/admin-ui.php:129
-#, php-format
-msgid ""
-"Upgrade to the <a href=\"%s\" target=\"_blank\">%s</a> to activate these "
-"settings."
-msgstr ""
-
-#: admin/admin-ui.php:131 admin/admin-ui.php:133
-msgid "Pro Version"
-msgstr ""
-
-#: admin/compare_init.php:8 includes/class-compare_functions.php:685
-#, fuzzy
-msgid "Product Comparison"
-msgstr "Бутони за сравняване в продуктовата страница"
 
 #: admin/admin-pages/admin-product-comparison-page.php:63
 #, fuzzy
@@ -256,6 +236,23 @@ msgstr "Сравни това"
 #, fuzzy
 msgid "Settings & Style"
 msgstr "Настройки"
+
+#: admin/admin-ui.php:127
+msgid ""
+"Advanced settings inside this yellow border are not activated on the Lite "
+"Version."
+msgstr ""
+
+#: admin/admin-ui.php:129
+#, php-format
+msgid ""
+"The fully featured %s in availble for <a href=\"%s\" target=\"_blank\">Free "
+"Evaluation Trail Here</a>. No credit card required."
+msgstr ""
+
+#: admin/admin-ui.php:131
+msgid "Pro Version"
+msgstr ""
 
 #: admin/classes/class-compare_categories.php:26
 msgid "Compare Category Successfully edited"
@@ -483,7 +480,7 @@ msgstr "Вид"
 #: admin/classes/class-compare_fields.php:438
 #: admin/classes/class-compare_products.php:83
 #: admin/classes/class-compare_products.php:122
-#: admin/classes/class-compare_products.php:225
+#: admin/classes/class-compare_products.php:226
 msgid "Edit"
 msgstr "Редактирай"
 
@@ -525,7 +522,7 @@ msgid "from"
 msgstr "от"
 
 #: admin/classes/class-compare_fields.php:289
-#: includes/class-compare_functions.php:337
+#: includes/class-compare_functions.php:340
 msgid "Remove"
 msgstr "Премахни"
 
@@ -595,39 +592,44 @@ msgstr ""
 msgid "WPEC Compare Products Manager"
 msgstr "WPEC Сравняване на продукти"
 
-#: admin/classes/class-compare_products.php:220
+#: admin/classes/class-compare_products.php:221
 msgid "No."
 msgstr "Не."
 
-#: admin/classes/class-compare_products.php:221
+#: admin/classes/class-compare_products.php:222
 msgid "Product Name"
 msgstr "Продуктово име"
 
-#: admin/classes/class-compare_products.php:222
+#: admin/classes/class-compare_products.php:223
 msgid "Product Category"
 msgstr "Продуктова категория"
 
-#: admin/classes/class-compare_products.php:223
+#: admin/classes/class-compare_products.php:224
 msgid "Compare Category"
 msgstr "Категория за сравняване"
 
-#: admin/classes/class-compare_products.php:224
+#: admin/classes/class-compare_products.php:225
 msgid "Activated / Deactivated"
 msgstr "Активиран / Деактивиран"
 
-#: admin/classes/class-compare_products.php:233
+#: admin/classes/class-compare_products.php:234
 msgid "Products"
 msgstr "Продукти"
 
-#: admin/classes/class-compare_products.php:234
+#: admin/classes/class-compare_products.php:235
 msgid "Find Product Name"
 msgstr "Открито продуктово име"
 
-#: admin/classes/class-compare_products.php:250
+#: admin/classes/class-compare_products.php:251
 msgid ""
 "Please upgrade to the Pro Version to activate Products express Compare "
 "feature manager"
 msgstr ""
+
+#: admin/compare_init.php:8 includes/class-compare_functions.php:683
+#, fuzzy
+msgid "Product Comparison"
+msgstr "Бутони за сравняване в продуктовата страница"
 
 #: admin/includes/uploader/class-uploader.php:149
 msgid "Upload"
@@ -2106,7 +2108,7 @@ msgid "Compare Widget"
 msgstr "Ширина на изкачащия прозорец за сравнение"
 
 #: classes/class-compare_filter.php:40 templates/product-compare.php:50
-#: templates/product-compare.php:52 widget/class-compare_widget.php:41
+#: templates/product-compare.php:52 widget/class-compare_widget.php:39
 msgid "Compare Products"
 msgstr "Сравняване на продукти"
 
@@ -2135,16 +2137,16 @@ msgstr "WPEC Сравняване на продукти"
 msgid "Product Manager"
 msgstr "Продуктово име"
 
-#: classes/class-compare_filter.php:366
+#: classes/class-compare_filter.php:403
 #, fuzzy
 msgid "Product_Comparison"
 msgstr "Бутони за сравняване в продуктовата страница"
 
-#: classes/class-compare_filter.php:487
+#: classes/class-compare_filter.php:534
 msgid "Documentation"
 msgstr ""
 
-#: classes/class-compare_filter.php:488
+#: classes/class-compare_filter.php:535
 msgid "Support"
 msgstr ""
 
@@ -2177,144 +2179,109 @@ msgstr ""
 msgid "this page"
 msgstr "тази страница"
 
-#: includes/class-compare_functions.php:340
+#: includes/class-compare_functions.php:343
 msgid "Avg. Customer Rating"
 msgstr "Средна оценка на клиентите"
 
-#: includes/class-compare_functions.php:346
+#: includes/class-compare_functions.php:349
 msgid "Buy Now"
 msgstr ""
 
-#: includes/class-compare_functions.php:545
 #: includes/class-compare_functions.php:548
+#: includes/class-compare_functions.php:551
 msgid "Back"
 msgstr ""
 
-#: includes/class-compare_functions.php:562
 #: includes/class-compare_functions.php:565
+#: includes/class-compare_functions.php:568
 msgid "Next"
 msgstr ""
 
-#: includes/class-compare_functions.php:601
+#: includes/class-compare_functions.php:604
 #, fuzzy
 msgid "Upgrade to Compare Product Pro"
 msgstr "Редактирай характеристиките за сравняване на продукти"
 
-#: includes/class-compare_functions.php:602
+#: includes/class-compare_functions.php:605
 msgid ""
 "<strong>NOTE:</strong> All the functions inside the Yellow border on the "
 "plugins admin panel are extra functionality that is activated by upgrading "
 "to the Pro version"
 msgstr ""
 
-#: includes/class-compare_functions.php:603
-#, fuzzy
-msgid "WP e-Commerce Compare Products Pro"
-msgstr "Сравняване на продукти"
-
-#: includes/class-compare_functions.php:604
-msgid "Activates these advanced Features"
-msgstr ""
-
 #: includes/class-compare_functions.php:607
 #, fuzzy
-msgid "Activate Compare - Products Manager."
-msgstr "WPEC Сравняване на продукти"
-
-#: includes/class-compare_functions.php:608
-#, fuzzy
-msgid "Activate the Compare Audio & Video feature."
-msgstr "Бутони за сравняване в продуктовата страница"
+msgid "WPEC Compare Products Pro"
+msgstr "Сравняване на продукти"
 
 #: includes/class-compare_functions.php:609
-msgid "Activate all Compare Widget settings."
+#, php-format
+msgid "Trial the <a href=\"%s\" target=\"_blank\">Pro Version for Free</a>"
 msgstr ""
 
 #: includes/class-compare_functions.php:610
-#, fuzzy
-msgid "Activate all Product Card Settings."
-msgstr "Бутони за сравняване в продуктовата страница"
-
-#: includes/class-compare_functions.php:611
-msgid "Activate all Comparison Table style Settings."
+msgid "No credit card required."
 msgstr ""
 
-#: includes/class-compare_functions.php:612
-msgid "Activate same day priority support."
+#: includes/class-compare_functions.php:611
+#, php-format
+msgid ""
+"Immediate access to <a href=\"%s\" target=\"_blank\">developer support</a>."
+msgstr ""
+
+#: includes/class-compare_functions.php:614
+msgid "More a3rev Quality Plugins"
 msgstr ""
 
 #: includes/class-compare_functions.php:615
-msgid "Pro Version 7 day FREE trail"
+msgid ""
+"Below is a list of the a3rev plugins that are available for free download "
+"from wordpress.org"
 msgstr ""
 
 #: includes/class-compare_functions.php:616
-msgid "Click here"
-msgstr ""
-
-#: includes/class-compare_functions.php:616
-msgid "for a 7 day Free Trail of the awesome Pro Version features."
-msgstr ""
-
-#: includes/class-compare_functions.php:617
-msgid "View this plugins"
-msgstr ""
-
-#: includes/class-compare_functions.php:617
-msgid "documentation"
-msgstr ""
-
-#: includes/class-compare_functions.php:618
 #, fuzzy
-msgid "Visit this plugins"
-msgstr "Принтирай тази страница"
-
-#: includes/class-compare_functions.php:618
-msgid "support forum"
-msgstr ""
+msgid "WP e-Commerce Plugins"
+msgstr "Сравняване на продукти"
 
 #: includes/class-compare_functions.php:619
-msgid "More FREE a3rev WP e-Commerce Plugins"
-msgstr ""
-
-#: includes/class-compare_functions.php:622
 #, fuzzy
 msgid "WP e-Commerce Products Quick View"
 msgstr "Сравняване на продукти"
 
-#: includes/class-compare_functions.php:623
+#: includes/class-compare_functions.php:620
 msgid "WP e-Commerce Dynamic Gallery"
 msgstr ""
 
-#: includes/class-compare_functions.php:624
+#: includes/class-compare_functions.php:621
 msgid "WP e-Commerce Predictive Search"
 msgstr ""
 
-#: includes/class-compare_functions.php:625
-#, fuzzy
-msgid "WP e-Commerce Compare Products"
-msgstr "Сравняване на продукти"
-
-#: includes/class-compare_functions.php:626
+#: includes/class-compare_functions.php:622
 msgid "WP e-Commerce Catalog Visibility & Email Inquiry"
 msgstr ""
 
-#: includes/class-compare_functions.php:627
+#: includes/class-compare_functions.php:623
 msgid "WP e-Commerce Grid View"
 msgstr ""
 
-#: includes/class-compare_functions.php:630
-msgid "FREE a3rev WordPress Plugins"
+#: includes/class-compare_functions.php:627
+msgid "WordPress Plugins"
 msgstr ""
 
-#: includes/class-compare_functions.php:633
+#: includes/class-compare_functions.php:630
+msgid "a3 Responsive Slider"
+msgstr ""
+
+#: includes/class-compare_functions.php:631
 msgid "Contact Us Page - Contact People"
 msgstr ""
 
-#: includes/class-compare_functions.php:634
+#: includes/class-compare_functions.php:632
 msgid "WordPress Email Template"
 msgstr ""
 
-#: includes/class-compare_functions.php:635
+#: includes/class-compare_functions.php:633
 msgid "Page View Count"
 msgstr ""
 
@@ -2323,9 +2290,29 @@ msgstr ""
 msgid "WPEC Compare Products"
 msgstr "Сравняване на продукти"
 
-#: widget/class-compare_widget.php:63
+#: widget/class-compare_widget.php:61
 msgid "Title"
 msgstr ""
+
+#, fuzzy
+#~ msgid "WP e-Commerce Compare Products Pro"
+#~ msgstr "Сравняване на продукти"
+
+#, fuzzy
+#~ msgid "Activate Compare - Products Manager."
+#~ msgstr "WPEC Сравняване на продукти"
+
+#, fuzzy
+#~ msgid "Activate the Compare Audio & Video feature."
+#~ msgstr "Бутони за сравняване в продуктовата страница"
+
+#, fuzzy
+#~ msgid "Activate all Product Card Settings."
+#~ msgstr "Бутони за сравняване в продуктовата страница"
+
+#, fuzzy
+#~ msgid "Visit this plugins"
+#~ msgstr "Принтирай тази страница"
 
 #~ msgid "Features"
 #~ msgstr "Характеристики"
