@@ -4,7 +4,7 @@
  * Call this function when plugin is activated
  */
 function wpec_compare_install(){
-	update_option('a3rev_wpeccp_version', '2.1.5.1');
+	update_option('a3rev_wpeccp_version', '2.1.5.3');
 	$product_compare_id = WPEC_Compare_Functions::create_page( esc_sql( 'product-comparison' ), '', __('Product Comparison', 'wpec_cp'), '[product_comparison_page]' );
 	update_option('product_compare_id', $product_compare_id);
 	
@@ -53,6 +53,9 @@ add_filter( 'plugin_row_meta', array('WPEC_Compare_Hook_Filter', 'plugin_extra_l
 	// Need to call Admin Init to show Admin UI
 	global $wpec_compare_admin_init;
 	$wpec_compare_admin_init->init();
+	
+	// Set nocache constants to comparision page
+	add_action('init', array( 'WPEC_Compare_Hook_Filter', 'nocache_ours_page' ), 0 );
 	
 	// Add upgrade notice to Dashboard pages
 	add_filter( $wpec_compare_admin_init->plugin_name . '_plugin_extension', array( 'WPEC_Compare_Functions', 'plugin_pro_notice' ) );
@@ -180,8 +183,8 @@ function wpec_cp_lite_upgrade_plugin () {
 		update_option('a3rev_wpeccp_version', '2.1.5');
 		update_option('a3rev_wpeccp_lite_version', '2.1.5');
 	}
-	update_option('a3rev_wpeccp_version', '2.1.5.1');
-	update_option('a3rev_wpeccp_lite_version', '2.1.5.1');
+	update_option('a3rev_wpeccp_version', '2.1.5.3');
+	update_option('a3rev_wpeccp_lite_version', '2.1.5.3');
 
 }
 ?>

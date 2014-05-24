@@ -2,9 +2,9 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compare products, wp ecommerce compare products, e-commerce, ecommerce
 
-Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 2.1.5.1
+Requires at least: 3.7
+Tested up to: 3.9
+Stable tag: 2.1.5.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -120,6 +120,19 @@ To install WP e-Commerce  Compare Products:
 You can use this plugin when you have installed the WP e-Commerce plugin
 
 == Changelog ==
+
+= 2.1.5.3 - 2014/05/08 =
+* Tweak - remove wp_create_nonce() function from Compare Widget load item by ajax feature.
+* Tweak - remove check_ajax_referer() function from Compare Widget load item by ajax feature.
+
+= 2.1.5.2 - 2014/05/06 =
+* Tweak - Update the compare widget. Added load items to cart by ajax for solve the problem cached by another plugin
+* Tweak - set DONOTCACHEPAGE constant for Comparison page to prevent caching of current items in widget.
+* Tweak - Updated Framework help text font for consistency.
+* Tweak - Added remove_all_filters('mce_external_plugins'); before call to wp_editor to remove extension scripts from other plugins.
+* Tweak - Tested 100% compatible with WP e-Commerce version 3.8.14
+* Tweak - Tested 100% compatible with WordPress version 3.9 
+* Credit - to Will MacQuinn for the ftp and wp-admin access to look at the compare widget caching issue.
 
 = 2.1.5.1 - 2014/02/04 =
 * Tweak - Added description text to the top of each Pro Version yellow border section
@@ -307,6 +320,12 @@ MAJOR UPGRADE
 
 
 == Upgrade Notice ==
+
+= 2.1.5.3 =
+Update your plugin for 2 Tweaks to the ajax item load in Compare Widget
+
+= 2.1.5.2 =
+Update your plugin now for 2 tweaks that prevent Compare window and widget caching. Full compatibility with WP e-Commerce 3.8.14 and WordPress 3.9
 
 = 2.1.5.1 =
 Upgrade now for undefined index bug fix that surfaced in version 2.1.5
