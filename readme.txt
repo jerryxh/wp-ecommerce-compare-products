@@ -4,7 +4,7 @@ Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compar
 
 Requires at least: 3.7
 Tested up to: 3.9.1
-Stable tag: 2.1.5.4
+Stable tag: 2.1.5.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -35,9 +35,6 @@ Chosen products are compared side-by-side, feature by feature, price-by-price. D
 * Fully tested and optimized for all iPads, Android, Kindle and Google Tablets
 * Fully tested and optimized for IOS and Android Mobile platforms.
 
-= Why We Built it! =
-
-We love the Compare Products feature that the big e-commerce sites have. We have looked at them all and over 12 months have developed what we believe is a product comparison extension for WP e-Commerce that is better than any of them.
 
 = Mobile Responsive App style admin interface =
 
@@ -53,16 +50,14 @@ We love the Compare Products feature that the big e-commerce sites have. We have
 * The Pro Version settings are all active on the admin panels But do not save and are not applied to the front end.
 * Upgrading to the Pro version activates all the Pro version Features and Settings and removes the Yellow side bar and borders.
 
-= Lite Version Support =
+>= Premium Support =
 
-* As a Lite Version user please post all support requests to the plugins WordPress Support forum.
-* We do not watch that forum and posting there you will be relying on another user for support, not an a3rev team member.
-* Upgrading to a Pro Version Trail Licence gives 'write' access to the a3rev support forum.
+>The a3rev team does not provide support for the WP e-Commerce Compare Products plugin on the WordPress.org forums. One on one developer support is available via the plugins [a3rev support forum](https://a3rev.com/forums/forum/wp-e-commerce-plugins/compare-products/) to people who have purchased a [WP e-Commerce Compare Products](http://a3rev.com/shop/wpec-compare-products/) Pro plugin Lifetime License.
+
+>The Pro Version has lots of extra features (listed below) that coupled with developer support might be well worth your investment!
+
 
 = Pro Version Features =
-
-* Industry leading - Full Pro Version [Free Evaluation Trail](http://a3rev.com/shop/wpec-compare-products/). No Credit Card Required.
-* Immediate access to support from developers on the plugins [a3rev support forum](https://a3rev.com/forums/forum/wp-e-commerce-plugins/compare-products/).
 * Compare Audio - Shows the default WordPress Audio player in the Comparison table. Supported formats .mp3, .m4a, .ogg, .wav file
 * Compare Video - Shows and plays Youtube, Vimeo and WordPressTV videos in the Comparison table. 
 * All of the In-Plugin Custom Style and layout settings are activated.
@@ -120,6 +115,10 @@ To install WP e-Commerce  Compare Products:
 You can use this plugin when you have installed the WP e-Commerce plugin
 
 == Changelog ==
+
+= 2.1.5.5 - 2014/06/24 =
+* Tweak - Updated chosen js script to latest version 1.0.1 on the a3rev Plugin Framework
+* Tweak - Added support for placeholder feature for input, email , password , text area types.
 
 = 2.1.5.4 - 2014/05/25 =
 * Tweak - Changed add_filter( 'gettext', array( $this, 'change_button_text' ), null, 2 ); to add_filter( 'gettext', array( $this, 'change_button_text' ), null, 3 );
@@ -329,6 +328,9 @@ MAJOR UPGRADE
 
 
 == Upgrade Notice ==
+
+= 2.1.5.5 =
+Upgrade now for 2 new framework code tweaks to keep your plugin in tip top running order.
 
 = 2.1.5.4 =
 Update now for a bug fix - a3 Plugin Framework conflict with WP e-Commerce tax rates and full compatibility with WP e-Commerce v 3.8.14.1 and WordPress v 3.9.1.

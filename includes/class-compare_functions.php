@@ -604,16 +604,23 @@ class WPEC_Compare_Functions
 		$html .= '<h3>'.__('Upgrade to Compare Product Pro', 'wpec_cp').'</h3>';
 		$html .= '<p>'.__("<strong>NOTE:</strong> All the functions inside the Yellow border on the plugins admin panel are extra functionality that is activated by upgrading to the Pro version", 'wpec_cp').':</p>';
 		$html .= '<p>';
-		$html .= '<h3 style="margin-bottom:5px;">* <a href="'.ECCP_AUTHOR_URI.'" target="_blank">'.__('WPEC Compare Products Pro', 'wpec_cp').'</a></h3>';
+		$html .= '<h3>* <a href="'.ECCP_AUTHOR_URI.'" target="_blank">'.__('WPEC Compare Products Pro', 'wpec_cp').'</a> '.__('Features', 'wpec_cp').':</h3>';
+		$html .= '<strong>'.__( 'Pro Version Lifetime License Features:', 'wpec_cp' ).'</strong>';
 		$html .= '<p>';
-		$html .= '* '. sprintf( __('Trial the <a href="%s" target="_blank">Pro Version for Free</a>', 'wpec_cp'), ECCP_AUTHOR_URI ).'<br />';
-		$html .= '* '. __('No credit card required.', 'wpec_cp').'<br />';
-		$html .= '* '. sprintf( __('Immediate access to <a href="%s" target="_blank">developer support</a>.', 'wpec_cp'), 'https://a3rev.com/forums/forum/wp-e-commerce-plugins/compare-products/' );
+		$html .= '<ul>';
+		$html .= '<li>* '.__('All Custom Style and layout settings are activated.', 'wpec_cp').'</li>';
+		$html .= '<li>* '.__('Product Express Manager - save time and money.', 'wpec_cp').'</li>';
+		$html .= '<li>* '.__("Activates the 'View Cart' feature on Grid View.", 'wpec_cp').'</li>';
+		$html .= '<li>* '.__('Grid View layout and display styling function.', 'wpec_cp').'</li>';
+		$html .= '<li>* '.__('Compare Widget layout and styling functionsd.', 'wpec_cp').'</li>';
+		$html .= '<li>* '.__('Add to Cart, View Checkout custom style feature.', 'wpec_cp').'</li>';
+		$html .= '<li>* '.__('Full Comparison Table layout and style functions.', 'wpec_cp').'</li>';
+		$html .= '<li>* '.__('Compare Audio - Shows WordPress Audio player in the Comparison table.', 'wpec_cp').'</li>';
+		$html .= '<li>* '.__('Compare Video - Shows and plays Youtube, Vimeo and WordPressTV videos in the Comparison table.', 'wpec_cp').'</li>';
+		$html .= '</ul>';
 		$html .= '</p>';
 		
-		$html .= '<h3>'.__('More a3rev Quality Plugins', 'wpec_cp').'</h3>';
-		$html .= '<p>'.__('Below is a list of the a3rev plugins that are available for free download from wordpress.org', 'wpec_cp').'</p>';
-		$html .= '<h3>'.__('WP e-Commerce Plugins', 'wpec_cp').'</h3>';
+		$html .= '<h3>'.__('More FREE a3rev WP e-Commerce Plugins', 'wpec_cp').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-products-quick-view/" target="_blank">'.__('WP e-Commerce Products Quick View', 'wpec_cp').'</a></li>';
@@ -624,7 +631,7 @@ class WPEC_Compare_Functions
 		$html .= '</ul>';
 		$html .= '</p>';
 		
-		$html .= '<h3>'.__('WordPress Plugins', 'wpec_cp').'</h3>';
+		$html .= '<h3>'.__('FREE a3rev WordPress Plugins', 'wpec_cp').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/a3-responsive-slider/" target="_blank">'.__('a3 Responsive Slider', 'wpec_cp').'</a></li>';

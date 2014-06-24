@@ -32,6 +32,14 @@ class WPEC_Compare_Admin_UI
 	 */
 	public $plugin_name = 'wpsc_compare_product';
 	
+	public $is_free_plugin = true;
+	
+	/**
+	 * @var string
+	 * You must change to correct class name that you are working
+	 */
+	public $class_name = 'WPEC_Compare';
+	
 	/**
 	 * @var string
 	 * You must change to correct pro plugin page url on a3rev site
@@ -126,10 +134,10 @@ class WPEC_Compare_Admin_UI
 		$upgrade_top_message = sprintf( '<div class="pro_feature_top_message">' 
 			. __( 'Advanced settings inside this yellow border are not activated on the Lite Version.', 'wpec_cp' ) 
 			. '<br />' 
-			. __( 'The fully featured %s in availble for <a href="%s" target="_blank">Free Evaluation Trail Here</a>. No credit card required.', 'wpec_cp' ) 
+			. __( 'Upgrade to the <a href="%s" target="_blank">%s</a> to activate these settings.', 'wpec_cp' ) 
 			. '</div>'
-			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_version_name', apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpec_cp' ) ) )
 			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_plugin_page_url', apply_filters( $this->plugin_name . '_pro_plugin_page_url', $this->pro_plugin_page_url ) )
+			, apply_filters( $this->plugin_name . '_' . $setting_id . '_pro_version_name', apply_filters( $this->plugin_name . '_pro_version_name', __( 'Pro Version', 'wpec_cp' ) ) )
 		);
 		
 		$upgrade_top_message = apply_filters( $this->plugin_name . '_upgrade_top_message', $upgrade_top_message );
