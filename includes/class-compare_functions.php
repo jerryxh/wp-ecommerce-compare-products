@@ -281,7 +281,10 @@ class WPEC_Compare_Functions
 				$product_compare_page = '#';
 			}
 			
-			$html .= '<div class="wpec_compare_widget_button_container"><a class="wpec_compare_button_go '.$widget_button_class.' '.$widget_button_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="">'.$widget_button_text.'</a></div>';
+			$widget_compare_popup_button = '';
+			if ( $wpec_compare_comparison_page_global_settings['open_compare_type'] != 'new_page' ) $widget_compare_popup_button = 'wpec_compare_popup_button_go';
+			
+			$html .= '<div class="wpec_compare_widget_button_container"><a class="wpec_compare_button_go '.$widget_compare_popup_button.' '.$widget_button_class.' '.$widget_button_custom_class.'" href="'.$product_compare_page.'" target="_blank" alt="" title="">'.$widget_button_text.'</a></div>';
 			
 			if ($wpec_compare_widget_clear_all_style['clear_all_item_vertical'] == 'below') $html .= $clear_html;
 			
@@ -600,36 +603,31 @@ class WPEC_Compare_Functions
 		$html .= '<a href="http://a3rev.com/shop/" target="_blank" style="float:right;margin-top:5px; margin-left:10px;" ><div class="a3-plugin-ui-icon a3-plugin-ui-a3-rev-logo"></div></a>';
 		$html .= '<h3>'.__('Upgrade to Compare Product Pro', 'wpec_cp').'</h3>';
 		$html .= '<p>'.__("<strong>NOTE:</strong> All the functions inside the Yellow border on the plugins admin panel are extra functionality that is activated by upgrading to the Pro version", 'wpec_cp').':</p>';
-		$html .= '<h3>* <a href="'.ECCP_AUTHOR_URI.'" target="_blank">'.__('WP e-Commerce Compare Products Pro', 'wpec_cp').'</a></h3>';
-		$html .= '<h3>'.__('Activates these advanced Features', 'wpec_cp').':</h3>';
 		$html .= '<p>';
-		$html .= '<ul style="padding-left:10px;">';
-		$html .= '<li>1. '.__("Activate Compare - Products Manager.", 'wpec_cp').'</li>';
-		$html .= '<li>2. '.__('Activate the Compare Audio & Video feature.', 'wpec_cp').'</li>';
-		$html .= '<li>3. '.__("Activate all Compare Widget settings.", 'wpec_cp').'</li>';
-		$html .= '<li>4. '.__('Activate all Product Card Settings.', 'wpec_cp').'</li>';
-		$html .= '<li>5. '.__("Activate all Comparison Table style Settings.", 'wpec_cp').'</li>';
-		$html .= '<li>6. '.__("Activate same day priority support.", 'wpec_cp').'</li>';
-		$html .= '</ul>';
+		$html .= '<h3 style="margin-bottom:5px;">* <a href="'.ECCP_AUTHOR_URI.'" target="_blank">'.__('WPEC Compare Products Pro', 'wpec_cp').'</a></h3>';
+		$html .= '<p>';
+		$html .= '* '. sprintf( __('Trial the <a href="%s" target="_blank">Pro Version for Free</a>', 'wpec_cp'), ECCP_AUTHOR_URI ).'<br />';
+		$html .= '* '. __('No credit card required.', 'wpec_cp').'<br />';
+		$html .= '* '. sprintf( __('Immediate access to <a href="%s" target="_blank">developer support</a>.', 'wpec_cp'), 'https://a3rev.com/forums/forum/wp-e-commerce-plugins/compare-products/' );
 		$html .= '</p>';
-		$html .= '<h3>'.__('Pro Version 7 day FREE trail', 'wpec_cp').'</h3>';
-		$html .= '<div> <a href="'.ECCP_AUTHOR_URI.'" target="_blank">'.__('Click here', 'wpec_cp').'</a> '.__('for a 7 day Free Trail of the awesome Pro Version features.', 'wpec_cp').'</div>';
-		$html .= '<h3>'.__('View this plugins', 'wpec_cp').' <a href="http://docs.a3rev.com/user-guides/wp-e-commerce/wpec-compare-products/" target="_blank">'.__('documentation', 'wpec_cp').'</a></h3>';
-		$html .= '<h3>'.__('Visit this plugins', 'wpec_cp').' <a href="http://wordpress.org/support/plugin/wp-ecommerce-compare-products/" target="_blank">'.__('support forum', 'wpec_cp').'</a></h3>';
-		$html .= '<h3>'.__('More FREE a3rev WP e-Commerce Plugins', 'wpec_cp').'</h3>';
+		
+		$html .= '<h3>'.__('More a3rev Quality Plugins', 'wpec_cp').'</h3>';
+		$html .= '<p>'.__('Below is a list of the a3rev plugins that are available for free download from wordpress.org', 'wpec_cp').'</p>';
+		$html .= '<h3>'.__('WP e-Commerce Plugins', 'wpec_cp').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-products-quick-view/" target="_blank">'.__('WP e-Commerce Products Quick View', 'wpec_cp').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-dynamic-gallery/" target="_blank">'.__('WP e-Commerce Dynamic Gallery', 'wpec_cp').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-predictive-search/" target="_blank">'.__('WP e-Commerce Predictive Search', 'wpec_cp').'</a></li>';
-		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-ecommerce-compare-products/" target="_blank">'.__('WP e-Commerce Compare Products', 'wpec_cp').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-catalog-visibility-and-email-inquiry/" target="_blank">'.__('WP e-Commerce Catalog Visibility & Email Inquiry', 'wpec_cp').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-e-commerce-grid-view/" target="_blank">'.__('WP e-Commerce Grid View', 'wpec_cp').'</a></li>';
 		$html .= '</ul>';
 		$html .= '</p>';
-		$html .= '<h3>'.__('FREE a3rev WordPress Plugins', 'wpec_cp').'</h3>';
+		
+		$html .= '<h3>'.__('WordPress Plugins', 'wpec_cp').'</h3>';
 		$html .= '<p>';
 		$html .= '<ul style="padding-left:10px;">';
+		$html .= '<li>* <a href="http://wordpress.org/plugins/a3-responsive-slider/" target="_blank">'.__('a3 Responsive Slider', 'wpec_cp').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/contact-us-page-contact-people/" target="_blank">'.__('Contact Us Page - Contact People', 'wpec_cp').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/wp-email-template/" target="_blank">'.__('WordPress Email Template', 'wpec_cp').'</a></li>';
 		$html .= '<li>* <a href="http://wordpress.org/plugins/page-views-count/" target="_blank">'.__('Page View Count', 'wpec_cp').'</a></li>';
