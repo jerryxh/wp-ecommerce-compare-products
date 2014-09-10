@@ -2,9 +2,9 @@
 Contributors: a3rev, A3 Revolution Software Development team
 Tags: WP eCommerce, WP e-Commerce, compare product, wpec compare product, compare products, wp ecommerce compare products, e-commerce, ecommerce
 
-Requires at least: 3.7
-Tested up to: 3.9.1
-Stable tag: 2.1.5.5
+Requires at least: 3.8
+Tested up to: 4.0
+Stable tag: 2.1.5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,8 +38,8 @@ Chosen products are compared side-by-side, feature by feature, price-by-price. D
 
 = Mobile Responsive App style admin interface =
 
-* 100% compatible with WordPress v3.9.0 admin interface.
-* Backward compatibility to WordPress v3.7.0
+* 100% compatible with WordPress v4.0 admin interface.
+* Backward compatibility to WordPress v3.8.0
 * App style admin inteface.
 * Admin interface is optimized for mobiles and tablets.
 
@@ -115,6 +115,11 @@ To install WP e-Commerce  Compare Products:
 You can use this plugin when you have installed the WP e-Commerce plugin
 
 == Changelog ==
+
+= 2.1.5.6 - 2014/09/10 = 
+* Tweak - Updated google font face in plugin framework.
+* Tweak - Tested 100% compatible with WP e-Commerce 3.8.14.3
+* Tweak - Tested 100% compatible with WordPress Version 4.0
 
 = 2.1.5.5 - 2014/06/24 =
 * Tweak - Updated chosen js script to latest version 1.0.1 on the a3rev Plugin Framework
@@ -328,6 +333,9 @@ MAJOR UPGRADE
 
 
 == Upgrade Notice ==
+
+= 2.1.5.6 =
+Upgrade your plugin now for full compatibility with WordPress Version 4.0 and WP e-Commerce Version 3.8.14.3
 
 = 2.1.5.5 =
 Upgrade now for 2 new framework code tweaks to keep your plugin in tip top running order.
