@@ -362,7 +362,7 @@ extract($wpec_compare_product_prices_style);
 	width:215px !important;
 }
 .compare_popup_print #product_comparison th, .compare_popup_print #product_comparison td {
-	border-right: <?php echo $table_border_size; ?> <?php echo $table_border_style; ?> <?php echo $table_border_colour; ?> !important;
-	border-bottom: <?php echo $table_border_size; ?> <?php echo $table_border_style; ?> <?php echo $table_border_colour; ?> !important;
+	border-right: <?php echo $table_border['width']; ?> <?php echo $table_border['style']; ?> <?php echo $table_border['color']; ?> !important;
+	border-bottom: <?php echo $table_border['width']; ?> <?php echo $table_border['style']; ?> <?php echo $table_border['color']; ?> !important;
 }
 </style>
